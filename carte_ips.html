@@ -272,7 +272,8 @@ async function loadData(){
 
     while(allData.length < total){
       let where = [`rentree_scolaire="${annee}"`];
-      if(academie) where.push(`academie="${academie}"`);
+      if(academie === 'VERSAILLES') where.push(`departement in ("YVELINES","ESSONNE","HAUTS-DE-SEINE","VAL-D'OISE")`);
+      else if(academie) where.push(`academie="${academie}"`);
       if(secteur) where.push(`secteur="${secteur}"`);
       const w = encodeURIComponent(where.join(' AND '));
       const url = `${API}/${ds}/records?limit=${LIMIT}&offset=${offset}&where=${w}&select=${encodeURIComponent(selectFields)}`;
