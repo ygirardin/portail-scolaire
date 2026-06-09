@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portail Scolaire — Carte & Affelnet Versailles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:      #0f172a;
+      --ink2:     #334155;
+      --muted:    #64748b;
+      --rule:     #e2e8f0;
+      --surface:  #f8fafc;
+      --white:    #ffffff;
+
+      /* Palette principale */
+      --navy:     #1a3a5c;
+      --sky:      #2563eb;
+      --sky-soft: #eff6ff;
+      --amber:    #d97706;
+      --amber-soft:#fffbeb;
+      --teal:     #0d9488;
+      --teal-soft:#f0fdfa;
+      --violet:   #7c3aed;
+      --violet-soft:#f5f3ff;
+      --rose:     #e11d48;
+      --rose-soft:#fff1f2;
+
+      --radius: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      background: var(--navy);
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 0 rgba(255,255,255,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      background: var(--amber);
+      color: var(--navy);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .header-sub {
+      font-size: .75rem;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e4080 55%, #2563eb 100%);
+      color: #fff;
+      padding: 60px 32px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: .73rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #93c5fd;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.7);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hstat { text-align: center; }
+    .hstat-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hstat-lbl {
+      font-size: .72rem;
+      color: rgba(255,255,255,.5);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* ── MAIN ────────────────────────────────────────── */
+    main { max-width: 1100px; margin: 0 auto; padding: 52px 24px 80px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+      margin-top: 48px;
+    }
+    .section-header:first-child { margin-top: 0; }
+    .section-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+    .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+    /* ── GRID ────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .grid-wide {
+      grid-template-columns: 1fr;
+    }
+
+    /* ── CARDS ───────────────────────────────────────── */
+    a.card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+      transition: box-shadow .2s, transform .2s, border-color .2s;
+      position: relative;
+    }
+    a.card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,.1);
+      transform: translateY(-2px);
+    }
+
+    /* Accent bar */
+    .card-bar { width: 4px; flex-shrink: 0; }
+    .bar-sky    { background: var(--sky); }
+    .bar-teal   { background: var(--teal); }
+    .bar-amber  { background: var(--amber); }
+    .bar-violet { background: var(--violet); }
+    .bar-rose   { background: var(--rose); }
+    .bar-navy   { background: var(--navy); }
+
+    .card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
+
+    .card-tag {
+      font-size: .66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+    .tag-sky    { color: var(--sky); }
+    .tag-teal   { color: var(--teal); }
+    .tag-amber  { color: var(--amber); }
+    .tag-violet { color: var(--violet); }
+    .tag-rose   { color: var(--rose); }
+    .tag-navy   { color: var(--navy); }
+
+    .card-icon { font-size: 1.5rem; margin-bottom: 10px; }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: var(--ink);
+    }
+    .card-desc {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      gap: 18px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .cm-val { font-size: .88rem; font-weight: 700; color: var(--ink); }
+    .cm-lbl { font-size: .67rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .card-cta {
+      margin-top: 14px;
+      font-size: .75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Wide card — horizontal layout for featured */
+    .card-wide {
+      flex-direction: row;
+    }
+    .card-wide .card-body {
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+    }
+    .card-wide .card-icon {
+      font-size: 2.4rem;
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .card-wide .card-content { flex: 1; }
+    .card-wide .card-cta { margin-top: 10px; }
+
+    /* ── FEATURED highlight ──────────────────────────── */
+    .card-featured {
+      background: linear-gradient(135deg, #1a3a5c 0%, #1e4080 100%);
+      border-color: transparent;
+      color: #fff;
+    }
+    .card-featured .card-title,
+    .card-featured .card-desc,
+    .card-featured .cm-val { color: #fff; }
+    .card-featured .card-desc { color: rgba(255,255,255,.65); }
+    .card-featured .cm-lbl { color: rgba(255,255,255,.4); }
+    .card-featured .card-meta { border-top-color: rgba(255,255,255,.15); }
+    .card-featured .card-cta { color: #93c5fd; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: .76rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--sky); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 640px) {
+      header { padding: 0 16px; }
+      .hero { padding: 44px 16px 52px; }
+      .hero-stats { gap: 20px; }
+      main { padding: 32px 14px 60px; }
+      .card-wide .card-body { flex-direction: column; gap: 12px; }
+      .card-wide .card-icon { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <span class="logo-badge">EDU</span>
+    Portail Scolaire
+  </a>
+  <span class="header-sub">Données ouvertes · MEN &amp; Académie de Versailles</span>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">🏫 Outils pédagogiques</div>
+    <h1>Carte scolaire &amp; <em>Affelnet</em><br>en un seul endroit</h1>
+    <p>Recherchez votre établissement, visualisez les secteurs scolaires, explorez les formations et consultez les codes vœux de l'académie de Versailles.</p>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-val">5 419</div>
+        <div class="hstat-lbl">Collèges</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">2 698</div>
+        <div class="hstat-lbl">Lycées</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">4 dép.</div>
+        <div class="hstat-lbl">Acad. Versailles</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">3 000+</div>
+        <div class="hstat-lbl">Codes vœux</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ── AFFELNET ─────────────────────────────── -->
+  <div class="section-header">
+    <span class="section-label">Affelnet · Académie de Versailles</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="grid grid-wide">
+    <a class="card card-wide card-featured bar-amber" href="voeux-versailles.html">
+      <div class="card-bar bar-amber"></div>
+      <div class="card-body">
+        <div class="card-icon">📋</div>
+        <div class="card-content">
+          <div class="card-tag tag-amber" style="color:#fbbf24;">Affelnet 2nde</div>
+          <div class="card-title">Listes des Vœux — Académie de Versailles</div>
+          <div class="card-desc">Retrouvez tous les codes vœux Affelnet pour l'entrée en seconde (2GT, 2nde Pro, CAP, apprentissage) dans les départements 78, 91, 92 et 95. Filtrez par établissement, MEF, statut et département.</div>
+          <div class="card-meta">
+            <div><div class="cm-val">78 · 91 · 92 · 95</div><div class="cm-lbl">Départements</div></div>
+            <div><div class="cm-val">Scolaire &amp; Apprenti</div><div class="cm-lbl">Statuts</div></div>
+            <div><div class="cm-val">2GT, Pro, CAP</div><div class="cm-lbl">Formations</div></div>
+          </div>
+          <div class="card-cta">Consulter la liste →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ── CARTE SCOLAIRE — ÉTABLISSEMENTS ──────── -->
+  <div class="section-header">
+    <span class="section-label">Carte scolaire · Établissements</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="colleges.html">
+      <div class="card-bar bar-sky"></div>
+      <div class="card-body">
+        <div class="card-tag tag-sky">Carte interactive</div>
+        <div class="card-icon">🏫</div>
+        <div class="card-title">Collèges publics</div>
+        <div class="card-desc">Recherchez votre collège de secteur par adresse et visualisez la zone de sectorisation sur toute la France.</div>
+        <div class="card-meta">
+          <div><div class="cm-val">5 419</div><div class="cm-lbl">Collèges</div></div>
+          <div><div class="cm-val">520 000</div><div class="cm-lbl">Adresses</div></div>
+          <div><div class="cm-val">34 000</div><div class="cm-lbl">Communes</div></div>
+        </div>
+        <div class="card-cta tag-sky">Ouvrir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="lycees.html">
+      <div class="card-bar bar-sky"></div>
+      <div class="card-body">
+        <div class="card-tag tag-sky">Carte interactive</div>
+        <div class="card-icon">🎓</div>
+        <div class="card-title">Lycées publics</div>
+        <div class="card-desc">Trouvez les lycées publics de votre département et consultez leurs formations via Onisep.</div>
+        <div class="card-meta">
+          <div><div class="cm-val">2 698</div><div class="cm-lbl">Lycées</div></div>
+          <div><div class="cm-val">104</div><div class="cm-lbl">Départements</div></div>
+        </div>
+        <div class="card-cta tag-sky">Ouvrir la carte →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ── CARTE SCOLAIRE — DISPOSITIFS ─────────── -->
+  <div class="section-header">
+    <span class="section-label">Dispositifs inclusifs &amp; sections spécifiques</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="segpa.html">
+      <div class="card-bar bar-amber"></div>
+      <div class="card-body">
+        <div class="card-tag tag-amber">Dispositif inclusif</div>
+        <div class="card-icon">📚</div>
+        <div class="card-title">SEGPA</div>
+        <div class="card-desc">Sections d'enseignement général et professionnel adapté, pour élèves présentant des difficultés scolaires graves et durables.</div>
+        <div class="card-meta">
+          <div><div class="cm-val">1 489</div><div class="cm-lbl">Collèges</div></div>
+        </div>
+        <div class="card-cta tag-amber">Voir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="ulis.html">
+      <div class="card-bar bar-teal"></div>
+      <div class="card-body">
+        <div class="card-tag tag-teal">Dispositif inclusif</div>
+        <div class="card-icon">♿</div>
+        <div class="card-title">ULIS</div>
+        <div class="card-desc">Unités localisées pour l'inclusion scolaire — scolarisation des élèves en situation de handicap en milieu ordinaire.</div>
+        <div class="card-meta">
+          <div><div class="cm-val">4 152</div><div class="cm-lbl">Collèges</div></div>
+        </div>
+        <div class="card-cta tag-teal">Voir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="sections-sportives.html">
+      <div class="card-bar bar-rose"></div>
+      <div class="card-body">
+        <div class="card-tag tag-rose">Section spécifique</div>
+        <div class="card-icon">⚽</div>
+        <div class="card-title">Sections sportives</div>
+        <div class="card-desc">Pratique sportive intensive intégrée à la scolarité : football, basketball, natation, athlétisme et plus encore.</div>
+        <div class="card-meta">
+          <div><div class="cm-val">2 709</div><div class="cm-lbl">Collèges</div></div>
+        </div>
+        <div class="card-cta tag-rose">Voir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="sections-internationales.html">
+      <div class="card-bar bar-violet"></div>
+      <div class="card-body">
+        <div class="card-tag tag-violet">Section spécifique</div>
+        <div class="card-icon">🌐</div>
+        <div class="card-title">Sections internationales</div>
+        <div class="card-desc">Enseignements renforcés en langue étrangère : anglais, allemand, espagnol, chinois, arabe et bien d'autres.</div>
+        <div class="card-meta">
+          <div><div class="cm-val">184</div><div class="cm-lbl">Collèges</div></div>
+        </div>
+        <div class="card-cta tag-violet">Voir la carte →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ── DONNÉES & STATISTIQUES ────────────────── -->
+  <div class="section-header">
+    <span class="section-label">Données &amp; statistiques</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="carte_effectifs.html">
+      <div class="card-bar bar-navy"></div>
+      <div class="card-body">
+        <div class="card-tag tag-navy">Statistiques</div>
+        <div class="card-icon">📊</div>
+        <div class="card-title">Effectifs des collèges</div>
+        <div class="card-desc">Visualisez les effectifs élèves par collège public en France métropolitaine et DOM-TOM.</div>
+        <div class="card-cta tag-navy">Voir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="carte_effectifs_1er_degre.html">
+      <div class="card-bar bar-navy"></div>
+      <div class="card-body">
+        <div class="card-tag tag-navy">Statistiques</div>
+        <div class="card-icon">🏫</div>
+        <div class="card-title">Effectifs 1er degré</div>
+        <div class="card-desc">Effectifs des écoles primaires et maternelles publiques sur le territoire national.</div>
+        <div class="card-cta tag-navy">Voir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="carte_ips.html">
+      <div class="card-bar bar-teal"></div>
+      <div class="card-body">
+        <div class="card-tag tag-teal">Indicateurs</div>
+        <div class="card-icon">📈</div>
+        <div class="card-title">Indice de position sociale (IPS)</div>
+        <div class="card-desc">Carte de l'IPS des collèges — indicateur composite mesurant les conditions sociales et économiques des familles.</div>
+        <div class="card-cta tag-teal">Voir la carte →</div>
+      </div>
+    </a>
+
+    <a class="card" href="classes-ha.html">
+      <div class="card-bar bar-amber"></div>
+      <div class="card-body">
+        <div class="card-tag tag-amber">Dispositif</div>
+        <div class="card-icon">🧩</div>
+        <div class="card-title">Classes hors âge (HA)</div>
+        <div class="card-desc">Données sur les classes accueillant des élèves en dehors de l'âge théorique de leur niveau scolaire.</div>
+        <div class="card-cta tag-amber">Consulter →</div>
+      </div>
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  Données : <a href="https://data.education.gouv.fr" target="_blank">data.education.gouv.fr</a> ·
+  Géocodage : <a href="https://adresse.data.gouv.fr" target="_blank">Base Adresse Nationale</a> ·
+  Formations : <a href="https://www.onisep.fr" target="_blank">Onisep</a><br>
+  Licence ouverte · Les données peuvent ne pas être à jour · Usage à titre indicatif
+</footer>
+
+</body>
+</html>

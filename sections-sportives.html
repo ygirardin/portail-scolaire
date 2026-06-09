@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte Section sportive — Collèges publics France</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+  <style>
+    :root {
+      --accent:       #e02424;
+      --accent-bg:    #fef2f2;
+      --accent-dark:  #7f1d1d;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f9fafb; }
+    body { display: flex; flex-direction: column; }
+
+    header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 14px; height: 50px;
+      background: #fff; border-bottom: 1px solid #e5e7eb;
+      flex-shrink: 0; z-index: 900;
+    }
+    .back { font-size: .8rem; font-weight: 600; color: #6b7280; text-decoration: none;
+            padding: 4px 10px; border: 1px solid #e5e7eb; border-radius: 6px; }
+    .back:hover { background: #f3f4f6; color: #111; }
+    .htitle { font-size: .95rem; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+    .badge { background: var(--accent); color: #fff; font-size: .62rem; font-weight: 800;
+             padding: 2px 7px; border-radius: 20px; letter-spacing: .05em; }
+    #hcount { margin-left: auto; font-size: .78rem; color: #9ca3af; }
+
+    .wrap { display: flex; flex: 1; overflow: hidden; }
+    #map { flex: 1; position: relative; }
+
+    #loading {
+      position: absolute; inset: 0; z-index: 800;
+      background: rgba(255,255,255,.88);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+      font-size: .9rem; color: #374151;
+    }
+    .spin {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 3px solid #e5e7eb; border-top-color: var(--accent);
+      animation: spin .65s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .panel {
+      width: 320px; flex-shrink: 0;
+      background: #fff; border-left: 1px solid #e5e7eb;
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .p-head { padding: 14px; border-bottom: 1px solid #e5e7eb; }
+    .p-head h2 { font-size: .95rem; font-weight: 700; margin-bottom: 10px; }
+
+    .search-wrap { position: relative; }
+    .search-icon { position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+                   font-size: .8rem; opacity: .45; pointer-events: none; }
+    input[type=text] {
+      width: 100%; padding: 7px 10px 7px 30px;
+      border: 1px solid #e5e7eb; border-radius: 7px;
+      font-size: .83rem; background: #f9fafb; outline: none;
+    }
+    input[type=text]:focus { border-color: var(--accent); background: #fff; }
+
+    select {
+      width: 100%; margin-top: 7px; padding: 7px 9px;
+      border: 1px solid #e5e7eb; border-radius: 7px;
+      font-size: .8rem; background: #f9fafb; cursor: pointer; outline: none;
+    }
+    select:focus { border-color: var(--accent); }
+
+    .count-bar {
+      padding: 8px 14px; font-size: .75rem; font-weight: 600;
+      color: var(--accent-dark); background: var(--accent-bg);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .list { flex: 1; overflow-y: auto; }
+    .item {
+      padding: 9px 14px; border-bottom: 1px solid #f3f4f6;
+      cursor: pointer; transition: background .1s;
+    }
+    .item:hover { background: #f9fafb; }
+    .item.active { background: var(--accent-bg); border-left: 3px solid var(--accent); padding-left: 11px; }
+    .iname { font-size: .83rem; font-weight: 600; color: #111827; }
+    .iloc  { font-size: .73rem; color: #9ca3af; margin-top: 1px; }
+    .empty { padding: 28px 14px; text-align: center; color: #9ca3af; font-size: .83rem; }
+
+    /* ── Popup enrichi ── */
+    .pu-title { font-weight: 700; font-size: .9rem; margin-bottom: 5px; color: #111; }
+    .pu-badge { display: inline-block; background: var(--accent); color: #fff;
+                font-size: .62rem; font-weight: 800; padding: 2px 6px;
+                border-radius: 4px; margin-bottom: 8px; }
+    .pu-info  { font-size: .8rem; color: #555; line-height: 1.6; }
+    .pu-contact { margin-top: 8px; padding-top: 8px; border-top: 1px solid #e5e7eb;
+                  font-size: .78rem; display: flex; flex-direction: column; gap: 3px; }
+    .pu-contact a { color: #1a56db; text-decoration: none; }
+    .pu-contact a:hover { text-decoration: underline; }
+
+    @media (max-width: 650px) { .panel { display: none; } }
+  </style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
+
+<header>
+  <a class="back" href="index.html">← Accueil</a>
+  <div class="htitle">
+    <span>⚽</span><span>Collèges avec section sportive</span>
+    <span class="badge">Section sportive</span>
+  </div>
+  <span id="hcount">Chargement…</span>
+</header>
+
+<div class="wrap">
+  <div id="map">
+    <div id="loading"><div class="spin"></div><span>Chargement des établissements…</span></div>
+  </div>
+
+  <div class="panel">
+    <div class="p-head">
+      <h2>⚽ Collèges avec section sportive</h2>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input id="q" type="text" placeholder="Nom ou commune…" />
+      </div>
+      <select id="dept"></select>
+    </div>
+    <div class="count-bar" id="cbar">—</div>
+    <div class="list" id="list"></div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = 'data/sections-sportives.json';
+const LABEL    = 'Section sportive';
+const COLOR    = '#e02424';
+
+const map = L.map('map').setView([46.6, 2.3], 6);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap · © CARTO', maxZoom: 18
+}).addTo(map);
+
+const markerLayer = L.layerGroup().addTo(map);
+let allData = [], markers = {};
+
+function mkIcon() {
+  return L.divIcon({
+    className: '',
+    html: `<div style="width:10px;height:10px;border-radius:50%;background:${COLOR};border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35)"></div>`,
+    iconSize: [10, 10], iconAnchor: [5, 5]
+  });
+}
+
+function mkPopup(e) {
+  const contact = [
+    e.tel  ? `📞 <a href="tel:${e.tel}">${e.tel}</a>` : '',
+    e.mail ? `✉️ <a href="mailto:${e.mail}">${e.mail}</a>` : '',
+    e.web  ? `🌐 <a href="${e.web}" target="_blank">Site web</a>` : '',
+  ].filter(Boolean).join('');
+
+  return `
+    <div class="pu-title">${e.nom}</div>
+    <span class="pu-badge">${LABEL}</span>
+    <div class="pu-info">
+      ${e.adr ? e.adr + '<br>' : ''}${e.cp} ${e.ville}
+    </div>
+    ${contact ? `<div class="pu-contact">${contact}</div>` : ''}
+  `;
+}
+
+function filtered() {
+  const q    = document.getElementById('q').value.trim().toLowerCase();
+  const dept = document.getElementById('dept').value;
+  return allData.filter(e =>
+    (!q    || e.nom.toLowerCase().includes(q) || e.ville.toLowerCase().includes(q)) &&
+    (!dept || e.dept === dept)
+  );
+}
+
+function render(data) {
+  markerLayer.clearLayers(); markers = {};
+  const icon = mkIcon();
+
+  data.forEach(e => {
+    const m = L.marker([e.lat, e.lng], { icon });
+    m.bindPopup(mkPopup(e), { maxWidth: 280 });
+    markerLayer.addLayer(m);
+    markers[e.uai] = m;
+  });
+
+  const list = document.getElementById('list');
+  document.getElementById('cbar').textContent =
+    `${data.length} établissement${data.length > 1 ? 's' : ''}`;
+
+  if (!data.length) {
+    list.innerHTML = '<div class="empty">Aucun résultat.</div>';
+    return;
+  }
+
+  list.innerHTML = data.map(e =>
+    `<div class="item" data-uai="${e.uai}">
+      <div class="iname">${e.nom}</div>
+      <div class="iloc">${e.cp} ${e.ville}${e.tel ? ' · ' + e.tel : ''}</div>
+    </div>`
+  ).join('');
+
+  list.querySelectorAll('.item').forEach(el => {
+    el.addEventListener('click', () => {
+      const m = markers[el.dataset.uai];
+      if (m) { map.flyTo(m.getLatLng(), 14, { duration: .7 }); m.openPopup(); }
+      list.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
+      el.classList.add('active');
+    });
+  });
+}
+
+function applyFilters() { render(filtered()); }
+
+(async () => {
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    allData = await res.json();
+
+    const depts = [...new Set(allData.map(e => e.dept).filter(Boolean))].sort();
+    const sel = document.getElementById('dept');
+    sel.innerHTML = '<option value="">Tous les départements</option>' +
+      depts.map(d => `<option value="${d}">Dépt. ${d}</option>`).join('');
+
+    document.getElementById('hcount').textContent = `${allData.length} collèges`;
+    applyFilters();
+    document.getElementById('q').addEventListener('input', applyFilters);
+    sel.addEventListener('change', applyFilters);
+
+  } catch (err) {
+    document.getElementById('loading').innerHTML =
+      `<span style="color:#dc2626">Erreur : ${err.message}<br>Vérifiez que data/sections-sportives.json existe.</span>`;
+    return;
+  }
+  document.getElementById('loading').style.display = 'none';
+})();
+</script>
+</body>
+</html>

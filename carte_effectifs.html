@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte Effectifs — Second Degré</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#12191f;--mist:#f0f5f0;--fog:#d8e8d8;
+  --vert-fonce:#1a5c2a;--vert:#27ae60;--vert-clair:#82e0aa;
+  --panel:#ffffff;--radius:10px;--accent:#2ecc71;
+}
+html,body{height:100%;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--mist)}
+.app{display:flex;flex-direction:column;height:100vh}
+header{
+  background:var(--vert-fonce);color:#fff;
+  padding:14px 20px;display:flex;align-items:center;gap:14px;
+  flex-shrink:0;z-index:500;position:relative;
+  box-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.logo{
+  width:36px;height:36px;border-radius:8px;
+  background:linear-gradient(135deg,#2ecc71,#1a5c2a);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:10px;font-weight:500;color:#fff;
+  letter-spacing:-.5px;flex-shrink:0;text-align:center;line-height:1.3;
+}
+.header-info{flex:1}
+header h1{font-size:1rem;font-weight:600;line-height:1.2}
+header p{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:2px}
+.header-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+select,input{
+  height:32px;padding:0 10px;border:1.5px solid rgba(255,255,255,.2);
+  border-radius:7px;font-size:.78rem;font-family:'DM Sans',sans-serif;
+  background:rgba(255,255,255,.12);color:#fff;outline:none;transition:border-color .15s;
+}
+select option{color:var(--ink);background:#fff}
+select:focus,input:focus{border-color:rgba(255,255,255,.6)}
+.btn{
+  height:32px;padding:0 14px;border:none;border-radius:7px;
+  font-size:.78rem;font-family:'DM Sans',sans-serif;font-weight:600;
+  cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.btn-load{background:#2ecc71;color:var(--vert-fonce)}
+.btn-load:hover{background:#27ae60;color:#fff}
+.btn-load:disabled{background:#3d7d4a;color:#aaa;cursor:wait}
+
+/* TYPE TABS */
+.type-tabs{display:flex;gap:4px}
+.type-tab{
+  height:28px;padding:0 12px;border-radius:6px;border:none;
+  font-size:.73rem;font-weight:600;cursor:pointer;transition:all .15s;
+  font-family:'DM Sans',sans-serif;
+}
+.type-tab.active{background:#2ecc71;color:var(--vert-fonce)}
+.type-tab:not(.active){background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
+.type-tab:hover:not(.active){background:rgba(255,255,255,.22);color:#fff}
+
+#map{flex:1;z-index:1}
+
+/* LEGEND */
+.legend{
+  position:absolute;bottom:30px;right:10px;z-index:400;
+  background:var(--panel);border-radius:var(--radius);
+  padding:12px 14px;box-shadow:0 2px 12px rgba(0,0,0,.13);
+  font-size:.75rem;min-width:175px;
+}
+.legend h3{font-size:.78rem;font-weight:700;margin-bottom:8px}
+.leg-circles{display:flex;align-items:flex-end;gap:10px;margin-bottom:8px}
+.leg-circ{display:flex;flex-direction:column;align-items:center;gap:4px}
+.leg-circ-dot{border-radius:50%;background:rgba(39,174,96,.6);border:1.5px solid #27ae60}
+.leg-circ-lbl{font-size:.65rem;color:#888}
+hr{border:none;border-top:1px solid var(--fog);margin:7px 0}
+.leg-note{font-size:.68rem;color:#888;line-height:1.4}
+
+/* CHART BAR en légende */
+.bar-legend{margin-top:6px}
+.bar-leg-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:.7rem}
+.bar-swatch{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+
+/* INFO PANEL */
+.info-panel{
+  position:absolute;top:80px;left:10px;z-index:400;
+  background:var(--panel);border-radius:var(--radius);
+  padding:14px 16px;box-shadow:0 2px 14px rgba(0,0,0,.14);
+  max-width:300px;min-width:240px;display:none;
+}
+.info-panel.visible{display:block}
+.info-panel h2{font-size:.88rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:3px}
+.info-panel .sub{font-size:.7rem;color:#888;margin-bottom:10px}
+.total-big{
+  font-family:'DM Mono',monospace;font-size:2rem;font-weight:500;
+  color:var(--vert-fonce);line-height:1;
+}
+.total-lbl{font-size:.7rem;color:#888;margin-bottom:10px}
+
+/* mini bar chart */
+.niveaux-chart{margin-top:6px}
+.niv-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.niv-label{font-size:.68rem;width:40px;color:#666;text-align:right;flex-shrink:0;font-family:'DM Mono',monospace}
+.niv-bar-wrap{flex:1;background:#f0f0f0;border-radius:3px;height:10px;overflow:hidden}
+.niv-bar{height:100%;border-radius:3px;transition:width .4s}
+.niv-val{font-size:.68rem;color:#666;font-family:'DM Mono',monospace;min-width:38px;text-align:right}
+
+.info-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:4px 0;border-bottom:1px solid var(--fog);font-size:.76rem;
+}
+.info-row:last-child{border-bottom:none}
+.info-row .k{color:#888}
+.info-row .v{font-weight:600}
+.close-btn{position:absolute;top:8px;right:10px;background:none;border:none;font-size:1.1rem;color:#aaa;cursor:pointer}
+.close-btn:hover{color:var(--ink)}
+
+/* STAT BAR */
+.statbar{
+  position:absolute;top:80px;right:10px;z-index:400;
+  background:var(--panel);border-radius:var(--radius);
+  padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.12);
+  font-size:.75rem;text-align:right;display:none;
+}
+.statbar.visible{display:block}
+.stat-n{font-family:'DM Mono',monospace;font-size:1.4rem;font-weight:500;color:var(--vert-fonce)}
+.stat-label{color:#888;margin-bottom:2px}
+.stat-sub{font-size:.7rem;color:#aaa;margin-top:2px}
+
+/* SPINNER */
+.spinner-overlay{
+  position:absolute;inset:0;background:rgba(240,245,240,.7);
+  display:flex;align-items:center;justify-content:center;z-index:600;display:none;
+}
+.spinner-overlay.active{display:flex}
+.spinner{width:40px;height:40px;border:4px solid #d8e8d8;border-top-color:#27ae60;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:600px){.header-controls{display:none}.legend{display:none}}
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
+<div class="app">
+  <header>
+    <div class="logo">EFF<br>ECT</div>
+    <div class="header-info">
+      <h1>Carte des Effectifs — Second Degré</h1>
+      <p>Collèges · Lycées GT · Lycées Pro · data.education.gouv.fr</p>
+    </div>
+    <div class="header-controls">
+      <div class="type-tabs">
+        <button class="type-tab active" onclick="setType('college')" id="tab-college">Collèges</button>
+        <button class="type-tab" onclick="setType('lycee_gt')" id="tab-lycee_gt">Lycées GT</button>
+        <button class="type-tab" onclick="setType('lycee_pro')" id="tab-lycee_pro">Lycées Pro</button>
+      </div>
+      <select id="sel-academie"><option value="">Toutes académies</option></select>
+      <select id="sel-secteur">
+        <option value="">Public + Privé</option>
+        <option value="public">Public</option>
+        <option value="prive">Privé</option>
+      </select>
+      <select id="sel-annee">
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+      </select>
+      <button class="btn btn-load" id="btn-load" onclick="loadData()">Charger la carte</button>
+    </div>
+  </header>
+
+  <div style="position:relative;flex:1;display:flex;flex-direction:column">
+    <div id="map"></div>
+    <div class="spinner-overlay" id="spinner-overlay"><div class="spinner"></div></div>
+
+    <div class="legend">
+      <h3>Taille = Effectif total</h3>
+      <div class="leg-circles">
+        <div class="leg-circ">
+          <div class="leg-circ-dot" style="width:10px;height:10px"></div>
+          <span class="leg-circ-lbl">200</span>
+        </div>
+        <div class="leg-circ">
+          <div class="leg-circ-dot" style="width:18px;height:18px"></div>
+          <span class="leg-circ-lbl">600</span>
+        </div>
+        <div class="leg-circ">
+          <div class="leg-circ-dot" style="width:28px;height:28px"></div>
+          <span class="leg-circ-lbl">1500+</span>
+        </div>
+      </div>
+      <hr>
+      <div class="bar-legend">
+        <div style="font-size:.72rem;font-weight:600;margin-bottom:5px">Niveaux</div>
+        <div class="bar-leg-row"><div class="bar-swatch" style="background:#3498db"></div><span id="lv1-label">6ème</span></div>
+        <div class="bar-leg-row"><div class="bar-swatch" style="background:#9b59b6"></div><span id="lv2-label">5ème</span></div>
+        <div class="bar-leg-row"><div class="bar-swatch" style="background:#e67e22"></div><span id="lv3-label">4ème</span></div>
+        <div class="bar-leg-row"><div class="bar-swatch" style="background:#e74c3c"></div><span id="lv4-label">3ème</span></div>
+      </div>
+      <hr>
+      <div class="leg-note">Cliquez sur un établissement<br>pour le détail par niveau</div>
+    </div>
+
+    <div class="info-panel" id="info-panel">
+      <button class="close-btn" onclick="closePanel()">✕</button>
+      <h2 id="p-nom"></h2>
+      <div class="sub" id="p-sub"></div>
+      <div class="total-big" id="p-total"></div>
+      <div class="total-lbl">élèves (total)</div>
+      <div class="niveaux-chart" id="p-chart"></div>
+      <div style="margin-top:10px">
+        <div class="info-row"><span class="k">Secteur</span><span class="v" id="p-sect"></span></div>
+        <div class="info-row"><span class="k">Académie</span><span class="v" id="p-acad"></span></div>
+        <div class="info-row"><span class="k">Rentrée</span><span class="v" id="p-rentree"></span></div>
+        <div class="info-row"><span class="k">% Filles</span><span class="v" id="p-filles"></span></div>
+      </div>
+    </div>
+
+    <div class="statbar" id="statbar">
+      <div class="stat-label">Établissements affichés</div>
+      <div class="stat-n" id="stat-n">0</div>
+      <div class="stat-sub" id="stat-sub"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets';
+
+// Dataset IDs & their level fields
+const CONFIGS = {
+  college: {
+    ds: 'fr-en-college-effectifs-niveau-sexe-lv',
+    levels: [
+      {key:'nombre_d_eleves_en_6eme',label:'6ème',color:'#3498db'},
+      {key:'nombre_d_eleves_en_5eme',label:'5ème',color:'#9b59b6'},
+      {key:'nombre_d_eleves_en_4eme',label:'4ème',color:'#e67e22'},
+      {key:'nombre_d_eleves_en_3eme',label:'3ème',color:'#e74c3c'},
+    ],
+    totalKey: 'nombre_total_d_eleves',
+    anneeField: 'rentree_scolaire',
+    sectField: 'secteur_prive_public',
+    selectFields: 'numero_college,appellation_officielle,rentree_scolaire,academie,departement_libelle,commune_libelle,secteur_prive_public,nombre_total_d_eleves,nombre_d_eleves_en_6eme,nombre_d_eleves_en_5eme,nombre_d_eleves_en_4eme,nombre_d_eleves_en_3eme,nombre_de_filles,latitude,longitude'
+  },
+  lycee_gt: {
+    ds: 'fr-en-lycee_gt-effectifs-niveau-sexe-lv',
+    levels: [
+      {key:'nombre_d_eleves_en_2nde_gt',label:'2nde',color:'#3498db'},
+      {key:'nombre_d_eleves_en_1ere_gt',label:'1ère',color:'#9b59b6'},
+      {key:'nombre_d_eleves_en_terminale_gt',label:'Term.',color:'#e74c3c'},
+      {key:'nombre_d_eleves_en_bts_cpge_ou_autres',label:'BTS/CPGE',color:'#27ae60'},
+    ],
+    totalKey: 'nombre_total_d_eleves',
+    anneeField: 'rentree_scolaire',
+    sectField: 'secteur_prive_public',
+    selectFields: 'numero_lycee_gt,appellation_officielle,rentree_scolaire,academie,departement_libelle,commune_libelle,secteur_prive_public,nombre_total_d_eleves,nombre_d_eleves_en_2nde_gt,nombre_d_eleves_en_1ere_gt,nombre_d_eleves_en_terminale_gt,nombre_d_eleves_en_bts_cpge_ou_autres,nombre_de_filles,latitude,longitude'
+  },
+  lycee_pro: {
+    ds: 'fr-en-lycee_pro-effectifs-niveau-sexe-lv',
+    levels: [
+      {key:'nombre_d_eleves_en_2nde_pro',label:'2nde Pro',color:'#3498db'},
+      {key:'nombre_d_eleves_en_1ere_pro',label:'1ère Pro',color:'#9b59b6'},
+      {key:'nombre_d_eleves_en_terminale_pro',label:'Term. Pro',color:'#e74c3c'},
+      {key:'nombre_d_eleves_en_cap_annee_1',label:'CAP 1',color:'#e67e22'},
+    ],
+    totalKey: 'nombre_total_d_eleves',
+    anneeField: 'rentree_scolaire',
+    sectField: 'secteur_prive_public',
+    selectFields: 'numero_lycee_pro,appellation_officielle,rentree_scolaire,academie,departement_libelle,commune_libelle,secteur_prive_public,nombre_total_d_eleves,nombre_d_eleves_en_2nde_pro,nombre_d_eleves_en_1ere_pro,nombre_d_eleves_en_terminale_pro,nombre_d_eleves_en_cap_annee_1,nombre_de_filles,latitude,longitude'
+  }
+};
+
+let map, markerLayer;
+let currentType = 'college';
+let currentConfig = CONFIGS.college;
+
+map = L.map('map',{center:[46.6,2.3],zoom:6,preferCanvas:true});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+  attribution:'© OpenStreetMap © CARTO',maxZoom:19
+}).addTo(map);
+markerLayer = L.layerGroup().addTo(map);
+
+function setType(t){
+  currentType = t;
+  currentConfig = CONFIGS[t];
+  ['college','lycee_gt','lycee_pro'].forEach(x=>{
+    document.getElementById('tab-'+x).classList.toggle('active',x===t);
+  });
+  // Update legend labels
+  const lvls = currentConfig.levels;
+  ['lv1','lv2','lv3','lv4'].forEach((id,i)=>{
+    const el = document.getElementById(id+'-label');
+    if(el) el.textContent = lvls[i]?.label || '';
+  });
+}
+
+function effectifRadius(n){
+  const v = parseInt(n)||0;
+  return Math.max(5, Math.min(28, Math.sqrt(v) * 0.65));
+}
+
+async function loadData(){
+  const btn = document.getElementById('btn-load');
+  btn.disabled = true; btn.textContent = '⏳ Chargement…';
+  document.getElementById('spinner-overlay').classList.add('active');
+  markerLayer.clearLayers();
+  closePanel();
+
+  const cfg     = currentConfig;
+  const annee   = document.getElementById('sel-annee').value;
+  const academie= document.getElementById('sel-academie').value;
+  const secteur = document.getElementById('sel-secteur').value;
+
+  try{
+    let allData = [], offset = 0, total = Infinity;
+    while(allData.length < total){
+      let where = [`${cfg.anneeField}="${annee}"`];
+      if(academie) where.push(`academie="${academie}"`);
+      if(secteur)  where.push(`${cfg.sectField}="${secteur}"`);
+      const w = encodeURIComponent(where.join(' AND '));
+      const url = `${API}/${cfg.ds}/records?limit=100&offset=${offset}&where=${w}&select=${encodeURIComponent(cfg.selectFields)}`;
+      const resp = await fetch(url);
+      const json = await resp.json();
+      if(!json.results||!json.results.length) break;
+      if(total===Infinity) total = json.total_count||0;
+      allData = allData.concat(json.results);
+      offset += 100;
+      if(json.results.length < 100) break;
+      if(allData.length >= 10000) break;
+    }
+
+    renderMarkers(allData);
+    populateAcademies(allData);
+    showStats(allData);
+  } catch(e){
+    alert('Erreur API : ' + e.message);
+    console.error(e);
+  }
+
+  document.getElementById('spinner-overlay').classList.remove('active');
+  btn.disabled = false; btn.textContent = 'Recharger';
+}
+
+function renderMarkers(data){
+  markerLayer.clearLayers();
+  const bounds = [];
+  const cfg = currentConfig;
+
+  data.forEach(r=>{
+    const lat = parseFloat(r.latitude), lng = parseFloat(r.longitude);
+    if(!lat||!lng||isNaN(lat)||isNaN(lng)) return;
+    const total = parseInt(r[cfg.totalKey])||0;
+    const radius = effectifRadius(total);
+
+    const circle = L.circleMarker([lat,lng],{
+      radius,
+      color:'rgba(0,0,0,.2)', weight:1,
+      fillColor:'#27ae60', fillOpacity:.65
+    });
+    circle.on('click', ()=> showPanel(r));
+    circle.bindTooltip(
+      `<b>${r.appellation_officielle||'—'}</b><br>${total.toLocaleString('fr')} élèves`,
+      {sticky:true}
+    );
+    markerLayer.addLayer(circle);
+    bounds.push([lat,lng]);
+  });
+
+  if(bounds.length > 0){
+    try{ map.fitBounds(bounds, {padding:[30,30]}); } catch(e){}
+  }
+}
+
+function showPanel(r){
+  const cfg = currentConfig;
+  const total = parseInt(r[cfg.totalKey])||0;
+  const nbFilles = parseInt(r.nombre_de_filles)||0;
+  const pctFilles = total ? ((nbFilles/total)*100).toFixed(0)+'%' : '—';
+
+  document.getElementById('p-nom').textContent = r.appellation_officielle||'—';
+  document.getElementById('p-sub').textContent = `${r.commune_libelle||''} · ${r.departement_libelle||''} · ${r[cfg.anneeField]||''}`;
+  document.getElementById('p-total').textContent = total.toLocaleString('fr');
+  document.getElementById('p-sect').textContent = r[cfg.sectField]||'—';
+  document.getElementById('p-acad').textContent = r.academie||'—';
+  document.getElementById('p-rentree').textContent = r[cfg.anneeField]||'—';
+  document.getElementById('p-filles').textContent = pctFilles;
+
+  // Mini bar chart
+  const maxVal = Math.max(...cfg.levels.map(l=>parseInt(r[l.key])||0), 1);
+  const chartHtml = cfg.levels.map(l=>{
+    const val = parseInt(r[l.key])||0;
+    const pct = Math.round((val/maxVal)*100);
+    return `<div class="niv-row">
+      <span class="niv-label">${l.label}</span>
+      <div class="niv-bar-wrap">
+        <div class="niv-bar" style="width:${pct}%;background:${l.color}"></div>
+      </div>
+      <span class="niv-val">${val.toLocaleString('fr')}</span>
+    </div>`;
+  }).join('');
+  document.getElementById('p-chart').innerHTML = chartHtml;
+
+  document.getElementById('info-panel').classList.add('visible');
+}
+
+function closePanel(){ document.getElementById('info-panel').classList.remove('visible'); }
+
+function showStats(data){
+  const cfg = currentConfig;
+  const totalEleves = data.reduce((s,r)=>s+(parseInt(r[cfg.totalKey])||0), 0);
+  document.getElementById('stat-n').textContent = data.length.toLocaleString('fr');
+  document.getElementById('stat-sub').textContent = totalEleves.toLocaleString('fr') + ' élèves';
+  document.getElementById('statbar').classList.add('visible');
+}
+
+function populateAcademies(data){
+  const acads = [...new Set(data.map(r=>r.academie).filter(Boolean))].sort();
+  const sel = document.getElementById('sel-academie');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">Toutes académies</option>';
+  acads.forEach(a=>{ const o=document.createElement('option'); o.value=a; o.textContent=a; sel.appendChild(o); });
+  if(current) sel.value = current;
+}
+
+window.addEventListener('load', loadData);
+</script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte IPS — Lycées & Collèges</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#12191f;--mist:#f0f4f7;--fog:#dce4ec;
+  --rouge:#c0392b;--orange:#e67e22;--jaune:#f1c40f;--vert:#27ae60;--bleu-ips:#2980b9;
+  --panel:#ffffff;--radius:10px;
+  --ips-low:#c0392b;--ips-mid:#e67e22;--ips-high:#27ae60;
+}
+html,body{height:100%;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--mist)}
+
+/* ── LAYOUT ── */
+.app{display:flex;flex-direction:column;height:100vh}
+header{
+  background:var(--ink);color:#fff;
+  padding:14px 20px;display:flex;align-items:center;gap:14px;
+  flex-shrink:0;z-index:500;position:relative;
+  box-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.logo{
+  width:36px;height:36px;border-radius:8px;
+  background:linear-gradient(135deg,#e67e22,#c0392b);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:#fff;
+  letter-spacing:-.5px;flex-shrink:0;
+}
+.header-info{flex:1}
+header h1{font-size:1rem;font-weight:600;line-height:1.2}
+header p{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:2px}
+.header-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+select,input{
+  height:32px;padding:0 10px;border:1.5px solid rgba(255,255,255,.2);
+  border-radius:7px;font-size:.78rem;font-family:'DM Sans',sans-serif;
+  background:rgba(255,255,255,.1);color:#fff;outline:none;
+  transition:border-color .15s;
+}
+select option{color:var(--ink);background:#fff}
+select:focus,input:focus{border-color:rgba(255,255,255,.6)}
+input::placeholder{color:rgba(255,255,255,.4)}
+.btn{
+  height:32px;padding:0 14px;border:none;border-radius:7px;
+  font-size:.78rem;font-family:'DM Sans',sans-serif;font-weight:600;
+  cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.btn-load{background:#e67e22;color:#fff}
+.btn-load:hover{background:#d35400}
+.btn-load:disabled{background:#555;cursor:wait}
+
+/* ── MAP ── */
+#map{flex:1;z-index:1}
+
+/* ── LÉGENDE ── */
+.legend{
+  position:absolute;bottom:30px;right:10px;z-index:400;
+  background:var(--panel);border-radius:var(--radius);
+  padding:12px 14px;box-shadow:0 2px 12px rgba(0,0,0,.15);
+  font-size:.75rem;min-width:170px;
+}
+.legend h3{font-size:.78rem;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.leg-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.leg-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:2px solid rgba(0,0,0,.15)}
+.leg-sep{border:none;border-top:1px solid var(--fog);margin:8px 0}
+.leg-note{font-size:.68rem;color:#888;line-height:1.4}
+
+/* ── PANEL INFO ── */
+.info-panel{
+  position:absolute;top:80px;left:10px;z-index:400;
+  background:var(--panel);border-radius:var(--radius);
+  padding:14px 16px;box-shadow:0 2px 14px rgba(0,0,0,.14);
+  max-width:280px;min-width:220px;display:none;
+}
+.info-panel.visible{display:block}
+.info-panel h2{font-size:.9rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.info-panel .sub{font-size:.72rem;color:#888;margin-bottom:10px}
+.ips-big{
+  font-family:'DM Mono',monospace;font-size:2rem;font-weight:500;
+  line-height:1;margin-bottom:2px;
+}
+.ips-label{font-size:.7rem;color:#888;margin-bottom:10px}
+.info-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:4px 0;border-bottom:1px solid var(--fog);font-size:.76rem;
+}
+.info-row:last-child{border-bottom:none}
+.info-row .k{color:#888}
+.info-row .v{font-weight:600;font-family:'DM Mono',monospace;font-size:.78rem}
+.close-btn{
+  position:absolute;top:8px;right:10px;background:none;border:none;
+  font-size:1.1rem;color:#aaa;cursor:pointer;
+}
+.close-btn:hover{color:var(--ink)}
+
+/* ── STATBAR ── */
+.statbar{
+  position:absolute;top:80px;right:10px;z-index:400;
+  background:var(--panel);border-radius:var(--radius);
+  padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.12);
+  font-size:.75rem;text-align:right;display:none;
+}
+.statbar.visible{display:block}
+.stat-n{font-family:'DM Mono',monospace;font-size:1.4rem;font-weight:500;color:var(--ink)}
+.stat-label{color:#888;margin-bottom:4px}
+.stat-avg{font-size:.7rem;color:#666}
+
+/* ── SPINNER ── */
+.spinner-overlay{
+  position:absolute;inset:0;background:rgba(240,244,247,.7);
+  display:flex;align-items:center;justify-content:center;
+  z-index:600;display:none;
+}
+.spinner-overlay.active{display:flex}
+.spinner{
+  width:40px;height:40px;border:4px solid #dce4ec;
+  border-top-color:#e67e22;border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── TYPE TABS ── */
+.type-tabs{display:flex;gap:4px}
+.type-tab{
+  height:28px;padding:0 12px;border-radius:6px;border:none;
+  font-size:.73rem;font-weight:600;cursor:pointer;transition:all .15s;
+  font-family:'DM Sans',sans-serif;
+}
+.type-tab.active{background:#e67e22;color:#fff}
+.type-tab:not(.active){background:rgba(255,255,255,.15);color:rgba(255,255,255,.7)}
+.type-tab:hover:not(.active){background:rgba(255,255,255,.25);color:#fff}
+
+@media(max-width:600px){
+  .header-controls{display:none}
+  .legend{display:none}
+}
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
+<div class="app">
+  <header>
+    <div class="logo">IPS</div>
+    <div class="header-info">
+      <h1>Carte IPS — Indice de Position Sociale</h1>
+      <p>Lycées & Collèges · data.education.gouv.fr · Mise à jour automatique</p>
+    </div>
+    <div class="header-controls">
+      <div class="type-tabs">
+        <button class="type-tab active" onclick="setType('lycee')" id="tab-lycee">Lycées</button>
+        <button class="type-tab" onclick="setType('college')" id="tab-college">Collèges</button>
+      </div>
+      <select id="sel-academie"><option value="">Toutes académies</option></select>
+      <select id="sel-secteur">
+        <option value="">Public + Privé</option>
+        <option value="PUBLIC">Public</option>
+        <option value="PRIVE">Privé</option>
+      </select>
+      <select id="sel-annee">
+        <option value="2024-2025">2024-2025</option>
+        <option value="2023-2024">2023-2024</option>
+      </select>
+      <button class="btn btn-load" id="btn-load" onclick="loadData()">Charger la carte</button>
+    </div>
+  </header>
+
+  <div style="position:relative;flex:1;display:flex;flex-direction:column">
+    <div id="map"></div>
+
+    <div class="spinner-overlay" id="spinner-overlay">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="legend">
+      <h3>IPS moyen établissement</h3>
+      <div class="leg-row"><div class="leg-dot" style="background:#c0392b"></div><span>< 90 · Défavorisé</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#e67e22"></div><span>90–110 · Moyen</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#f1c40f"></div><span>110–130 · Favorisé</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#27ae60"></div><span>> 130 · Très favorisé</span></div>
+      <hr class="leg-sep">
+      <div class="leg-note">Taille du cercle = hétérogénéité<br>sociale (écart-type IPS)</div>
+    </div>
+
+    <div class="info-panel" id="info-panel">
+      <button class="close-btn" onclick="closePanel()">✕</button>
+      <h2 id="p-nom"></h2>
+      <div class="sub" id="p-sub"></div>
+      <div class="ips-big" id="p-ips"></div>
+      <div class="ips-label">IPS moyen (ensemble)</div>
+      <div class="info-row"><span class="k">Voie GT</span><span class="v" id="p-gt"></span></div>
+      <div class="info-row"><span class="k">Voie Pro</span><span class="v" id="p-pro"></span></div>
+      <div class="info-row"><span class="k">Hétérogénéité</span><span class="v" id="p-ecart"></span></div>
+      <div class="info-row"><span class="k">Secteur</span><span class="v" id="p-sect"></span></div>
+      <div class="info-row"><span class="k">Académie</span><span class="v" id="p-acad"></span></div>
+      <div class="info-row"><span class="k">Rentrée</span><span class="v" id="p-rentree"></span></div>
+    </div>
+
+    <div class="statbar" id="statbar">
+      <div class="stat-label">Établissements affichés</div>
+      <div class="stat-n" id="stat-n">0</div>
+      <div class="stat-avg" id="stat-avg"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets';
+const DS = {
+  lycee:   'fr-en-ips-lycees-ap2023',
+  college: 'fr-en-ips-colleges-ap2023'
+};
+
+let map, markerLayer;
+let currentType = 'lycee';
+
+// Init map
+map = L.map('map', {center:[46.6, 2.3], zoom:6, preferCanvas:true});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution:'© OpenStreetMap © CARTO',maxZoom:19
+}).addTo(map);
+markerLayer = L.layerGroup().addTo(map);
+
+function ipsColor(v){
+  if(!v||isNaN(v)) return '#aaa';
+  if(v < 90) return '#c0392b';
+  if(v < 110) return '#e67e22';
+  if(v < 130) return '#f1c40f';
+  return '#27ae60';
+}
+function ipsRadius(ecart){
+  const e = parseFloat(ecart)||20;
+  return Math.max(5, Math.min(18, e * 0.35));
+}
+
+function setType(t){
+  currentType = t;
+  ['lycee','college'].forEach(x=>{
+    document.getElementById('tab-'+x).classList.toggle('active', x===t);
+  });
+  // Update voie rows visibility
+  const proRow = document.querySelector('.info-row:nth-child(6)');
+}
+
+async function loadData(){
+  const btn = document.getElementById('btn-load');
+  btn.disabled = true; btn.textContent = '⏳ Chargement…';
+  document.getElementById('spinner-overlay').classList.add('active');
+  markerLayer.clearLayers();
+  closePanel();
+
+  const annee   = document.getElementById('sel-annee').value;
+  const academie= document.getElementById('sel-academie').value;
+  const secteur = document.getElementById('sel-secteur').value;
+  const ds = DS[currentType];
+
+  // Fields differ slightly between lycée and collège
+  const isLycee = currentType === 'lycee';
+  const selectFields = isLycee
+    ? 'uai,nom_etablissement,rentree_scolaire,academie,departement,commune,secteur,ips_ensemble,ips_voie_gt,ips_voie_pro,ecart_type_ips_ensemble,latitude,longitude'
+    : 'uai,nom_etablissement,rentree_scolaire,academie,departement,commune,secteur,ips_ensemble,ecart_type_ips_ensemble,latitude,longitude';
+
+  try {
+    let allData = [];
+    let offset = 0;
+    const LIMIT = 100;
+    let total = Infinity;
+
+    while(allData.length < total){
+      let where = [`rentree_scolaire="${annee}"`];
+      if(academie) where.push(`academie="${academie}"`);
+      if(secteur) where.push(`secteur="${secteur}"`);
+      const w = encodeURIComponent(where.join(' AND '));
+      const url = `${API}/${ds}/records?limit=${LIMIT}&offset=${offset}&where=${w}&select=${encodeURIComponent(selectFields)}`;
+      const resp = await fetch(url);
+      const json = await resp.json();
+      if(!json.results) break;
+      if(total===Infinity) total = json.total_count||json.results.length;
+      allData = allData.concat(json.results);
+      offset += LIMIT;
+      if(json.results.length < LIMIT) break;
+      if(allData.length >= 8000) break; // safety cap
+    }
+
+    renderMarkers(allData, isLycee);
+    populateAcademies(allData);
+    showStats(allData);
+  } catch(e){
+    alert('Erreur API : ' + e.message);
+  }
+
+  document.getElementById('spinner-overlay').classList.remove('active');
+  btn.disabled = false; btn.textContent = 'Recharger';
+}
+
+function renderMarkers(data, isLycee){
+  markerLayer.clearLayers();
+  const bounds = [];
+  data.forEach(r=>{
+    const lat = parseFloat(r.latitude), lng = parseFloat(r.longitude);
+    if(!lat||!lng||isNaN(lat)||isNaN(lng)) return;
+    const ips = parseFloat(r.ips_ensemble);
+    const ecart = parseFloat(r.ecart_type_ips_ensemble)||20;
+    const color = ipsColor(ips);
+    const radius = ipsRadius(ecart);
+
+    const circle = L.circleMarker([lat,lng],{
+      radius, color:'rgba(0,0,0,.25)', weight:1,
+      fillColor:color, fillOpacity:.8
+    });
+    circle.on('click', ()=> showPanel(r, isLycee));
+    circle.bindTooltip(`<b>${r.nom_etablissement||'—'}</b><br>IPS : ${isNaN(ips)?'NS':ips.toFixed(1)}`, {sticky:true});
+    markerLayer.addLayer(circle);
+    bounds.push([lat,lng]);
+  });
+  if(bounds.length > 0){
+    try{ map.fitBounds(bounds, {padding:[30,30]}); } catch(e){}
+  }
+}
+
+function showPanel(r, isLycee){
+  const ips = parseFloat(r.ips_ensemble);
+  document.getElementById('p-nom').textContent = r.nom_etablissement||'—';
+  document.getElementById('p-sub').textContent = `${r.commune||''} · ${r.departement||''} · ${r.rentree_scolaire||''}`;
+  document.getElementById('p-ips').textContent = isNaN(ips) ? 'NS' : ips.toFixed(1);
+  document.getElementById('p-ips').style.color = ipsColor(ips);
+  document.getElementById('p-gt').textContent = r.ips_voie_gt||'—';
+  document.getElementById('p-pro').textContent = r.ips_voie_pro||'—';
+  document.getElementById('p-ecart').textContent = r.ecart_type_ips_ensemble ? parseFloat(r.ecart_type_ips_ensemble).toFixed(1) : '—';
+  document.getElementById('p-sect').textContent = r.secteur||'—';
+  document.getElementById('p-acad').textContent = r.academie||'—';
+  document.getElementById('p-rentree').textContent = r.rentree_scolaire||'—';
+
+  // Hide GT/Pro rows for collège
+  const rows = document.querySelectorAll('#info-panel .info-row');
+  rows[0].style.display = isLycee ? '' : 'none'; // GT
+  rows[1].style.display = isLycee ? '' : 'none'; // Pro
+
+  document.getElementById('info-panel').classList.add('visible');
+}
+function closePanel(){ document.getElementById('info-panel').classList.remove('visible'); }
+
+function showStats(data){
+  const valid = data.filter(r=>!isNaN(parseFloat(r.ips_ensemble)));
+  const avg = valid.length ? (valid.reduce((s,r)=>s+parseFloat(r.ips_ensemble),0)/valid.length).toFixed(1) : '—';
+  document.getElementById('stat-n').textContent = data.length.toLocaleString('fr');
+  document.getElementById('stat-avg').textContent = `IPS moyen : ${avg}`;
+  document.getElementById('statbar').classList.add('visible');
+}
+
+function populateAcademies(data){
+  const acads = [...new Set(data.map(r=>r.academie).filter(Boolean))].sort();
+  const sel = document.getElementById('sel-academie');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">Toutes académies</option>';
+  acads.forEach(a=>{ const o=document.createElement('option'); o.value=a; o.textContent=a; sel.appendChild(o); });
+  if(current) sel.value = current;
+}
+
+// Auto-load on start
+window.addEventListener('load', loadData);
+</script>
+</body>
+</html>

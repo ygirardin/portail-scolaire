@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte scolaire — Collèges publics France</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;font-family:system-ui,sans-serif;background:#0d0f14;color:#e8eaf0;}
+#map{position:fixed;inset:0;z-index:0;}
+#loader{position:fixed;inset:0;z-index:1000;background:#0d0f14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s;}
+#loader.out{opacity:0;pointer-events:none;}
+.ld-icon{font-size:44px;animation:bob 1.2s ease-in-out infinite;}
+.ld-title{font-size:1.2rem;font-weight:800;}
+.ld-sub{color:#6b7280;font-size:.85rem;}
+.prog-track{width:220px;height:4px;background:#2a2f3d;border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,#4f6ef7,#7c3aed);border-radius:2px;width:0%;transition:width .3s;}
+#panel{position:fixed;top:16px;left:16px;z-index:500;width:290px;display:flex;flex-direction:column;gap:10px;pointer-events:none;}
+.card{background:rgba(22,25,32,0.97);border:1px solid #2a2f3d;border-radius:14px;padding:16px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.6);pointer-events:all;}
+.pill{display:inline-block;background:rgba(79,110,247,0.15);border:1px solid rgba(79,110,247,0.4);border-radius:100px;padding:3px 12px;font-size:11px;font-weight:700;color:#93a8ff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
+h1{font-size:1rem;font-weight:800;line-height:1.3;margin-bottom:0;}
+.stats{display:flex;border:1px solid #2a2f3d;border-radius:9px;overflow:hidden;margin-top:10px;}
+.stat{flex:1;padding:6px 8px;text-align:center;border-right:1px solid #2a2f3d;}
+.stat:last-child{border-right:none;}
+.sv{font-size:.9rem;font-weight:800;}
+.sl{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;}
+.sw{position:relative;margin-bottom:8px;}
+.si{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#6b7280;pointer-events:none;}
+input[type=text]{width:100%;background:#1e2230;border:1.5px solid #2a2f3d;border-radius:9px;color:#e8eaf0;font-size:.85rem;padding:9px 10px 9px 30px;outline:none;transition:border-color .2s,box-shadow .2s;}
+input[type=text]:focus{border-color:#4f6ef7;box-shadow:0 0 0 3px rgba(79,110,247,0.15);}
+input[type=text]::placeholder{color:#6b7280;}
+.ac{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:300;background:#1e2230;border:1px solid #2a2f3d;border-radius:9px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,0.6);display:none;}
+.ac.open{display:block;}
+.aci{padding:8px 12px;cursor:pointer;font-size:.8rem;border-bottom:1px solid #2a2f3d;transition:background .1s;}
+.aci:last-child{border-bottom:none;}
+.aci:hover,.aci.hi{background:rgba(79,110,247,0.12);}
+.am{font-weight:600;}.as{color:#6b7280;font-size:.73rem;}
+.btn{width:100%;background:linear-gradient(135deg,#4f6ef7,#7c3aed);color:#fff;border:none;border-radius:9px;padding:9px;font-size:.85rem;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;}
+.btn:hover{opacity:.88;transform:translateY(-1px);}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+.sb{margin-top:6px;padding:7px 10px;border-radius:8px;font-size:.78rem;display:none;align-items:center;gap:6px;}
+.sb.loading{display:flex;background:rgba(79,110,247,0.08);border:1px solid rgba(79,110,247,0.25);color:#93a8ff;}
+.sb.error{display:block;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:#fca5a5;}
+.spin{width:11px;height:11px;flex-shrink:0;border:2px solid rgba(79,110,247,0.3);border-top-color:#4f6ef7;border-radius:50%;animation:spin .7s linear infinite;}
+#rc{display:none;}#rc.on{display:block;}
+.rl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#93a8ff;margin-bottom:4px;}
+.rn{font-size:.92rem;font-weight:800;line-height:1.3;margin-bottom:6px;}
+.rb{display:inline-flex;align-items:center;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);border-radius:100px;padding:2px 8px;font-size:10px;font-weight:700;color:#4ade80;text-transform:uppercase;margin-bottom:8px;}
+.rs{font-size:.73rem;color:#6b7280;padding:5px 8px;background:rgba(79,110,247,0.06);border:1px solid rgba(79,110,247,0.14);border-radius:7px;margin-bottom:8px;}
+.rs span{color:#93a8ff;font-weight:600;}
+.ri{font-size:.76rem;color:#6b7280;line-height:1.7;margin-bottom:8px;}
+.ri strong{color:#c8cad0;font-weight:500;}
+.br{display:flex;gap:6px;flex-wrap:wrap;}
+.bs{display:inline-flex;align-items:center;gap:3px;background:#1e2230;border:1px solid #2a2f3d;border-radius:7px;padding:5px 10px;color:#e8eaf0;font-size:.74rem;font-weight:500;cursor:pointer;text-decoration:none;transition:border-color .15s;white-space:nowrap;}
+.bs:hover{border-color:#4f6ef7;}.bs.red{border-color:rgba(239,68,68,0.3);color:#fca5a5;}
+.leaflet-popup-content-wrapper{background:rgba(22,25,32,0.98)!important;border:1px solid #2a2f3d!important;border-radius:12px!important;box-shadow:0 8px 28px rgba(0,0,0,0.6)!important;color:#e8eaf0!important;font-family:system-ui,sans-serif!important;}
+.leaflet-popup-tip{background:#2a2f3d!important;}
+.leaflet-popup-close-button{color:#6b7280!important;top:7px!important;right:7px!important;}
+.pb{padding:2px;min-width:200px;}
+.pt{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#93a8ff;margin-bottom:3px;}
+.pn{font-size:.9rem;font-weight:800;margin-bottom:3px;line-height:1.3;}
+.pa{font-size:.76rem;color:#6b7280;line-height:1.6;margin-bottom:8px;}
+.pl{display:inline-flex;align-items:center;background:#1e2230;border:1px solid #2a2f3d;border-radius:6px;padding:4px 9px;color:#e8eaf0;font-size:.73rem;font-weight:500;text-decoration:none;}
+.pl:hover{border-color:#4f6ef7;}
+.marker-cluster-small{background-color:rgba(79,110,247,0.2)!important;}
+.marker-cluster-small div{background-color:rgba(79,110,247,0.8)!important;color:#fff!important;font-weight:700;}
+.marker-cluster-medium{background-color:rgba(124,58,237,0.2)!important;}
+.marker-cluster-medium div{background-color:rgba(124,58,237,0.8)!important;color:#fff!important;font-weight:700;}
+.marker-cluster-large{background-color:rgba(239,68,68,0.2)!important;}
+.marker-cluster-large div{background-color:rgba(239,68,68,0.8)!important;color:#fff!important;font-weight:700;}
+#hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(22,25,32,0.92);border:1px solid #2a2f3d;border-radius:100px;padding:6px 14px;font-size:.73rem;color:#6b7280;white-space:nowrap;z-index:400;pointer-events:none;transition:opacity .5s;}
+#hint.gone{opacity:0;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
+<div id="loader">
+  <div class="ld-icon">&#127979;</div>
+  <div class="ld-title">Carte — Collèges publics</div>
+  <div class="ld-sub" id="ldSub">Chargement des données...</div>
+  <div class="prog-track"><div class="prog-fill" id="prog"></div></div>
+</div>
+<div id="map"></div>
+<div id="panel">
+  <div class="card">
+    <div class="pill">France entière · Collèges</div>
+    <h1>Collèges publics<br><span style="color:#6d8afb;">Trouvez votre secteur</span></h1>
+    <div class="stats">
+      <div class="stat"><div class="sv">5 419</div><div class="sl">Collèges</div></div>
+      <div class="stat"><div class="sv">520k</div><div class="sl">Adresses</div></div>
+      <div class="stat"><div class="sv">34k</div><div class="sl">Communes</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="sw" id="sw">
+      <span class="si">📍</span>
+      <input type="text" id="addr" placeholder="Entrez votre adresse..." autocomplete="off" spellcheck="false"/>
+      <div class="ac" id="ac"></div>
+    </div>
+    <button class="btn" id="sbtn">Trouver mon collège</button>
+    <div class="sb" id="sb"><div class="spin"></div><span id="stxt"></span></div>
+  </div>
+  <div class="card" id="rc">
+    <div class="rl">Votre collège de secteur</div>
+    <div class="rn" id="rn"></div>
+    <div class="rb">✓ Collège public</div>
+    <div class="rs" id="rs"></div>
+    <div class="ri" id="ri"></div>
+    <div class="br">
+      <a class="bs" id="rm" href="#" target="_blank" rel="noopener">🗺️ Itinéraire</a>
+      <button class="bs red" id="btnClear">✕ Effacer</button>
+    </div>
+  </div>
+</div>
+<div id="hint">Naviguez · Cliquez sur un collège · Recherchez votre adresse</div>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+var COLLEGES = null;
+var sectoCache = {};
+var map, cg, mkrs = {};
+var hlM, hlC, hlD, sectL, sectP;
+
+// Chemin vers les données (relatif au HTML)
+var DATA_PATH = 'data/';
+
+function prog(pct,txt){
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('ldSub').textContent=txt;
+}
+
+// Chargement initial : uniquement les collèges (léger)
+prog(10,'Chargement des collèges...');
+fetch(DATA_PATH+'colleges.json')
+  .then(function(r){return r.json();})
+  .then(function(data){
+    COLLEGES = data;
+    prog(60,'Initialisation de la carte...');
+    initMap();
+    prog(85,'Placement des marqueurs...');
+    addMarkers();
+    prog(100,'Prêt !');
+    setTimeout(function(){
+      document.getElementById('loader').classList.add('out');
+      setTimeout(function(){document.getElementById('loader').remove();},500);
+    },300);
+    setTimeout(function(){document.getElementById('hint').classList.add('gone');},5000);
+  })
+  .catch(function(e){
+    document.getElementById('ldSub').textContent='Erreur de chargement : '+e.message;
+  });
+
+function initMap(){
+  map=L.map('map',{center:[46.6,2.3],zoom:6,zoomControl:false});
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:19}).addTo(map);
+  L.control.zoom({position:'bottomright'}).addTo(map);
+}
+
+function addMarkers(){
+  cg=L.markerClusterGroup({
+    maxClusterRadius:50,spiderfyOnMaxZoom:true,showCoverageOnHover:false,
+    zoomToBoundsOnClick:true,disableClusteringAtZoom:13,
+    iconCreateFunction:function(c){
+      var n=c.getChildCount(),s=n<10?32:n<100?36:42;
+      return L.divIcon({html:'<div style="background:rgba(79,110,247,0.9);color:#fff;border-radius:50%;width:'+s+'px;height:'+s+'px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:'+(s-20)+'px;border:2px solid rgba(255,255,255,0.5);box-shadow:0 2px 8px rgba(0,0,0,0.4);">'+n+'</div>',className:'',iconSize:[s,s],iconAnchor:[s/2,s/2]});
+    }
+  });
+  COLLEGES.forEach(function(c){
+    if(!c.lat||!c.lon)return;
+    var m=L.marker([c.lat,c.lon],{icon:ico(false)});
+    m.col=c; m.on('click',function(){openPopup(m,c);}); cg.addLayer(m); mkrs[c.uai]=m;
+  });
+  map.addLayer(cg);
+}
+
+document.getElementById('sbtn').addEventListener('click',doSearch);
+document.getElementById('btnClear').addEventListener('click',clearRes);
+
+function ico(hl){
+  var s=hl?20:10,bg=hl?'#22c55e':'#4f6ef7',bd=hl?'3px solid #fff':'2px solid rgba(255,255,255,0.3)',sh=hl?'0 0 14px #22c55e':'0 2px 6px rgba(0,0,0,0.4)';
+  return L.divIcon({className:'',html:'<div style="width:'+s+'px;height:'+s+'px;border-radius:50%;background:'+bg+';border:'+bd+';box-shadow:'+sh+'"></div>',iconSize:[s,s],iconAnchor:[s/2,s/2]});
+}
+function esc(s){var d=document.createElement('div');d.textContent=String(s||'');return d.innerHTML;}
+function norm(s){
+  if(!s)return'';
+  return s.toUpperCase()
+    .replace(/[\u00e0-\u00e5\u00c0-\u00c5]/g,'A').replace(/[\u00e8-\u00eb\u00c8-\u00cb]/g,'E')
+    .replace(/[\u00ec-\u00ef\u00cc-\u00cf]/g,'I').replace(/[\u00f2-\u00f6\u00d2-\u00d6]/g,'O')
+    .replace(/[\u00f9-\u00fc\u00d9-\u00dc]/g,'U').replace(/[\u00e7\u00c7]/g,'C')
+    .replace(/\s+/g,' ').trim();
+}
+function jacc(a,b){
+  if(a===b)return 1;
+  var wa=a.split(' ').filter(function(w){return w.length>1;}),wb=b.split(' ').filter(function(w){return w.length>1;});
+  var inter=0; wa.forEach(function(w){if(wb.indexOf(w)>=0)inter++;});
+  var u=wa.length+wb.length-inter; return u>0?inter/u:0;
+}
+function deptFromInsee(insee){
+  var s=String(insee);
+  return s.startsWith('97')?s.slice(0,3):s.slice(0,2).replace(/^0/,'')||'0';
+}
+
+// Charge le fichier de sectorisation du département (avec cache)
+function loadSectoDept(dept, callback){
+  if(sectoCache[dept]){callback(sectoCache[dept]);return;}
+  fetch(DATA_PATH+'secto-'+dept+'.json')
+    .then(function(r){return r.json();})
+    .then(function(d){sectoCache[dept]=d;callback(d);})
+    .catch(function(){callback(null);});
+}
+
+// Popup collège
+function openPopup(m,c){
+  var cp=String(c.cp||'').padStart(5,'0'),url='https://www.google.com/maps/search/?api=1&query='+c.lat+','+c.lon;
+  var div=document.createElement('div');div.className='pb';
+  div.innerHTML='<div class="pt">Collège public</div><div class="pn">'+esc(c.nom)+'</div>'
+    +'<div class="pa">'+esc(c.adresse||'')+'<br>'+cp+' '+esc(c.commune)+'</div>'
+    +'<a class="pl" href="'+url+'" target="_blank" style="margin-bottom:8px;">Itinéraire</a>'
+    +'<div id="ficheBox_'+c.uai+'" style="margin-top:8px;padding-top:8px;border-top:1px solid #2a2f3d;">'
+      +'<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#93a8ff;">'
+        +'<div style="width:9px;height:9px;border:2px solid rgba(79,110,247,0.3);border-top-color:#4f6ef7;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;"></div>'
+        +'Chargement du contact...'
+      +'</div>'
+    +'</div>';
+  m.bindPopup(div,{maxWidth:300}).openPopup();
+  // Appel direct (pas via once) pour éviter les problèmes de timing
+  loadSect(c);
+  setTimeout(function(){ fetchFiche(c.uai); }, 50);
+}
+
+// Contacts embarqués depuis contacts.json (aucun appel API externe)
+var CONTACTS = null;
+
+function loadContacts(callback) {
+  if (CONTACTS !== null) { callback(); return; }
+  fetch(DATA_PATH + 'contacts.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(d) { CONTACTS = d; callback(); })
+    .catch(function(e) {
+      console.error('contacts.json error:', e);
+      CONTACTS = {};
+      callback();
+    });
+}
+
+function fetchFiche(uai) {
+  loadContacts(function() { renderFiche(uai); });
+}
+
+function renderFiche(uai) {
+  var box = document.getElementById('ficheBox_' + uai);
+  if (!box) return;
+  var c = CONTACTS[uai];
+  // Accepte toutes les variantes de clés : t/m (court) ou tel/mail ou telephone/mail
+  var tel  = c ? (c.t || c.tel || c.telephone || '') : '';
+  var mail = c ? (c.m || c.mail || '') : '';
+  tel  = String(tel).trim();
+  mail = String(mail).trim();
+  if (!tel && !mail) {
+    box.innerHTML = '<div style="font-size:.72rem;color:#6b7280;font-style:italic;">Pas de contact renseigné.</div>';
+    return;
+  }
+  var html = '';
+  if (tel) html += '<div style="font-size:.78rem;margin-bottom:6px;display:flex;align-items:center;gap:8px;">'
+    + '<span style="color:#6b7280;font-size:15px;">&#128222;</span>'
+    + '<a href="tel:' + tel.replace(/\s/g,'') + '" style="color:#93a8ff;text-decoration:none;font-weight:500;">' + esc(tel) + '</a>'
+    + '</div>';
+  if (mail) html += '<div style="font-size:.78rem;display:flex;align-items:center;gap:8px;">'
+    + '<span style="color:#6b7280;font-size:15px;">&#9993;</span>'
+    + '<a href="mailto:' + esc(mail) + '" style="color:#93a8ff;text-decoration:none;font-weight:500;">' + esc(mail) + '</a>'
+    + '</div>';
+  box.innerHTML = html;
+}
+
+// Recherche
+var inp=document.getElementById('addr'),acEl=document.getElementById('ac'),acT,sugg=[],ai=-1;
+inp.addEventListener('input',function(){clearTimeout(acT);var q=inp.value.trim();if(q.length<4){hideAC();return;}acT=setTimeout(function(){fetchAC(q);},280);});
+inp.addEventListener('keydown',function(e){
+  var its=acEl.querySelectorAll('.aci');
+  if(e.key==='ArrowDown'){ai=Math.min(ai+1,its.length-1);updAC(its);e.preventDefault();}
+  else if(e.key==='ArrowUp'){ai=Math.max(ai-1,-1);updAC(its);e.preventDefault();}
+  else if(e.key==='Enter'){if(ai>=0&&its[ai])its[ai].click();else doSearch();e.preventDefault();}
+  else if(e.key==='Escape')hideAC();
+});
+document.addEventListener('click',function(e){if(!e.target.closest('#sw'))hideAC();});
+function updAC(its){its.forEach(function(it,i){it.classList.toggle('hi',i===ai);});if(ai>=0&&sugg[ai])inp.value=sugg[ai].properties.label;}
+function fetchAC(q){
+  fetch('https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(q)+'&limit=5&type=housenumber')
+    .then(function(r){return r.json();}).then(function(d){sugg=d.features;renderAC();}).catch(function(){});
+}
+function renderAC(){
+  if(!sugg.length){hideAC();return;}ai=-1;acEl.innerHTML='';
+  sugg.forEach(function(f,i){
+    var p=f.properties,div=document.createElement('div');div.className='aci';
+    div.innerHTML='<div class="am">'+esc(p.name||p.label)+'</div><div class="as">'+esc(p.postcode||'')+' '+esc(p.city||'')+'</div>';
+    div.addEventListener('click',function(){inp.value=f.properties.label;hideAC();fromFeat(f);});
+    acEl.appendChild(div);
+  });
+  acEl.classList.add('open');
+}
+function hideAC(){acEl.classList.remove('open');}
+function doSearch(){
+  var q=inp.value.trim();if(!q)return;hideAC();setSt('loading','Géocodage...');
+  fetch('https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(q)+'&limit=1')
+    .then(function(r){return r.json();})
+    .then(function(d){if(!d.features||!d.features.length){setSt('error','Adresse introuvable.');return;}fromFeat(d.features[0]);})
+    .catch(function(){setSt('error','Vérifiez votre connexion.');});
+}
+
+function fromFeat(feat){
+  var p=feat.properties;
+  var insee=p.citycode,dept=deptFromInsee(insee);
+  var stBAN=norm(p.street||p.name||''),num=parseInt(p.housenumber)||0;
+  var lat=feat.geometry.coordinates[1],lng=feat.geometry.coordinates[0];
+  setSt('loading','Chargement sectorisation dept '+dept+'...');
+  loadSectoDept(dept,function(cidxDept){
+    if(!cidxDept){clrSt();setSt('error','Données non disponibles pour ce département.');return;}
+    var cidx=cidxDept[insee];
+    if(!cidx){clrSt();setSt('error','Commune introuvable dans la sectorisation.');return;}
+    if(cidx['NAN']){
+      var rne=cidx['NAN'][0]?cidx['NAN'][0].r:null;
+      var col=findCollege(rne);
+      clrSt();if(col)showRes(col,p.label,lat,lng,insee);else setSt('error','Collège non trouvé.');return;
+    }
+    var bestE=null,bestS=0,keys=Object.keys(cidx);
+    for(var i=0;i<keys.length;i++){var nk=norm(keys[i]),s=(nk===stBAN)?1:jacc(stBAN,nk);if(s>bestS&&s>0.65){bestS=s;bestE=cidx[keys[i]];}if(s===1)break;}
+    if(!bestE){var fk=Object.keys(cidx)[0];if(fk&&cidx[fk].length)bestE=cidx[fk];else{clrSt();setSt('error','Collège non trouvé pour cette adresse.');return;}}
+    var rne=null;
+    for(var j=0;j<bestE.length;j++){var e=bestE[j],ev=num%2===0;if(num>=e.d&&num<=e.f){if(!e.p||e.p==='PI'||(e.p==='P'&&ev)||(e.p==='I'&&!ev)){rne=e.r;break;}}}
+    if(!rne&&bestE.length)rne=bestE[0].r;
+    var col=findCollege(rne);clrSt();
+    if(col)showRes(col,p.label,lat,lng,insee);else setSt('error','Collège non trouvé.');
+  });
+}
+
+function findCollege(uai){
+  if(!uai||!COLLEGES)return null;
+  for(var i=0;i<COLLEGES.length;i++){if(COLLEGES[i].uai===uai)return COLLEGES[i];}
+  return null;
+}
+
+function showRes(c,label,slat,slng,insee){
+  var cp=String(c.cp||'').padStart(5,'0'),url='https://www.google.com/maps/search/?api=1&query='+c.lat+','+c.lon;
+  document.getElementById('rn').textContent=c.nom;
+  document.getElementById('rs').innerHTML='Adresse : <span>'+esc(label)+'</span>';
+  document.getElementById('ri').innerHTML='<strong>Adresse :</strong> '+esc(c.adresse||'')+'<br><strong>Ville :</strong> '+esc(c.commune)+' ('+cp+')';
+  document.getElementById('rm').href=url;
+  document.getElementById('rc').classList.add('on');
+  clrHl();
+  map.fitBounds(L.latLngBounds([[slat,slng],[c.lat,c.lon]]).pad(0.35),{maxZoom:15,animate:true,duration:1});
+  hlC=L.circle([c.lat,c.lon],{radius:200,color:'#22c55e',fillColor:'#22c55e',fillOpacity:0.1,weight:2,opacity:0.5,dashArray:'5,4'}).addTo(map);
+  hlM=L.marker([c.lat,c.lon],{icon:ico(true)}).addTo(map)
+    .bindPopup('<div class="pb"><div class="pt">Votre collège de secteur</div><div class="pn">'+esc(c.nom)+'</div><div class="pa">'+esc(c.adresse||'')+'<br>'+cp+' '+esc(c.commune)+'</div><a class="pl" href="'+url+'" target="_blank">Itinéraire</a></div>',{maxWidth:280}).openPopup();
+  hlD=L.circleMarker([slat,slng],{radius:7,color:'#f59e0b',fillColor:'#f59e0b',fillOpacity:.9,weight:2}).addTo(map).bindTooltip('Votre adresse');
+  // Charge la sectorisation pour ce collège
+  loadSectForCollege(c, insee);
+}
+
+function clearRes(){
+  document.getElementById('rc').classList.remove('on');clrHl();
+  if(sectL){map.removeLayer(sectL);sectL=null;}if(sectP){sectP.remove();sectP=null;}
+  map.setView([46.6,2.3],6,{animate:true});
+}
+function clrHl(){
+  if(hlM){map.removeLayer(hlM);hlM=null;}if(hlC){map.removeLayer(hlC);hlC=null;}if(hlD){map.removeLayer(hlD);hlD=null;}
+}
+function setSt(type,msg){
+  var el=document.getElementById('sb');el.className='sb '+type;
+  document.getElementById('stxt').textContent=msg;
+  el.style.display=type==='loading'?'flex':'block';
+  document.getElementById('sbtn').disabled=type==='loading';
+}
+function clrSt(){document.getElementById('sb').style.display='none';document.getElementById('sbtn').disabled=false;}
+
+// Sectorisation
+function loadSect(c){
+  if(sectL){map.removeLayer(sectL);sectL=null;}if(sectP){sectP.remove();sectP=null;}
+  var dept=c.dept||'';
+  if(!dept)return;
+  loadSectoDept(dept,function(idxDept){
+    if(!idxDept)return;
+    var streets=[],seen={},ikeys=Object.keys(idxDept);
+    for(var i=0;i<ikeys.length;i++){
+      var insee=ikeys[i],sd=idxDept[insee],sk=Object.keys(sd);
+      for(var j=0;j<sk.length;j++){
+        var street=sk[j],entries=sd[street];
+        for(var k=0;k<entries.length;k++){
+          if(entries[k].r===c.uai){var key=insee+'|'+street;if(!seen[key]){seen[key]=true;streets.push({insee:insee,street:street,d:entries[k].d||0,f:entries[k].f||9999,p:entries[k].p||'PI'});}}
+        }
+      }
+    }
+    showSectPanel(c,streets);buildPoly(streets);
+  });
+}
+function loadSectForCollege(c,insee){loadSect(c);}
+
+function showSectPanel(c,streets){
+  var cp=String(c.cp||'').padStart(5,'0'),byC={};
+  streets.forEach(function(s){if(!byC[s.insee])byC[s.insee]=[];byC[s.insee].push(s);});
+  var listHTML='';
+  Object.keys(byC).forEach(function(insee){
+    var cs=byC[insee];cs.sort(function(a,b){return a.street.localeCompare(b.street);});
+    listHTML+='<div style="padding:5px 12px 3px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;border-bottom:1px solid #2a2f3d;">'+insee+'</div>';
+    cs.forEach(function(s){
+      var range=(s.d>0||s.f<9999)?' <span style="color:#6b7280;font-size:.68rem;">'+(s.d||1)+'-'+(s.f>=9999?'fin':s.f)+(s.p&&s.p!='PI'?' ('+s.p+')':'')+'</span>':'';
+      listHTML+=s.street==='NAN'
+        ?'<div style="padding:5px 12px;border-bottom:1px solid #1e2230;font-size:.75rem;color:#4ade80;">Commune entière</div>'
+        :'<div style="padding:5px 12px;border-bottom:1px solid #1e2230;font-size:.75rem;line-height:1.3;">'+esc(s.street)+range+'</div>';
+    });
+  });
+  var panel=document.createElement('div');panel.id='sectPanel';
+  panel.style.cssText='position:fixed;top:16px;right:16px;z-index:600;width:260px;max-height:calc(100vh - 32px);display:flex;flex-direction:column;pointer-events:all;';
+  panel.innerHTML='<div style="background:rgba(22,25,32,0.97);border:1px solid #2a2f3d;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);display:flex;flex-direction:column;max-height:calc(100vh - 32px);">'
+    +'<div style="padding:12px 14px;border-bottom:1px solid #2a2f3d;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">'
+      +'<div><div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#93a8ff;margin-bottom:2px;">Sectorisation</div>'
+      +'<div style="font-size:.82rem;font-weight:800;line-height:1.2;">'+esc(c.nom)+'</div>'
+      +'<div style="font-size:.72rem;color:#6b7280;">'+streets.length+' rues · '+esc(c.commune)+'</div></div>'
+      +'<button id="closeSect" style="background:none;border:1px solid #2a2f3d;border-radius:6px;padding:3px 8px;color:#6b7280;font-size:.72rem;cursor:pointer;">✕</button>'
+    +'</div>'
+    +'<div id="polyStatus" style="padding:7px 12px;font-size:.75rem;color:#93a8ff;background:rgba(79,110,247,0.06);border-bottom:1px solid #2a2f3d;display:flex;align-items:center;gap:6px;">'
+      +'<div style="width:9px;height:9px;border:2px solid rgba(79,110,247,0.3);border-top-color:#4f6ef7;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;"></div><span>Calcul du polygone...</span>'
+    +'</div>'
+    +'<div style="overflow-y:auto;flex:1;">'+listHTML+'</div></div>';
+  document.body.appendChild(panel);sectP=panel;
+  document.getElementById('closeSect').addEventListener('click',function(){panel.remove();sectP=null;if(sectL){map.removeLayer(sectL);sectL=null;}});
+}
+function buildPoly(streets){
+  var sample=[],step=Math.max(1,Math.floor(streets.length/25));
+  for(var i=0;i<streets.length;i+=step){if(sample.length>=25)break;sample.push(streets[i]);}
+  var points=[],pending=sample.length;
+  if(!pending){updPolyStatus('Pas de rues géocodables.');return;}
+  sample.forEach(function(s){
+    fetch('https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(s.street+' '+s.insee)+'&citycode='+s.insee+'&limit=1')
+      .then(function(r){return r.json();})
+      .then(function(d){if(d.features&&d.features.length){var co=d.features[0].geometry.coordinates;points.push([co[1],co[0]]);}pending--;if(pending===0)finPoly(points);})
+      .catch(function(){pending--;if(pending===0)finPoly(points);});
+  });
+}
+function finPoly(pts){
+  if(pts.length<3){updPolyStatus('Polygone non disponible ('+pts.length+' pts).');return;}
+  var hull=convexHull(pts);if(hull.length<3){updPolyStatus('Polygone non disponible.');return;}
+  if(sectL)map.removeLayer(sectL);
+  sectL=L.polygon(hull,{color:'#4f6ef7',fillColor:'#4f6ef7',fillOpacity:0.08,weight:2,opacity:0.6,dashArray:'6,4'}).addTo(map);
+  updPolyStatus('Zone approximative ('+pts.length+' pts).');
+}
+function updPolyStatus(msg){var el=document.getElementById('polyStatus');if(el)el.innerHTML='<span style="color:#4ade80;">✓</span> <span style="color:#6b7280;">'+msg+'</span>';}
+function convexHull(pts){
+  if(pts.length<3)return pts;var start=0;
+  for(var i=1;i<pts.length;i++)if(pts[i][1]<pts[start][1])start=i;
+  var hull=[],cur=start;
+  do{hull.push(pts[cur]);var nxt=(cur+1)%pts.length;for(var i=0;i<pts.length;i++)if(cross(pts[cur],pts[nxt],pts[i])<0)nxt=i;cur=nxt;}
+  while(cur!==start&&hull.length<=pts.length);return hull;
+}
+function cross(O,A,B){return(A[0]-O[0])*(B[1]-O[1])-(A[1]-O[1])*(B[0]-O[0]);}
+</script>
+</body>
+</html>
