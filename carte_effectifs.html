@@ -317,7 +317,8 @@ async function loadData(){
     let allData = [], offset = 0, total = Infinity;
     while(allData.length < total){
       let where = [`${cfg.anneeField}="${annee}"`];
-      if(academie) where.push(`academie="${academie}"`);
+      if(academie === 'VERSAILLES') where.push(`departement_libelle in ("YVELINES","ESSONNE","HAUTS-DE-SEINE","VAL-D'OISE")`);
+      else if(academie) where.push(`academie="${academie}"`);
       if(secteur)  where.push(`${cfg.sectField}="${secteur}"`);
       const w = encodeURIComponent(where.join(' AND '));
       const url = `${API}/${cfg.ds}/records?limit=100&offset=${offset}&where=${w}&select=${encodeURIComponent(cfg.selectFields)}`;
