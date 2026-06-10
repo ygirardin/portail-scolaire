@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bassins d'éducation — Val d'Oise (95)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{
+  --navy:#1a3a5c; --sky:#2563eb; --sky-soft:#eff6ff;
+  --ink:#0f172a; --ink2:#334155; --muted:#64748b;
+  --rule:#e2e8f0; --surface:#f8fafc; --white:#fff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--surface);color:var(--ink);height:100vh;display:flex;flex-direction:column;}
+
+header{background:var(--navy);padding:0 20px;height:52px;display:flex;align-items:center;gap:14px;flex-shrink:0;z-index:1000;}
+.back-btn{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.78rem;font-weight:500;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:5px 12px;transition:background .15s;}
+.back-btn:hover{background:rgba(255,255,255,.2);}
+.header-title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:#fff;}
+.header-sub{font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;}
+
+.layout{display:flex;flex:1;overflow:hidden;}
+
+/* MAP */
+#map{flex:1;z-index:1;}
+
+/* PANEL LATÉRAL */
+#panel{width:380px;flex-shrink:0;background:var(--white);border-left:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;transition:width .25s;}
+#panel.hidden{width:0;}
+
+.panel-header{padding:16px;border-bottom:1px solid var(--rule);flex-shrink:0;}
+.panel-bassin-name{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink);}
+.panel-bassin-bar{height:4px;border-radius:2px;margin-top:8px;}
+.panel-desc{font-size:.75rem;color:var(--muted);margin-top:6px;line-height:1.5;}
+.panel-count{font-size:.75rem;font-weight:600;margin-top:6px;}
+
+.panel-search{padding:10px 16px;border-bottom:1px solid var(--rule);flex-shrink:0;}
+.panel-search input{width:100%;height:32px;border:1.5px solid var(--rule);border-radius:7px;padding:0 10px;font-size:.8rem;font-family:'Inter',sans-serif;color:var(--ink);outline:none;}
+.panel-search input:focus{border-color:var(--sky);}
+
+.panel-filters{padding:8px 16px;border-bottom:1px solid var(--rule);display:flex;gap:6px;flex-shrink:0;}
+.filter-btn{height:26px;padding:0 10px;border:1.5px solid var(--rule);border-radius:100px;font-size:.7rem;font-weight:600;cursor:pointer;background:var(--white);color:var(--muted);font-family:'Inter',sans-serif;transition:all .15s;}
+.filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+.panel-list{flex:1;overflow-y:auto;padding:8px 0;}
+
+.etab-card{padding:12px 16px;border-bottom:1px solid var(--rule);cursor:default;transition:background .1s;}
+.etab-card:hover{background:var(--sky-soft);}
+.etab-type{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;margin-bottom:4px;}
+.type-clg{background:#dbeafe;color:#1d4ed8;}
+.type-lgt{background:#f0fdf4;color:#15803d;}
+.type-lpo{background:#f5f3ff;color:#6d28d9;}
+.type-lp{background:#fff7ed;color:#c2410c;}
+.type-erea,.type-cfa{background:#fef3c7;color:#92400e;}
+.etab-nom{font-weight:600;font-size:.82rem;color:var(--ink);line-height:1.3;}
+.etab-uai{font-size:.68rem;color:var(--muted);margin-left:5px;font-weight:400;}
+.etab-adr{font-size:.73rem;color:var(--ink2);margin-top:3px;}
+.etab-contacts{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;}
+.etab-chef{font-size:.72rem;color:var(--muted);width:100%;}
+.contact-link{display:inline-flex;align-items:center;gap:3px;font-size:.7rem;color:var(--sky);text-decoration:none;background:var(--sky-soft);border-radius:4px;padding:2px 7px;}
+.contact-link:hover{background:#bfdbfe;}
+
+.panel-empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:.82rem;}
+
+/* LEGEND */
+.legend{background:var(--white);border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.12);line-height:1.6;}
+.legend h4{font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:.72rem;color:var(--ink2);cursor:pointer;padding:2px 0;}
+.legend-item:hover{color:var(--ink);}
+.legend-dot{width:14px;height:14px;border-radius:3px;flex-shrink:0;}
+
+/* TOOLTIP MAP */
+.bassin-tooltip{font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;padding:6px 10px;}
+
+/* Close btn */
+.panel-close{margin-left:auto;width:28px;height:28px;border:none;background:var(--surface);border-radius:6px;cursor:pointer;font-size:1rem;color:var(--muted);display:flex;align-items:center;justify-content:center;}
+.panel-close:hover{background:var(--rule);}
+
+@media(max-width:768px){
+  .layout{flex-direction:column;}
+  #map{height:55vh;}
+  #panel{width:100%;border-left:none;border-top:1px solid var(--rule);height:45vh;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">← Portail</a>
+  <span class="header-title">🗺️ Bassins d'éducation — Val d'Oise (95)</span>
+  <span class="header-sub">6 bassins · 158 établissements · Cliquez sur un bassin</span>
+</header>
+
+<div class="layout">
+  <div id="map"></div>
+
+  <div id="panel" class="hidden">
+    <div class="panel-header">
+      <div style="display:flex;align-items:flex-start;">
+        <div style="flex:1">
+          <div class="panel-bassin-name" id="panel-name">—</div>
+          <div class="panel-bassin-bar" id="panel-bar"></div>
+          <div class="panel-desc" id="panel-desc"></div>
+          <div class="panel-count" id="panel-count"></div>
+        </div>
+        <button class="panel-close" onclick="closePanel()">✕</button>
+      </div>
+    </div>
+    <div class="panel-search">
+      <input type="text" id="panel-q" placeholder="Filtrer par nom, commune…" oninput="renderList()">
+    </div>
+    <div class="panel-filters">
+      <button class="filter-btn active" id="f-all" onclick="setFilter('all')">Tous</button>
+      <button class="filter-btn" id="f-clg" onclick="setFilter('CLG')">Collèges</button>
+      <button class="filter-btn" id="f-lgt" onclick="setFilter('LGT')">Lycées GT</button>
+      <button class="filter-btn" id="f-lpo" onclick="setFilter('LPO')">LPO</button>
+      <button class="filter-btn" id="f-lp" onclick="setFilter('LP')">Lycées Pro</button>
+    </div>
+    <div class="panel-list" id="panel-list"></div>
+  </div>
+</div>
+
+<script>
+// ── DONNÉES ──────────────────────────────────────────────────────────────────
+const ETABS = [{"uai":"0950046J","type":"CLG","nom":"DESCARTES","adresse":"4 avenue Descartes 95230 SOISY SOUS MONTMORENCY","chef":"M. GODEY MEDERIC","tel":"01 39 89 34 74","mail":"ce.0950046J@ac-versailles.fr","site":"www.clg-descartes-soisy.ac-versailles.fr","cp":"95230","bassin":"Enghien-Montmorency"},{"uai":"0950895G","type":"CLG","nom":"SIMONE VEIL","adresse":"3 rue Pierre de Coubertin 95000 PONTOISE","chef":"","tel":"01 85 76 56 80","mail":"ce.0950895G@ac-versailles.fr","site":"www.clg-simone-veil-pontoise.fr","cp":"95000","bassin":"Pontoise-Vexin"},{"uai":"0951279Z","type":"CLG","nom":"LES COUTURES","adresse":"2 rue du Val d'Oise 95620 PARMAIN","chef":"M. CHOULAK LYES","tel":"01 34 73 42 11","mail":"ce.0951279Z@ac-versailles.fr","site":"www.clg-coutures-parmain.ac-versailles.fr","cp":"95620","bassin":"Pontoise-Vexin"},{"uai":"0951090U","type":"LPO","nom":"LYC METIER PIERRE MENDES-FRANCE","adresse":"1 rue de Goussainville 95400 VILLIERS LE BEL","chef":"","tel":"01 34 38 31 00","mail":"ce.0951090U@ac-versailles.fr","site":"www.lyc-pmf-villiers.ac-versailles.fr","cp":"95400","bassin":"Sarcelles-Lochères"},{"uai":"0951636M","type":"CLG","nom":"LES TOUPETS","adresse":"46 avenue Louise Michel 95490 VAUREAL","chef":"","tel":"01 30 73 20 22","mail":"ce.0951636M@ac-versailles.fr","site":"www.clg-toupets-vaureal.ac-versailles.fr","cp":"95490","bassin":"Cergy"},{"uai":"0950645K","type":"LGT","nom":"VAN GOGH","adresse":"Rue du Général Décaen 95123 ERMONT CEDEX","chef":"M. BOUGEARD NICOLAS","tel":"01 30 72 74 22","mail":"ce.0950645K@ac-versailles.fr","site":"","cp":"95123","bassin":"Enghien-Montmorency"},{"uai":"0951100E","type":"CLG","nom":"EPINE GUYON","adresse":"46 rue des Onze Arpents 95130 FRANCONVILLE LA GARENNE","chef":"","tel":"01 34 13 76 18","mail":"ce.0951100E@ac-versailles.fr","site":"www.clg-epineguyon-franconville.ac-versailles.fr","cp":"95130","bassin":"Enghien-Montmorency"},{"uai":"0950023J","type":"CLG","nom":"HENRI WALLON","adresse":"2 rue du Tiers Pot 95140 GARGES LES GONESSE","chef":"","tel":"01 39 86 41 71","mail":"ce.0950023J@ac-versailles.fr","site":"www.rar-wallon-garges.ac-versailles.fr","cp":"95140","bassin":"Sarcelles-Lochères"},{"uai":"0951094Y","type":"CLG","nom":"PAUL VAILLANT COUTURIER","adresse":"22 rue de Calais 95100 ARGENTEUIL","chef":"MME GEROMEGNACE SANDRINE","tel":"01 34 34 39 00","mail":"ce.0951094Y@ac-versailles.fr","site":"www.clg-vaillant-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0950936B","type":"CLG","nom":"DES HAUTIERS","adresse":"18 rue des Hautiers 95640 MARINES","chef":"","tel":"01 30 39 71 98","mail":"ce.0950936B@ac-versailles.fr","site":"www.clg-hautiers-marines.ac-versailles.fr","cp":"95640","bassin":"Pontoise-Vexin"},{"uai":"0951098C","type":"CLG","nom":"PABLO PICASSO","adresse":"202 avenue Stalingrad 95140 GARGES LES GONESSE","chef":"MME MAO LAURENCE","tel":"01 39 86 71 16","mail":"ce.0951098C@ac-versailles.fr","site":"www.clg-picasso-garges.ac-versailles.fr","cp":"95140","bassin":"Sarcelles-Lochères"},{"uai":"0951154N","type":"CLG","nom":"CAMILLE CLAUDEL","adresse":"Rue de la Verneuil 95370 MONTIGNY LES CORMEILLES","chef":"","tel":"01 39 97 67 96","mail":"ce.0951154N@ac-versailles.fr","site":"www.clg-claudel-montigny.ac-versailles.fr","cp":"95370","bassin":"Enghien-Montmorency"},{"uai":"0951232Y","type":"CLG","nom":"MARIE SKLODOWSKA-CURIE","adresse":"2 rue de la Clé des Champs 95130 LE PLESSIS BOUCHARD","chef":"","tel":"01 34 13 23 97","mail":"ce.0951232Y@ac-versailles.fr","site":"","cp":"95130","bassin":"Enghien-Montmorency"},{"uai":"0952036X","type":"CLG","nom":"HENRI MATISSE","adresse":"Avenue de la Division Leclerc 95140 GARGES LES GONESSE","chef":"MME KERROS VERONIQUE","tel":"01 30 11 15 50","mail":"ce.0952036X@ac-versailles.fr","site":"www.clg-matisse-garges.ac-versailles.fr","cp":"95140","bassin":"Sarcelles-Lochères"},{"uai":"0951964U","type":"CLG","nom":"LES EXPLORATEURS","adresse":"Boulevard des Explorateurs 95800 CERGY","chef":"","tel":"01 34 35 05 75","mail":"ce.0951964U@ac-versailles.fr","site":"www.clg-explorateurs-cergy.ac-versailles.fr","cp":"95800","bassin":"Cergy"},{"uai":"0950647M","type":"LGT","nom":"GERARD DE NERVAL","adresse":"Place de l'Europe 95270 LUZARCHES","chef":"M. PIENS PIERRE","tel":"01 30 29 55 00","mail":"ce.0950647M@ac-versailles.fr","site":"www.lyc-nerval-luzarches.ac-versailles.fr","cp":"95270","bassin":"Sarcelles-Lochères"},{"uai":"0950937C","type":"CLG","nom":"LES TOULEUSES","adresse":"1 avenue du Bois 95000 CERGY","chef":"MME MOREAU VALERIE","tel":"01 30 30 12 23","mail":"ce.0950937C@ac-versailles.fr","site":"www.clg-touleuses-cergy.ac-versailles.fr/site/","cp":"95000","bassin":"Cergy"},{"uai":"0951104J","type":"LPO","nom":"LYC METIER JEAN PERRIN","adresse":"2 rue des Egalissées 95310 ST OUEN L AUMONE","chef":"","tel":"01 34 32 58 28","mail":"ce.0951104J@ac-versailles.fr","site":"www.lyc-perrin-soa.ac-versailles.fr","cp":"95310","bassin":"Cergy"},{"uai":"0950749Y","type":"CLG","nom":"SAINT EXUPERY","adresse":"42 avenue Pierre Sémard 95400 VILLIERS LE BEL","chef":"M. SIMAO SAMUEL","tel":"01 39 94 13 22","mail":"ce.0950749Y@ac-versailles.fr","site":"www.clg-st-exupery-vlb.ac-versailles.fr","cp":"95400","bassin":"Sarcelles-Lochères"},{"uai":"0950640E","type":"LGT","nom":"JULIE-VICTOIRE DAUBIE","adresse":"9 rue Louis Massignon 95100 ARGENTEUIL","chef":"M. POUPLARD CEDRIC","tel":"01 30 76 55 55","mail":"ce.0950640E@ac-versailles.fr","site":"www.lyc-daubie-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0950888Z","type":"CLG","nom":"HENRI WALLON","adresse":"41 rue des Brigadières 95875 BEZONS CEDEX","chef":"MME BERARD MARIANNE","tel":"01 34 11 77 33","mail":"ce.0950888Z@ac-versailles.fr","site":"www.clg-wallon-bezons.ac-versailles.fr","cp":"95875","bassin":"Argenteuil"},{"uai":"0950884V","type":"CLG","nom":"CARNOT","adresse":"","chef":"","tel":"01 34 34 16 66","mail":"ce.0950884V@ac-versailles.fr","site":"www.clg-carnot-argenteuil.ac-versailles.fr","cp":"","bassin":"Argenteuil"},{"uai":"0950651S","type":"LGT","nom":"JACQUES PREVERT","adresse":"23 chemin Vert de Boissy 95150 TAVERNY","chef":"","tel":"01 39 95 32 25","mail":"ce.0950651S@ac-versailles.fr","site":"www.lyc-prevert-taverny.ac-versailles.fr","cp":"95150","bassin":"Enghien-Montmorency"},{"uai":"0951823R","type":"CLG","nom":"CHARLES FRANCOIS DAUBIGNY","adresse":"6 rue Pierre Bérégovoy 95430 AUVERS SUR OISE","chef":"MME BESSIERE VALERIE","tel":"01 34 48 09 09","mail":"ce.0951823R@ac-versailles.fr","site":"www.clg-daubigny-auvers.ac-versailles.fr","cp":"95430","bassin":"Pontoise-Vexin"},{"uai":"0951697D","type":"CLG","nom":"MOULIN A VENT","adresse":"24 avenue du Terroir 95800 CERGY","chef":"MME GALISSON CAROLE","tel":"01 34 32 21 21","mail":"ce.0951697D@ac-versailles.fr","site":"www.clg-moulin-vent-cergy.ac-versailles.fr","cp":"95800","bassin":"Cergy"},{"uai":"0952205F","type":"CLG","nom":"ISABELLE AUTISSIER","adresse":"1 rue Jacques Tati 95220 HERBLAY SUR SEINE","chef":"MME DUBOIS ISABELLE","tel":"01 85 76 67 70","mail":"ce.0952205F@ac-versailles.fr","site":"www.clg-autissier-herblay.ac-versailles.fr","cp":"95220","bassin":"Argenteuil"},{"uai":"0952114G","type":"CLG","nom":"ARIANE","adresse":"9 avenue de l'Espace 95100 ARGENTEUIL","chef":"MME SALAH NAHOUEL","tel":"01 39 98 69 79","mail":"ce.0952114G@ac-versailles.fr","site":"www.clg-ariane-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0952087C","type":"CLG","nom":"PIERRE PERRET","adresse":"202 grande rue 95340 BERNES SUR OISE","chef":"MME RIAGUAS GERALDINE","tel":"01 30 34 04 31","mail":"ce.0952087C@ac-versailles.fr","site":"www.clg-bernes.ac-versailles.fr","cp":"95340","bassin":"Pontoise-Vexin"},{"uai":"0950945L","type":"CLG","nom":"LE CARRE STE HONORINE","adresse":"Rue des Ecoles 95150 TAVERNY","chef":"M. DRIDI KAMEL","tel":"01 39 95 11 48","mail":"ce.0950945L@ac-versailles.fr","site":"www.clg-lecarre-taverny.ac-versailles.fr","cp":"95150","bassin":"Enghien-Montmorency"},{"uai":"0951992Z","type":"CLG","nom":"LOUIS AUGUSTIN BOSC","adresse":"Place Augustin Bosc 95390 ST PRIX","chef":"M. REHANE MOULOUD","tel":"01 30 10 60 00","mail":"ce.0951992Z@ac-versailles.fr","site":"www.clg-bosc-st-prix.ac-versailles.fr","cp":"95390","bassin":"Enghien-Montmorency"},{"uai":"0951102G","type":"CLG","nom":"CLAUDE MONET","adresse":"9 rue Robert Baron 95420 MAGNY EN VEXIN","chef":"MME DENOUVEAUX CECILE","tel":"01 34 67 04 67","mail":"ce.0951102G@ac-versailles.fr","site":"www.clg-monet-magny.ac-versailles.fr","cp":"95420","bassin":"Pontoise-Vexin"},{"uai":"0951230W","type":"CLG","nom":"EUGENIE COTTON","adresse":"2 rue de Rethondes 95104 ARGENTEUIL CEDEX","chef":"M. RIVIERE SYLVAIN","tel":"01 39 82 16 87","mail":"ce.0951230W@ac-versailles.fr","site":"www.clg-cotton-argenteuil.ac-versailles.fr","cp":"95104","bassin":"Argenteuil"},{"uai":"0951617S","type":"CLG","nom":"GERARD PHILIPE","adresse":"5 allée des Vanneaux 95800 CERGY","chef":"M. DELONCLE GEOFFREY","tel":"01 30 38 06 66","mail":"ce.0951617S@ac-versailles.fr","site":"www.clg-philipe-cergy.ac-versailles.fr","cp":"95800","bassin":"Cergy"},{"uai":"0951672B","type":"CLG","nom":"LEONARD DE VINCI","adresse":"79 rue de Pierrelaye la Butte 95610 ERAGNY SUR OISE","chef":"MME SEGAUX SABINE","tel":"01 34 64 23 50","mail":"ce.0951672B@ac-versailles.fr","site":"www.clg-vinci-eragny.ac-versailles.fr","cp":"95610","bassin":"Cergy"},{"uai":"0950939E","type":"CLG","nom":"LEON BLUM","adresse":"2 rue Léon Blum 95400 VILLIERS LE BEL","chef":"","tel":"01 39 94 08 24","mail":"ce.0950939E@ac-versailles.fr","site":"www.clg-blum-villiers-le-bel.ac-versailles.fr","cp":"95400","bassin":"Sarcelles-Lochères"},{"uai":"0950931W","type":"CLG","nom":"L'ARDILLIERE DE NEZANT","adresse":"Avenue de la Division Leclerc 95350 ST BRICE SOUS FORET","chef":"MME LAUBREAUX EMMANUELLE","tel":"01 39 90 26 14","mail":"ce.0950931W@ac-versailles.fr","site":"www.clg-nezant-stbrice.ac-versailles.fr","cp":"95350","bassin":"Enghien-Montmorency"},{"uai":"0950930V","type":"CLG","nom":"GEORGES POMPIDOU","adresse":"20 rue de la Coussaye 95880 ENGHIEN LES BAINS","chef":"","tel":"01 34 12 63 32","mail":"ce.0950930V@ac-versailles.fr","site":"www.clg-pompidou-enghien.ac-versailles.fr","cp":"95880","bassin":"Enghien-Montmorency"},{"uai":"0950891C","type":"CLG","nom":"PIERRE DE RONSARD","adresse":"4 chemin du Mont Griffard 95160 MONTMORENCY","chef":"","tel":"01 39 89 81 39","mail":"ce.0950891C@ac-versailles.fr","site":"www.clg-ronsard-montmorency.ac-versailles.fr","cp":"95160","bassin":"Enghien-Montmorency"},{"uai":"0950898K","type":"CLG","nom":"PIERRE ET MARIE CURIE","adresse":"Rue Jean Droit 95290 L ISLE ADAM","chef":"","tel":"01 34 69 01 83","mail":"ce.0950898K@ac-versailles.fr","site":"www.clg-curie-lisleadam.ac-versailles.fr","cp":"95290","bassin":"Pontoise-Vexin"},{"uai":"0951356H","type":"CLG","nom":"LUCIE AUBRAC","adresse":"10 allée Romain Rolland 95100 ARGENTEUIL","chef":"","tel":"01 39 98 96 00","mail":"ce.0951356H@ac-versailles.fr","site":"www.clg-aubrac-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0951400F","type":"CLG","nom":"MAUBUISSON","adresse":"Avenue Charles de Gaulle 95550 BESSANCOURT","chef":"","tel":"01 39 60 83 65","mail":"ce.0951400F@ac-versailles.fr","site":"www.college-maubuisson.fr","cp":"95550","bassin":"Enghien-Montmorency"},{"uai":"0951357J","type":"CLG","nom":"ANNA DE NOAILLES","adresse":"Place de l'Europe 95270 LUZARCHES","chef":"MME LEFRANCOIS ISABELLE","tel":"01 30 29 55 19","mail":"ce.0951357J@ac-versailles.fr","site":"www.clg-noailles-luzarches.ac-versailles.fr","cp":"95270","bassin":"Sarcelles-Lochères"},{"uai":"0950648N","type":"LGT","nom":"JEAN-JACQUES ROUSSEAU","adresse":"20 rue de Jaigny 95160 MONTMORENCY","chef":"M. LARROQUE ERIC","tel":"01 34 05 12 50","mail":"ce.0950648N@ac-versailles.fr","site":"www.lyc-rousseau-montmorency.ac-versailles.fr","cp":"95160","bassin":"Enghien-Montmorency"},{"uai":"0950656X","type":"LP","nom":"LYC METIER LE CORBUSIER","adresse":"2 rue Paul Bloch 95240 CORMEILLES EN PARISIS","chef":"M. DEMBELE AGUIBOU","tel":"01 39 78 48 98","mail":"ce.0950656X@ac-versailles.fr","site":"www.lyc-lecorbusier-cormeilles.ac-versailles.fr","cp":"95240","bassin":"Argenteuil"},{"uai":"0950947N","type":"LPO","nom":"MARYSE CONDE","adresse":"8 rue Fernand Léger 95200 SARCELLES","chef":"","tel":"01 34 38 36 00","mail":"ce.0950947N@ac-versailles.fr","site":"","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0950748X","type":"CLG","nom":"WANDA LANDOWSKA","adresse":"8 avenue des Diablots 95320 ST LEU LA FORET","chef":"","tel":"01 34 13 48 72","mail":"ce.0950748X@ac-versailles.fr","site":"www.clg-landowska-st-leu.ac-versailles.fr","cp":"95320","bassin":"Enghien-Montmorency"},{"uai":"0950037Z","type":"CLG","nom":"JEAN ZAY","adresse":"6 rue Pierre Curie 95210 ST GRATIEN","chef":"M. JEZEQUEL JEAN FRANCOIS","tel":"01 39 34 68 68","mail":"ce.0950037Z@ac-versailles.fr","site":"www.clg-zay-st-gratien.ac-versailles.fr","cp":"95210","bassin":"Enghien-Montmorency"},{"uai":"0951051B","type":"CLG","nom":"MARCEL PAGNOL","adresse":"Rue Emile Combres 95560 MONTSOULT","chef":"","tel":"01 34 69 85 92","mail":"ce.0951051B@ac-versailles.fr","site":"www.clg-pagnol-montsoult.ac-versailles.fr","cp":"95560","bassin":"Pontoise-Vexin"},{"uai":"0951921X","type":"CLG","nom":"MICHEL DE MONTAIGNE","adresse":"7 avenue des Demoiselles 95190 GOUSSAINVILLE","chef":"","tel":"01 39 88 73 04","mail":"ce.0951921X@ac-versailles.fr","site":"www.clg-montaigne-goussainville.ac-versailles.fr","cp":"95190","bassin":"Pontoise-Vexin"},{"uai":"0950014Z","type":"CLG","nom":"ARISTIDE BRIAND","adresse":"Rue du Baron Duchaussoy 95331 DOMONT CEDEX","chef":"M. AMERI YOUSSEF","tel":"01 39 91 16 56","mail":"ce.0950014Z@ac-versailles.fr","site":"www.clg-briand-domont.ac-versailles.fr","cp":"95331","bassin":"Enghien-Montmorency"},{"uai":"0951143B","type":"CLG","nom":"JEAN MOULIN","adresse":"Rue Jean Zay 95400 ARNOUVILLE","chef":"","tel":"01 39 86 34 50","mail":"ce.0951143B@ac-versailles.fr","site":"www.clg-moulin-arnouville.ac-versailles.fr","cp":"95400","bassin":"Sarcelles-Lochères"},{"uai":"0952140K","type":"CLG","nom":"EMILIE DU CHATELET","adresse":"13 chemin du Tour du Parc 95170 DEUIL LA BARRE","chef":"M. CHARNAY YVAN","tel":"01 34 05 04 10","mail":"ce.0952140K@ac-versailles.fr","site":"www.clg-chatelet-deuil.ac-versailles.fr","cp":"95170","bassin":"Enghien-Montmorency"},{"uai":"0951705M","type":"CLG","nom":"LA BUSSIE","adresse":"1 rue de la Sérénade 95490 VAUREAL","chef":"MME FLECHEL GENEVIEVE","tel":"01 34 21 00 99","mail":"ce.0951705M@ac-versailles.fr","site":"www.clg-labussie-vaureal.ac-versailles.fr","cp":"95490","bassin":"Cergy"},{"uai":"0951190C","type":"CLG","nom":"LANGEVIN-WALLON","adresse":"19 rue Parmentier 95210 ST GRATIEN","chef":"MME CHAIEB NAJAH","tel":"01 39 89 73 84","mail":"ce.0951190C@ac-versailles.fr","site":"www.clg-langevin-wallon-st-gratien.ac-versailles.fr","cp":"95210","bassin":"Enghien-Montmorency"},{"uai":"0952282P","type":"CLG","nom":"CAROLINE AIGLE","adresse":"1 place Gisèle Halimi 95000 CERGY","chef":"","tel":"01 88 60 76 20","mail":"ce.0952282P@ac-versailles.fr","site":"","cp":"95000","bassin":"Cergy"},{"uai":"0950934Z","type":"CLG","nom":"GEORGES BRASSENS","adresse":"15 rue Jean Catelas 95340 PERSAN","chef":"MME PELEGRIN CARINE","tel":"01 34 70 15 99","mail":"ce.0950934Z@ac-versailles.fr","site":"www.clg-brassens-persan.ac-versailles.fr","cp":"95340","bassin":"Pontoise-Vexin"},{"uai":"0950682A","type":"CLG","nom":"DENIS DIDEROT","adresse":"10 rue Henri Dunant 95170 DEUIL LA BARRE","chef":"MME DECOURBE ANAIS","tel":"01 39 83 00 67","mail":"ce.0950682A@ac-versailles.fr","site":"www.clg-diderot-deuil.ac-versailles.fr","cp":"95170","bassin":"Enghien-Montmorency"},{"uai":"0952088D","type":"CLG","nom":"JEAN-FRANCOIS CLERVOY","adresse":"8 avenue des Marais 95130 FRANCONVILLE LA GARENNE","chef":"","tel":"01 30 72 61 39","mail":"ce.0952088D@ac-versailles.fr","site":"www.clg-college3-franconville.ac-versailles.fr","cp":"95130","bassin":"Enghien-Montmorency"},{"uai":"0950932X","type":"CLG","nom":"JEAN VILAR","adresse":"74 rue de Conflans 95220 HERBLAY SUR SEINE","chef":"MME MENARD MARIE-NOELLE","tel":"01 39 31 63 63","mail":"ce.0950932X@ac-versailles.fr","site":"www.clg-vilar-herblay.ac-versailles.fr","cp":"95220","bassin":"Argenteuil"},{"uai":"0951142A","type":"CLG","nom":"ROBERT DOISNEAU","adresse":"2 place Jean Renoir 95502 GONESSE CEDEX","chef":"MME GIBRAC VALERIE","tel":"01 39 87 10 11","mail":"ce.0951142A@ac-versailles.fr","site":"www.clg-doisneau-gonesse.ac-versailles.fr","cp":"95502","bassin":"Gonesse-Roissy"},{"uai":"0951726K","type":"CLG","nom":"LE PETIT BOIS","adresse":"Rue Juliette Monnier 95480 PIERRELAYE","chef":"","tel":"01 30 37 20 90","mail":"ce.0951726K@ac-versailles.fr","site":"www.clg-petitbois-pierrelaye.ac-versailles.fr","cp":"95480","bassin":"Cergy"},{"uai":"0951637N","type":"LGT","nom":"GALILEE","adresse":"11 avenue du Jour 95801 CERGY PONTOISE CEDEX","chef":"","tel":"01 34 41 74 20","mail":"ce.0951637N@ac-versailles.fr","site":"www.lyc-galilee-cergy.ac-versailles.fr","cp":"95801","bassin":"Cergy"},{"uai":"0951945Y","type":"CLG","nom":"VICTOR HUGO","adresse":"68 rue Victor Hugo 95200 SARCELLES","chef":"","tel":"01 39 33 53 00","mail":"ce.0951945Y@ac-versailles.fr","site":"www.clg-hugo-sarcelles.ac-versailles.fr","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0951197K","type":"CLG","nom":"GEORGES BRASSENS","adresse":"10 rue Jeanne Planche 95153 TAVERNY CEDEX","chef":"","tel":"01 39 95 05 61","mail":"ce.0951197K@ac-versailles.fr","site":"www.clg-brassens-taverny.ac-versailles.fr","cp":"95153","bassin":"Enghien-Montmorency"},{"uai":"0950900M","type":"CLG","nom":"ANATOLE FRANCE","adresse":"34 bis avenue Pierre Koenig 95200 SARCELLES","chef":"M. HOUAMEL SAMIR","tel":"01 39 90 38 26","mail":"ce.0950900M@ac-versailles.fr","site":"www.clg-france-sarcelles.ac-versailles.fr","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0950026M","type":"CLG","nom":"MAXIMILIEN DE ROBESPIERRE","adresse":"1 rue Claude Bernard 95190 GOUSSAINVILLE","chef":"","tel":"01 39 88 44 44","mail":"ce.0950026M@ac-versailles.fr","site":"www.clg-robespierre-goussainville.ac-versailles.fr","cp":"95190","bassin":"Pontoise-Vexin"},{"uai":"0950892D","type":"CLG","nom":"JULES FERRY","adresse":"1 rue Jean Moulin 95600 EAUBONNE","chef":"M. AUBRY MICKAEL","tel":"01 39 59 00 53","mail":"ce.0950892D@ac-versailles.fr","site":"www.clg-ferry-eaubonne.ac-versailles.fr","cp":"95600","bassin":"Enghien-Montmorency"},{"uai":"0951194G","type":"CLG","nom":"PABLO PICASSO","adresse":"Rue de l'Ormetteau 95610 ERAGNY SUR OISE","chef":"MME LYCZKO VERONIQUE","tel":"01 34 64 23 03","mail":"ce.0951194G@ac-versailles.fr","site":"www.clg-picasso-eragny.ac-versailles.fr","cp":"95610","bassin":"Cergy"},{"uai":"0951050A","type":"CLG","nom":"PIERRE CURIE","adresse":"166 boulevard Paul Vaillant Cout 95190 GOUSSAINVILLE","chef":"MME DE SOUSA MARGARIDA","tel":"01 39 88 98 32","mail":"ce.0951050A@ac-versailles.fr","site":"www.clg-curie-goussainville.ac-versailles.fr","cp":"95190","bassin":"Pontoise-Vexin"},{"uai":"0950886X","type":"CLG","nom":"CLAUDE MONET","adresse":"2 mail Stendhal 95104 ARGENTEUIL CEDEX","chef":"","tel":"01 39 82 23 90","mail":"ce.0950886X@ac-versailles.fr","site":"www.clg-monet-argenteuil.ac-versailles.fr","cp":"95104","bassin":"Argenteuil"},{"uai":"0951147F","type":"LGT","nom":"FRAGONARD","adresse":"3 rue Fragonard 95290 L ISLE ADAM","chef":"M. KEIREL BENOI","tel":"01 34 08 19 91","mail":"ce.0951147F@ac-versailles.fr","site":"www.lyc-fragonard-isle-adam.ac-versailles.fr","cp":"95290","bassin":"Pontoise-Vexin"},{"uai":"0950723V","type":"CLG","nom":"JEAN LURCAT","adresse":"37 rue Marius Delpech 95200 SARCELLES","chef":"MME LEFEBVRE MAGALI","tel":"01 39 93 93 94","mail":"ce.0950723V@ac-versailles.fr","site":"www.clg-lurcat-sarcelles.ac-versailles.fr","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0950711G","type":"CLG","nom":"PAUL ELUARD","adresse":"11 rue Claude Monet 95140 GARGES LES GONESSE","chef":"M. NAOUA YOUCEF","tel":"01 39 86 48 65","mail":"ce.0950711G@ac-versailles.fr","site":"www.clg-eluard-garges.ac-versailles.fr","cp":"95140","bassin":"Sarcelles-Lochères"},{"uai":"0951401G","type":"CLG","nom":"LA JUSTICE","adresse":"8 chemin des Mérites 95000 CERGY","chef":"M. LEBAILLY JEAN-LOUIS","tel":"01 30 31 08 62","mail":"ce.0951401G@ac-versailles.fr","site":"www.clg-justice-cergy.ac-versailles.fr","cp":"95000","bassin":"Cergy"},{"uai":"0950896H","type":"CLG","nom":"NICOLAS FLAMEL","adresse":"23 boulevard de l'Europe 95300 PONTOISE","chef":"MME AMZZOUG ISABELLE","tel":"01 30 30 16 76","mail":"ce.0950896H@ac-versailles.fr","site":"www.clg-flamel-pontoise.ac-versailles.fr","cp":"95300","bassin":"Pontoise-Vexin"},{"uai":"0951922Y","type":"LGT","nom":"CAMILLE SAINT-SAENS","adresse":"18 rue Guynemer 95170 DEUIL LA BARRE","chef":"MME MARDON VALERIE","tel":"01 34 28 64 00","mail":"ce.0951922Y@ac-versailles.fr","site":"www.lyc-st-saens-deuil.ac-versailles.fr","cp":"95170","bassin":"Enghien-Montmorency"},{"uai":"0951763A","type":"LPO","nom":"LYC METIER LOUIS JOUVET","adresse":"26 rue de Saint-Prix 95152 TAVERNY CEDEX","chef":"","tel":"01 34 18 41 20","mail":"ce.0951763A@ac-versailles.fr","site":"www.lyc-jouvet-taverny.ac-versailles.fr","cp":"95152","bassin":"Enghien-Montmorency"},{"uai":"0951352D","type":"CLG","nom":"SCHWEITZER","adresse":"47 rue d'Andilly 95230 SOISY SOUS MONTMORENCY","chef":"","tel":"01 39 89 08 19","mail":"ce.0951352D@ac-versailles.fr","site":"www.clg-schweitzer-soisy.ac-versailles.fr","cp":"95230","bassin":"Enghien-Montmorency"},{"uai":"0951993A","type":"CLG","nom":"MARTIN LUTHER KING","adresse":"1 rue du Docteur Rampont 95400 VILLIERS LE BEL","chef":"","tel":"01 39 90 02 51","mail":"ce.0951993A@ac-versailles.fr","site":"www.reseau-mlk-vlb.ac-versailles.fr","cp":"95400","bassin":"Sarcelles-Lochères"},{"uai":"0950943J","type":"CLG","nom":"CHANTEREINE","adresse":"Avenue de Chantereine 95200 SARCELLES","chef":"M. SOLER FABRICE","tel":"01 39 90 66 90","mail":"ce.0950943J@ac-versailles.fr","site":"www.clg-chantereine-sarcelles.ac-versailles.fr","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0950926R","type":"CLG","nom":"STENDHAL","adresse":"Chemin de Beaumont 95470 FOSSES","chef":"MME FOURNIER FLORENCE","tel":"01 34 68 68 80","mail":"ce.0950926R@ac-versailles.fr","site":"www.clg-stendhal-fosses.ac-versailles.fr","cp":"95470","bassin":"Gonesse-Roissy"},{"uai":"0951824S","type":"LPO","nom":"DE L HAUTIL","adresse":"1 rue Gabriel Fauré 95280 JOUY LE MOUTIER","chef":"","tel":"01 34 32 71 71","mail":"ce.0951824S@ac-versailles.fr","site":"www.lyc-hautil-jouy.ac-versailles.fr","cp":"95280","bassin":"Cergy"},{"uai":"0951281B","type":"LPO","nom":"LYC METIER TURGOT","adresse":"3 place au Pain 95162 MONTMORENCY CEDEX","chef":"","tel":"01 34 05 15 25","mail":"ce.0951281B@ac-versailles.fr","site":"www.lyc-turgot-montmorency.ac-versailles.fr","cp":"95162","bassin":"Enghien-Montmorency"},{"uai":"0952045G","type":"CLG","nom":"LOUIS HAYET","adresse":"4 avenue Louis Hayet 95240 CORMEILLES EN PARISIS","chef":"","tel":"01 34 50 32 60","mail":"ce.0952045G@ac-versailles.fr","site":"www.clg-hayet-cormeilles.ac-versailles.fr","cp":"95240","bassin":"Argenteuil"},{"uai":"0951753P","type":"LGT","nom":"LEONARD DE VINCI","adresse":"2 rue Robquin 95470 ST WITZ","chef":"MME LASRI DJAMILA","tel":"01 34 68 25 89","mail":"ce.0951753P@ac-versailles.fr","site":"www.lyc-vinci-st-witz.ac-versailles.fr","cp":"95470","bassin":"Gonesse-Roissy"},{"uai":"0951403J","type":"CLG","nom":"LA BRUYERE","adresse":"118 chaussée Jules César 95520 OSNY","chef":"MME BENHALLAM MEKKAOUI LAILA","tel":"01 30 75 80 00","mail":"ce.0951403J@ac-versailles.fr","site":"www.clg-bruyere-osny.ac-versailles.fr","cp":"95520","bassin":"Cergy"},{"uai":"0952236P","type":"CLG","nom":"LOUISE WEISS","adresse":"1 avenue Georges Daressy 95240 CORMEILLES EN PARISIS","chef":"","tel":"01 85 76 78 50","mail":"ce.0952236P@ac-versailles.fr","site":"www.clg-weiss-cormeilles.ac-versailles.fr","cp":"95240","bassin":"Argenteuil"},{"uai":"0950025L","type":"CLG","nom":"PHILIPPE AUGUSTE","adresse":"4 rue de l'Eglantier 95500 GONESSE","chef":"M. BOUDJEMAI KARIM","tel":"01 39 85 09 79","mail":"ce.0950025L@ac-versailles.fr","site":"www.clg-auguste-gonesse.ac-versailles.fr","cp":"95500","bassin":"Gonesse-Roissy"},{"uai":"0950941G","type":"CLG","nom":"JEAN BULLANT","adresse":"16 avenue Foch 95440 ECOUEN","chef":"","tel":"01 34 04 19 80","mail":"ce.0950941G@ac-versailles.fr","site":"www.clg-bullant-ecouen.ac-versailles.fr","cp":"95440","bassin":"Sarcelles-Lochères"},{"uai":"0950658Z","type":"LP","nom":"LYC METIER CHATEAU D EPLUCHES","adresse":"45 avenue du Château 95310 ST OUEN L AUMONE","chef":"M. NIQUE JOCELYN","tel":"01 34 48 32 80","mail":"ce.0950658Z@ac-versailles.fr","site":"www.lyc-epluches-st-ouen.ac-versailles.fr","cp":"95310","bassin":"Cergy"},{"uai":"0951696C","type":"CLG","nom":"GEORGES DUHAMEL","adresse":"4 place Roger Sarotin 95220 HERBLAY SUR SEINE","chef":"","tel":"01 34 50 00 10","mail":"ce.0951696C@ac-versailles.fr","site":"www.clg-duhamel-herblay.ac-versailles.fr","cp":"95220","bassin":"Argenteuil"},{"uai":"0951195H","type":"CLG","nom":"MARCEL PAGNOL","adresse":"2 rue Louise Weiss 95310 ST OUEN L AUMONE","chef":"","tel":"01 34 64 45 28","mail":"ce.0951195H@ac-versailles.fr","site":"www.clg-pagnol-soa.ac-versailles.fr","cp":"95310","bassin":"Cergy"},{"uai":"0950039B","type":"CLG","nom":"LE PARC","adresse":"9 rue du Parc 95310 ST OUEN L AUMONE","chef":"MME GELU CAROLINE","tel":"01 34 64 23 51","mail":"ce.0950039B@ac-versailles.fr","site":"www.clg-leparc-st-ouen.ac-versailles.fr","cp":"95310","bassin":"Cergy"},{"uai":"0951991Y","type":"CLG","nom":"CECILE SOREL","adresse":"Place des Chênes 95630 MERIEL","chef":"M. GAMBARD DAVID","tel":"01 30 36 07 08","mail":"ce.0951991Y@ac-versailles.fr","site":"www.clg-sorel-meriel.ac-versailles.fr","cp":"95630","bassin":"Pontoise-Vexin"},{"uai":"0951354F","type":"CLG","nom":"ANDRE MALRAUX","adresse":"5 rue André Malraux 95380 LOUVRES","chef":"MME ELFAQIR MAJIDA","tel":"01 34 68 92 90","mail":"ce.0951354F@ac-versailles.fr","site":"www.clg-malraux-louvres.ac-versailles.fr","cp":"95380","bassin":"Sarcelles-Lochères"},{"uai":"0950908W","type":"CLG","nom":"FRANCOIS MAURIAC","adresse":"80 rue de Paris 95380 LOUVRES","chef":"","tel":"01 34 68 12 80","mail":"ce.0950908W@ac-versailles.fr","site":"www.clg-mauriac-louvres.ac-versailles.fr","cp":"95380","bassin":"Sarcelles-Lochères"},{"uai":"0950739M","type":"CLG","nom":"ANTOINE DE SAINT EXUPERY","adresse":"25 rue du Syndicat 95120 ERMONT","chef":"MME QUINODON BERENICE","tel":"01 34 14 22 12","mail":"ce.0950739M@ac-versailles.fr","site":"www.clg-exupery-ermont.ac-versailles.fr","cp":"95120","bassin":"Enghien-Montmorency"},{"uai":"0951710T","type":"LPO","nom":"LYC METIER CAMILLE CLAUDEL","adresse":"4 avenue Fédérico Garcia Lorca 95490 VAUREAL","chef":"M. MAREC FRANCOIS","tel":"01 34 21 18 93","mail":"ce.0951710T@ac-versailles.fr","site":"www.lyc-claudel-vaureal.ac-versailles.fr","cp":"95490","bassin":"Cergy"},{"uai":"0951673C","type":"LPO","nom":"LYC METIER GUSTAVE EIFFEL","adresse":"9 allée Jean de Florette 95120 ERMONT","chef":"M. MORIN JEROME","tel":"01 34 14 17 32","mail":"ce.0951673C@ac-versailles.fr","site":"www.lyc-eiffel-ermont.ac-versailles.fr","cp":"95120","bassin":"Enghien-Montmorency"},{"uai":"0951919V","type":"CLG","nom":"FRANCOISE DOLTO","adresse":"Rue Marcel Petit 95670 MARLY LA VILLE","chef":"M. AUZELY EMMANUEL","tel":"01 34 68 58 58","mail":"ce.0951919V@ac-versailles.fr","site":"www.clg-dolto-marly.ac-versailles.fr","cp":"95670","bassin":"Sarcelles-Lochères"},{"uai":"0951822P","type":"CLG","nom":"LEONARD DE VINCI","adresse":"11 rue Jean-Baptiste Clément 95570 BOUFFEMONT","chef":"M. PARIS ERIC","tel":"01 39 35 01 12","mail":"ce.0951822P@ac-versailles.fr","site":"","cp":"95570","bassin":"Enghien-Montmorency"},{"uai":"0950949R","type":"LP","nom":"LYC METIER JEAN MERMOZ","adresse":"21 rue Emile Combres 95560 MONTSOULT","chef":"MME ROSSI FRANCOISE","tel":"01 34 73 99 95","mail":"ce.0950949R@ac-versailles.fr","site":"www.lyc-mermoz-montsoult.ac-versailles.fr","cp":"95560","bassin":"Pontoise-Vexin"},{"uai":"0951141Z","type":"CLG","nom":"NICOLAS COPERNIC","adresse":"8 ruelle Marianne 95360 MONTMAGNY","chef":"","tel":"01 39 83 46 17","mail":"ce.0951141Z@ac-versailles.fr","site":"www.clg-copernic-montmagny.ac-versailles.fr","cp":"95360","bassin":"Enghien-Montmorency"},{"uai":"0951811C","type":"LPO","nom":"LYC METIER FERNAND ET NADIA LEGER","adresse":"7 allée Fernand et Nadia Léger 95104 ARGENTEUIL CEDEX","chef":"M. MERRIEN GILLES","tel":"01 39 98 43 43","mail":"ce.0951811C@ac-versailles.fr","site":"www.lyc-leger-argenteuil.ac-versailles.fr","cp":"95104","bassin":"Argenteuil"},{"uai":"0951399E","type":"LGT","nom":"ALFRED KASTLER","adresse":"26 avenue de la Palette 95011 CERGY PONTOISE CEDEX","chef":"","tel":"01 30 32 47 47","mail":"ce.0951399E@ac-versailles.fr","site":"www.lyc-kastler-cergy.ac-versailles.fr","cp":"95011","bassin":"Cergy"},{"uai":"0950887Y","type":"CLG","nom":"GABRIEL PERI","adresse":"30 rue Pierre Altmeyer 95870 BEZONS","chef":"MME ALLAOUA OUELD ESCHEI AICHA","tel":"01 39 82 79 91","mail":"ce.0950887Y@ac-versailles.fr","site":"www.clg-peri-bezons.ac-versailles.fr","cp":"95870","bassin":"Argenteuil"},{"uai":"0950933Y","type":"CLG","nom":"JACQUES MONOD","adresse":"13 rue Jean Zay 95260 BEAUMONT SUR OISE","chef":"","tel":"01 34 70 03 02","mail":"ce.0950933Y@ac-versailles.fr","site":"","cp":"95260","bassin":"Pontoise-Vexin"},{"uai":"0951937P","type":"LPO","nom":"PAUL-EMILE VICTOR","adresse":"116 rue de Livilliers 95520 OSNY","chef":"","tel":"01 34 35 14 14","mail":"ce.0951937P@ac-versailles.fr","site":"www.lyc-victor-osny.ac-versailles.fr","cp":"95520","bassin":"Cergy"},{"uai":"0951723G","type":"LGT","nom":"MONTESQUIEU","adresse":"165 rue Emile Zola 95220 HERBLAY SUR SEINE","chef":"MME SOUFI DJAMILA","tel":"01 34 50 71 00","mail":"ce.0951723G@ac-versailles.fr","site":"www.lyc-montesquieu-herblay.ac-versailles.fr","cp":"95220","bassin":"Argenteuil"},{"uai":"0951196J","type":"CLG","nom":"VOLTAIRE","adresse":"22 boulevard Galvani 95206 SARCELLES CEDEX","chef":"M. LE BRUN PIERRE","tel":"01 39 90 01 47","mail":"ce.0951196J@ac-versailles.fr","site":"www.voltaire-sarcelles.fr","cp":"95206","bassin":"Sarcelles-Lochères"},{"uai":"0951787B","type":"LPO","nom":"LYC METIER ARTHUR RIMBAUD","adresse":"99 avenue de la Division Leclerc 95140 GARGES LES GONESSE","chef":"","tel":"01 34 07 11 22","mail":"ce.0951787B@ac-versailles.fr","site":"www.lyc-rimbaud-garges.ac-versailles.fr","cp":"95140","bassin":"Sarcelles-Lochères"},{"uai":"0951052C","type":"CLG","nom":"BLAISE PASCAL","adresse":"Rue Blaise Pascal 95270 VIARMES","chef":"M. POPP JEAN-FRANCOIS","tel":"01 30 35 41 88","mail":"ce.0951052C@ac-versailles.fr","site":"www.clg-pascal-viarmes.ac-versailles.fr","cp":"95270","bassin":"Sarcelles-Lochères"},{"uai":"0950022H","type":"CLG","nom":"BEL AIR","adresse":"Ruelle du Moulin 95130 FRANCONVILLE LA GARENNE","chef":"MME GUILBAUD EMMANUELLE","tel":"01 34 13 58 97","mail":"ce.0950022H@ac-versailles.fr","site":"www.clg-belair-franconville.ac-versailles.fr","cp":"95130","bassin":"Enghien-Montmorency"},{"uai":"0950709E","type":"LPO","nom":"LYC METIER VIRGINIA HENDERSON","adresse":"100 avenue Charles Vaillant 95400 ARNOUVILLE","chef":"","tel":"01 39 85 21 78","mail":"ce.0950709E@ac-versailles.fr","site":"www.lyc-henderson-arnouville.ac-versailles.fr","cp":"95400","bassin":"Sarcelles-Lochères"},{"uai":"0951725J","type":"CLG","nom":"JACQUES-YVES COUSTEAU","adresse":"Rue Courtil Bajou 95540 MERY SUR OISE","chef":"","tel":"01 30 36 35 35","mail":"ce.0951725J@ac-versailles.fr","site":"www.clg-cousteau-mery.ac-versailles.fr","cp":"95540","bassin":"Pontoise-Vexin"},{"uai":"0951748J","type":"LPO","nom":"EVARISTE GALOIS","adresse":"14 boulevard Léon Blum 95260 BEAUMONT SUR OISE","chef":"","tel":"01 34 70 17 06","mail":"ce.0951748J@ac-versailles.fr","site":"www.lyc-galois-beaumont.ac-versailles.fr","cp":"95260","bassin":"Pontoise-Vexin"},{"uai":"0950045H","type":"CLG","nom":"EVARISTE GALOIS","adresse":"13 rue Jean Giraudoux 95200 SARCELLES","chef":"M. MORAND DOMINIQUE","tel":"01 39 93 11 61","mail":"ce.0950045H@ac-versailles.fr","site":"www.clg-galois-sarcelles.ac-versailles.fr","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0951801S","type":"CLG","nom":"LES MERISIERS","adresse":"Place Hector Berlioz 95280 JOUY LE MOUTIER","chef":"","tel":"01 34 40 80 80","mail":"ce.0951801S@ac-versailles.fr","site":"www.clg-merisiers-jouy.ac-versailles.fr","cp":"95280","bassin":"Cergy"},{"uai":"0951799P","type":"CLG","nom":"CHARLES LE BRUN","adresse":"3 rue le Laboureur 95160 MONTMORENCY","chef":"","tel":"01 39 64 34 86","mail":"ce.0951799P@ac-versailles.fr","site":"www.clg-lebrun-montmorency.ac-versailles.fr","cp":"95160","bassin":"Enghien-Montmorency"},{"uai":"0950885W","type":"CLG","nom":"IRENE JOLIOT-CURIE","adresse":"12 rue de Maully 95106 ARGENTEUIL CEDEX","chef":"","tel":"01 34 10 40 78","mail":"ce.0950885W@ac-versailles.fr","site":"www.clg-curie-argenteuil.ac-versailles.fr","cp":"95106","bassin":"Argenteuil"},{"uai":"0951920W","type":"CLG","nom":"FRANCOIS TRUFFAUT","adresse":"Avenue Léon Blum 95500 GONESSE","chef":"","tel":"01 39 87 66 68","mail":"ce.0951920W@ac-versailles.fr","site":"www.clg-truffaut-gonesse.ac-versailles.fr","cp":"95500","bassin":"Gonesse-Roissy"},{"uai":"0951099D","type":"CLG","nom":"JACQUES DAGUERRE","adresse":"15 rue des Carrières 95240 CORMEILLES EN PARISIS","chef":"","tel":"01 39 78 75 01","mail":"ce.0951099D@ac-versailles.fr","site":"www.clg-daguerre-cormeilles.ac-versailles.fr","cp":"95240","bassin":"Argenteuil"},{"uai":"0951724H","type":"CLG","nom":"STE APOLLINE","adresse":"Boulevard des Chasseurs 95800 COURDIMANCHE","chef":"","tel":"01 34 46 34 46","mail":"ce.0951724H@ac-versailles.fr","site":"www.clg-apolline-courdimanche.ac-versailles.fr","cp":"95800","bassin":"Cergy"},{"uai":"0951974E","type":"LPO","nom":"LOUIS ARMAND","adresse":"32 rue Stéphane Proust 95600 EAUBONNE","chef":"M. MOUYEN CEDRIC","tel":"01 34 06 10 30","mail":"ce.0951974E@ac-versailles.fr","site":"www.lycee-louis-armand-eaubonne.fr","cp":"95600","bassin":"Enghien-Montmorency"},{"uai":"0951138W","type":"CLG","nom":"JEAN-JACQUES ROUSSEAU","adresse":"13 rue Jean-Jacques Rousseau 95100 ARGENTEUIL","chef":"MME RAMIRES-VELIS FLORA","tel":"01 39 82 98 82","mail":"ce.0951138W@ac-versailles.fr","site":"www.clg-rousseau-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0951139X","type":"CLG","nom":"ALBERT CAMUS","adresse":"291 avenue Jean Jaurès 95100 ARGENTEUIL","chef":"","tel":"01 39 80 57 57","mail":"ce.0951139X@ac-versailles.fr","site":"www.clg-camus-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0951282C","type":"LP","nom":"LYC METIER DU VEXIN","adresse":"2 rue Jean Hamon 95750 CHARS","chef":"","tel":"01 30 39 78 94","mail":"ce.0951282C@ac-versailles.fr","site":"www.lyc-vexin-chars.ac-versailles.fr","cp":"95750","bassin":"Pontoise-Vexin"},{"uai":"0951756T","type":"LPO","nom":"JULES VERNE","adresse":"1 rue Michel Strogoff 95800 CERGY","chef":"","tel":"01 34 32 20 00","mail":"ce.0951756T@ac-versailles.fr","site":"www.lyc-verne-cergy.ac-versailles.fr","cp":"95800","bassin":"Cergy"},{"uai":"0950722U","type":"CLG","nom":"JEAN MOULIN","adresse":"84 rue du Poirier Baron 95110 SANNOIS","chef":"M. FAURY CEDRIC","tel":"01 34 11 75 55","mail":"ce.0950722U@ac-versailles.fr","site":"www.clg-moulin-sannois.ac-versailles.fr","cp":"95110","bassin":"Argenteuil"},{"uai":"0952128X","type":"CLG","nom":"GEORGES CHARPAK","adresse":"Rue Pierre de Coubertin 95190 GOUSSAINVILLE","chef":"MME CHABOU SONIA","tel":"01 30 18 99 98","mail":"ce.0952128X@ac-versailles.fr","site":"www.clg-charpak-goussainville.ac-versailles.fr","cp":"95190","bassin":"Pontoise-Vexin"},{"uai":"0952173W","type":"LPO","nom":"EUGENE RONCERAY","adresse":"5 rue Marcel Langlois 95875 BEZONS CEDEX","chef":"MME DENIBAS ANNIE","tel":"01 34 34 36 00","mail":"ce.0952173W@ac-versailles.fr","site":"","cp":"95875","bassin":"Argenteuil"},{"uai":"0952127W","type":"CLG","nom":"AIME CESAIRE","adresse":"14 chemin de Moisselles 95460 EZANVILLE","chef":"MME ESNARD ADAINE JOSIANE","tel":"01 30 11 81 80","mail":"ce.0952127W@ac-versailles.fr","site":"www.clg-cesaire-ezanville.ac-versailles.fr","cp":"95460","bassin":"Sarcelles-Lochères"},{"uai":"0951754R","type":"CLG","nom":"VOLTAIRE","adresse":"21 rue Voltaire 95110 SANNOIS","chef":"","tel":"01 34 10 11 77","mail":"ce.0951754R@ac-versailles.fr","site":"www.clg-voltaire-sannois.ac-versailles.fr","cp":"95110","bassin":"Argenteuil"},{"uai":"0950649P","type":"LPO","nom":"LYC METIER CAMILLE PISSARRO","adresse":"1 rue Henri Matisse 95000 PONTOISE","chef":"","tel":"01 34 41 54 54","mail":"ce.0950649P@ac-versailles.fr","site":"www.lyc-pissarro-pontoise.ac-versailles.fr","cp":"95000","bassin":"Cergy"},{"uai":"0950019E","type":"CLG","nom":"JULES FERRY","adresse":"Rue Maurice Berteaux 95123 ERMONT CEDEX","chef":"MME VERNY FLORENCE","tel":"01 34 15 89 14","mail":"ce.0950019E@ac-versailles.fr","site":"www.clg-ferry-ermont.ac-versailles.fr","cp":"95123","bassin":"Enghien-Montmorency"},{"uai":"0950657Y","type":"LP","nom":"FERDINAND BUISSON","adresse":"245 rue Ferdinand Buisson 95120 ERMONT","chef":"MME LARDE FRANCOISE","tel":"01 34 15 70 61","mail":"ce.0950657Y@ac-versailles.fr","site":"www.lyc-buisson-ermont.ac-versailles.fr","cp":"95120","bassin":"Enghien-Montmorency"},{"uai":"0950894F","type":"CLG","nom":"JEAN-CLAUDE CHABANNE","adresse":"10 impasse Chabanne 95300 PONTOISE","chef":"","tel":"01 30 32 51 00","mail":"ce.0950894F@ac-versailles.fr","site":"www.clg-chabanne-pontoise.ac-versailles.fr","cp":"95300","bassin":"Pontoise-Vexin"},{"uai":"0951722F","type":"LPO","nom":"JEAN MONNET","adresse":"Rue Jean Monnet 95131 FRANCONVILLE CEDEX","chef":"M. DUVAL PHILIPPE","tel":"01 30 72 46 61","mail":"ce.0951722F@ac-versailles.fr","site":"www.lyc-monnet-franconville.ac-versailles.fr","cp":"95131","bassin":"Enghien-Montmorency"},{"uai":"0951527U","type":"CLG","nom":"HENRI GUILLAUMET","adresse":"Place Icare 95280 JOUY LE MOUTIER","chef":"MME LIMOSINO CAROLE","tel":"01 34 43 51 00","mail":"ce.0951527U@ac-versailles.fr","site":"www.clg-guillaumet-jouy.ac-versailles.fr","cp":"95280","bassin":"Cergy"},{"uai":"0951909J","type":"CLG","nom":"MAURICE UTRILLO","adresse":"8 rue Jules Ferry 95360 MONTMAGNY","chef":"M. BIR HOCINE","tel":"01 34 28 66 70","mail":"ce.0951909J@ac-versailles.fr","site":"","cp":"95360","bassin":"Enghien-Montmorency"},{"uai":"0951233Z","type":"CLG","nom":"FRANIA EISENBACH HAVERLAND","adresse":"13 rue Bernard Astruc 95180 MENUCOURT","chef":"","tel":"01 34 42 34 72","mail":"ce.0951233Z@ac-versailles.fr","site":"www.clg-eisenbach-haverland-menucourt.ac-versailles.fr","cp":"95180","bassin":"Cergy"},{"uai":"0951766D","type":"LGT","nom":"SIMONE DE BEAUVOIR","adresse":"171 avenue de Stalingrad 95141 GARGES LES GONESSE CEDEX","chef":"","tel":"01 39 93 09 90","mail":"ce.0951766D@ac-versailles.fr","site":"www.lyc-beauvoir-garges.ac-versailles.fr","cp":"95141","bassin":"Sarcelles-Lochères"},{"uai":"0950666H","type":"LPO","nom":"LYC METIER GEORGES BRAQUE","adresse":"21 rue Victor Puiseux 95100 ARGENTEUIL","chef":"M. HOSNI ALI","tel":"01 39 96 50 50","mail":"ce.0950666H@ac-versailles.fr","site":"www.lyc-braque-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0950641F","type":"LPO","nom":"JEAN JAURES","adresse":"25 rue Charles Lecoq 95100 ARGENTEUIL","chef":"M. DORAFI JAMAL","tel":"01 39 98 50 00","mail":"ce.0950641F@ac-versailles.fr","site":"www.lyc-jaures-argenteuil.ac-versailles.fr","cp":"95100","bassin":"Argenteuil"},{"uai":"0950650R","type":"LPO","nom":"JEAN-JACQUES ROUSSEAU","adresse":"2 rue Jean-Jacques Rousseau 95200 SARCELLES","chef":"M. LESELLIER MANUEL","tel":"01 39 33 26 00","mail":"ce.0950650R@ac-versailles.fr","site":"www.lyc-rousseau-sarcelles.ac-versailles.fr","cp":"95200","bassin":"Sarcelles-Lochères"},{"uai":"0952086B","type":"CLG","nom":"MONTESQUIEU","adresse":"190 chaussée Jules César 95250 BEAUCHAMP","chef":"","tel":"01 39 32 19 00","mail":"ce.0952086B@ac-versailles.fr","site":"","cp":"95250","bassin":"Enghien-Montmorency"},{"uai":"0950893E","type":"CLG","nom":"ANDRE CHENIER","adresse":"Rue André Chénier 95600 EAUBONNE","chef":"","tel":"01 39 59 22 74","mail":"ce.0950893E@ac-versailles.fr","site":"www.clg-chenier-eaubonne.ac-versailles.fr","cp":"95600","bassin":"Enghien-Montmorency"},{"uai":"0951800R","type":"CLG","nom":"LOUIS ARAGON","adresse":"1 place Eugène Delacroix 95370 MONTIGNY LES CORMEILLES","chef":"MME BRUSCOLI LAURIANE","tel":"01 39 31 07 48","mail":"ce.0951800R@ac-versailles.fr","site":"www.clg-aragon-montigny.ac-versailles.fr","cp":"95370","bassin":"Enghien-Montmorency"},{"uai":"0952080V","type":"CLG","nom":"ROLAND VASSEUR","adresse":"11 rue Roland Vasseur 95450 VIGNY","chef":"MME BRIAND SOPHIE","tel":"01 30 39 27 23","mail":"ce.0952080V@ac-versailles.fr","site":"www.clg-vigny.ac-versailles.fr","cp":"95450","bassin":"Pontoise-Vexin"},{"uai":"0951788C","type":"LPO","nom":"GEORGE SAND","adresse":"Avenue du Lycée 95331 DOMONT CEDEX","chef":"M. AMOYAL JOSEPH","tel":"01 39 35 02 13","mail":"ce.0951788C@ac-versailles.fr","site":"www.lyc-sand-domont.ac-versailles.fr","cp":"95331","bassin":"Enghien-Montmorency"},{"uai":"0950667J","type":"LPO","nom":"ROMAIN ROLLAND","adresse":"21 avenue de Montmorency 95190 GOUSSAINVILLE","chef":"","tel":"01 39 33 95 55","mail":"ce.0950667J@ac-versailles.fr","site":"www.lyc-rolland-goussainville.ac-versailles.fr","cp":"95190","bassin":"Pontoise-Vexin"},{"uai":"0951728M","type":"LPO","nom":"EDMOND ROSTAND","adresse":"75 rue de Paris 95310 ST OUEN L AUMONE","chef":"","tel":"01 34 48 57 30","mail":"ce.0951728M@ac-versailles.fr","site":"www.lyc-rostand-st-ouen.ac-versailles.fr","cp":"95310","bassin":"Cergy"},{"uai":"0951618T","type":"LP","nom":"LYC METIER AUGUSTE ESCOFFIER","adresse":"77 rue de Pierrelaye 95610 ERAGNY SUR OISE","chef":"M. DUBOIS ARNAUD","tel":"01 34 02 40 80","mail":"ce.0951618T@ac-versailles.fr","site":"www.lyc-escoffier-eragny.ac-versailles.fr","cp":"95610","bassin":"Cergy"},{"uai":"0951727L","type":"LPO","nom":"LYC METIER CHARLES BAUDELAIRE","adresse":"13 rue du Grand Tremblay 95470 FOSSES","chef":"","tel":"01 34 72 27 00","mail":"ce.0951727L@ac-versailles.fr","site":"www.lyc-baudelaire-fosses.ac-versailles.fr","cp":"95470","bassin":"Gonesse-Roissy"},{"uai":"0950646L","type":"LGT","nom":"RENE CASSIN","adresse":"7 avenue François Mitterrand 95500 GONESSE","chef":"M. LEBOUL PHILIPPE","tel":"01 34 45 15 15","mail":"ce.0950646L@ac-versailles.fr","site":"www.lyc-cassin-gonesse.ac-versailles.fr","cp":"95500","bassin":"Gonesse-Roissy"},{"uai":"0952284S","type":"LGT","nom":"PHILIPPE KIEFFER","adresse":"2 rue Riera et Christy 95240 CORMEILLES EN PARISIS","chef":"MME AUCLAIR LIDIA","tel":"01 88 60 36 50","mail":"ce.0952284S@ac-versailles.fr","site":"","cp":"95240","bassin":"Argenteuil"},{"uai":"0952196W","type":"LPO","nom":"LYC METIER GUSTAVE MONOD","adresse":"71 avenue de Ceinture 95880 ENGHIEN LES BAINS","chef":"M. LEFEVRE PASCAL","tel":"01 39 89 32 41","mail":"ce.0952196W@ac-versailles.fr","site":"www.lyc-polyvalent-monod-enghien.fr","cp":"95880","bassin":"Enghien-Montmorency"},{"uai":"0952079U","type":"CLG","nom":"ROSA BONHEUR","adresse":"1 rue de la Sablonnière 95710 BRAY ET LU","chef":"MME BEAUJOIS VALERIE","tel":"01 30 27 35 10","mail":"ce.0952079U@ac-versailles.fr","site":"www.clg-brayetlu.ac-versailles.fr","cp":"95710","bassin":"Pontoise-Vexin"}];
+
+const BASSINS_GEO = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"nom":"Argenteuil","color":"#e74c3c","colorFill":"#e74c3c","desc":"Argenteuil · Bezons · Cormeilles-en-Parisis · Herblay-sur-Seine · Montigny-lès-Cormeilles · Sannois"},"geometry":{"type":"Polygon","coordinates":[[[2.17,48.92],[2.23,48.925],[2.28,48.94],[2.32,48.95],[2.35,48.955],[2.37,48.945],[2.38,48.92],[2.35,48.9],[2.32,48.895],[2.29,48.89],[2.25,48.885],[2.21,48.89],[2.19,48.9],[2.17,48.92]]]}},{"type":"Feature","properties":{"nom":"Enghien-Montmorency","color":"#e67e22","colorFill":"#e67e22","desc":"Enghien-les-Bains · Montmorency · Ermont · Franconville · Taverny · Soisy · Deuil-la-Barre · Eaubonne · St-Gratien · St-Leu · St-Brice · Bouffemont · Bessancourt · Domont"},"geometry":{"type":"Polygon","coordinates":[[[2.23,48.925],[2.28,48.94],[2.32,48.95],[2.35,48.955],[2.35,49.04],[2.32,49.07],[2.28,49.09],[2.23,49.095],[2.18,49.085],[2.14,49.06],[2.13,49.02],[2.14,48.97],[2.17,48.94],[2.2,48.93],[2.23,48.925]]]}},{"type":"Feature","properties":{"nom":"Cergy","color":"#2980b9","colorFill":"#2980b9","desc":"Cergy · Pontoise · Osny · Jouy-le-Moutier · Éragny · Vauréal · Saint-Ouen-l'Aumône · Menucourt · Neuville · Pierrelaye"},"geometry":{"type":"Polygon","coordinates":[[[1.95,49.0],[2.02,49.0],[2.09,49.02],[2.13,49.02],[2.14,49.06],[2.18,49.085],[2.15,49.14],[2.1,49.16],[2.05,49.17],[2.0,49.15],[1.96,49.12],[1.93,49.08],[1.92,49.04],[1.95,49.0]]]}},{"type":"Feature","properties":{"nom":"Pontoise-Vexin","color":"#16a085","colorFill":"#16a085","desc":"Pontoise · L'Isle-Adam · Auvers-sur-Oise · Persan · Beaumont-sur-Oise · Marines · Magny-en-Vexin · Chars · Bray-et-Lû · Méry · Mériel · Parmain"},"geometry":{"type":"Polygon","coordinates":[[[1.95,49.0],[2.09,49.02],[2.15,49.14],[2.1,49.16],[2.05,49.17],[2.03,49.22],[2.0,49.28],[1.95,49.32],[1.88,49.3],[1.8,49.25],[1.7,49.2],[1.65,49.15],[1.68,49.08],[1.75,49.03],[1.85,49.0],[1.95,49.0]]]}},{"type":"Feature","properties":{"nom":"Sarcelles-Lochères","color":"#8e44ad","colorFill":"#8e44ad","desc":"Sarcelles · Garges-lès-Gonesse · Villiers-le-Bel · Arnouville · Écouen · Ezanville · Viarmes · Luzarches · Montmagny · St-Brice-sous-Forêt"},"geometry":{"type":"Polygon","coordinates":[[[2.35,48.955],[2.37,48.945],[2.38,48.92],[2.42,48.93],[2.48,48.95],[2.5,48.97],[2.52,49.0],[2.5,49.05],[2.45,49.09],[2.4,49.12],[2.37,49.1],[2.35,49.04],[2.35,48.955]]]}},{"type":"Feature","properties":{"nom":"Gonesse-Roissy","color":"#27ae60","colorFill":"#27ae60","desc":"Gonesse · Goussainville · Fosses · Louvres · Marly-la-Ville · St-Witz · Écouen"},"geometry":{"type":"Polygon","coordinates":[[[2.42,48.93],[2.48,48.95],[2.5,48.97],[2.52,49.0],[2.5,49.05],[2.55,49.08],[2.6,49.1],[2.58,49.14],[2.52,49.16],[2.45,49.15],[2.4,49.12],[2.45,49.09],[2.5,49.05],[2.52,49.0],[2.5,48.97],[2.48,48.95],[2.42,48.93]]]}}]};
+
+// ── CARTE ────────────────────────────────────────────────────────────────────
+const map = L.map('map', {zoomControl:true}).setView([49.05, 2.18], 10);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution:'© OpenStreetMap © CARTO',
+  maxZoom:18
+}).addTo(map);
+
+// Légende
+const legend = L.control({position:'bottomleft'});
+legend.onAdd = () => {
+  const div = L.DomUtil.create('div','legend');
+  div.innerHTML = '<h4>Bassins d\'éducation</h4>' +
+    BASSINS_GEO.features.map(f =>
+      `<div class="legend-item" onclick="selectBassin('${f.properties.nom}')">
+        <div class="legend-dot" style="background:${f.properties.color}"></div>
+        ${f.properties.nom}
+      </div>`
+    ).join('');
+  return div;
+};
+legend.addTo(map);
+
+// ── POLYGONES ────────────────────────────────────────────────────────────────
+let activeLayer = null;
+const layers = {};
+
+BASSINS_GEO.features.forEach(feature => {
+  const nom = feature.properties.nom;
+  const color = feature.properties.color;
+
+  const layer = L.geoJSON(feature, {
+    style: {
+      color: color,
+      weight: 2.5,
+      opacity: 0.9,
+      fillColor: color,
+      fillOpacity: 0.18
+    }
+  });
+
+  layer.on('mouseover', function(e) {
+    if (activeBassin !== nom) {
+      e.target.setStyle({fillOpacity: 0.32, weight: 3});
+    }
+    L.popup({closeButton:false, offset:[0,-5]})
+      .setLatLng(e.latlng)
+      .setContent(`<div class="bassin-tooltip" style="color:${color}">${nom}</div>`)
+      .openOn(map);
+  });
+
+  layer.on('mouseout', function(e) {
+    if (activeBassin !== nom) {
+      e.target.setStyle({fillOpacity: 0.18, weight: 2.5});
+    }
+    map.closePopup();
+  });
+
+  layer.on('click', function() {
+    selectBassin(nom);
+  });
+
+  layer.addTo(map);
+  layers[nom] = layer;
+});
+
+// ── PANEL ────────────────────────────────────────────────────────────────────
+let activeBassin = null;
+let activeFilter = 'all';
+
+function selectBassin(nom) {
+  // Reset ancien bassin
+  if (activeBassin && layers[activeBassin]) {
+    const oldColor = BASSINS_GEO.features.find(f=>f.properties.nom===activeBassin)?.properties.color;
+    layers[activeBassin].setStyle({fillOpacity:0.18, weight:2.5, color:oldColor});
+  }
+
+  activeBassin = nom;
+  const feature = BASSINS_GEO.features.find(f=>f.properties.nom===nom);
+  const color = feature.properties.color;
+
+  // Surligner le bassin sélectionné
+  layers[nom].setStyle({fillOpacity:0.35, weight:3.5, color:color});
+
+  // Mettre à jour le panel
+  document.getElementById('panel-name').textContent = nom;
+  document.getElementById('panel-bar').style.background = color;
+  document.getElementById('panel-desc').textContent = feature.properties.desc;
+
+  const etabsBassin = ETABS.filter(e => e.bassin === nom);
+  document.getElementById('panel-count').innerHTML =
+    `<span style="color:${color}">${etabsBassin.length} établissements</span>`;
+
+  document.getElementById('panel-q').value = '';
+  activeFilter = 'all';
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('f-all').classList.add('active');
+
+  document.getElementById('panel').classList.remove('hidden');
+  renderList();
+
+  // Zoom sur le bassin
+  map.fitBounds(layers[nom].getBounds(), {padding:[40,40]});
+}
+
+function closePanel() {
+  if (activeBassin && layers[activeBassin]) {
+    const color = BASSINS_GEO.features.find(f=>f.properties.nom===activeBassin)?.properties.color;
+    layers[activeBassin].setStyle({fillOpacity:0.18, weight:2.5, color:color});
+  }
+  activeBassin = null;
+  document.getElementById('panel').classList.add('hidden');
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('f-'+f.toLowerCase().replace('lgt','lgt').replace('lpo','lpo').replace('lp','lp').replace('all','all')).classList.add('active');
+  renderList();
+}
+
+function renderList() {
+  if (!activeBassin) return;
+  const q = document.getElementById('panel-q').value.trim().toLowerCase();
+  const list = document.getElementById('panel-list');
+
+  let etabs = ETABS.filter(e => e.bassin === activeBassin);
+
+  if (activeFilter !== 'all') {
+    etabs = etabs.filter(e => e.type === activeFilter);
+  }
+  if (q) {
+    etabs = etabs.filter(e =>
+      (e.nom+' '+e.adresse).toLowerCase().includes(q)
+    );
+  }
+
+  etabs.sort((a,b) => a.nom.localeCompare(b.nom));
+
+  if (!etabs.length) {
+    list.innerHTML = '<div class="panel-empty">Aucun établissement pour ces critères.</div>';
+    return;
+  }
+
+  const typeClass = {
+    'CLG':'type-clg','LGT':'type-lgt','LPO':'type-lpo',
+    'LP':'type-lp','EREA':'type-erea','CFA':'type-cfa'
+  };
+  const typeLabel = {
+    'CLG':'Collège','LGT':'Lycée GT','LPO':'LPO','LP':'Lycée Pro',
+    'EREA':'EREA','CFA':'CFA',''   :'Établissement'
+  };
+
+  list.innerHTML = etabs.map(e => {
+    const tc = typeClass[e.type] || 'type-clg';
+    const tl = typeLabel[e.type] || e.type || '—';
+    const mailHtml = e.mail ? `<a class="contact-link" href="mailto:${e.mail}">✉ ${e.mail}</a>` : '';
+    const telHtml = e.tel ? `<a class="contact-link" href="tel:${e.tel.replace(/\s/g,'')}">📞 ${e.tel}</a>` : '';
+    const siteHtml = e.site ? `<a class="contact-link" href="${e.site.startsWith('http')?e.site:'https://'+e.site}" target="_blank">🌐 Site</a>` : '';
+    const chefHtml = e.chef ? `<div class="etab-chef">👤 ${e.chef}</div>` : '';
+    return `<div class="etab-card">
+      <span class="etab-type ${tc}">${tl}</span>
+      <span class="etab-uai">${e.uai}</span>
+      <div class="etab-nom">${e.nom}</div>
+      <div class="etab-adr">📍 ${e.adresse||'—'}</div>
+      <div class="etab-contacts">
+        ${chefHtml}
+        ${telHtml}${mailHtml}${siteHtml}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Init filtres boutons
+const filterMap = {'all':'f-all','CLG':'f-clg','LGT':'f-lgt','LPO':'f-lpo','LP':'f-lp'};
+</script>
+</body>
+</html>
