@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide DIGICOD — Établissement v1.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a3a5c; --sky:#2563eb; --sky-soft:#eff6ff;
+  --teal:#0d9488; --amber:#d97706; --red:#dc2626;
+  --green:#16a34a; --violet:#7c3aed;
+  --ink:#0f172a; --ink2:#334155; --muted:#64748b;
+  --rule:#e2e8f0; --surface:#f8fafc; --white:#fff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--surface);color:var(--ink);line-height:1.6;}
+
+/* HEADER */
+header{background:var(--navy);padding:0 24px;height:52px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:200;}
+.back-btn{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.78rem;font-weight:500;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:5px 12px;}
+.back-btn:hover{background:rgba(255,255,255,.2);}
+.header-title{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:700;color:#fff;}
+.header-badge{margin-left:auto;font-size:.68rem;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:3px 9px;}
+
+/* LAYOUT */
+.layout{display:flex;max-width:1200px;margin:0 auto;padding:0 24px;}
+
+/* SOMMAIRE */
+.toc{width:260px;flex-shrink:0;padding:28px 0 48px;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;border-right:1px solid var(--rule);}
+.toc-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0 16px 10px;margin-bottom:4px;}
+.toc-item{display:block;padding:5px 16px;font-size:.75rem;color:var(--ink2);text-decoration:none;border-left:2px solid transparent;transition:all .12s;line-height:1.4;}
+.toc-item:hover{color:var(--sky);border-left-color:var(--sky);background:var(--sky-soft);}
+.toc-item.active{color:var(--sky);border-left-color:var(--sky);font-weight:600;}
+.toc-item.l2{padding-left:28px;font-size:.72rem;}
+.toc-item.l3{padding-left:42px;font-size:.7rem;color:var(--muted);}
+.toc-sep{height:1px;background:var(--rule);margin:10px 16px;}
+
+/* CONTENU */
+.content{flex:1;padding:32px 0 80px 48px;min-width:0;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg, var(--navy) 0%, #1e4976 100%);border-radius:14px;padding:28px 32px;margin-bottom:36px;display:flex;align-items:center;gap:24px;}
+.hero-logo{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 16px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;flex-shrink:0;}
+.hero-logo span{color:#60a5fa;}
+.hero-body{}
+.hero-title{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:4px;}
+.hero-sub{font-size:.8rem;color:rgba(255,255,255,.6);}
+.hero-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+.hero-tag{font-size:.68rem;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:2px 8px;}
+
+/* SECTIONS */
+.section{margin-bottom:40px;scroll-margin-top:72px;}
+.section-num{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sky);margin-bottom:6px;}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--rule);}
+.sub-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);margin:20px 0 10px;scroll-margin-top:72px;}
+.sub-title-sm{font-size:.85rem;font-weight:700;color:var(--ink2);margin:14px 0 8px;scroll-margin-top:72px;}
+
+/* PROSE */
+p{font-size:.88rem;color:var(--ink2);margin-bottom:10px;line-height:1.7;}
+strong{color:var(--ink);font-weight:600;}
+
+/* ÉTAPES */
+.steps{display:flex;flex-direction:column;gap:10px;margin:14px 0;}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1.5px solid var(--rule);border-radius:10px;padding:12px 16px;}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--sky);color:#fff;font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-body{flex:1;}
+.step-title{font-weight:600;font-size:.84rem;color:var(--ink);margin-bottom:3px;}
+.step-desc{font-size:.8rem;color:var(--ink2);line-height:1.5;}
+.step.important .step-num{background:var(--amber);}
+.step.important{border-color:#fde68a;background:#fffbeb;}
+.step.required .step-num{background:var(--red);}
+.step.required{border-color:#fecaca;background:#fff5f5;}
+
+/* ALERTES */
+.alert{border-radius:8px;padding:12px 16px;margin:14px 0;display:flex;gap:10px;align-items:flex-start;font-size:.82rem;line-height:1.5;}
+.alert-icon{font-size:1rem;flex-shrink:0;margin-top:1px;}
+.alert.info{background:var(--sky-soft);border:1.5px solid #bfdbfe;color:#1e40af;}
+.alert.warning{background:#fffbeb;border:1.5px solid #fde68a;color:#92400e;}
+.alert.danger{background:#fff5f5;border:1.5px solid #fecaca;color:#991b1b;}
+.alert.success{background:#f0fdf4;border:1.5px solid #bbf7d0;color:#166534;}
+
+/* CODES COULEUR */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0;}
+.color-item{background:var(--white);border:1.5px solid var(--rule);border-radius:9px;padding:10px 14px;display:flex;gap:10px;align-items:center;}
+.color-dot{width:18px;height:18px;border-radius:50%;flex-shrink:0;border:2px solid rgba(0,0,0,.08);}
+.color-label{font-size:.78rem;font-weight:600;color:var(--ink);}
+.color-desc{font-size:.72rem;color:var(--muted);}
+
+/* DOCS TABLE */
+.docs-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:12px 0;}
+.docs-table th{background:var(--surface);padding:8px 12px;text-align:left;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:2px solid var(--rule);}
+.docs-table td{padding:8px 12px;border-bottom:1px solid var(--rule);color:var(--ink2);vertical-align:top;}
+.docs-table tr:hover td{background:var(--sky-soft);}
+
+/* WORKFLOW */
+.workflow{display:flex;gap:0;margin:16px 0;flex-wrap:wrap;}
+.wf-step{background:var(--white);border:1.5px solid var(--rule);border-radius:8px;padding:10px 14px;font-size:.75rem;font-weight:600;color:var(--ink);position:relative;flex:1;min-width:120px;text-align:center;}
+.wf-step::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.9rem;z-index:1;}
+.wf-step:last-child::after{display:none;}
+.wf-step .wf-sub{font-weight:400;color:var(--muted);font-size:.68rem;margin-top:2px;}
+.wf-step.done{background:#f0fdf4;border-color:#bbf7d0;color:var(--green);}
+.wf-step.active{background:var(--sky-soft);border-color:#93c5fd;color:var(--sky);}
+.wf-step.locked{background:var(--surface);color:var(--muted);}
+
+/* CARD GRID */
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.info-card{background:var(--white);border:1.5px solid var(--rule);border-radius:9px;padding:12px 14px;}
+.info-card-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;}
+.info-card ul{list-style:none;padding:0;}
+.info-card li{font-size:.78rem;color:var(--ink2);padding:3px 0;display:flex;gap:6px;align-items:flex-start;}
+.info-card li::before{content:'•';color:var(--sky);flex-shrink:0;}
+
+/* TAG INLINE */
+.tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:.68rem;font-weight:700;vertical-align:middle;}
+.tag-blue{background:#dbeafe;color:#1d4ed8;}
+.tag-green{background:#d1fae5;color:#065f46;}
+.tag-amber{background:#fef3c7;color:#92400e;}
+.tag-red{background:#fee2e2;color:#991b1b;}
+.tag-navy{background:#e0e7ff;color:#3730a3;}
+
+kbd{background:var(--surface);border:1.5px solid var(--rule);border-radius:4px;padding:1px 6px;font-size:.72rem;font-family:monospace;color:var(--ink);}
+
+@media(max-width:900px){
+  .toc{display:none;}
+  .content{padding:24px 0 48px;}
+  .layout{padding:0 16px;}
+  .card-row{grid-template-columns:1fr;}
+  .workflow{flex-direction:column;}
+  .wf-step::after{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">← Portail</a>
+  <span class="header-title">Guide DIGICOD — Établissement</span>
+  <span class="header-badge">v1.1 · Rectorat de Versailles</span>
+</header>
+
+<div class="layout">
+
+  <!-- SOMMAIRE -->
+  <nav class="toc">
+    <div class="toc-title">Sommaire</div>
+    <a class="toc-item" href="#intro">Présentation</a>
+    <a class="toc-item" href="#acces">1. Accès à l'application</a>
+    <a class="toc-item l2" href="#connexion">Connexion au portail</a>
+    <a class="toc-item l2" href="#multi-etab">Profil multi-établissements</a>
+    <a class="toc-item" href="#charte">2. Charte d'utilisation</a>
+    <a class="toc-item" href="#codes">3. Codes couleur</a>
+    <a class="toc-item" href="#gestion">4. Gestion des conseils</a>
+    <a class="toc-item l2" href="#creer">4.1 Créer un dossier</a>
+    <a class="toc-item l3" href="#chercher-eleve">Rechercher l'élève</a>
+    <a class="toc-item l3" href="#renseigner">Renseigner le dossier</a>
+    <a class="toc-item l3" href="#publier">Publier le dossier</a>
+    <a class="toc-item l3" href="#departemental">CD départemental</a>
+    <a class="toc-item l2" href="#reunion">4.2 Préparer la réunion</a>
+    <a class="toc-item l3" href="#ajouter-reunion">Ajouter une réunion</a>
+    <a class="toc-item l3" href="#valider-cd">Valider le conseil</a>
+    <a class="toc-item l2" href="#decision">4.3 Saisir la décision</a>
+    <div class="toc-sep"></div>
+    <a class="toc-item" href="#outils">5. Outils annexes</a>
+    <a class="toc-item l2" href="#documents">Déposer des documents</a>
+    <a class="toc-item l2" href="#commentaires">Commentaires</a>
+    <a class="toc-item l2" href="#export">Export PDF</a>
+    <a class="toc-item l2" href="#historique">Historique</a>
+    <div class="toc-sep"></div>
+    <a class="toc-item" href="#post-cd">6. Actions post-CD</a>
+    <a class="toc-item" href="#reaffectations">7. Réaffectations</a>
+    <a class="toc-item" href="#aide">8. Menu Aide</a>
+    <a class="toc-item" href="#infos">9. Infos complémentaires</a>
+  </nav>
+
+  <!-- CONTENU -->
+  <main class="content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-logo">DIG<span>|</span>COD</div>
+      <div class="hero-body">
+        <div class="hero-title">Guide établissement — DIGICOD v1.1</div>
+        <div class="hero-sub">Dispositif de Gestion Informatisée des Conseils de Discipline · Rectorat de Versailles · DSI</div>
+        <div class="hero-tags">
+          <span class="hero-tag">Application web</span>
+          <span class="hero-tag">Profil EPLE</span>
+          <span class="hero-tag">Académie de Versailles</span>
+          <span class="hero-tag">31 pages</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="section" id="intro">
+      <div class="section-num">Présentation</div>
+      <div class="section-title">Qu'est-ce que DIGICOD ?</div>
+      <p>DIGICOD (version 2) est une application web académique qui permet la <strong>gestion dématérialisée des conseils de discipline</strong>. Elle regroupe trois acteurs principaux : les EPLE, les services DSDEN/Rectorat, et les administrateurs DSI.</p>
+      <div class="alert info"><span class="alert-icon">ℹ️</span>Les données nominatives présentes dans les copies d'écran du guide officiel sont toutes fictives. Les données non fictives ont été floutées.</div>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Acteurs de l'application</div>
+          <ul>
+            <li>EPLE (établissements)</li>
+            <li>DSDEN (département)</li>
+            <li>Rectorat</li>
+            <li>Administrateurs DSI</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Glossaire rapide</div>
+          <ul>
+            <li><strong>CD</strong> — Conseil de Discipline</li>
+            <li><strong>DSDEN</strong> — Direction des Services Départementaux de l'EN</li>
+            <li><strong>EPLE</strong> — Établissement Public Local d'Enseignement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. ACCÈS -->
+    <div class="section" id="acces">
+      <div class="section-num">Section 1</div>
+      <div class="section-title">Accès à l'application</div>
+
+      <div class="sub-title" id="connexion">Se connecter au portail</div>
+      <p>Le portail est accessible de deux façons selon votre situation :</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">🏢 Intranet (réseau interne)</div>
+          <ul>
+            <li>URL : <strong>https://intranet.in.ac-academie.fr</strong></li>
+            <li>Identifiant : UID (messagerie)</li>
+            <li>Mot de passe : mot de passe messagerie</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">🌐 Internet (hors réseau)</div>
+          <ul>
+            <li>URL : <strong>https://id.ac-academie.fr</strong></li>
+            <li>Identifiant : UID (messagerie)</li>
+            <li>Mot de passe : Passcode OTP (clef)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">S'authentifier</div>
+            <div class="step-desc">Saisir son UID et son mot de passe (ou Passcode OTP) sur la page d'authentification du portail.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Choisir le domaine « Scolarité du 2nd degré »</div>
+            <div class="step-desc">Dans le portail d'applications, sélectionner ce domaine dans le menu de gauche.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur DIGICOD</div>
+            <div class="step-desc">Dans la rubrique « Applications locales de gestion de scolarité du 2nd degré », cliquer sur <strong>DIGICOD – Gestion des conseils de discipline</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Une fois connecté, vos données d'authentification (nom, profil, établissement) apparaissent en haut à droite. Le menu de navigation donne accès aux rubriques <kbd>CONSEILS</kbd> <kbd>RÉAFFECTATIONS</kbd> <kbd>AIDE</kbd>.</p>
+
+      <div class="sub-title" id="multi-etab">Profil avec plusieurs établissements</div>
+      <p>Si votre profil est rattaché à plusieurs établissements, une liste de sélection s'affiche à la connexion. Cliquez sur l'établissement souhaité pour accéder à la page d'accueil. Vous pouvez ensuite changer d'établissement à tout moment via le bouton <kbd>PERMUTER</kbd> en haut à droite.</p>
+    </div>
+
+    <!-- 2. CHARTE -->
+    <div class="section" id="charte">
+      <div class="section-num">Section 2</div>
+      <div class="section-title">Charte d'utilisation</div>
+      <p>Lors de la <strong>première connexion</strong>, une charte d'utilisation doit être acceptée avant d'accéder à l'application.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">✓</div>
+          <div class="step-body">
+            <div class="step-title">Cocher la case de confirmation</div>
+            <div class="step-desc">« J'ai pris connaissance des conditions d'utilisation et m'engage à les respecter »</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">✓</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Accepter »</div>
+            <div class="step-desc">Vous serez alors redirigé vers la page d'accueil de l'application.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert warning"><span class="alert-icon">⚠️</span>La charte rappelle que l'application ne doit être utilisée <strong>qu'à des fins professionnelles</strong>, que les identifiants ne doivent pas être partagés, et que les données nominatives ne doivent pas être diffusées en dehors du cadre professionnel.</div>
+    </div>
+
+    <!-- 3. CODES COULEUR -->
+    <div class="section" id="codes">
+      <div class="section-num">Section 3</div>
+      <div class="section-title">Code couleur et iconographie</div>
+      <p>Des <strong>puces colorées</strong> indiquent l'état d'avancement de chaque étape du dossier. Ce même code s'applique dans le tableau de suivi des conseils de discipline.</p>
+      <div class="color-grid">
+        <div class="color-item">
+          <div class="color-dot" style="background:#f59e0b;"></div>
+          <div><div class="color-label">🟡 Orange</div><div class="color-desc">En attente d'une validation</div></div>
+        </div>
+        <div class="color-item">
+          <div class="color-dot" style="background:#ef4444;"></div>
+          <div><div class="color-label">🔴 Rouge</div><div class="color-desc">En attente d'une action (création)</div></div>
+        </div>
+        <div class="color-item">
+          <div class="color-dot" style="background:#22c55e;"></div>
+          <div><div class="color-label">🟢 Vert (plein)</div><div class="color-desc">Tâche réalisée / terminée — action de l'utilisateur connecté</div></div>
+        </div>
+        <div class="color-item">
+          <div class="color-dot" style="background:#fff;border:2px solid #94a3b8;"></div>
+          <div><div class="color-label">⚪ Blanc (vide)</div><div class="color-desc">Action hors périmètre / à faire par un autre acteur</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. GESTION -->
+    <div class="section" id="gestion">
+      <div class="section-num">Section 4</div>
+      <div class="section-title">Pas-à-pas : gestion des conseils de discipline</div>
+      <p>Toute la gestion des dossiers est accessible via le menu <kbd>CONSEILS</kbd>. La page d'accueil affiche tous les CD de l'établissement non encore archivés.</p>
+
+      <div class="workflow">
+        <div class="wf-step active">Créer le dossier<div class="wf-sub">Rechercher l'élève</div></div>
+        <div class="wf-step">Publier<div class="wf-sub">Facultatif</div></div>
+        <div class="wf-step">Ajouter une réunion<div class="wf-sub">Obligatoire</div></div>
+        <div class="wf-step">Valider le CD<div class="wf-sub">Après réunion</div></div>
+        <div class="wf-step">Saisir la décision<div class="wf-sub">Post-conseil</div></div>
+        <div class="wf-step locked">Valider la décision<div class="wf-sub">Finalisation</div></div>
+      </div>
+
+      <!-- 4.1 Créer -->
+      <div class="sub-title" id="creer">4.1 — Créer un conseil de discipline</div>
+
+      <div class="sub-title-sm" id="chercher-eleve">Rechercher l'élève concerné</div>
+      <p>La création d'un CD se fait depuis la page des conseils de l'élève. Deux méthodes d'accès :</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">📋 Depuis la liste existante</div>
+          <ul><li>Cliquer directement sur le nom de l'élève s'il apparaît déjà dans la liste des CD</li></ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">🔍 Depuis la barre de recherche</div>
+          <ul><li>Saisir au moins <strong>2 caractères</strong> du nom de famille</li><li>Cliquer sur le nom dans les résultats</li></ul>
+        </div>
+      </div>
+
+      <div class="sub-title-sm" id="renseigner">Créer et renseigner le dossier</div>
+      <p>Depuis la page de l'élève, cliquer sur <kbd>Créer un dossier conseil de discipline</kbd>. Une page de saisie s'ouvre :</p>
+
+      <div class="steps">
+        <div class="step required">
+          <div class="step-num">!</div>
+          <div class="step-body">
+            <div class="step-title">Motif principal <span class="tag tag-red">Obligatoire</span></div>
+            <div class="step-desc">Seul champ obligatoire pour créer le dossier. Sélectionner dans la liste déroulante.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Motifs secondaires <span class="tag tag-blue">Facultatif</span></div>
+            <div class="step-desc">De 0 à 2 motifs secondaires possibles.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Qualification des faits <span class="tag tag-amber">Requis pour publier</span></div>
+            <div class="step-desc">Saisie libre. Pas obligatoire à la création mais indispensable pour pouvoir publier le dossier.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Date des faits <span class="tag tag-blue">Facultatif</span></div>
+            <div class="step-desc">Si renseignée, elle apparaîtra automatiquement dans les courriers générés.</div>
+          </div>
+        </div>
+        <div class="step important">
+          <div class="step-num">⚠</div>
+          <div class="step-body">
+            <div class="step-title">Mesure conservatoire</div>
+            <div class="step-desc">En cochant cette case, des modèles de documents spécifiques sont proposés (notification de mesure conservatoire, convocation avec mention). La mesure conservatoire doit répondre à une véritable nécessité et ne peut être mise en place qu'avant le conseil de discipline.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Enregistrer »</div>
+            <div class="step-desc">Le dossier est créé en mode <strong>brouillon</strong>. Les informations ne sont visibles que de l'établissement jusqu'à publication.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert info"><span class="alert-icon">💡</span>Après enregistrement, il est possible de modifier les informations de scolarité (niveau, classe, observations) en cliquant sur <kbd>Modifier</kbd> dans le bloc « Informations de scolarité ». Ces informations ne sont modifiables que tant que le dossier n'est pas validé.</div>
+
+      <!-- Informations pour les documents -->
+      <div class="sub-title-sm">Informations nécessaires à la génération des documents</div>
+      <p>En cliquant sur le bandeau dédié, vous accédez aux coordonnées des représentants légaux, de l'élève, et au nom du chef d'établissement. Ces informations servent à pré-remplir les courriers générés.</p>
+      <div class="alert warning"><span class="alert-icon">⚠️</span>Les informations saisies dans ce dossier sont indépendantes des dossiers précédents, mais seront reprises automatiquement à la création du prochain dossier de cet élève. Elles restent modifiables jusqu'à la validation de la décision.</div>
+
+      <!-- 4.1.5 Publier -->
+      <div class="sub-title" id="publier">4.1.5 — Publier le dossier</div>
+      <p>La publication est <strong>facultative à ce stade</strong> mais devient obligatoire avant de valider le conseil. Elle rend le dossier visible par la DSDEN et le Rectorat, et donne accès aux modèles de documents (convocations, notifications).</p>
+
+      <div class="steps">
+        <div class="step required">
+          <div class="step-num">!</div>
+          <div class="step-body">
+            <div class="step-title">Prérequis : « Qualification des faits » doit être remplie</div>
+            <div class="step-desc">Sans ce champ, le bouton Publier affiche un message d'avertissement et la publication est bloquée.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Publier » dans le bandeau bleu</div>
+            <div class="step-desc">Le dossier devient visible par tous les acteurs dans leur périmètre géographique (la DSDEN du 78 ne voit que les établissements du 78).</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Après publication, les <strong>modèles de documents Word</strong> sont disponibles : réponse négative à demande de saisine, demande dossier administratif élève, et en cas de mesure conservatoire : notifications aux représentants légaux.</p>
+
+      <!-- 4.1.6 CD Départemental -->
+      <div class="sub-title" id="departemental">4.1.6 — Cas particulier : CD départemental</div>
+      <p>Si la case « conseil de discipline départemental » a été cochée à la création, après publication le bouton <kbd>Transmettre gestion dossier à la DSDEN</kbd> apparaît.</p>
+      <div class="alert danger"><span class="alert-icon">🚨</span><strong>Action irréversible côté établissement.</strong> Une fois la gestion transmise à la DSDEN, vous ne pouvez plus modifier ni gérer le dossier. Seule la DSDEN peut vous rendre la main en cas d'erreur. Vous conservez néanmoins la possibilité de consulter le dossier tout au long de son traitement.</div>
+
+      <!-- 4.2 Réunion -->
+      <div class="sub-title" id="reunion">4.2 — Préparer la réunion du conseil de discipline</div>
+      <p>Le dossier doit obligatoirement contenir <strong>au moins une réunion</strong> avant de pouvoir être validé.</p>
+
+      <div class="sub-title-sm" id="ajouter-reunion">Ajouter une réunion</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Ajouter une réunion » dans le bloc Réunion du CD</div>
+            <div class="step-desc">Une fenêtre de saisie s'ouvre.</div>
+          </div>
+        </div>
+        <div class="step required">
+          <div class="step-num">!</div>
+          <div class="step-body">
+            <div class="step-title">Renseigner la date et l'heure <span class="tag tag-red">Obligatoire</span></div>
+            <div class="step-desc">Seul champ obligatoire. Cliquer sur l'icône calendrier pour sélectionner le jour puis l'heure.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Définir le lieu <span class="tag tag-blue">Facultatif</span></div>
+            <div class="step-desc">Par défaut : l'établissement créateur du dossier. Pour délocaliser la réunion, cocher la case dédiée et saisir l'adresse exacte.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Enregistrer »</div>
+            <div class="step-desc">La réunion apparaît dans le bloc. Elle reste modifiable et supprimable tant que le CD n'est pas validé.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert warning"><span class="alert-icon">⚠️</span><strong>Quorum non atteint ?</strong> Si le quorum n'est pas atteint lors d'une première réunion, ne pas la supprimer (conservation à titre d'historique). Ajouter une seconde réunion en commentant la situation. Seule la réunion avec la date la plus récente sera utilisée pour la génération des documents.</div>
+
+      <!-- 4.2.4 Valider -->
+      <div class="sub-title-sm" id="valider-cd">Valider le conseil de discipline</div>
+      <p>La validation n'est possible que si le dossier a été publié ET qu'une réunion a été ajoutée.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Valider ce conseil de discipline » (bandeau jaune)</div>
+            <div class="step-desc">Le dossier est validé. Les informations de qualification des faits et les réunions ne sont plus modifiables.</div>
+          </div>
+        </div>
+      </div>
+      <p>Après validation, de nouveaux modèles de documents sont disponibles : <strong>convocations</strong> (élève, représentants légaux, défenseur, membres du CD, témoins…), <strong>listes d'émargement</strong> et <strong>procès-verbal</strong>.</p>
+      <div class="alert info"><span class="alert-icon">💡</span>Pour modifier le dossier après validation (avant saisie de la décision), utiliser le bouton <kbd>Dévalider le conseil</kbd>.</div>
+
+      <!-- 4.3 Décision -->
+      <div class="sub-title" id="decision">4.3 — Renseigner la décision du conseil</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Saisir une décision » dans le bloc Décision</div>
+            <div class="step-desc">Une fenêtre de saisie s'ouvre.</div>
+          </div>
+        </div>
+        <div class="step required">
+          <div class="step-num">!</div>
+          <div class="step-body">
+            <div class="step-title">Sélectionner la décision <span class="tag tag-red">Obligatoire</span></div>
+            <div class="step-desc">Choisir dans la liste déroulante. Seul ce champ est obligatoire pour enregistrer.</div>
+          </div>
+        </div>
+        <div class="step important">
+          <div class="step-num">⚠</div>
+          <div class="step-body">
+            <div class="step-title">Modification possible des qualifications et motifs</div>
+            <div class="step-desc">À ce stade uniquement, il est possible de modifier la qualification des faits, le motif principal et les motifs secondaires selon les décisions prises lors de la réunion. <strong>Attention : la nouvelle saisie écrase la précédente sans historisation.</strong></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Cliquer sur « Enregistrer » puis « Valider la décision »</div>
+            <div class="step-desc">La validation de la décision <strong>finalise la gestion du CD par l'établissement</strong>. Le dossier n'est plus modifiable. De nouveaux modèles sont alors disponibles : rapport de synthèse, liste des documents pour appel, courriers de notification.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert info"><span class="alert-icon">💡</span>Tant qu'aucun autre acteur n'est intervenu (ex : DSDEN pour réaffectation), il est possible de <strong>dévalider la décision</strong> via le bouton dédié dans le bandeau bleu.</div>
+    </div>
+
+    <!-- 5. OUTILS -->
+    <div class="section" id="outils">
+      <div class="section-num">Section 5</div>
+      <div class="section-title">Outils annexes de gestion du dossier</div>
+
+      <div class="sub-title" id="documents">5.1 — Déposer des documents</div>
+      <p>Une fois les documents produits, signés et numérisés, ils peuvent être joints au dossier pour partage sécurisé avec la DSDEN et le Rectorat. Les documents sont <strong>chiffrés</strong> sur les serveurs académiques.</p>
+      <div class="alert info"><span class="alert-icon">📎</span>Seuls les formats <span class="tag tag-blue">PDF</span> et <span class="tag tag-blue">JPG</span> sont acceptés. Seule l'entité ayant déposé un document peut le remplacer ou le supprimer. Tout document déposé est visible par tous les acteurs ayant accès au dossier.</div>
+      <p>Types de documents disponibles selon l'étape : convocations, décision finale, fiche de rescolarisation (navette), listes d'émargement, PV de séance, rapport de synthèse.</p>
+
+      <div class="sub-title" id="commentaires">5.2 — Commentaires de suivi</div>
+      <p>Permettent à tous les acteurs d'ajouter des informations de suivi ne trouvant pas leur place dans les champs structurés. Chaque commentaire est horodaté et identifié par son auteur. Les commentaires apparaissent dans l'export PDF.</p>
+      <div class="alert warning"><span class="alert-icon">⚠️</span>N'utiliser les commentaires qu'à des fins de <strong>bon suivi administratif</strong> des conseils de discipline, conformément à la charte d'utilisation.</div>
+
+      <div class="sub-title" id="export">5.3 — Export PDF</div>
+      <p>Le bouton <kbd>Export PDF</kbd> (à droite du numéro de dossier) génère un export complet non modifiable, incluant :</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Informations exportées</div>
+          <ul>
+            <li>État civil de l'élève</li>
+            <li>Représentants légaux</li>
+            <li>Informations de scolarité</li>
+            <li>Qualification des faits</li>
+            <li>Réunion(s)</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">&nbsp;</div>
+          <ul>
+            <li>Décision</li>
+            <li>Actions post-CD</li>
+            <li>Appel</li>
+            <li>Recours</li>
+            <li>Tous les commentaires</li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert info"><span class="alert-icon">💡</span>L'export PDF peut être remis aux familles souhaitant consulter le contenu exhaustif du dossier qui les concerne.</div>
+
+      <div class="sub-title" id="historique">5.4 — Historique du dossier</div>
+      <p>Accessible via <kbd>Historique des actions sur ce dossier</kbd> en haut à droite de la page du CD. Affiche les dates, heures et auteurs de chaque action majeure (création, publication, validation, dévalidation…). Visible par tous les acteurs ayant accès au dossier.</p>
+    </div>
+
+    <!-- 6. POST-CD -->
+    <div class="section" id="post-cd">
+      <div class="section-num">Section 6</div>
+      <div class="section-title">Actions post-CD</div>
+      <p>Une fois le CD tenu et la décision validée, la DSDEN et le Rectorat peuvent intervenir. L'établissement suit ces étapes <strong>en lecture seule</strong>.</p>
+      <div class="color-grid">
+        <div class="color-item">
+          <div class="color-dot" style="background:var(--teal);"></div>
+          <div><div class="color-label">Action</div><div class="color-desc">Réaffectation de l'élève suite à exclusion définitive sans sursis — géré par la DSDEN</div></div>
+        </div>
+        <div class="color-item">
+          <div class="color-dot" style="background:var(--amber);"></div>
+          <div><div class="color-label">Appel</div><div class="color-desc">Demande d'appel de la famille — visible mais sans action EPLE possible</div></div>
+        </div>
+        <div class="color-item">
+          <div class="color-dot" style="background:var(--violet);"></div>
+          <div><div class="color-label">Recours</div><div class="color-desc">Recours au tribunal administratif — visible mais sans action EPLE possible</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. RÉAFFECTATIONS -->
+    <div class="section" id="reaffectations">
+      <div class="section-num">Section 7</div>
+      <div class="section-title">Menu Réaffectations</div>
+      <p>Accessible via <kbd>RÉAFFECTATIONS</kbd> dans la barre de navigation. Permet de suivre les mouvements d'élèves au sein de l'établissement (entrées et sorties suite à conseils de discipline). Un survol de la flèche rappelle la décision associée. Le filtre par année scolaire permet de naviguer dans l'historique.</p>
+    </div>
+
+    <!-- 8. AIDE -->
+    <div class="section" id="aide">
+      <div class="section-num">Section 8</div>
+      <div class="section-title">Menu Aide</div>
+      <p>Le menu <kbd>AIDE</kbd> centralise les ressources et les contacts d'assistance :</p>
+      <table class="docs-table">
+        <thead><tr><th>Ressource</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Guide DIGICOD DSDEN / Rectorat</strong></td><td>Guide de recette version 1 destiné aux DSDEN et au Rectorat</td></tr>
+          <tr><td><strong>Guide DIGICOD EPLE</strong></td><td>Le présent guide pas à pas pour les établissements (v0.7)</td></tr>
+          <tr><td><strong>Arbre de décision</strong></td><td>Ressource académique en ligne pour les conseils de discipline</td></tr>
+          <tr><td><strong>CARIINA</strong></td><td>Portail d'assistance informatique académique (24h/7j)</td></tr>
+          <tr><td><strong>Assistance téléphonique</strong></td><td>Numéro de Cariina : <strong>01 30 83 43 00</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 9. INFOS -->
+    <div class="section" id="infos">
+      <div class="section-num">Section 9</div>
+      <div class="section-title">Informations complémentaires</div>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">📋 Journalisation</div>
+          <ul>
+            <li>Toutes les actions utilisateurs sont historisées nominativement</li>
+            <li>Journal consultable par les administrateurs</li>
+            <li>L'historique des changements de statut est visible par tous les acteurs</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">🔒 Confidentialité (RGPD)</div>
+          <ul>
+            <li>Application inscrite au registre académique RGPD</li>
+            <li>Données personnelles sensibles — usage strictement professionnel</li>
+            <li>Accès par profil et périmètre, toujours authentifié</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub-title-sm">Règles d'archivage</div>
+      <p>L'archivage est automatisé et anonymisé. La date de référence est la <strong>date de la décision du CD</strong>.</p>
+      <table class="docs-table">
+        <thead><tr><th>Type de décision</th><th>Date d'archivage anonymisé</th></tr></thead>
+        <tbody>
+          <tr><td>Exclusion définitive (avec ou sans sursis)</td><td>Date de sortie de l'élève de l'académie</td></tr>
+          <tr><td>Autres décisions — avec sursis</td><td>Fin d'année scolaire</td></tr>
+          <tr><td>Autres décisions — sans sursis</td><td>Premier anniversaire de la décision</td></tr>
+          <tr><td>Dossier en appel/recours</td><td>Clôture suspendue — traitement manuel par les services</td></tr>
+        </tbody>
+      </table>
+      <div class="alert info"><span class="alert-icon">💡</span>La date d'archivage prévue pour chaque dossier clos est visible dans le tableau principal des conseils de discipline. Un dossier clos peut, dans certaines conditions, être rouvert.</div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// Sommaire actif au scroll
+const sections = document.querySelectorAll('[id]');
+const tocLinks = document.querySelectorAll('.toc-item');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.toc-item[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, {rootMargin:'-60px 0px -70% 0px'});
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
