@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Dém'Act — Manuel utilisateur EPLE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a3a5c; --sky:#2563eb; --sky-soft:#eff6ff;
+  --teal:#0d9488; --teal-soft:#f0fdfa;
+  --amber:#d97706; --red:#dc2626; --green:#16a34a;
+  --violet:#7c3aed; --violet-soft:#f5f3ff;
+  --ink:#0f172a; --ink2:#334155; --muted:#64748b;
+  --rule:#e2e8f0; --surface:#f8fafc; --white:#fff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--surface);color:var(--ink);line-height:1.6;}
+
+header{background:var(--navy);padding:0 24px;height:52px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:200;}
+.back-btn{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.78rem;font-weight:500;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:5px 12px;}
+.back-btn:hover{background:rgba(255,255,255,.2);}
+.header-title{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:700;color:#fff;}
+.header-badge{margin-left:auto;font-size:.68rem;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:3px 9px;}
+
+.layout{display:flex;max-width:1200px;margin:0 auto;padding:0 24px;}
+
+/* SOMMAIRE */
+.toc{width:260px;flex-shrink:0;padding:28px 0 48px;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;border-right:1px solid var(--rule);}
+.toc-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0 16px 10px;}
+.toc-item{display:block;padding:5px 16px;font-size:.75rem;color:var(--ink2);text-decoration:none;border-left:2px solid transparent;transition:all .12s;line-height:1.4;}
+.toc-item:hover{color:var(--teal);border-left-color:var(--teal);background:var(--teal-soft);}
+.toc-item.active{color:var(--teal);border-left-color:var(--teal);font-weight:600;}
+.toc-item.l2{padding-left:28px;font-size:.72rem;}
+.toc-item.l3{padding-left:42px;font-size:.7rem;color:var(--muted);}
+.toc-sep{height:1px;background:var(--rule);margin:8px 16px;}
+
+/* CONTENU */
+.content{flex:1;padding:32px 0 80px 48px;min-width:0;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0d6e63 0%,#0f766e 100%);border-radius:14px;padding:28px 32px;margin-bottom:36px;display:flex;align-items:center;gap:24px;}
+.hero-logo{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;flex-shrink:0;text-align:center;line-height:1.2;}
+.hero-logo small{display:block;font-size:.6rem;font-weight:400;opacity:.7;letter-spacing:.04em;margin-top:2px;}
+.hero-title{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:4px;}
+.hero-sub{font-size:.8rem;color:rgba(255,255,255,.65);}
+.hero-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+.hero-tag{font-size:.68rem;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.18);border-radius:5px;padding:2px 8px;}
+
+/* SECTIONS */
+.section{margin-bottom:40px;scroll-margin-top:72px;}
+.section-num{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:6px;}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--rule);}
+.sub-title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin:20px 0 10px;scroll-margin-top:72px;}
+.sub-title-sm{font-size:.84rem;font-weight:700;color:var(--ink2);margin:14px 0 8px;scroll-margin-top:72px;}
+
+p{font-size:.87rem;color:var(--ink2);margin-bottom:10px;line-height:1.7;}
+strong{color:var(--ink);font-weight:600;}
+
+/* ÉTAPES */
+.steps{display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1.5px solid var(--rule);border-radius:10px;padding:11px 15px;}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-body{flex:1;}
+.step-title{font-weight:600;font-size:.83rem;color:var(--ink);margin-bottom:3px;}
+.step-desc{font-size:.78rem;color:var(--ink2);line-height:1.5;}
+.step.warn .step-num{background:var(--amber);}
+.step.warn{border-color:#fde68a;background:#fffbeb;}
+.step.required .step-num{background:var(--red);}
+.step.required{border-color:#fecaca;background:#fff5f5;}
+.step.ok .step-num{background:var(--green);}
+
+/* ALERTES */
+.alert{border-radius:8px;padding:12px 15px;margin:12px 0;display:flex;gap:10px;align-items:flex-start;font-size:.81rem;line-height:1.55;}
+.alert-icon{font-size:.95rem;flex-shrink:0;margin-top:1px;}
+.alert.info{background:var(--sky-soft);border:1.5px solid #bfdbfe;color:#1e40af;}
+.alert.warning{background:#fffbeb;border:1.5px solid #fde68a;color:#92400e;}
+.alert.danger{background:#fff5f5;border:1.5px solid #fecaca;color:#991b1b;}
+.alert.success{background:#f0fdf4;border:1.5px solid #bbf7d0;color:#166534;}
+.alert.teal{background:var(--teal-soft);border:1.5px solid #99f6e4;color:#134e4a;}
+
+/* CARDS */
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.info-card{background:var(--white);border:1.5px solid var(--rule);border-radius:9px;padding:12px 14px;}
+.info-card-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;}
+.info-card ul{list-style:none;padding:0;}
+.info-card li{font-size:.78rem;color:var(--ink2);padding:3px 0;display:flex;gap:6px;align-items:flex-start;line-height:1.4;}
+.info-card li::before{content:'•';color:var(--teal);flex-shrink:0;}
+
+/* TABLEAU */
+.dtable{width:100%;border-collapse:collapse;font-size:.79rem;margin:12px 0;}
+.dtable th{background:var(--surface);padding:8px 11px;text-align:left;font-weight:600;font-size:.71rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:2px solid var(--rule);}
+.dtable td{padding:8px 11px;border-bottom:1px solid var(--rule);color:var(--ink2);vertical-align:top;line-height:1.45;}
+.dtable tr:hover td{background:var(--teal-soft);}
+.dtable td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+
+/* WORKFLOW */
+.workflow{display:flex;gap:0;margin:16px 0;overflow-x:auto;padding-bottom:4px;}
+.wf-step{background:var(--white);border:1.5px solid var(--rule);border-radius:8px;padding:9px 13px;font-size:.73rem;font-weight:600;color:var(--ink);flex-shrink:0;min-width:110px;text-align:center;position:relative;margin-right:20px;}
+.wf-step::after{content:'→';position:absolute;right:-15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.85rem;}
+.wf-step:last-child::after{display:none;}
+.wf-step:last-child{margin-right:0;}
+.wf-sub{font-weight:400;color:var(--muted);font-size:.67rem;margin-top:2px;}
+.wf-step.done{background:#f0fdf4;border-color:#86efac;color:var(--green);}
+.wf-step.active{background:var(--teal-soft);border-color:#5eead4;color:var(--teal);}
+.wf-step.key{background:var(--sky-soft);border-color:#93c5fd;color:var(--sky);}
+
+/* STATUTS */
+.statuts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:12px 0;}
+.statut{background:var(--white);border:1.5px solid var(--rule);border-radius:8px;padding:9px 12px;font-size:.77rem;color:var(--ink2);}
+.statut-name{font-weight:700;color:var(--ink);font-size:.8rem;margin-bottom:2px;}
+
+/* PROFILS */
+.profils{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0;}
+.profil{background:var(--white);border:1.5px solid var(--rule);border-radius:9px;padding:11px 13px;}
+.profil-title{font-weight:700;font-size:.78rem;color:var(--teal);margin-bottom:5px;}
+.profil ul{list-style:none;padding:0;}
+.profil li{font-size:.74rem;color:var(--ink2);padding:2px 0;line-height:1.4;}
+
+.tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:.67rem;font-weight:700;vertical-align:middle;}
+.tag-tr{background:#dcfce7;color:#15803d;}
+.tag-ntr{background:#f1f5f9;color:#475569;}
+.tag-req{background:#fee2e2;color:#991b1b;}
+.tag-opt{background:#dbeafe;color:#1d4ed8;}
+.tag-ce{background:#fef3c7;color:#92400e;}
+.tag-ca{background:#ede9fe;color:#6d28d9;}
+
+kbd{background:var(--surface);border:1.5px solid var(--rule);border-radius:4px;padding:1px 6px;font-size:.71rem;font-family:monospace;color:var(--ink);}
+
+@media(max-width:900px){
+  .toc{display:none;}
+  .content{padding:20px 0 48px;}
+  .layout{padding:0 14px;}
+  .card-row,.profils{grid-template-columns:1fr;}
+  .workflow{flex-wrap:wrap;}
+  .wf-step{margin-right:8px;margin-bottom:8px;}
+  .wf-step::after{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">← Portail</a>
+  <span class="header-title">Guide Dém'Act — Manuel utilisateur</span>
+  <span class="header-badge">Version 4 · Profil EPLE</span>
+</header>
+
+<div class="layout">
+
+  <nav class="toc">
+    <div class="toc-title">Sommaire</div>
+    <a class="toc-item" href="#intro">Présentation</a>
+    <a class="toc-item" href="#acteurs">Acteurs et profils</a>
+    <a class="toc-item" href="#connexion">Connexion</a>
+    <a class="toc-item" href="#interface">Interface générale</a>
+    <a class="toc-item" href="#glossaire">Abréviations clés</a>
+    <a class="toc-item" href="#actes-liste">Types d'actes</a>
+    <a class="toc-item l2" href="#transmissibles">Actes transmissibles (TR)</a>
+    <a class="toc-item l2" href="#non-transmissibles">Actes non transmissibles (NTR)</a>
+    <a class="toc-item" href="#statuts">Statuts des actes</a>
+    <div class="toc-sep"></div>
+    <a class="toc-item" href="#creer">Créer un acte</a>
+    <a class="toc-item l2" href="#bibliotheque">Bibliothèque de modèles</a>
+    <a class="toc-item l2" href="#saisie-ce">Saisir un acte CE</a>
+    <a class="toc-item l2" href="#saisie-ca">Saisir un acte CA/CP</a>
+    <a class="toc-item l2" href="#seance">Gérer une séance</a>
+    <a class="toc-item" href="#signer">Signer et valider</a>
+    <a class="toc-item l2" href="#signer-ce">Signature d'un acte CE</a>
+    <a class="toc-item l2" href="#signer-ca">Signature d'un acte CA/CP</a>
+    <a class="toc-item" href="#transmettre">Transmettre aux ACL</a>
+    <a class="toc-item" href="#rectification">Traiter une rectification</a>
+    <div class="toc-sep"></div>
+    <a class="toc-item" href="#recherche">Rechercher un acte</a>
+    <a class="toc-item" href="#suivi">Suivi d'un acte</a>
+    <a class="toc-item" href="#affichage">Afficher un acte validé</a>
+    <a class="toc-item" href="#pv">Procès-verbaux</a>
+    <a class="toc-item" href="#espace-coll">Espace collaboratif</a>
+    <div class="toc-sep"></div>
+    <a class="toc-item" href="#parametrage">Paramétrage EPLE</a>
+    <a class="toc-item" href="#erreurs">Messages d'erreur</a>
+    <a class="toc-item" href="#archivage">Archivage</a>
+  </nav>
+
+  <main class="content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-logo">Dém'Act<small>Version 4</small></div>
+      <div>
+        <div class="hero-title">Manuel utilisateur Dém'Act — Profil EPLE</div>
+        <div class="hero-sub">Dématérialisation des Actes administratifs · Application nationale MEN · 255 pages</div>
+        <div class="hero-tags">
+          <span class="hero-tag">Application web</span>
+          <span class="hero-tag">Actes administratifs</span>
+          <span class="hero-tag">Actes budgétaires</span>
+          <span class="hero-tag">Contrôle de légalité</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRÉSENTATION -->
+    <div class="section" id="intro">
+      <div class="section-num">Présentation</div>
+      <div class="section-title">Qu'est-ce que Dém'Act ?</div>
+      <p><strong>Dém'Act</strong> est l'application nationale du Ministère de l'Éducation nationale permettant la <strong>rédaction dématérialisée des actes administratifs et budgétaires</strong> relatifs au fonctionnement des EPLE. Elle gère également la transmission de ces actes aux autorités de contrôle de légalité (ACL) et le suivi de leur instruction.</p>
+      <p>Les EPLE produisent chaque année une soixantaine de types d'actes, dont la moitié environ est transmise aux ACL pour devenir exécutoire. Tous les actes élaborés et validés sont conservés dans l'outil pendant <strong>10 ans</strong> (durée d'utilité administrative).</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Ce que Dém'Act permet</div>
+          <ul>
+            <li>Rédiger les actes CE, CA et CP</li>
+            <li>Gérer les séances du CA et de la CP</li>
+            <li>Transmettre aux ACL pour instruction</li>
+            <li>Suivre le délai légal de contrôle</li>
+            <li>Gérer les demandes de rectification</li>
+            <li>Archiver et rechercher les actes</li>
+            <li>Collaborer via l'espace commun</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Ce que Dém'Act NE fait PAS</div>
+          <ul>
+            <li>Générer automatiquement les actes budgétaires depuis GFC</li>
+            <li>Remplacer la signature manuscrite officielle (signature électronique apposée sur le PDF)</li>
+            <li>Traiter les actes des établissements privés</li>
+            <li>Gérer les actes du 1er degré</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTEURS -->
+    <div class="section" id="acteurs">
+      <div class="section-num">Section 1</div>
+      <div class="section-title">Acteurs et profils utilisateurs</div>
+      <p>Plusieurs acteurs interviennent dans le circuit de traitement selon le type d'acte :</p>
+      <div class="profils">
+        <div class="profil">
+          <div class="profil-title">👤 Profils EPLE</div>
+          <ul>
+            <li><strong>Rédacteur EPLE</strong> — saisit et prépare les actes</li>
+            <li><strong>Valideur CE</strong> — signe les actes CE et CA/CP</li>
+            <li><strong>Administrateur EPLE</strong> — paramètre l'application</li>
+          </ul>
+        </div>
+        <div class="profil">
+          <div class="profil-title">🏛️ Profils ACL EN (Académie)</div>
+          <ul>
+            <li><strong>Rédacteur ACL EN</strong> — instruit les actes</li>
+            <li><strong>Valideur ACL EN</strong> — valide l'instruction</li>
+            <li><strong>Administrateur ACL EN</strong> — paramétrage académique</li>
+          </ul>
+        </div>
+        <div class="profil">
+          <div class="profil-title">🏢 Profils ACL CT (Collectivité)</div>
+          <ul>
+            <li><strong>Rédacteur ACL CT</strong> — instruit les actes de la CT</li>
+            <li><strong>Valideur ACL CT</strong> — valide l'instruction CT</li>
+            <li><strong>Administrateur ACL CT</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert teal"><span class="alert-icon">ℹ️</span>La Préfecture intervient uniquement pour certains actes de fonctionnement transmissibles. Elle n'a pas de profil de saisie dans Dém'Act.</div>
+    </div>
+
+    <!-- CONNEXION -->
+    <div class="section" id="connexion">
+      <div class="section-num">Section 2</div>
+      <div class="section-title">Connexion à l'application</div>
+      <p>La connexion à Dém'Act se fait <strong>via le portail du MEN</strong>, après authentification avec votre login et mot de passe habituels. Il n'y a pas d'identifiant spécifique à Dém'Act.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">S'authentifier sur le portail MEN</div>
+            <div class="step-desc">Saisir votre login et mot de passe habituels (intranet ou internet selon votre situation).</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Accéder à Dém'Act</div>
+            <div class="step-desc">Dans le portail d'applications, chercher et cliquer sur <strong>Dém'Act</strong>. L'application s'ouvre dans le navigateur.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert danger"><span class="alert-icon">🚨</span>Si le message <em>« Votre établissement (identifiant : XXXXXXXX) n'est pas géré par l'application »</em> s'affiche, votre code UAI n'est pas reconnu. Contacter le <strong>correspondant fonctionnel du Rectorat</strong> pour faire vérifier votre code UAI LDAP.</div>
+    </div>
+
+    <!-- INTERFACE -->
+    <div class="section" id="interface">
+      <div class="section-num">Section 3</div>
+      <div class="section-title">Interface générale</div>
+      <p>Toutes les pages de Dém'Act suivent le même découpage en 4 zones :</p>
+      <table class="dtable">
+        <thead><tr><th>Zone</th><th>Contenu</th></tr></thead>
+        <tbody>
+          <tr><td>Zone 1 — Bannière</td><td>Nom de l'application à gauche · Liens <kbd>Se déconnecter</kbd>, <kbd>Vade Mecum</kbd>, <kbd>PV</kbd> à droite · Identité et rôle de l'utilisateur connecté</td></tr>
+          <tr><td>Zone 2 — Menu</td><td>Logo académique · Menu général des fonctionnalités disponibles (selon votre profil) avec le nombre d'actes en attente entre parenthèses · Lien <kbd>Aide en ligne</kbd> (manuel PDF) en bas</td></tr>
+          <tr><td>Zone 3 — Contenu</td><td>Titre de la fonctionnalité · Lien <kbd>Aide</kbd> contextuel (ouvre un PDF d'aide) · Contenu de la page</td></tr>
+          <tr><td>Zone 4 — Pied de page</td><td>Mentions légales MEN</td></tr>
+        </tbody>
+      </table>
+      <div class="alert info"><span class="alert-icon">💡</span>Dans le menu de gauche, les libellés des statuts peuvent différer des titres affichés dans les tableaux de bord. Par exemple : <em>« Approbation rédaction »</em> dans le menu = <em>« Actes en attente d'approbation CE »</em> dans le tableau de bord. Se reporter au tableau de correspondance (Section 5).</div>
+    </div>
+
+    <!-- GLOSSAIRE -->
+    <div class="section" id="glossaire">
+      <div class="section-num">Section 4</div>
+      <div class="section-title">Abréviations et termes clés</div>
+      <table class="dtable">
+        <thead><tr><th>Abréviation</th><th>Signification</th></tr></thead>
+        <tbody>
+          <tr><td>ACL</td><td>Autorité de Contrôle de Légalité (Rectorat/DSDEN, Collectivité territoriale, Préfecture)</td></tr>
+          <tr><td>ACL EN</td><td>ACL Éducation nationale — Rectorat ou DSDEN</td></tr>
+          <tr><td>ACL CT</td><td>ACL Collectivité Territoriale — Conseil Régional, Départemental ou Métropole</td></tr>
+          <tr><td>CA</td><td>Conseil d'Administration</td></tr>
+          <tr><td>CE</td><td>Chef d'Établissement</td></tr>
+          <tr><td>CP</td><td>Commission Permanente</td></tr>
+          <tr><td>CT</td><td>Collectivité Territoriale</td></tr>
+          <tr><td>EPLE</td><td>Établissement Public Local d'Enseignement (lycées, collèges, EREA, ERPD)</td></tr>
+          <tr><td>NTR</td><td>Acte Non TRansmissible — traité uniquement par l'EPLE</td></tr>
+          <tr><td>TR</td><td>Acte TRansmissible — à envoyer aux ACL pour instruction</td></tr>
+          <tr><td>PV</td><td>Procès-verbal de séance du CA ou de la CP</td></tr>
+          <tr><td>UAI</td><td>Unité Administrative Immatriculée — numéro d'identification de l'EPLE</td></tr>
+          <tr><td>Chrono</td><td>Décompte du délai légal d'instruction (en jours calendaires)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ACTES LISTE -->
+    <div class="section" id="actes-liste">
+      <div class="section-num">Section 5</div>
+      <div class="section-title">Types d'actes traités par Dém'Act</div>
+      <p>Les actes sont classés selon leur <strong>émetteur</strong> (CA, CP ou CE), leur <strong>catégorie</strong> (TR ou NTR), leur <strong>type</strong> (action éducatrice, fonctionnement, budgétaire) et leur <strong>destinataire</strong>.</p>
+
+      <div class="sub-title" id="transmissibles">Principaux actes transmissibles (TR) — CA</div>
+      <table class="dtable">
+        <thead><tr><th>Libellé de l'acte</th><th>Type</th><th>Destinataire</th><th>Délai</th></tr></thead>
+        <tbody>
+          <tr><td>Organisation du temps scolaire</td><td>Action éducatrice</td><td>Autorité académique</td><td>15 j</td></tr>
+          <tr><td>Organisation de la structure pédagogique</td><td>Action éducatrice</td><td>Autorité académique</td><td>15 j</td></tr>
+          <tr><td>Projet d'établissement</td><td>Action éducatrice</td><td>Autorité académique</td><td>15 j</td></tr>
+          <tr><td>Règlement intérieur</td><td>Action éducatrice</td><td>Autorité académique</td><td>15 j</td></tr>
+          <tr><td>Emploi de la dotation horaire globalisée</td><td>Action éducatrice</td><td>Autorité académique</td><td>15 j</td></tr>
+          <tr><td>Budget initial</td><td>Budgétaire</td><td>ACL EN + CT + Préfecture</td><td>30 j</td></tr>
+          <tr><td>Compte financier</td><td>Budgétaire</td><td>ACL EN + CT + Préfecture</td><td>15 j</td></tr>
+          <tr><td>Décision budgétaire modificative</td><td>Budgétaire</td><td>ACL EN + CT + Préfecture</td><td>15 j</td></tr>
+          <tr><td>Passation de conventions et marchés</td><td>Fonctionnement</td><td>Préfecture (ou ACL EN si délégation)</td><td>15 j</td></tr>
+          <tr><td>Financement des voyages scolaires</td><td>Fonctionnement</td><td>Préfecture (ou ACL EN si délégation)</td><td>15 j</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-title" id="non-transmissibles">Principaux actes non transmissibles (NTR) — CA</div>
+      <p>Ces actes sont traités <strong>uniquement par l'EPLE</strong>. Ils peuvent être transmis pour information à la CT sur sa demande.</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Exemples d'actes NTR</div>
+          <ul>
+            <li>Choix des manuels scolaires</li>
+            <li>Plan de prévention de la violence</li>
+            <li>Tarifs des prestations de l'établissement</li>
+            <li>Action d'intenter ou défendre en justice</li>
+            <li>Acquisition et aliénation des biens</li>
+            <li>Acceptation de dons et legs</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Actes CE transmissibles</div>
+          <ul>
+            <li>Contrats et conventions à incidence financière <span class="tag tag-tr">TR</span></li>
+            <li>Délégation de signature <span class="tag tag-tr">TR</span></li>
+            <li>Actes exécutoires sans délai dès la signature du CE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATUTS -->
+    <div class="section" id="statuts">
+      <div class="section-num">Section 6</div>
+      <div class="section-title">Cycle de vie d'un acte — Statuts</div>
+      <p>Chaque acte passe par une série de statuts successifs, de sa création jusqu'à son état final. Les statuts du menu de gauche peuvent avoir des libellés différents de ceux affichés dans le tableau de bord.</p>
+      <div class="statuts-grid">
+        <div class="statut"><div class="statut-name">En cours de rédaction</div>Acte créé, en cours de saisie par le Rédacteur EPLE</div>
+        <div class="statut"><div class="statut-name">Approbation rédaction</div>En attente d'approbation par le Valideur CE (acte CA/CP)</div>
+        <div class="statut"><div class="statut-name">À signer</div>En attente de signature par le Valideur CE</div>
+        <div class="statut"><div class="statut-name">À transmettre</div>Signé, en attente de transmission aux ACL</div>
+        <div class="statut"><div class="statut-name">En arrivée pour instruction</div>Transmis, reçu par l'ACL pour instruction</div>
+        <div class="statut"><div class="statut-name">En cours d'instruction</div>L'ACL rédige ses observations</div>
+        <div class="statut"><div class="statut-name">En attente de rectification</div>L'ACL demande une modification par l'EPLE</div>
+        <div class="statut"><div class="statut-name">Acte rectificatif</div>L'EPLE a transmis l'acte modifié à l'ACL</div>
+        <div class="statut"><div class="statut-name">Exécutoires sans délai / délai écoulé</div>Acte devenu exécutoire (délai légal écoulé)</div>
+        <div class="statut"><div class="statut-name">Validés</div>Acte validé par l'ACL — état final</div>
+        <div class="statut"><div class="statut-name">Classés sans suite</div>Acte rejeté ou annulé — état final</div>
+        <div class="statut"><div class="statut-name">Transmis pour information</div>Avis ou acte de fonctionnement transmis en info — état final</div>
+        <div class="statut"><div class="statut-name">Règlement conjoint</div>Acte budgétaire en attente de concertation ACL EN / ACL CT</div>
+        <div class="statut"><div class="statut-name">Rectification non effectuée</div>L'EPLE n'a pas rectifié dans les 3 mois — état final, non exécutoire</div>
+      </div>
+      <div class="alert teal"><span class="alert-icon">💡</span><strong>Acte exécutoire :</strong> pour un acte NTR → dès la signature CE. Pour un acte TR CE → dès la transmission à l'ACL. Pour un acte TR CA/CP → à l'issue du délai légal d'instruction (15 ou 30 jours) ou à la validation par l'ACL. Dans tous les cas, l'EPLE doit ensuite procéder à <strong>l'affichage ou la notification</strong> de l'acte.</div>
+    </div>
+
+    <!-- CRÉER UN ACTE -->
+    <div class="section" id="creer">
+      <div class="section-num">Section 7</div>
+      <div class="section-title">Créer un acte</div>
+      <p>Tout acte est créé depuis un <strong>modèle sélectionné dans la bibliothèque</strong>. Il n'est pas possible de créer un acte « de zéro ».</p>
+
+      <div class="workflow">
+        <div class="wf-step active">Bibliothèque<div class="wf-sub">Choisir modèle</div></div>
+        <div class="wf-step">Rédaction<div class="wf-sub">Saisir les données</div></div>
+        <div class="wf-step">Approbation<div class="wf-sub">CA/CP seulement</div></div>
+        <div class="wf-step">Signature<div class="wf-sub">Valideur CE</div></div>
+        <div class="wf-step key">Transmission<div class="wf-sub">Si TR</div></div>
+        <div class="wf-step done">Exécutoire<div class="wf-sub">État final</div></div>
+      </div>
+
+      <div class="sub-title" id="bibliotheque">7.1 — La bibliothèque de modèles</div>
+      <p>Accessible depuis le menu <kbd>Bibliothèque de modèles</kbd>, elle liste tous les modèles d'actes et d'avis disponibles selon votre profil.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Accéder à la bibliothèque</div>
+            <div class="step-desc">Cliquer sur <kbd>Bibliothèque de modèles</kbd> dans le menu de gauche.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Sélectionner le modèle souhaité</div>
+            <div class="step-desc">La liste est organisée par émetteur (CA, CP, CE), catégorie (TR/NTR) et type d'acte. Cliquer sur le nom du modèle pour l'ouvrir.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Consulter ou récupérer le modèle</div>
+            <div class="step-desc">Deux options : <strong>Afficher le modèle original</strong> (consultation uniquement) ou <strong>Créer un acte depuis ce modèle</strong> (ouvre le formulaire de saisie).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-title" id="saisie-ce">7.2 — Saisir un acte CE</div>
+      <p>La saisie est réservée au <strong>Rédacteur EPLE</strong>. Le formulaire comprend plusieurs zones :</p>
+      <table class="dtable">
+        <thead><tr><th>Zone</th><th>Contenu</th><th>Statut</th></tr></thead>
+        <tbody>
+          <tr><td>Zone 1</td><td>Données non modifiables (UAI, établissement, type d'acte, catégorie)</td><td>—</td></tr>
+          <tr><td>Zone 2</td><td>Données de l'acte à saisir (objet, date, données spécifiques au modèle)</td><td><span class="tag tag-req">Obligatoire</span></td></tr>
+          <tr><td>Zone 3</td><td>Pièces jointes (format PDF uniquement, correspondance nombre déclaré / nombre joint)</td><td><span class="tag tag-opt">Facultatif</span></td></tr>
+          <tr><td>Zone 4</td><td>Informations de séance (pour actes CA/CP)</td><td><span class="tag tag-ca">CA/CP</span></td></tr>
+          <tr><td>Zone 5</td><td>Boutons de commande (Enregistrer, Demander signature, Signer)</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Renseigner les champs obligatoires</div>
+            <div class="step-desc">Saisir toutes les informations requises par le modèle. Les champs obligatoires non renseignés bloquent la signature.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Enregistrer l'acte</div>
+            <div class="step-desc">Cliquer sur <kbd>Enregistrer</kbd>. L'acte est créé en base au statut <strong>« En cours de rédaction »</strong>. Il reste modifiable.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Demander la signature</div>
+            <div class="step-desc">Une fois l'acte complet, cliquer sur <kbd>Demander signature</kbd>. L'acte passe au statut <strong>« À signer »</strong> et devient disponible pour le Valideur CE.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert warning"><span class="alert-icon">⚠️</span>Si le nombre de pièces jointes déclaré dans le champ prévu ne correspond pas au nombre réellement importé, un message d'erreur bloquant s'affiche à la signature. La limite est de <strong>2 pièces jointes max pour une demande de rectification</strong> (5 Mo max chacune, format PDF obligatoire).</div>
+
+      <div class="sub-title" id="saisie-ca">7.3 — Saisir un acte CA ou CP</div>
+      <p>Le processus est identique à l'acte CE, avec en plus la gestion des <strong>données de séance</strong> (numéro, date, résultats du vote).</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Associer l'acte à une séance</div>
+            <div class="step-desc">Dans la Zone 4, sélectionner la séance correspondante ou en créer une nouvelle. Le numéro de séance est généré automatiquement.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Saisir le résultat du vote</div>
+            <div class="step-desc">Renseigner le nombre de voix Pour, Contre, Abstentions. En cas d'<strong>égalité de voix</strong>, le Valideur CE devra choisir explicitement d'accepter ou rejeter lors de la signature.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Enregistrer et demander l'approbation</div>
+            <div class="step-desc">Cliquer <kbd>Enregistrer</kbd> puis <kbd>Demander approbation</kbd>. L'acte passe au statut <strong>« Approbation rédaction »</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-title" id="seance">7.4 — Gérer les séances (CA et CP)</div>
+      <p>Accessible via <kbd>Gestion des séances</kbd> dans le menu. Permet de créer, modifier ou supprimer les séances du CA et de la CP, indépendamment des actes.</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Séance initiale</div>
+          <ul>
+            <li>Date et heure de la séance</li>
+            <li>Type (CA ou CP)</li>
+            <li>Objet de la séance</li>
+            <li>Liste des membres présents</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Séance reconvoquée</div>
+          <ul>
+            <li>Même données + référence à la séance initiale</li>
+            <li>Utilisée en cas de quorum non atteint lors de la première réunion</li>
+            <li>Les données de la séance initiale sont rappelées dans l'acte</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNER -->
+    <div class="section" id="signer">
+      <div class="section-num">Section 8</div>
+      <div class="section-title">Signer et valider un acte</div>
+      <p>La signature est réservée au <strong>Valideur CE</strong>. Elle appose une signature électronique sur le PDF de l'acte et fait passer l'acte au statut suivant.</p>
+
+      <div class="sub-title" id="signer-ce">8.1 — Signature d'un acte CE</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Accéder aux actes à signer</div>
+            <div class="step-desc">Cliquer sur <kbd>À signer</kbd> dans le menu. Le tableau de bord liste les actes en attente.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Signature unitaire ou par lot</div>
+            <div class="step-desc"><strong>Par lot :</strong> sélectionner les actes à traiter et cliquer sur <kbd>Signer les actes sélectionnés</kbd>. <strong>Unitaire :</strong> cliquer sur l'acte, éventuellement le modifier, puis cliquer <kbd>Signer</kbd>.</div>
+          </div>
+        </div>
+        <div class="step ok">
+          <div class="step-num">✓</div>
+          <div class="step-body">
+            <div class="step-title">Résultat selon le type d'acte</div>
+            <div class="step-desc"><strong>NTR :</strong> l'acte passe directement au statut <strong>« Validés »</strong> (exécutoire). <strong>TR :</strong> l'acte passe au statut <strong>« À transmettre »</strong>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert warning"><span class="alert-icon">⚠️</span>En cas de signature par lot, si un acte comporte une erreur, <strong>aucun acte de la sélection n'est signé</strong>. Ouvrir l'acte bloquant, corriger l'erreur, puis relancer la signature par lot.</div>
+      <div class="alert info"><span class="alert-icon">💡</span>À la signature, si l'acte dépend de la compétence exclusive du CE, le message <em>« Ne pas oublier d'afficher l'acte »</em> s'affiche automatiquement.</div>
+
+      <div class="sub-title" id="signer-ca">8.2 — Approbation et signature d'un acte CA/CP</div>
+      <p>Les actes CA/CP passent par une étape supplémentaire d'approbation avant la signature.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Approuver la rédaction (Valideur CE)</div>
+            <div class="step-desc">Accéder à <kbd>Approbation rédaction</kbd>. Vérifier l'acte. Cliquer <kbd>Approuver</kbd> pour valider la rédaction — l'acte passe au statut <strong>« À signer »</strong>. Ou <kbd>Refuser</kbd> pour le renvoyer au Rédacteur.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Signer l'acte (Valideur CE)</div>
+            <div class="step-desc">Même procédure que pour un acte CE. En cas d'<strong>égalité de voix</strong>, choisir explicitement la décision (zone distincte dans le tableau de bord).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANSMETTRE -->
+    <div class="section" id="transmettre">
+      <div class="section-num">Section 9</div>
+      <div class="section-title">Transmettre un acte aux autorités de contrôle</div>
+      <p>Uniquement pour les actes <span class="tag tag-tr">TR</span>. Une fois signé, l'acte est au statut <strong>« À transmettre »</strong>.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Accéder aux actes à transmettre</div>
+            <div class="step-desc">Cliquer sur <kbd>À transmettre</kbd> dans le menu EPLE.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Transmettre (unitaire ou par lot)</div>
+            <div class="step-desc">Sélectionner les actes et cliquer <kbd>Transmettre</kbd>. Un récépissé de transmission est généré et consultable dans le suivi de l'acte.</div>
+          </div>
+        </div>
+        <div class="step ok">
+          <div class="step-num">✓</div>
+          <div class="step-body">
+            <div class="step-title">Le chrono démarre</div>
+            <div class="step-desc">Le décompte du délai légal d'instruction commence à la transmission (15 ou 30 jours selon le type d'acte). L'acte passe au statut <strong>« En arrivée pour instruction »</strong> côté ACL.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert teal"><span class="alert-icon">⏱️</span><strong>Cas particulier — CT sans Dém'Act :</strong> si la collectivité territoriale n'est pas raccordée à Dém'Act (pictogramme spécifique dans le tableau de bord), l'EPLE doit envoyer l'acte par courrier papier à la CT, puis <strong>saisir manuellement</strong> la décision d'instruction à sa place dans l'application.</div>
+    </div>
+
+    <!-- RECTIFICATION -->
+    <div class="section" id="rectification">
+      <div class="section-num">Section 10</div>
+      <div class="section-title">Traiter une demande de rectification</div>
+      <p>Si l'ACL demande une modification, l'acte passe au statut <strong>« En attente de rectification »</strong>. Le délai légal d'instruction est automatiquement <strong>suspendu</strong>.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Consulter la demande de rectification</div>
+            <div class="step-desc">Ouvrir l'acte depuis <kbd>En attente de rectification</kbd>. Les observations de l'ACL sont dans la Zone 3 du formulaire.</div>
+          </div>
+        </div>
+        <div class="step warn">
+          <div class="step-num">⚠</div>
+          <div class="step-body">
+            <div class="step-title">Décision sur le chrono</div>
+            <div class="step-desc">L'EPLE peut choisir de <strong>relancer manuellement le chrono</strong> (bouton fléché dans la colonne Délai). <strong>Attention : cette relance est définitive.</strong> Si l'EPLE ne relance pas, le chrono repart automatiquement à la transmission de l'acte rectificatif.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Modifier l'acte (Rédacteur EPLE)</div>
+            <div class="step-desc">Apporter les modifications demandées dans la Zone 2. Enregistrer sans transmettre tant que la rectification n'est pas complète.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Signer et transmettre l'acte rectificatif (Valideur CE)</div>
+            <div class="step-desc">Cliquer sur <kbd>Signer et transmettre l'acte rectificatif</kbd>. L'acte passe au statut <strong>« Acte rectificatif »</strong> et son numéro est suffixé (ex : 14-1, 14-2…).</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert danger"><span class="alert-icon">🚨</span>Si l'EPLE ne transmet pas l'acte rectificatif dans un délai de <strong>3 mois</strong>, l'ACL peut clôturer le dossier avec le statut <strong>« Rectification non effectuée »</strong>. L'acte sera définitivement non exécutoire.</div>
+    </div>
+
+    <!-- RECHERCHE -->
+    <div class="section" id="recherche">
+      <div class="section-num">Section 11</div>
+      <div class="section-title">Rechercher un acte</div>
+      <p>La recherche multicritères est accessible depuis le menu <kbd>Recherche</kbd>.</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Critères de recherche EPLE</div>
+          <ul>
+            <li>Objet de l'acte (texte libre)</li>
+            <li>Type d'acte (CA, CP, CE)</li>
+            <li>Catégorie (TR / NTR)</li>
+            <li>Statut de l'acte</li>
+            <li>Plage de dates</li>
+            <li>Numéro d'enregistrement</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Résultats et actions</div>
+          <ul>
+            <li>Liste paginée des actes correspondants</li>
+            <li>Cliquer sur l'objet pour accéder à l'acte</li>
+            <li>Export CSV du tableau des résultats</li>
+            <li>Tri par colonne (croissant/décroissant)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUIVI -->
+    <div class="section" id="suivi">
+      <div class="section-num">Section 12</div>
+      <div class="section-title">Suivi d'un acte</div>
+      <p>Depuis tout tableau de bord, le pictogramme <kbd>Suivi</kbd> (œil) ouvre l'historique complet de l'acte.</p>
+      <table class="dtable">
+        <thead><tr><th>Information</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Dates clés</td><td>Date de création, signature, transmission, instruction, validation</td></tr>
+          <tr><td>Historique des actions</td><td>Chaque action horodatée avec l'acteur et l'entité concernée</td></tr>
+          <tr><td>Récépissé de transmission</td><td>Pour les actes TR : document PDF attestant la transmission aux ACL</td></tr>
+          <tr><td>Accusé de réception</td><td>Pour les actes budgétaires : AR de chaque ACL</td></tr>
+          <tr><td>Bordereau d'instruction</td><td>Document PDF des observations de l'ACL</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- AFFICHAGE -->
+    <div class="section" id="affichage">
+      <div class="section-num">Section 13</div>
+      <div class="section-title">Afficher un acte validé</div>
+      <p>L'affichage ou la notification d'un acte est <strong>obligatoire pour le rendre exécutoire</strong> même après validation. Cette action est réservée à l'EPLE.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Accéder aux actes affichables</div>
+            <div class="step-desc">Menu <kbd>Actes affichables</kbd>. Liste tous les actes validés en attente d'affichage.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Sélectionner et confirmer l'affichage</div>
+            <div class="step-desc">Cocher les actes affichés et cliquer sur <kbd>Confirmer l'affichage</kbd>. L'acte passe au statut <strong>« Affiché »</strong> et disparaît de la liste des actes affichables.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert warning"><span class="alert-icon">⚠️</span>Les actes CA/CP <strong>refusés en séance</strong> ne deviendront jamais exécutoires et ne peuvent pas être affichés.</div>
+    </div>
+
+    <!-- PV -->
+    <div class="section" id="pv">
+      <div class="section-num">Section 14</div>
+      <div class="section-title">Procès-verbaux de séance</div>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">📄 Créer un PV (EPLE)</div>
+          <ul>
+            <li>Menu <kbd>Procès-verbaux</kbd> → <kbd>Créer</kbd></li>
+            <li>Sélectionner la séance correspondante</li>
+            <li>Un modèle original est proposé</li>
+            <li>Télécharger, compléter, ré-importer en PDF</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">📤 Déposer un PV existant (EPLE)</div>
+          <ul>
+            <li>Menu <kbd>Procès-verbaux</kbd> → <kbd>Déposer</kbd></li>
+            <li>Format PDF uniquement</li>
+            <li>Le PV devient accessible aux ACL</li>
+            <li>Un pictogramme 📋 apparaît à côté de l'émetteur dans les tableaux de bord ACL</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESPACE COLLABORATIF -->
+    <div class="section" id="espace-coll">
+      <div class="section-num">Section 15</div>
+      <div class="section-title">Espace collaboratif</div>
+      <p>L'espace collaboratif permet aux utilisateurs de Dém'Act de <strong>dialoguer et d'échanger des documents</strong> entre EPLE et ACL, en dehors du circuit formel des actes.</p>
+      <div class="card-row">
+        <div class="info-card">
+          <div class="info-card-title">Organisation</div>
+          <ul>
+            <li>Structure hiérarchique : <strong>Thèmes parents</strong> et <strong>Thèmes fils</strong></li>
+            <li>Navigation par fil d'Ariane</li>
+            <li>Sujets de discussion au sein des thèmes</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">Actions possibles</div>
+          <ul>
+            <li>Créer / modifier / supprimer un thème ou sujet</li>
+            <li>Poster des commentaires</li>
+            <li>Joindre des documents (formats variés acceptés)</li>
+            <li>Consulter les échanges des autres acteurs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARAMÉTRAGE -->
+    <div class="section" id="parametrage">
+      <div class="section-num">Section 16</div>
+      <div class="section-title">Paramétrage par l'EPLE (Administrateur)</div>
+      <p>Ces fonctionnalités sont réservées à l'<strong>Administrateur EPLE</strong>.</p>
+      <table class="dtable">
+        <thead><tr><th>Paramétrage</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Collectivités territoriales</td><td>Définir les actes de fonctionnement à transmettre pour information à la CT sur sa demande</td></tr>
+          <tr><td>Membres du CA et de la CP</td><td>Saisir et maintenir la liste des membres pour pré-remplir les données de séance</td></tr>
+          <tr><td>Droits d'un adjoint-gestionnaire</td><td>Attribuer les droits de validation à un adjoint-gestionnaire (délégation)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ERREURS -->
+    <div class="section" id="erreurs">
+      <div class="section-num">Section 17</div>
+      <div class="section-title">Principaux messages d'erreur bloquants</div>
+      <table class="dtable">
+        <thead><tr><th>Message</th><th>Cause</th><th>Solution</th></tr></thead>
+        <tbody>
+          <tr><td>Votre établissement n'est pas géré par l'application</td><td>Code UAI non reconnu</td><td>Contacter le correspondant fonctionnel du Rectorat</td></tr>
+          <tr><td>Aucun acte n'a été signé</td><td>Un acte de la sélection par lot est incomplet</td><td>Ouvrir l'acte mentionné, compléter les champs manquants, relancer la signature par lot</td></tr>
+          <tr><td>Le nombre réel de PJ ne correspond pas au nombre saisi</td><td>Incohérence entre le champ et les PJ réellement jointes</td><td>Vérifier et corriger le champ ou ajouter/retirer des pièces jointes</td></tr>
+          <tr><td>Votre niveau de droits ne vous permet pas d'effectuer cette action</td><td>Action réservée au Valideur, tentée par le Rédacteur</td><td>Se rapprocher du Valideur CE de l'établissement</td></tr>
+          <tr><td>Champs obligatoires non renseignés (liste)</td><td>Signature tentée avec des données manquantes</td><td>Remplir tous les champs signalés</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ARCHIVAGE -->
+    <div class="section" id="archivage">
+      <div class="section-num">Section 18</div>
+      <div class="section-title">Archivage</div>
+      <p>Tous les actes élaborés et validés sont conservés <strong>10 ans</strong> dans l'application. L'archivage est automatisé et commun à tous les acteurs.</p>
+      <div class="alert teal"><span class="alert-icon">🗄️</span>La fonctionnalité de recherche multicritères de type BO (Business Objects) pour des requêtes statistiques sur les actes archivés est mentionnée dans le manuel mais <strong>non disponible</strong> dans la version 4.</div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const sections = document.querySelectorAll('[id]');
+const tocLinks = document.querySelectorAll('.toc-item');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const l = document.querySelector(`.toc-item[href="#${e.target.id}"]`);
+      if (l) l.classList.add('active');
+    }
+  });
+},{rootMargin:'-60px 0px -70% 0px'});
+sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
