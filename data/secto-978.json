@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.07942,
+          18.06945
+        ]
+      },
+      "properties": {
+        "uai": "9710022X",
+        "nom": "Collège Mont des Accords",
+        "commune": "Saint-Martin",
+        "dept": "978"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.05246,
+          18.11089
+        ]
+      },
+      "properties": {
+        "uai": "9711023K",
+        "nom": "Collège Soualiga",
+        "commune": "Saint-Martin",
+        "dept": "978"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.03502,
+          18.06395
+        ]
+      },
+      "properties": {
+        "uai": "9711087E",
+        "nom": "Collège roche gravée de Moho",
+        "commune": "Saint-Martin",
+        "dept": "978"
+      }
+    }
+  ]
+}

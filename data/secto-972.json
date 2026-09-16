@@ -1,0 +1,693 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.83774,
+          14.54437
+        ]
+      },
+      "properties": {
+        "uai": "9720031B",
+        "nom": "Collège",
+        "commune": "Le Vauclin",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.02728,
+          14.48821
+        ]
+      },
+      "properties": {
+        "uai": "9720035F",
+        "nom": "Collège",
+        "commune": "Le Diamant",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.12005,
+          14.86799
+        ]
+      },
+      "properties": {
+        "uai": "9720472F",
+        "nom": "Collège AIME CESAIRE de BASSE-POINTE",
+        "commune": "Basse-Pointe",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.0712,
+          14.61144
+        ]
+      },
+      "properties": {
+        "uai": "9720007A",
+        "nom": "Collège Aimé Césaire de Fort-de-France",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.07723,
+          14.49191
+        ]
+      },
+      "properties": {
+        "uai": "9720565G",
+        "nom": "Collège Alexandre Stellio",
+        "commune": "Les Anses-d'Arlet",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.9757,
+          14.5731
+        ]
+      },
+      "properties": {
+        "uai": "9720469C",
+        "nom": "Collège Asselin de Beauville",
+        "commune": "Ducos",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.03597,
+          14.67693
+        ]
+      },
+      "properties": {
+        "uai": "9720021R",
+        "nom": "Collège Belle Etoile",
+        "commune": "Saint-Joseph",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.03902,
+          14.6363
+        ]
+      },
+      "properties": {
+        "uai": "9720682J",
+        "nom": "Collège CASSIEN SAINTE-CLAIRE",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.13816,
+          14.76829
+        ]
+      },
+      "properties": {
+        "uai": "9720016K",
+        "nom": "Collège Christiane Eda-Pierre",
+        "commune": "Le Morne-Rouge",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.9741,
+          14.69322
+        ]
+      },
+      "properties": {
+        "uai": "9720043P",
+        "nom": "Collège Constant le Ray",
+        "commune": "Le Robert",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.02806,
+          14.82218
+        ]
+      },
+      "properties": {
+        "uai": "9720028Y",
+        "nom": "Collège EUGENE MONA",
+        "commune": "Le Marigot",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.94404,
+          14.55792
+        ]
+      },
+      "properties": {
+        "uai": "9720020P",
+        "nom": "Collège Edmond Lucien Valard",
+        "commune": "Saint-Esprit",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.99032,
+          14.61571
+        ]
+      },
+      "properties": {
+        "uai": "9720470D",
+        "nom": "Collège Edouard Glissant",
+        "commune": "Le Lamentin",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.99899,
+          14.78548
+        ]
+      },
+      "properties": {
+        "uai": "9720513A",
+        "nom": "Collège Emmanuel Saldes",
+        "commune": "Sainte-Marie",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.99656,
+          14.71218
+        ]
+      },
+      "properties": {
+        "uai": "9720012F",
+        "nom": "Collège Euzhan Palcy",
+        "commune": "Gros-Morne",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.08261,
+          14.61171
+        ]
+      },
+      "properties": {
+        "uai": "9720010D",
+        "nom": "Collège François-Auguste Perrinon",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.97437,
+          14.5249
+        ]
+      },
+      "properties": {
+        "uai": "9720448E",
+        "nom": "Collège Georges ELISABETH",
+        "commune": "Rivière-Salée",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.86297,
+          14.47127
+        ]
+      },
+      "properties": {
+        "uai": "9720447D",
+        "nom": "Collège Gérard Café",
+        "commune": "Le Marin",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.05554,
+          14.8316
+        ]
+      },
+      "properties": {
+        "uai": "9720445B",
+        "nom": "Collège Hubert NERO",
+        "commune": "Le Lorrain",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.87976,
+          14.43291
+        ]
+      },
+      "properties": {
+        "uai": "9720514B",
+        "nom": "Collège Isidore Pelage",
+        "commune": "Sainte-Anne",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.06932,
+          14.63409
+        ]
+      },
+      "properties": {
+        "uai": "9720084J",
+        "nom": "Collège Jacqueline JULIUS",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.90406,
+          14.48587
+        ]
+      },
+      "properties": {
+        "uai": "9720017L",
+        "nom": "Collège Jacques Roumain",
+        "commune": "Rivière-Pilote",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.89839,
+          14.6176
+        ]
+      },
+      "properties": {
+        "uai": "9720428H",
+        "nom": "Collège Jeanne et Emile ADENET",
+        "commune": "Le François",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.04299,
+          14.60834
+        ]
+      },
+      "properties": {
+        "uai": "9720708M",
+        "nom": "Collège Jenny ALPHA",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.99024,
+          14.77713
+        ]
+      },
+      "properties": {
+        "uai": "9720006Z",
+        "nom": "Collège Joseph Lagrosillière",
+        "commune": "Sainte-Marie",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.06636,
+          14.60501
+        ]
+      },
+      "properties": {
+        "uai": "9720052Z",
+        "nom": "Collège Julia Nicolas",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.17697,
+          14.74812
+        ]
+      },
+      "properties": {
+        "uai": "9720446C",
+        "nom": "Collège Louis Delgrès",
+        "commune": "Saint-Pierre",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.99032,
+          14.61571
+        ]
+      },
+      "properties": {
+        "uai": "9720848P",
+        "nom": "Collège MANDY FRANCOIS-ELIE",
+        "commune": "Le Lamentin",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.01613,
+          14.74475
+        ]
+      },
+      "properties": {
+        "uai": "9720842H",
+        "nom": "Collège Morne des Esses",
+        "commune": "Sainte-Marie",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.94448,
+          14.67004
+        ]
+      },
+      "properties": {
+        "uai": "9720861D",
+        "nom": "Collège PONTALERY (CLG Robert 3)",
+        "commune": "Le Robert",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.94006,
+          14.68051
+        ]
+      },
+      "properties": {
+        "uai": "9720019N",
+        "nom": "Collège Paul Symphor",
+        "commune": "Le Robert",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.99675,
+          14.6125
+        ]
+      },
+      "properties": {
+        "uai": "9720083H",
+        "nom": "Collège Petit Manoir",
+        "commune": "Le Lamentin",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.05552,
+          14.62258
+        ]
+      },
+      "properties": {
+        "uai": "9720349X",
+        "nom": "Collège Roger CASTENDET (Ex Coridon)",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.96396,
+          14.73816
+        ]
+      },
+      "properties": {
+        "uai": "9720025V",
+        "nom": "Collège Rose Saint Just",
+        "commune": "La Trinité",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.91966,
+          14.46827
+        ]
+      },
+      "properties": {
+        "uai": "9720449F",
+        "nom": "Collège Sainte-Luce",
+        "commune": "Sainte-Luce",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.04178,
+          14.53799
+        ]
+      },
+      "properties": {
+        "uai": "9720498J",
+        "nom": "Collège Suzanne ROUSSI-CESAIRE",
+        "commune": "Les Trois-Ilets",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.10071,
+          14.63023
+        ]
+      },
+      "properties": {
+        "uai": "9720684L",
+        "nom": "Collège Terreville",
+        "commune": "Schoelcher",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.91157,
+          14.62053
+        ]
+      },
+      "properties": {
+        "uai": "9720495F",
+        "nom": "Collège Trianon",
+        "commune": "Le François",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.09631,
+          14.62229
+        ]
+      },
+      "properties": {
+        "uai": "9720455M",
+        "nom": "Collège Vincent Placoly",
+        "commune": "Schoelcher",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.94992,
+          14.74566
+        ]
+      },
+      "properties": {
+        "uai": "9720351Z",
+        "nom": "Collège de Beauséjour",
+        "commune": "La Trinité",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.079,
+          14.60631
+        ]
+      },
+      "properties": {
+        "uai": "9720411P",
+        "nom": "Collège de Tartenson",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.18353,
+          14.71197
+        ]
+      },
+      "properties": {
+        "uai": "9720008B",
+        "nom": "Collège du Carbet",
+        "commune": "Le Carbet",
+        "dept": "972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.04515,
+          14.60777
+        ]
+      },
+      "properties": {
+        "uai": "9720412R",
+        "nom": "FERNAND DONATIEN",
+        "commune": "Fort-de-France",
+        "dept": "972"
+      }
+    }
+  ]
+}

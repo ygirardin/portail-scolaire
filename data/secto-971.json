@@ -1,0 +1,677 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.37617,
+          16.26097
+        ]
+      },
+      "properties": {
+        "uai": "9710687V",
+        "nom": "COLLEGE OLYMPE RAME DECORBIN",
+        "commune": "Sainte-Anne",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.56537,
+          16.08683
+        ]
+      },
+      "properties": {
+        "uai": "9711231L",
+        "nom": "COLLEGE SYLVIANE TELCHID",
+        "commune": "Capesterre-Belle-Eau",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.52085,
+          16.25561
+        ]
+      },
+      "properties": {
+        "uai": "9711205H",
+        "nom": "Cité Scolaire d'Excellence Sportive",
+        "commune": "Les Abymes",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.318,
+          15.9542
+        ]
+      },
+      "properties": {
+        "uai": "9710037N",
+        "nom": "Collège Albert Baclet",
+        "commune": "Saint-Louis",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.50645,
+          16.27885
+        ]
+      },
+      "properties": {
+        "uai": "9710710V",
+        "nom": "Collège Alexandre Isaac",
+        "commune": "Les Abymes",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.2968,
+          16.25035
+        ]
+      },
+      "properties": {
+        "uai": "9710030F",
+        "nom": "Collège Alexandre Macal",
+        "commune": "Saint-François",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.62932,
+          16.2747
+        ]
+      },
+      "properties": {
+        "uai": "9710086S",
+        "nom": "Collège Appel du 18 Juin",
+        "commune": "Lamentin",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.57686,
+          15.87214
+        ]
+      },
+      "properties": {
+        "uai": "9711155D",
+        "nom": "Collège Archipel des Saintes",
+        "commune": "Terre-de-Haut",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.50235,
+          16.27199
+        ]
+      },
+      "properties": {
+        "uai": "9710938T",
+        "nom": "Collège Aurélie LAMBOURDE",
+        "commune": "Les Abymes",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.59509,
+          16.24767
+        ]
+      },
+      "properties": {
+        "uai": "9711086D",
+        "nom": "Collège Baie-mahault 2",
+        "commune": "Baie-Mahault",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.67041,
+          16.28069
+        ]
+      },
+      "properties": {
+        "uai": "9711181G",
+        "nom": "Collège Bois Rada",
+        "commune": "Sainte-Rose",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.68851,
+          16.32443
+        ]
+      },
+      "properties": {
+        "uai": "9710023Y",
+        "nom": "Collège Bébel",
+        "commune": "Sainte-Rose",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.78696,
+          16.23134
+        ]
+      },
+      "properties": {
+        "uai": "9710029E",
+        "nom": "Collège Courbaril",
+        "commune": "Pointe-Noire",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.48925,
+          16.21178
+        ]
+      },
+      "properties": {
+        "uai": "9710039R",
+        "nom": "Collège Edmond Bambuck",
+        "commune": "Le Gosier",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.37808,
+          16.2283
+        ]
+      },
+      "properties": {
+        "uai": "9710021W",
+        "nom": "Collège Eugène Yssap",
+        "commune": "Sainte-Anne",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.50619,
+          16.47608
+        ]
+      },
+      "properties": {
+        "uai": "9710025A",
+        "nom": "Collège Fernand Balin",
+        "commune": "Anse-Bertrand",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.45689,
+          16.33991
+        ]
+      },
+      "properties": {
+        "uai": "9710403L",
+        "nom": "Collège Florette Morand",
+        "commune": "Morne-à-l'Eau",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.77568,
+          16.16744
+        ]
+      },
+      "properties": {
+        "uai": "9710026B",
+        "nom": "Collège Fontaines Bouillantes",
+        "commune": "Bouillante",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.54503,
+          16.24974
+        ]
+      },
+      "properties": {
+        "uai": "9710686U",
+        "nom": "Collège Front de Mer",
+        "commune": "Pointe-à-Pitre",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.78821,
+          16.30773
+        ]
+      },
+      "properties": {
+        "uai": "9710643X",
+        "nom": "Collège Félix Aladin FLEMIN",
+        "commune": "Deshaies",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.59485,
+          16.19711
+        ]
+      },
+      "properties": {
+        "uai": "9710016R",
+        "nom": "Collège Félix Eboué",
+        "commune": "Petit-Bourg",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.56455,
+          16.04363
+        ]
+      },
+      "properties": {
+        "uai": "9710406P",
+        "nom": "Collège Germain Saint Ruf",
+        "commune": "Capesterre-Belle-Eau",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.31533,
+          15.88445
+        ]
+      },
+      "properties": {
+        "uai": "9710926E",
+        "nom": "Collège Grand Bourg",
+        "commune": "Grand-Bourg",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.34963,
+          16.33203
+        ]
+      },
+      "properties": {
+        "uai": "9710015P",
+        "nom": "Collège Général de Gaulle",
+        "commune": "Le Moule",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.74351,
+          16.01668
+        ]
+      },
+      "properties": {
+        "uai": "9710041T",
+        "nom": "Collège Jean Jaurès",
+        "commune": "Baillif",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71933,
+          15.9933
+        ]
+      },
+      "properties": {
+        "uai": "9710482X",
+        "nom": "Collège Joseph Pitat",
+        "commune": "Basse-Terre",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.53551,
+          16.23737
+        ]
+      },
+      "properties": {
+        "uai": "9710072B",
+        "nom": "Collège Jules Michelet",
+        "commune": "Pointe-à-Pitre",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.64635,
+          15.97478
+        ]
+      },
+      "properties": {
+        "uai": "9710707S",
+        "nom": "Collège Les Roches Gravées",
+        "commune": "Trois-Rivières",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.06845,
+          16.3049
+        ]
+      },
+      "properties": {
+        "uai": "9710033J",
+        "nom": "Collège Maryse Condé",
+        "commune": "La Désirade",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.5741,
+          16.13253
+        ]
+      },
+      "properties": {
+        "uai": "9710644Y",
+        "nom": "Collège Matéliane",
+        "commune": "Goyave",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.59302,
+          16.26096
+        ]
+      },
+      "properties": {
+        "uai": "9710040S",
+        "nom": "Collège Maurice Satineau",
+        "commune": "Baie-Mahault",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.48611,
+          16.37842
+        ]
+      },
+      "properties": {
+        "uai": "9710028D",
+        "nom": "Collège Maximilien Vrécord",
+        "commune": "Petit-Canal",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.22108,
+          15.89377
+        ]
+      },
+      "properties": {
+        "uai": "9710032H",
+        "nom": "Collège Nelson Mandéla",
+        "commune": "Capesterre-de-Marie-Galante",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.53344,
+          16.23484
+        ]
+      },
+      "properties": {
+        "uai": "9710661S",
+        "nom": "Collège Nestor de Kermadec",
+        "commune": "Pointe-à-Pitre",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.52376,
+          16.4173
+        ]
+      },
+      "properties": {
+        "uai": "9710584H",
+        "nom": "Collège Port -Louis",
+        "commune": "Port-Louis",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.5293,
+          16.25965
+        ]
+      },
+      "properties": {
+        "uai": "9710405N",
+        "nom": "Collège Raizet",
+        "commune": "Les Abymes",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.68667,
+          15.99301
+        ]
+      },
+      "properties": {
+        "uai": "9710034K",
+        "nom": "Collège Richard Samuel",
+        "commune": "Gourbeyre",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71576,
+          16.01789
+        ]
+      },
+      "properties": {
+        "uai": "9710036M",
+        "nom": "Collège Rémy Nainsouta",
+        "commune": "Saint-Claude",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.53624,
+          16.2386
+        ]
+      },
+      "properties": {
+        "uai": "9710073C",
+        "nom": "Collège Sadi Carnot",
+        "commune": "Pointe-à-Pitre",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.53164,
+          16.2495
+        ]
+      },
+      "properties": {
+        "uai": "9710826W",
+        "nom": "Collège Saint John Perse",
+        "commune": "Les Abymes",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.76673,
+          16.05525
+        ]
+      },
+      "properties": {
+        "uai": "9710045X",
+        "nom": "Collège Suze ANGELY",
+        "commune": "Vieux-Habitants",
+        "dept": "971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.32991,
+          16.32483
+        ]
+      },
+      "properties": {
+        "uai": "9711218X",
+        "nom": "Collège de Guenette",
+        "commune": "Le Moule",
+        "dept": "971"
+      }
+    }
+  ]
+}

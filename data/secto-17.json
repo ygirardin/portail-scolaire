@@ -1,0 +1,821 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.61291,
+          45.74898
+        ]
+      },
+      "properties": {
+        "uai": "0170059X",
+        "nom": "Collège Agrippa d'Aubigné",
+        "commune": "Saintes",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.14081,
+          46.14501
+        ]
+      },
+      "properties": {
+        "uai": "0170142M",
+        "nom": "Collège Albert Camus",
+        "commune": "La Rochelle",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.19337,
+          45.88492
+        ]
+      },
+      "properties": {
+        "uai": "0170005N",
+        "nom": "Collège Aliénor d'Aquitaine",
+        "commune": "Le Château-d'Oléron",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.92659,
+          45.67659
+        ]
+      },
+      "properties": {
+        "uai": "0170387D",
+        "nom": "Collège André Albert",
+        "commune": "Saujon",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.93712,
+          46.11837
+        ]
+      },
+      "properties": {
+        "uai": "0171129K",
+        "nom": "Collège André Dulin",
+        "commune": "Aigrefeuille-d'Aunis",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.08745,
+          46.07928
+        ]
+      },
+      "properties": {
+        "uai": "0171211Z",
+        "nom": "Collège André Malraux",
+        "commune": "Châtelaillon-Plage",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.30361,
+          45.52009
+        ]
+      },
+      "properties": {
+        "uai": "0170002K",
+        "nom": "Collège Arlette Guirado",
+        "commune": "Archiac",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.41413,
+          45.77758
+        ]
+      },
+      "properties": {
+        "uai": "0170004M",
+        "nom": "Collège Beauregard",
+        "commune": "Burie",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.13534,
+          46.17177
+        ]
+      },
+      "properties": {
+        "uai": "0170035W",
+        "nom": "Collège Beauregard",
+        "commune": "La Rochelle",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.02241,
+          45.16441
+        ]
+      },
+      "properties": {
+        "uai": "0170048K",
+        "nom": "Collège Bernard Roussillon",
+        "commune": "Saint-Aigulin",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.57124,
+          45.36995
+        ]
+      },
+      "properties": {
+        "uai": "0170016A",
+        "nom": "Collège Didier Daurat",
+        "commune": "Mirambeau",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6517,
+          45.736
+        ]
+      },
+      "properties": {
+        "uai": "0170063B",
+        "nom": "Collège Edgar Quinet",
+        "commune": "Saintes",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.97067,
+          45.95337
+        ]
+      },
+      "properties": {
+        "uai": "0171056F",
+        "nom": "Collège Edouard Grimaux",
+        "commune": "Rochefort",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.55092,
+          45.57834
+        ]
+      },
+      "properties": {
+        "uai": "0170389F",
+        "nom": "Collège Emile Combes",
+        "commune": "Pons",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.01081,
+          45.61732
+        ]
+      },
+      "properties": {
+        "uai": "0171122C",
+        "nom": "Collège Emile Zola",
+        "commune": "Royan",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1509,
+          46.16407
+        ]
+      },
+      "properties": {
+        "uai": "0171184V",
+        "nom": "Collège Eugène Fromentin",
+        "commune": "La Rochelle",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.11658,
+          46.152
+        ]
+      },
+      "properties": {
+        "uai": "0171117X",
+        "nom": "Collège Fabre d'Eglantine",
+        "commune": "La Rochelle",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1468,
+          45.77832
+        ]
+      },
+      "properties": {
+        "uai": "0170388E",
+        "nom": "Collège Fernand Garandeau",
+        "commune": "La Tremblade",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7739,
+          45.82102
+        ]
+      },
+      "properties": {
+        "uai": "0170055T",
+        "nom": "Collège Fontbruant",
+        "commune": "Saint-Porchaire",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.00437,
+          46.13066
+        ]
+      },
+      "properties": {
+        "uai": "0170010U",
+        "nom": "Collège Françoise Dolto",
+        "commune": "La Jarrie",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.89127,
+          45.94578
+        ]
+      },
+      "properties": {
+        "uai": "0170072L",
+        "nom": "Collège Frédéric et Irène Joliot-Curie",
+        "commune": "Tonnay-Charente",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.52771,
+          45.95032
+        ]
+      },
+      "properties": {
+        "uai": "0171118Y",
+        "nom": "Collège Georges Texier",
+        "commune": "Saint-Jean-d'Angély",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.05012,
+          45.63894
+        ]
+      },
+      "properties": {
+        "uai": "0171120A",
+        "nom": "Collège Henri Dunant",
+        "commune": "Royan",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.74857,
+          46.109
+        ]
+      },
+      "properties": {
+        "uai": "0170071K",
+        "nom": "Collège Hélène de Fonsèque",
+        "commune": "Surgères",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.17039,
+          46.17214
+        ]
+      },
+      "properties": {
+        "uai": "0170970M",
+        "nom": "Collège Jean Guiton",
+        "commune": "Lagord",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.10595,
+          45.82753
+        ]
+      },
+      "properties": {
+        "uai": "0170386C",
+        "nom": "Collège Jean Hay",
+        "commune": "Marennes-Hiers-Brouage",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.96505,
+          45.86521
+        ]
+      },
+      "properties": {
+        "uai": "0170047J",
+        "nom": "Collège Jean Monnet",
+        "commune": "Saint-Agnant",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.80894,
+          46.24186
+        ]
+      },
+      "properties": {
+        "uai": "0170007R",
+        "nom": "Collège Jean Monnet",
+        "commune": "Courçon",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.66906,
+          45.57143
+        ]
+      },
+      "properties": {
+        "uai": "0170009T",
+        "nom": "Collège Jules Ferry",
+        "commune": "Gémozac",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.96186,
+          45.92944
+        ]
+      },
+      "properties": {
+        "uai": "0170081W",
+        "nom": "Collège La Fayette",
+        "commune": "Rochefort",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2484,
+          45.24362
+        ]
+      },
+      "properties": {
+        "uai": "0170076R",
+        "nom": "Collège La Fontaine",
+        "commune": "Montlieu-la-Garde",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.35535,
+          46.19344
+        ]
+      },
+      "properties": {
+        "uai": "0171034G",
+        "nom": "Collège Les Salières",
+        "commune": "Saint-Martin-de-Ré",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.84198,
+          45.5784
+        ]
+      },
+      "properties": {
+        "uai": "0170008S",
+        "nom": "Collège Les Vieilles Vignes",
+        "commune": "Cozes",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.43549,
+          45.43858
+        ]
+      },
+      "properties": {
+        "uai": "0170011V",
+        "nom": "Collège Léopold Dussaigne",
+        "commune": "Jonzac",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.05845,
+          46.1881
+        ]
+      },
+      "properties": {
+        "uai": "0171210Y",
+        "nom": "Collège Marc Chagall",
+        "commune": "Dompierre-sur-Mer",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3134,
+          45.86854
+        ]
+      },
+      "properties": {
+        "uai": "0171159T",
+        "nom": "Collège Marc Jeanjean",
+        "commune": "Matha",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.71193,
+          45.96769
+        ]
+      },
+      "properties": {
+        "uai": "0170082X",
+        "nom": "Collège Marcel Pagnol",
+        "commune": "Tonnay-Boutonne",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.98873,
+          46.30695
+        ]
+      },
+      "properties": {
+        "uai": "0171022U",
+        "nom": "Collège Maurice Calmel",
+        "commune": "Marans",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.56719,
+          45.48039
+        ]
+      },
+      "properties": {
+        "uai": "0170049L",
+        "nom": "Collège Maurice Chastang",
+        "commune": "Saint-Genis-de-Saintonge",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.96324,
+          45.93736
+        ]
+      },
+      "properties": {
+        "uai": "0171057G",
+        "nom": "Collège Pierre Loti",
+        "commune": "Rochefort",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.17872,
+          46.16921
+        ]
+      },
+      "properties": {
+        "uai": "0170077S",
+        "nom": "Collège Pierre Mendès France",
+        "commune": "La Rochelle",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.53124,
+          45.85175
+        ]
+      },
+      "properties": {
+        "uai": "0170050M",
+        "nom": "Collège Raymond Bouyer",
+        "commune": "Saint-Hilaire-de-Villefranche",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63355,
+          45.74927
+        ]
+      },
+      "properties": {
+        "uai": "0170144P",
+        "nom": "Collège René Caillié",
+        "commune": "Saintes",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.67527,
+          45.87638
+        ]
+      },
+      "properties": {
+        "uai": "0170056U",
+        "nom": "Collège Robert Cellerier",
+        "commune": "Saint-Savinien",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.39847,
+          45.28654
+        ]
+      },
+      "properties": {
+        "uai": "0170390G",
+        "nom": "Collège Samuel Dumenieu",
+        "commune": "Montendre",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.17261,
+          46.16131
+        ]
+      },
+      "properties": {
+        "uai": "0170088D",
+        "nom": "Collège Samuel de Missy",
+        "commune": "La Rochelle",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3515,
+          46.02338
+        ]
+      },
+      "properties": {
+        "uai": "0171213B",
+        "nom": "Collège de L'Ouche des Carmes",
+        "commune": "Aulnay",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5062,
+          46.04491
+        ]
+      },
+      "properties": {
+        "uai": "0170012W",
+        "nom": "Collège de La Trézence",
+        "commune": "Loulay",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.12459,
+          46.13286
+        ]
+      },
+      "properties": {
+        "uai": "0171339N",
+        "nom": "Collège de l'Atlantique",
+        "commune": "Aytré",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.18378,
+          45.21618
+        ]
+      },
+      "properties": {
+        "uai": "0171160U",
+        "nom": "Collège de la Tour",
+        "commune": "Montguyon",
+        "dept": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.31026,
+          45.94492
+        ]
+      },
+      "properties": {
+        "uai": "0171215D",
+        "nom": "Collège du Pertuis d'Antioche",
+        "commune": "Saint-Pierre-d'Oléron",
+        "dept": "17"
+      }
+    }
+  ]
+}

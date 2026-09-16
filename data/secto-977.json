@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.84944,
+          17.89866
+        ]
+      },
+      "properties": {
+        "uai": "9710035L",
+        "nom": "Collège Mireille Choisy",
+        "commune": "Saint-Barthélemy",
+        "dept": "977"
+      }
+    }
+  ]
+}

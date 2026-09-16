@@ -1,0 +1,373 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.12327,
+          -12.83337
+        ]
+      },
+      "properties": {
+        "uai": "9760119A",
+        "nom": "Collège Ali Halidi",
+        "commune": "Chiconi",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.11835,
+          -12.72185
+        ]
+      },
+      "properties": {
+        "uai": "9760094Y",
+        "nom": "Collège Bakari Kusu",
+        "commune": "Bandraboua",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.20251,
+          -12.73505
+        ]
+      },
+      "properties": {
+        "uai": "9760244L",
+        "nom": "Collège Frédéric d'Achery",
+        "commune": "Koungou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.23159,
+          -12.78276
+        ]
+      },
+      "properties": {
+        "uai": "9760219J",
+        "nom": "Collège Halidi Sélémani",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.1405,
+          -12.93816
+        ]
+      },
+      "properties": {
+        "uai": "9760042S",
+        "nom": "Collège Marcel Henry",
+        "commune": "Chirongui",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.10555,
+          -12.8494
+        ]
+      },
+      "properties": {
+        "uai": "9760180S",
+        "nom": "Collège Mariama Salim",
+        "commune": "Sada",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.12855,
+          -12.84069
+        ]
+      },
+      "properties": {
+        "uai": "9760371Z",
+        "nom": "Collège Musakua",
+        "commune": "Ouangani",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.21142,
+          -12.79306
+        ]
+      },
+      "properties": {
+        "uai": "9760009F",
+        "nom": "Collège Nelson Mandela",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.20584,
+          -12.79896
+        ]
+      },
+      "properties": {
+        "uai": "9760308F",
+        "nom": "Collège Ouvoimoja",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.18993,
+          -12.84768
+        ]
+      },
+      "properties": {
+        "uai": "9760245M",
+        "nom": "Collège Zakia Madi",
+        "commune": "Dembeni",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.19509,
+          -12.9146
+        ]
+      },
+      "properties": {
+        "uai": "9760179R",
+        "nom": "Collège de Bandrélé",
+        "commune": "Bandrele",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.08941,
+          -12.92239
+        ]
+      },
+      "properties": {
+        "uai": "9760379H",
+        "nom": "Collège de Boueni",
+        "commune": "Bouéni",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.22357,
+          -12.76902
+        ]
+      },
+      "properties": {
+        "uai": "9760162X",
+        "nom": "Collège de Kaweni 1",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.22392,
+          -12.76716
+        ]
+      },
+      "properties": {
+        "uai": "9760314M",
+        "nom": "Collège de Kawéni 2",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.20138,
+          -12.80634
+        ]
+      },
+      "properties": {
+        "uai": "9760368W",
+        "nom": "Collège de Kwalé",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.28042,
+          -12.78543
+        ]
+      },
+      "properties": {
+        "uai": "9760008E",
+        "nom": "Collège de Labattoir - Bouéni M'Titi",
+        "commune": "Dzaoudzi",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.08039,
+          -12.75875
+        ]
+      },
+      "properties": {
+        "uai": "9760167C",
+        "nom": "Collège de M'Tsangamouji",
+        "commune": "M'Tsangamouji",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.22682,
+          -12.75303
+        ]
+      },
+      "properties": {
+        "uai": "9760369X",
+        "nom": "Collège de Majicavo",
+        "commune": "Koungou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.07571,
+          -12.68527
+        ]
+      },
+      "properties": {
+        "uai": "9760230W",
+        "nom": "Collège de Mtsamboro",
+        "commune": "Mtsamboro",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.126,
+          -12.79024
+        ]
+      },
+      "properties": {
+        "uai": "9760274U",
+        "nom": "Collège de Tsingoni",
+        "commune": "Tsingoni",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.17457,
+          -12.78721
+        ]
+      },
+      "properties": {
+        "uai": "9760545N",
+        "nom": "Collège de Vahibé",
+        "commune": "Mamoudzou",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.28323,
+          -12.79361
+        ]
+      },
+      "properties": {
+        "uai": "9760183V",
+        "nom": "Collège de Zena M'Dere",
+        "commune": "Pamandzi",
+        "dept": "976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.10983,
+          -12.95315
+        ]
+      },
+      "properties": {
+        "uai": "9760166B",
+        "nom": "Collège des Ylangs Ylangs",
+        "commune": "Kani-Kéli",
+        "dept": "976"
+      }
+    }
+  ]
+}

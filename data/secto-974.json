@@ -1,0 +1,1253 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.52493,
+          -21.25072
+        ]
+      },
+      "properties": {
+        "uai": "9740070H",
+        "nom": "Collège 14eme km",
+        "commune": "Le Tampon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.60629,
+          -21.37721
+        ]
+      },
+      "properties": {
+        "uai": "9740578K",
+        "nom": "Collège Achille Grondin",
+        "commune": "Saint-Joseph",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.33124,
+          -21.24151
+        ]
+      },
+      "properties": {
+        "uai": "9740005M",
+        "nom": "Collège Adrien Cadet",
+        "commune": "Les Avirons",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.55266,
+          -20.89498
+        ]
+      },
+      "properties": {
+        "uai": "9740022F",
+        "nom": "Collège Adrien Cerneau",
+        "commune": "Sainte-Marie",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.37252,
+          -21.27271
+        ]
+      },
+      "properties": {
+        "uai": "9741387P",
+        "nom": "Collège Aime Cesaire",
+        "commune": "L'Etang-Salé",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.29542,
+          -21.04035
+        ]
+      },
+      "properties": {
+        "uai": "9740039Z",
+        "nom": "Collège Albert Lougnon",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.47364,
+          -21.13424
+        ]
+      },
+      "properties": {
+        "uai": "9740096L",
+        "nom": "Collège Alsace Corre",
+        "commune": "Cilaos",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.71873,
+          -21.0449
+        ]
+      },
+      "properties": {
+        "uai": "9740083X",
+        "nom": "Collège Amiral Pierre Bouvet",
+        "commune": "Saint-Benoît",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.28082,
+          -21.00009
+        ]
+      },
+      "properties": {
+        "uai": "9740596E",
+        "nom": "Collège Antoine Soubou",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.53296,
+          -21.03352
+        ]
+      },
+      "properties": {
+        "uai": "9740651P",
+        "nom": "Collège Auguste Lacaussade",
+        "commune": "Salazie",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.52843,
+          -20.92491
+        ]
+      },
+      "properties": {
+        "uai": "9741323V",
+        "nom": "Collège Beausejour",
+        "commune": "Sainte-Marie",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.47844,
+          -20.91031
+        ]
+      },
+      "properties": {
+        "uai": "9741188Y",
+        "nom": "Collège Bois de Nèfles",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.48546,
+          -20.89946
+        ]
+      },
+      "properties": {
+        "uai": "9740618D",
+        "nom": "Collège Boris GAMALEYA Les Alizés",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.76738,
+          -21.36227
+        ]
+      },
+      "properties": {
+        "uai": "9740468R",
+        "nom": "Collège Bory de Saint Vincent",
+        "commune": "Saint-Philippe",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.47059,
+          -21.24953
+        ]
+      },
+      "properties": {
+        "uai": "9740006N",
+        "nom": "Collège Capitaine Dimitile - Entre-Deux",
+        "commune": "Entre-Deux",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.26781,
+          -21.08856
+        ]
+      },
+      "properties": {
+        "uai": "9740035V",
+        "nom": "Collège Célimène Gaudieux",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.3051,
+          -20.93407
+        ]
+      },
+      "properties": {
+        "uai": "9740548C",
+        "nom": "Collège Edmond Albius",
+        "commune": "Le Port",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.48491,
+          -20.89304
+        ]
+      },
+      "properties": {
+        "uai": "9741208V",
+        "nom": "Collège Elie Wiesel du chaudron",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.50271,
+          -20.90637
+        ]
+      },
+      "properties": {
+        "uai": "9741260B",
+        "nom": "Collège Emile Hugot",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.51558,
+          -21.33991
+        ]
+      },
+      "properties": {
+        "uai": "9741235Z",
+        "nom": "Collège Emilien Adam de Villiers",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.68357,
+          -21.00065
+        ]
+      },
+      "properties": {
+        "uai": "9740046G",
+        "nom": "Collège Fanny Desjardins",
+        "commune": "Bras-Panon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.49645,
+          -20.88777
+        ]
+      },
+      "properties": {
+        "uai": "9740734E",
+        "nom": "Collège François Mahe De La Bourdonnais",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.6291,
+          -21.13983
+        ]
+      },
+      "properties": {
+        "uai": "9740037X",
+        "nom": "Collège Gaston Crochet",
+        "commune": "La Plaine-des-Palmistes",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.71136,
+          -21.05323
+        ]
+      },
+      "properties": {
+        "uai": "9741366S",
+        "nom": "Collège Guy Môquet",
+        "commune": "Saint-Benoît",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.32042,
+          -21.1515
+        ]
+      },
+      "properties": {
+        "uai": "9740018B",
+        "nom": "Collège Harry GRUCHET - Chaloupe St Leu",
+        "commune": "Saint-Leu",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.45027,
+          -21.2987
+        ]
+      },
+      "properties": {
+        "uai": "9741049X",
+        "nom": "Collège Henri Matisse",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.59914,
+          -20.90204
+        ]
+      },
+      "properties": {
+        "uai": "9740094J",
+        "nom": "Collège Hippolyte Foucque",
+        "commune": "Sainte-Suzanne",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.70817,
+          -21.03246
+        ]
+      },
+      "properties": {
+        "uai": "9740702V",
+        "nom": "Collège Hubert Delisle",
+        "commune": "Saint-Benoît",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.43712,
+          -21.26016
+        ]
+      },
+      "properties": {
+        "uai": "9740011U",
+        "nom": "Collège Hégésippe Hoarau",
+        "commune": "Saint-Louis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.64595,
+          -20.96796
+        ]
+      },
+      "properties": {
+        "uai": "9741386N",
+        "nom": "Collège Héva-Chemin Morin",
+        "commune": "Saint-André",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.33502,
+          -20.95988
+        ]
+      },
+      "properties": {
+        "uai": "9740909V",
+        "nom": "Collège Jean Albany",
+        "commune": "La Possession",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.40062,
+          -21.27
+        ]
+      },
+      "properties": {
+        "uai": "9741189Z",
+        "nom": "Collège Jean Lafosse",
+        "commune": "Saint-Louis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.52139,
+          -20.90274
+        ]
+      },
+      "properties": {
+        "uai": "9740735F",
+        "nom": "Collège Jean d'Esme",
+        "commune": "Sainte-Marie",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.30734,
+          -20.94945
+        ]
+      },
+      "properties": {
+        "uai": "9741313J",
+        "nom": "Collège Jean le Toullec",
+        "commune": "Le Port",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.29652,
+          -21.10363
+        ]
+      },
+      "properties": {
+        "uai": "9740085Z",
+        "nom": "Collège Jeanne BARRET - Trois-Bassins",
+        "commune": "Les Trois-Bassins",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.64845,
+          -20.95738
+        ]
+      },
+      "properties": {
+        "uai": "9740599H",
+        "nom": "Collège Joseph Bédier",
+        "commune": "Saint-André",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.62721,
+          -21.37475
+        ]
+      },
+      "properties": {
+        "uai": "9740577J",
+        "nom": "Collège Joseph Hubert",
+        "commune": "Saint-Joseph",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.56241,
+          -21.34731
+        ]
+      },
+      "properties": {
+        "uai": "9740654T",
+        "nom": "Collège Joseph Suacot",
+        "commune": "Petite-Ile",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.44653,
+          -20.88378
+        ]
+      },
+      "properties": {
+        "uai": "9740595D",
+        "nom": "Collège Jules Reydellet",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.28108,
+          -20.99722
+        ]
+      },
+      "properties": {
+        "uai": "9740093H",
+        "nom": "Collège Jules Solesse",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.4529,
+          -20.88305
+        ]
+      },
+      "properties": {
+        "uai": "9740081V",
+        "nom": "Collège Juliette Dodu",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.28471,
+          -20.98163
+        ]
+      },
+      "properties": {
+        "uai": "9740069G",
+        "nom": "Collège L'Etang Saint-Paul",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.41464,
+          -21.27436
+        ]
+      },
+      "properties": {
+        "uai": "9740091F",
+        "nom": "Collège Leconte de Lisle",
+        "commune": "Saint-Louis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.49485,
+          -21.29797
+        ]
+      },
+      "properties": {
+        "uai": "9741346V",
+        "nom": "Collège Ligne des Bambous",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.30676,
+          -21.21737
+        ]
+      },
+      "properties": {
+        "uai": "9740546A",
+        "nom": "Collège Marcel Goulette",
+        "commune": "Saint-Leu",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.55396,
+          -21.21793
+        ]
+      },
+      "properties": {
+        "uai": "9740620F",
+        "nom": "Collège Michel Debre",
+        "commune": "Le Tampon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.64962,
+          -20.96943
+        ]
+      },
+      "properties": {
+        "uai": "9740598G",
+        "nom": "Collège Mille Roches",
+        "commune": "Saint-André",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.46757,
+          -21.33567
+        ]
+      },
+      "properties": {
+        "uai": "9740574F",
+        "nom": "Collège Paul Hermann",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.42052,
+          -21.27687
+        ]
+      },
+      "properties": {
+        "uai": "9740841W",
+        "nom": "Collège Plateau Goyaves",
+        "commune": "Saint-Louis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.27601,
+          -21.14616
+        ]
+      },
+      "properties": {
+        "uai": "9741048W",
+        "nom": "Collège Pointe des Châteaux",
+        "commune": "Saint-Leu",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.46115,
+          -21.2885
+        ]
+      },
+      "properties": {
+        "uai": "9740027L",
+        "nom": "Collège Ravine des Cabris",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.3325,
+          -20.93452
+        ]
+      },
+      "properties": {
+        "uai": "9740084Y",
+        "nom": "Collège Raymond Verges",
+        "commune": "La Possession",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.46871,
+          -20.90063
+        ]
+      },
+      "properties": {
+        "uai": "9740645H",
+        "nom": "Collège Robert J. Ardon - Montgaillard",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.22976,
+          -21.06427
+        ]
+      },
+      "properties": {
+        "uai": "9741763Y",
+        "nom": "Collège Roquefeuil",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.3713,
+          -21.26508
+        ]
+      },
+      "properties": {
+        "uai": "9740813R",
+        "nom": "Collège Simon Lucas",
+        "commune": "L'Etang-Salé",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.65675,
+          -20.94767
+        ]
+      },
+      "properties": {
+        "uai": "9741261C",
+        "nom": "Collège Terrain Fayard",
+        "commune": "Saint-André",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.52599,
+          -21.2861
+        ]
+      },
+      "properties": {
+        "uai": "9740036W",
+        "nom": "Collège Terrain Fleury",
+        "commune": "Le Tampon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.48972,
+          -21.34664
+        ]
+      },
+      "properties": {
+        "uai": "9740811N",
+        "nom": "Collège Terre Sainte",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.32386,
+          -20.96206
+        ]
+      },
+      "properties": {
+        "uai": "9741236A",
+        "nom": "Collège Texeira da Motta",
+        "commune": "La Possession",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.82546,
+          -21.15428
+        ]
+      },
+      "properties": {
+        "uai": "9740044E",
+        "nom": "Collège Thérésien Cadet",
+        "commune": "Sainte-Rose",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.2913,
+          -20.94256
+        ]
+      },
+      "properties": {
+        "uai": "9741045T",
+        "nom": "Collège Titan",
+        "commune": "Le Port",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.5004,
+          -21.25961
+        ]
+      },
+      "properties": {
+        "uai": "9740652R",
+        "nom": "Collège Trois Mares",
+        "commune": "Le Tampon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.45225,
+          -20.8851
+        ]
+      },
+      "properties": {
+        "uai": "9740080U",
+        "nom": "Collège de Bourbon",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.64614,
+          -20.92863
+        ]
+      },
+      "properties": {
+        "uai": "9740703W",
+        "nom": "Collège de Cambuston - Claude MAHOUDEAUX",
+        "commune": "Saint-André",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.2673,
+          -21.02113
+        ]
+      },
+      "properties": {
+        "uai": "9741190A",
+        "nom": "Collège de Plateau Caillou",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.63746,
+          -20.93339
+        ]
+      },
+      "properties": {
+        "uai": "9741237B",
+        "nom": "Collège de Quartier français Lucet Langenier",
+        "commune": "Sainte-Suzanne",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.42246,
+          -20.89334
+        ]
+      },
+      "properties": {
+        "uai": "9740042C",
+        "nom": "Collège de la Montagne",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.52253,
+          -21.25908
+        ]
+      },
+      "properties": {
+        "uai": "9741581A",
+        "nom": "Collège du 12eme Km",
+        "commune": "Le Tampon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.74315,
+          -21.08468
+        ]
+      },
+      "properties": {
+        "uai": "9740065C",
+        "nom": "Collège du Bassin Bleu",
+        "commune": "Saint-Benoît",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.29997,
+          -20.94292
+        ]
+      },
+      "properties": {
+        "uai": "9740812P",
+        "nom": "Collège l'Oasis",
+        "commune": "Le Port",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.50528,
+          -21.27756
+        ]
+      },
+      "properties": {
+        "uai": "9741262D",
+        "nom": "Collège la Chatoire",
+        "commune": "Le Tampon",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.66654,
+          -21.37601
+        ]
+      },
+      "properties": {
+        "uai": "9741047V",
+        "nom": "Collège la Marine",
+        "commune": "Saint-Joseph",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.2703,
+          -21.04761
+        ]
+      },
+      "properties": {
+        "uai": "9740784J",
+        "nom": "Collège le Bernica",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.43634,
+          -21.25625
+        ]
+      },
+      "properties": {
+        "uai": "9740012V",
+        "nom": "Collège le Ruisseau",
+        "commune": "Saint-Louis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.22234,
+          -21.03935
+        ]
+      },
+      "properties": {
+        "uai": "9740932V",
+        "nom": "Collège les Aigrettes",
+        "commune": "Saint-Paul",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.47651,
+          -20.89166
+        ]
+      },
+      "properties": {
+        "uai": "9740572D",
+        "nom": "Collège les Deux Canons",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.50373,
+          -20.91203
+        ]
+      },
+      "properties": {
+        "uai": "9741044S",
+        "nom": "Collège les Mascareignes",
+        "commune": "Saint-Denis",
+        "dept": "974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.4763,
+          -21.33777
+        ]
+      },
+      "properties": {
+        "uai": "9740576H",
+        "nom": "Collège les Tamarins",
+        "commune": "Saint-Pierre",
+        "dept": "974"
+      }
+    }
+  ]
+}

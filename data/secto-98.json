@@ -1,0 +1,533 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.4448,
+          -22.2063
+        ]
+      },
+      "properties": {
+        "uai": "9830698S",
+        "nom": "Collège Apogoti",
+        "commune": "Dumbea",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.47446,
+          -22.20646
+        ]
+      },
+      "properties": {
+        "uai": "9830640D",
+        "nom": "Collège Edmée Varin",
+        "commune": "Dumbea",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.15761,
+          -21.35482
+        ]
+      },
+      "properties": {
+        "uai": "9830493U",
+        "nom": "Collège Essau Voudjo de Poya",
+        "commune": "Poya",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.47182,
+          -22.21326
+        ]
+      },
+      "properties": {
+        "uai": "9830474Y",
+        "nom": "Collège Francis Carco",
+        "commune": "Dumbea",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.46391,
+          -22.2602
+        ]
+      },
+      "properties": {
+        "uai": "9830625M",
+        "nom": "Collège François Ollivaud",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.35805,
+          -22.12757
+        ]
+      },
+      "properties": {
+        "uai": "9830656W",
+        "nom": "Collège Gabriel Païta",
+        "commune": "Paita",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.44013,
+          -22.28009
+        ]
+      },
+      "properties": {
+        "uai": "9830004M",
+        "nom": "Collège Georges Baudoux",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.43345,
+          -22.13872
+        ]
+      },
+      "properties": {
+        "uai": "9830626N",
+        "nom": "Collège Jean Fayard",
+        "commune": "Dumbea",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.46641,
+          -22.27237
+        ]
+      },
+      "properties": {
+        "uai": "9830356V",
+        "nom": "Collège Jean Lèques",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.44595,
+          -22.29772
+        ]
+      },
+      "properties": {
+        "uai": "9830277J",
+        "nom": "Collège Jean Mariotti",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.21428,
+          -21.60817
+        ]
+      },
+      "properties": {
+        "uai": "9830355U",
+        "nom": "Collège La Colline",
+        "commune": "Thio",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.27846,
+          -20.92143
+        ]
+      },
+      "properties": {
+        "uai": "9830357W",
+        "nom": "Collège Laura Boula",
+        "commune": "Lifou",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.49423,
+          -21.57273
+        ]
+      },
+      "properties": {
+        "uai": "9830010U",
+        "nom": "Collège Louis Leopold Djiet",
+        "commune": "Bourail",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.38075,
+          -22.13724
+        ]
+      },
+      "properties": {
+        "uai": "9830616C",
+        "nom": "Collège Louise Michel",
+        "commune": "Paita",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.94513,
+          -20.68646
+        ]
+      },
+      "properties": {
+        "uai": "9830522A",
+        "nom": "Collège Pai-Kaileone",
+        "commune": "Hienghene",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.34041,
+          -20.93817
+        ]
+      },
+      "properties": {
+        "uai": "9830008S",
+        "nom": "Collège Raymond Vauthier",
+        "commune": "Poindimie",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.50993,
+          -20.6829
+        ]
+      },
+      "properties": {
+        "uai": "9830639C",
+        "nom": "Collège Shea Tiaou",
+        "commune": "Ouvéa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.82492,
+          -21.70496
+        ]
+      },
+      "properties": {
+        "uai": "9830009T",
+        "nom": "Collège Théodore Kawa Braïno",
+        "commune": "La foa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.45364,
+          -22.28757
+        ]
+      },
+      "properties": {
+        "uai": "9830649N",
+        "nom": "Collège Tuband",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.52286,
+          -22.22828
+        ]
+      },
+      "properties": {
+        "uai": "9830384A",
+        "nom": "Collège de Boulari",
+        "commune": "Mont-dore",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.96507,
+          -21.52196
+        ]
+      },
+      "properties": {
+        "uai": "9830419N",
+        "nom": "Collège de Canala",
+        "commune": "Canala",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.44298,
+          -22.19438
+        ]
+      },
+      "properties": {
+        "uai": "9830681Y",
+        "nom": "Collège de Dumbéa sur mer 1",
+        "commune": "Dumbea",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.43404,
+          -22.23228
+        ]
+      },
+      "properties": {
+        "uai": "9830524C",
+        "nom": "Collège de Kaméré",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.8552,
+          -21.0507
+        ]
+      },
+      "properties": {
+        "uai": "9830278K",
+        "nom": "Collège de Koné",
+        "commune": "Kone",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.28144,
+          -20.55801
+        ]
+      },
+      "properties": {
+        "uai": "9830007R",
+        "nom": "Collège de Koumac",
+        "commune": "Koumac",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.0324,
+          -21.48074
+        ]
+      },
+      "properties": {
+        "uai": "9830482G",
+        "nom": "Collège de La Roche",
+        "commune": "Maré",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.48996,
+          -22.23064
+        ]
+      },
+      "properties": {
+        "uai": "9830538T",
+        "nom": "Collège de Normandie",
+        "commune": "Nouméa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.43862,
+          -20.34062
+        ]
+      },
+      "properties": {
+        "uai": "9830632V",
+        "nom": "Collège de Ouégoa",
+        "commune": "Ouegoa",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          164.89061,
+          -21.10137
+        ]
+      },
+      "properties": {
+        "uai": "9830691J",
+        "nom": "Collège de Païamboué",
+        "commune": "Kone",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.63947,
+          -22.27354
+        ]
+      },
+      "properties": {
+        "uai": "9830624L",
+        "nom": "Collège de Plum",
+        "commune": "Mont-dore",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.88535,
+          -21.54466
+        ]
+      },
+      "properties": {
+        "uai": "9830414H",
+        "nom": "Collège de Tadine",
+        "commune": "Maré",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          165.61458,
+          -21.27818
+        ]
+      },
+      "properties": {
+        "uai": "9830418M",
+        "nom": "Collège de Wani",
+        "commune": "Houailou",
+        "dept": "98"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.94444,
+          -22.15913
+        ]
+      },
+      "properties": {
+        "uai": "9830477B",
+        "nom": "Collège de Yaté",
+        "commune": "Yaté",
+        "dept": "98"
+      }
+    }
+  ]
+}

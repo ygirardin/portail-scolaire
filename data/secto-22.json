@@ -1,1 +1,741 @@
-{"22202":{"NAN":[{"d":0,"f":9999,"p":null,"r":"0291102R"}]},"22351":{"NAN":[{"d":0,"f":9999,"p":null,"r":"0291102R"}]},"22157":{"NAN":[{"d":0,"f":9999,"p":null,"r":"0291102R"}]},"22344":{"NAN":[{"d":0,"f":9999,"p":null,"r":"0291102R"}]},"22373":{"NAN":[{"d":0,"f":9999,"p":null,"r":"0291102R"}]}}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.17311,
+          48.5606
+        ]
+      },
+      "properties": {
+        "uai": "0221698B",
+        "nom": "Collège Albert Camus",
+        "commune": "Guingamp",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7614,
+          48.51105
+        ]
+      },
+      "properties": {
+        "uai": "0220185G",
+        "nom": "Collège Anatole Le Braz",
+        "commune": "Saint-Brieuc",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.83936,
+          48.6472
+        ]
+      },
+      "properties": {
+        "uai": "0220063Z",
+        "nom": "Collège Camille Claudel",
+        "commune": "Saint-Quay-Portrieux",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1672,
+          48.69849
+        ]
+      },
+      "properties": {
+        "uai": "0221542G",
+        "nom": "Collège Charles Brochen",
+        "commune": "Pontrieux",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.46513,
+          48.74652
+        ]
+      },
+      "properties": {
+        "uai": "0220082V",
+        "nom": "Collège Charles Le Goffic",
+        "commune": "Lannion",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.64106,
+          48.4858
+        ]
+      },
+      "properties": {
+        "uai": "0222030M",
+        "nom": "Collège Charles-de-Gaulle",
+        "commune": "Hillion",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3219,
+          48.23739
+        ]
+      },
+      "properties": {
+        "uai": "0221038J",
+        "nom": "Collège Edouard Herriot",
+        "commune": "Rostrenen",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2382,
+          48.77849
+        ]
+      },
+      "properties": {
+        "uai": "0220073K",
+        "nom": "Collège Ernest Renan",
+        "commune": "Minihy-Tréguier",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.75319,
+          48.34578
+        ]
+      },
+      "properties": {
+        "uai": "0221568K",
+        "nom": "Collège Eugène Guillevic",
+        "commune": "Ploeuc-L'Hermitage",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.04949,
+          48.45188
+        ]
+      },
+      "properties": {
+        "uai": "0221623V",
+        "nom": "Collège François Broussais",
+        "commune": "Dinan",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.30297,
+          48.63111
+        ]
+      },
+      "properties": {
+        "uai": "0221518F",
+        "nom": "Collège François Clech",
+        "commune": "Bégard",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.63636,
+          48.3548
+        ]
+      },
+      "properties": {
+        "uai": "0221594N",
+        "nom": "Collège François Lorant",
+        "commune": "Moncontour",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.23982,
+          48.52281
+        ]
+      },
+      "properties": {
+        "uai": "0220038X",
+        "nom": "Collège François René de Chateaubriand",
+        "commune": "Plancoët",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.47277,
+          48.61
+        ]
+      },
+      "properties": {
+        "uai": "0220045E",
+        "nom": "Collège François-Marie Luzel",
+        "commune": "Plouaret",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.42863,
+          48.40626
+        ]
+      },
+      "properties": {
+        "uai": "0221540E",
+        "nom": "Collège Gwer Halou",
+        "commune": "Callac",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.14291,
+          48.55954
+        ]
+      },
+      "properties": {
+        "uai": "0220197V",
+        "nom": "Collège Jacques Prévert",
+        "commune": "Guingamp",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.16353,
+          48.31045
+        ]
+      },
+      "properties": {
+        "uai": "0220061X",
+        "nom": "Collège Jean Jaurès",
+        "commune": "Saint-Nicolas-du-Pélem",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.93366,
+          48.67493
+        ]
+      },
+      "properties": {
+        "uai": "0221512Z",
+        "nom": "Collège Jean Louis Hamon",
+        "commune": "Plouha",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.79132,
+          48.51544
+        ]
+      },
+      "properties": {
+        "uai": "0220184F",
+        "nom": "Collège Jean Macé",
+        "commune": "Saint-Brieuc",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.26553,
+          48.3243
+        ]
+      },
+      "properties": {
+        "uai": "0221127F",
+        "nom": "Collège Jean Monnet",
+        "commune": "Broons",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.75109,
+          48.50912
+        ]
+      },
+      "properties": {
+        "uai": "0220054P",
+        "nom": "Collège Jean Racine",
+        "commune": "Saint-Brieuc",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.53643,
+          48.58705
+        ]
+      },
+      "properties": {
+        "uai": "0221126E",
+        "nom": "Collège Jean Richepin",
+        "commune": "Pléneuf-Val-André",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.18944,
+          48.47607
+        ]
+      },
+      "properties": {
+        "uai": "0220003J",
+        "nom": "Collège Jules Ferry",
+        "commune": "Bourbriac",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.77395,
+          48.54143
+        ]
+      },
+      "properties": {
+        "uai": "0221039K",
+        "nom": "Collège Jules Léquier",
+        "commune": "Plérin",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.01057,
+          48.30407
+        ]
+      },
+      "properties": {
+        "uai": "0220046F",
+        "nom": "Collège La Gautrais",
+        "commune": "Plouasne",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.79835,
+          48.49475
+        ]
+      },
+      "properties": {
+        "uai": "0221621T",
+        "nom": "Collège La Grande Métairie",
+        "commune": "Ploufragan",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.91168,
+          48.40814
+        ]
+      },
+      "properties": {
+        "uai": "0221028Y",
+        "nom": "Collège Le Volozen",
+        "commune": "Quintin",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.46152,
+          48.80612
+        ]
+      },
+      "properties": {
+        "uai": "0221029Z",
+        "nom": "Collège Les Sept Iles",
+        "commune": "Perros-Guirec",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.59662,
+          48.17449
+        ]
+      },
+      "properties": {
+        "uai": "0221037H",
+        "nom": "Collège Louis Guilloux",
+        "commune": "Plémet",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.40533,
+          48.36648
+        ]
+      },
+      "properties": {
+        "uai": "0220040Z",
+        "nom": "Collège Louis de Chappedelaine",
+        "commune": "Plénée-Jugon",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.98162,
+          48.54033
+        ]
+      },
+      "properties": {
+        "uai": "0220006M",
+        "nom": "Collège Lucie et Raymond Aubrac",
+        "commune": "Châtelaudren-Plouagat",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.75216,
+          48.49659
+        ]
+      },
+      "properties": {
+        "uai": "0221513A",
+        "nom": "Collège Léonard de Vinci",
+        "commune": "Saint-Brieuc",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.05628,
+          48.78289
+        ]
+      },
+      "properties": {
+        "uai": "0221991V",
+        "nom": "Collège Marie-José Chombart de Lauwe",
+        "commune": "Paimpol",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.99301,
+          48.20313
+        ]
+      },
+      "properties": {
+        "uai": "0220032R",
+        "nom": "Collège Paul Eluard",
+        "commune": "Guerlédan",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.51525,
+          48.76803
+        ]
+      },
+      "properties": {
+        "uai": "0221819H",
+        "nom": "Collège Paul Le Flem",
+        "commune": "Pleumeur-Bodou",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.29512,
+          48.5976
+        ]
+      },
+      "properties": {
+        "uai": "0220029M",
+        "nom": "Collège Paul Sébillot",
+        "commune": "Matignon",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.40859,
+          48.18923
+        ]
+      },
+      "properties": {
+        "uai": "0221538C",
+        "nom": "Collège Per-Jakez Helias",
+        "commune": "Merdrignac",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.043,
+          48.45132
+        ]
+      },
+      "properties": {
+        "uai": "0220081U",
+        "nom": "Collège Roger Vercel",
+        "commune": "Dinan",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.50974,
+          48.47684
+        ]
+      },
+      "properties": {
+        "uai": "0221537B",
+        "nom": "Collège Simone Veil",
+        "commune": "Lamballe-Armor",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.46392,
+          48.62926
+        ]
+      },
+      "properties": {
+        "uai": "0220015X",
+        "nom": "Collège Thalassa",
+        "commune": "Erquy",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5124,
+          48.29703
+        ]
+      },
+      "properties": {
+        "uai": "0220008P",
+        "nom": "Collège Victor Vasarely",
+        "commune": "Le Mené",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.43408,
+          48.73458
+        ]
+      },
+      "properties": {
+        "uai": "0221931E",
+        "nom": "Collège Yves Coppens",
+        "commune": "Lannion",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.75322,
+          48.18579
+        ]
+      },
+      "properties": {
+        "uai": "0221509W",
+        "nom": "Collège des Livaudières",
+        "commune": "Loudéac",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.63114,
+          48.65179
+        ]
+      },
+      "properties": {
+        "uai": "0221541F",
+        "nom": "Collège du Penker",
+        "commune": "Plestin-les-Grèves",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.39559,
+          48.54368
+        ]
+      },
+      "properties": {
+        "uai": "0221539D",
+        "nom": "Collège du Prat Eles",
+        "commune": "Belle-Isle-en-Terre",
+        "dept": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.00147,
+          48.52454
+        ]
+      },
+      "properties": {
+        "uai": "0220047G",
+        "nom": "Collège du Val de Rance",
+        "commune": "Plouër-sur-Rance",
+        "dept": "22"
+      }
+    }
+  ]
+}

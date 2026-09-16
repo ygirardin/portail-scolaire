@@ -1,0 +1,565 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.03855,
+          5.47676
+        ]
+      },
+      "properties": {
+        "uai": "9730570G",
+        "nom": "COLLEGE AGNES BARDURY",
+        "commune": "Saint-Laurent-du-Maroni",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.49476,
+          4.89027
+        ]
+      },
+      "properties": {
+        "uai": "9730587A",
+        "nom": "COLLEGE DE MONTSINERY-TONNEGRANDE",
+        "commune": "Montsinéry-Tonnegrande",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.38202,
+          4.27602
+        ]
+      },
+      "properties": {
+        "uai": "9730380A",
+        "nom": "Collège Achmat Kartadinama",
+        "commune": "Grand-Santi",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.03107,
+          5.47197
+        ]
+      },
+      "properties": {
+        "uai": "9730248G",
+        "nom": "Collège Albert Londres",
+        "commune": "Saint-Laurent-du-Maroni",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.14169,
+          4.29987
+        ]
+      },
+      "properties": {
+        "uai": "9730452D",
+        "nom": "Collège Annexe Pierre Ardinet",
+        "commune": "Régina",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.40722,
+          4.92307
+        ]
+      },
+      "properties": {
+        "uai": "9730374U",
+        "nom": "Collège Antoine Sylvère Felix",
+        "commune": "Macouria",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.03135,
+          5.48374
+        ]
+      },
+      "properties": {
+        "uai": "9730394R",
+        "nom": "Collège Arsène Bouyer d'Angoma",
+        "commune": "Saint-Laurent-du-Maroni",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.2778,
+          4.90702
+        ]
+      },
+      "properties": {
+        "uai": "9730179G",
+        "nom": "Collège Auguste Dédé",
+        "commune": "Remire-Montjoly",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.32394,
+          4.938
+        ]
+      },
+      "properties": {
+        "uai": "9730020J",
+        "nom": "Collège Auxence Contout",
+        "commune": "Cayenne",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.14645,
+          3.81297
+        ]
+      },
+      "properties": {
+        "uai": "9730381B",
+        "nom": "Collège Capitaine Charles Tafanier",
+        "commune": "Papaichton",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.80158,
+          3.89075
+        ]
+      },
+      "properties": {
+        "uai": "9730173A",
+        "nom": "Collège Chlore Constant",
+        "commune": "Saint-Georges",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.35117,
+          4.83513
+        ]
+      },
+      "properties": {
+        "uai": "9730307W",
+        "nom": "Collège Concorde - Maurice Dumesnil",
+        "commune": "Matoury",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.95484,
+          5.38188
+        ]
+      },
+      "properties": {
+        "uai": "9730145V",
+        "nom": "Collège Elie Castor",
+        "commune": "Sinnamary",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.33163,
+          4.94143
+        ]
+      },
+      "properties": {
+        "uai": "9730130D",
+        "nom": "Collège Eugène Nonnon",
+        "commune": "Cayenne",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.02788,
+          5.50397
+        ]
+      },
+      "properties": {
+        "uai": "9730110G",
+        "nom": "Collège Eugénie Tell-Eboué",
+        "commune": "Saint-Laurent-du-Maroni",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.21192,
+          5.47593
+        ]
+      },
+      "properties": {
+        "uai": "9730219A",
+        "nom": "Collège Ferdinand Madeleine",
+        "commune": "Iracoubo",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.03409,
+          3.64403
+        ]
+      },
+      "properties": {
+        "uai": "9730193X",
+        "nom": "Collège Gran Man Difou",
+        "commune": "Maripasoula",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.31597,
+          4.92979
+        ]
+      },
+      "properties": {
+        "uai": "9730083C",
+        "nom": "Collège Gérard Holder",
+        "commune": "Cayenne",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.64346,
+          5.16503
+        ]
+      },
+      "properties": {
+        "uai": "9730125Y",
+        "nom": "Collège Henri Agarande",
+        "commune": "Kourou",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.65827,
+          5.1714
+        ]
+      },
+      "properties": {
+        "uai": "9730483M",
+        "nom": "Collège Joseph Ho Ten You",
+        "commune": "Kourou",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.47816,
+          5.01305
+        ]
+      },
+      "properties": {
+        "uai": "9730206L",
+        "nom": "Collège Just Hyasine",
+        "commune": "Macouria",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.30856,
+          4.91764
+        ]
+      },
+      "properties": {
+        "uai": "9730247F",
+        "nom": "Collège Justin Catayée",
+        "commune": "Cayenne",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.32934,
+          4.84246
+        ]
+      },
+      "properties": {
+        "uai": "9730182K",
+        "nom": "Collège La Canopée",
+        "commune": "Matoury",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.34284,
+          4.88999
+        ]
+      },
+      "properties": {
+        "uai": "9730218Z",
+        "nom": "Collège Lise Ophion",
+        "commune": "Matoury",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.77932,
+          5.6711
+        ]
+      },
+      "properties": {
+        "uai": "9730192W",
+        "nom": "Collège Léo Othily",
+        "commune": "Mana",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.03559,
+          5.48837
+        ]
+      },
+      "properties": {
+        "uai": "9730348R",
+        "nom": "Collège Léodate Volmar",
+        "commune": "Saint-Laurent-du-Maroni",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.34277,
+          5.15716
+        ]
+      },
+      "properties": {
+        "uai": "9730337D",
+        "nom": "Collège Ma Aiye",
+        "commune": "Apatou",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.65014,
+          5.17347
+        ]
+      },
+      "properties": {
+        "uai": "9730306V",
+        "nom": "Collège Omeba Tobo",
+        "commune": "Kourou",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.01307,
+          5.48107
+        ]
+      },
+      "properties": {
+        "uai": "9730329V",
+        "nom": "Collège Paul Jean Louis",
+        "commune": "Saint-Laurent-du-Maroni",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.32317,
+          4.92876
+        ]
+      },
+      "properties": {
+        "uai": "9730091L",
+        "nom": "Collège Paul Kapel",
+        "commune": "Cayenne",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.33644,
+          3.16472
+        ]
+      },
+      "properties": {
+        "uai": "9730451C",
+        "nom": "Collège Paul Suitman",
+        "commune": "Camopi",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.81686,
+          5.60452
+        ]
+      },
+      "properties": {
+        "uai": "9730373T",
+        "nom": "Collège Paule Berthelot",
+        "commune": "Mana",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.2785,
+          4.89544
+        ]
+      },
+      "properties": {
+        "uai": "9730370P",
+        "nom": "Collège Réeberg Néron",
+        "commune": "Remire-Montjoly",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.66854,
+          5.15555
+        ]
+      },
+      "properties": {
+        "uai": "9730237V",
+        "nom": "Collège Victor Schoelcher",
+        "commune": "Kourou",
+        "dept": "973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.29194,
+          4.88088
+        ]
+      },
+      "properties": {
+        "uai": "9730598M",
+        "nom": "Collège de REMIRE-MONTJOLY III",
+        "commune": "Remire-Montjoly",
+        "dept": "973"
+      }
+    }
+  ]
+}

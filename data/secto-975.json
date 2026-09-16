@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.37886,
+          47.10058
+        ]
+      },
+      "properties": {
+        "uai": "9750026E",
+        "nom": "Collège d'Etat du socle",
+        "commune": "Miquelon-langlade",
+        "dept": "975"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.17668,
+          46.78165
+        ]
+      },
+      "properties": {
+        "uai": "9750025D",
+        "nom": "Collège emile Letournel SAINT-PIERRE",
+        "commune": "Saint pierre",
+        "dept": "975"
+      }
+    }
+  ]
+}
