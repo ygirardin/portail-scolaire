@@ -129,6 +129,20 @@ var hlM, hlC, hlD, sectL, sectP;
 // Chemin vers les données (relatif au HTML)
 var DATA_PATH = 'data/';
 
+// FIX CORS : proxy pour API data.gouv.fr
+var CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+var API_BASE = 'https://api-adresse.data.gouv.fr/search/';
+
+function makeAPIUrl(q, opts) {
+  var params = [];
+  params.push('q=' + encodeURIComponent(q));
+  params.push('limit=' + (opts.limit || 5));
+  if (opts.citycode) params.push('citycode=' + opts.citycode);
+  if (opts.type) params.push('type=' + opts.type);
+  var url = API_BASE + '?' + params.join('&');
+  return CORS_PROXY + encodeURIComponent(url);
+}
+
 function prog(pct,txt){
   document.getElementById('prog').style.width=pct+'%';
   document.getElementById('ldSub').textContent=txt;
@@ -293,8 +307,8 @@ inp.addEventListener('keydown',function(e){
 document.addEventListener('click',function(e){if(!e.target.closest('#sw'))hideAC();});
 function updAC(its){its.forEach(function(it,i){it.classList.toggle('hi',i===ai);});if(ai>=0&&sugg[ai])inp.value=sugg[ai].properties.label;}
 function fetchAC(q){
-  fetch('https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(q)+'&limit=5&type=housenumber')
-    .then(function(r){return r.json();}).then(function(d){sugg=d.features;renderAC();}).catch(function(){});
+  fetch(makeAPIUrl(q, {limit: 5, type: 'housenumber'}))
+    .then(function(r){return r.json();}).then(function(d){sugg=d.features;renderAC();}).catch(function(e){console.error('AC fetch error:', e);});
 }
 function renderAC(){
   if(!sugg.length){hideAC();return;}ai=-1;acEl.innerHTML='';
@@ -309,10 +323,10 @@ function renderAC(){
 function hideAC(){acEl.classList.remove('open');}
 function doSearch(){
   var q=inp.value.trim();if(!q)return;hideAC();setSt('loading','Géocodage...');
-  fetch('https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(q)+'&limit=1')
+  fetch(makeAPIUrl(q, {limit: 1}))
     .then(function(r){return r.json();})
     .then(function(d){if(!d.features||!d.features.length){setSt('error','Adresse introuvable.');return;}fromFeat(d.features[0]);})
-    .catch(function(){setSt('error','Vérifiez votre connexion.');});
+    .catch(function(e){console.error('Search error:', e);setSt('error','Vérifiez votre connexion.');});
 }
 
 function fromFeat(feat){
@@ -397,7 +411,8 @@ function loadSect(c){
         }
       }
     }
-    showSectPanel(c,streets);buildPoly(streets);
+    showSectPanel(c,streets);
+    buildPoly(streets);
   });
 }
 function loadSectForCollege(c,insee){loadSect(c);}
@@ -438,10 +453,10 @@ function buildPoly(streets){
   var points=[],pending=sample.length;
   if(!pending){updPolyStatus('Pas de rues géocodables.');return;}
   sample.forEach(function(s){
-    fetch('https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(s.street+' '+s.insee)+'&citycode='+s.insee+'&limit=1')
+    fetch(makeAPIUrl(s.street+' '+s.insee, {citycode: s.insee, limit: 1}))
       .then(function(r){return r.json();})
       .then(function(d){if(d.features&&d.features.length){var co=d.features[0].geometry.coordinates;points.push([co[1],co[0]]);}pending--;if(pending===0)finPoly(points);})
-      .catch(function(){pending--;if(pending===0)finPoly(points);});
+      .catch(function(e){console.error('Geocode error:', e);pending--;if(pending===0)finPoly(points);});
   });
 }
 function finPoly(pts){
