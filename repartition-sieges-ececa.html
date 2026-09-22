@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Répartition des sièges - ECECA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .list-container {
+            background: white;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .list-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .candidates {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .candidate-row {
+            display: grid;
+            grid-template-columns: 40px 1fr 80px 30px;
+            gap: 8px;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .candidate-row input {
+            padding: 6px;
+            font-size: 13px;
+        }
+
+        .candidate-status {
+            font-size: 12px;
+            font-weight: 600;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .results {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 3px solid #667eea;
+        }
+
+        .results h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-titulaire {
+            background: #d4edda;
+            color: #155724;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .status-suppleant {
+            background: #fff3cd;
+            color: #856404;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid #28a745;
+        }
+
+        .repartition-detail {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .repartition-detail h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .repartition-row {
+            display: grid;
+            grid-template-columns: 100px 80px 80px 80px 80px;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+
+        .repartition-row:last-child {
+            border-bottom: none;
+        }
+
+        .repartition-row strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Répartition des sièges - Méthode ECECA</h1>
+            <p>Outil de calcul pour les élections au conseil d'administration</p>
+        </header>
+
+        <div class="content">
+            <!-- SECTION 1: PARAMÈTRES DE L'ÉTABLISSEMENT -->
+            <section>
+                <h2>⚙️ Paramètres de l'établissement</h2>
+                
+                <div class="form-group">
+                    <label for="schoolType">Type d'établissement</label>
+                    <select id="schoolType">
+                        <option value="">-- Sélectionner --</option>
+                        <option value="college">Collège</option>
+                        <option value="lycee">Lycée</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numClasses">Nombre de classes / Nombre de sièges titulaires</label>
+                    <input type="number" id="numClasses" min="1" placeholder="Ex: 12" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="numStudents">Nombre d'élèves (optionnel)</label>
+                    <input type="number" id="numStudents" min="0" placeholder="Ex: 450">
+                </div>
+            </section>
+
+            <!-- SECTION 2: GESTION DES LISTES -->
+            <section>
+                <h2>📝 Gestion des listes</h2>
+                
+                <div class="form-group">
+                    <label for="listName">Nom de la liste</label>
+                    <input type="text" id="listName" placeholder="Ex: Liste A">
+                </div>
+
+                <button class="btn-primary" onclick="addList()">Ajouter une liste</button>
+                
+                <div id="listsContainer" style="margin-top: 20px;"></div>
+            </section>
+
+            <!-- SECTION 3: RÉSULTATS DU SCRUTIN -->
+            <section>
+                <h2>🗳️ Résultats du scrutin</h2>
+                
+                <div id="voicesContainer"></div>
+                
+                <button class="btn-primary" onclick="calculateResults()">📊 Calculer la répartition</button>
+                <button class="btn-secondary" onclick="resetAll()" style="margin-left: 10px;">Réinitialiser</button>
+            </section>
+
+            <!-- SECTION 4: RÉSULTATS -->
+            <section class="results" id="resultsSection" style="display:none;">
+                <h2>📊 Résultats de la répartition</h2>
+                
+                <div id="resultsContent"></div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        let lists = {};
+        let listOrder = [];
+
+        function addList() {
+            const listName = document.getElementById('listName').value.trim();
+            
+            if (!listName) {
+                alert('Veuillez entrer un nom de liste');
+                return;
+            }
+
+            if (lists[listName]) {
+                alert('Cette liste existe déjà');
+                return;
+            }
+
+            lists[listName] = { candidates: [], voices: 0 };
+            listOrder.push(listName);
+            document.getElementById('listName').value = '';
+            
+            renderLists();
+            renderVoicesInput();
+        }
+
+        function renderLists() {
+            const container = document.getElementById('listsContainer');
+            container.innerHTML = '';
+
+            listOrder.forEach((listName, index) => {
+                const list = lists[listName];
+                const listDiv = document.createElement('div');
+                listDiv.className = 'list-container';
+                
+                let candidatesHTML = '';
+                list.candidates.forEach((candidate, candIndex) => {
+                    candidatesHTML += `
+                        <div class="candidate-row">
+                            <div class="candidate-status">${candIndex < 1 ? 'T' : candIndex < 2 ? 'S' : 'S'}</div>
+                            <input type="text" value="${candidate}" placeholder="Nom du candidat" 
+                                   onchange="updateCandidate('${listName}', ${candIndex}, this.value)">
+                            <input type="number" value="1990" min="1920" max="2010" placeholder="Année" 
+                                   style="font-size: 12px;" onchange="updateCandidateAge('${listName}', ${candIndex}, this.value)">
+                            <button class="btn-danger" onclick="removeCandidate('${listName}', ${candIndex})">×</button>
+                        </div>
+                    `;
+                });
+
+                listDiv.innerHTML = `
+                    <div class="list-header">
+                        <span class="list-name">📌 ${listName}</span>
+                        <button class="btn-danger" onclick="removeList('${listName}')">Supprimer liste</button>
+                    </div>
+                    <div class="candidates">
+                        ${candidatesHTML}
+                        <button class="btn-secondary" onclick="addCandidate('${listName}')" style="width: 100%; margin-top: 10px;">+ Ajouter un candidat</button>
+                    </div>
+                `;
+
+                container.appendChild(listDiv);
+            });
+        }
+
+        function addCandidate(listName) {
+            lists[listName].candidates.push(`Candidat ${lists[listName].candidates.length + 1}`);
+            renderLists();
+        }
+
+        function updateCandidate(listName, index, value) {
+            lists[listName].candidates[index] = value;
+        }
+
+        function updateCandidateAge(listName, index, age) {
+            if (!lists[listName].ages) lists[listName].ages = {};
+            lists[listName].ages[index] = parseInt(age);
+        }
+
+        function removeCandidate(listName, index) {
+            lists[listName].candidates.splice(index, 1);
+            renderLists();
+            renderVoicesInput();
+        }
+
+        function removeList(listName) {
+            delete lists[listName];
+            listOrder = listOrder.filter(l => l !== listName);
+            renderLists();
+            renderVoicesInput();
+        }
+
+        function renderVoicesInput() {
+            const container = document.getElementById('voicesContainer');
+            container.innerHTML = '';
+
+            listOrder.forEach(listName => {
+                const div = document.createElement('div');
+                div.className = 'form-group';
+                div.innerHTML = `
+                    <label for="voices_${listName}">Voix pour ${listName}</label>
+                    <input type="number" id="voices_${listName}" min="0" placeholder="0" 
+                           onchange="updateVoices('${listName}', this.value)">
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function updateVoices(listName, value) {
+            lists[listName].voices = parseInt(value) || 0;
+        }
+
+        function calculateResults() {
+            const schoolType = document.getElementById('schoolType').value;
+            const numClasses = parseInt(document.getElementById('numClasses').value);
+
+            if (!schoolType) {
+                alert('Veuillez sélectionner un type d\'établissement');
+                return;
+            }
+
+            if (!numClasses || numClasses < 1) {
+                alert('Veuillez entrer un nombre de classes valide');
+                return;
+            }
+
+            if (listOrder.length === 0) {
+                alert('Veuillez ajouter au moins une liste');
+                return;
+            }
+
+            // Vérifier qu'au moins une liste a des voix
+            const totalVoices = listOrder.reduce((sum, name) => sum + lists[name].voices, 0);
+            if (totalVoices === 0) {
+                alert('Veuillez entrer le nombre de voix pour au moins une liste');
+                return;
+            }
+
+            const results = computeRepartition(numClasses, totalVoices);
+            displayResults(results, numClasses, totalVoices);
+        }
+
+        function computeRepartition(numClasses, totalVoices) {
+            const seatsToDistribute = numClasses;
+            
+            // Étape 1: Calculer le quotient électoral
+            const quotient = totalVoices / seatsToDistribute;
+            
+            // Étape 2: Première répartition
+            let firstDistribution = {};
+            let seatsDistributed = 0;
+            
+            listOrder.forEach(listName => {
+                const seats = Math.floor(lists[listName].voices / quotient);
+                firstDistribution[listName] = seats;
+                seatsDistributed += seats;
+            });
+
+            // Étape 3: Calculer les restes
+            let rests = [];
+            listOrder.forEach(listName => {
+                const rest = lists[listName].voices - (firstDistribution[listName] * quotient);
+                rests.push({
+                    list: listName,
+                    rest: rest,
+                    voices: lists[listName].voices
+                });
+            });
+
+            // Trier par reste décroissant
+            rests.sort((a, b) => b.rest - a.rest);
+
+            // Étape 4: Deuxième répartition
+            let secondDistribution = {};
+            listOrder.forEach(listName => {
+                secondDistribution[listName] = 0;
+            });
+
+            let remainingSeats = seatsToDistribute - seatsDistributed;
+            let restIndex = 0;
+
+            while (remainingSeats > 0 && restIndex < rests.length) {
+                secondDistribution[rests[restIndex].list]++;
+                remainingSeats--;
+                restIndex++;
+            }
+
+            // Résultats finaux
+            let finalResults = {};
+            listOrder.forEach(listName => {
+                finalResults[listName] = (firstDistribution[listName] || 0) + (secondDistribution[listName] || 0);
+            });
+
+            return {
+                quotient: quotient,
+                firstDistribution: firstDistribution,
+                rests: rests,
+                secondDistribution: secondDistribution,
+                finalResults: finalResults,
+                seatsToDistribute: seatsToDistribute
+            };
+        }
+
+        function displayResults(results, numClasses, totalVoices) {
+            const section = document.getElementById('resultsSection');
+            const content = document.getElementById('resultsContent');
+            
+            let html = '';
+
+            // Statistiques générales
+            html += `
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value">${results.quotient.toFixed(2)}</div>
+                        <div class="stat-label">Quotient électoral</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${totalVoices}</div>
+                        <div class="stat-label">Suffrages exprimés</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${numClasses}</div>
+                        <div class="stat-label">Sièges titulaires</div>
+                    </div>
+                </div>
+            `;
+
+            // Détail de la répartition
+            html += '<h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Détail de la répartition</h3>';
+            html += `
+                <div class="repartition-detail">
+                    <h4>Résumé par liste</h4>
+                    <div class="repartition-row" style="font-weight: bold; background: #f0f0f0;">
+                        <strong>Liste</strong>
+                        <strong>Voix</strong>
+                        <strong>1ère attr.</strong>
+                        <strong>Reste</strong>
+                        <strong>Total</strong>
+                    </div>
+            `;
+
+            listOrder.forEach(listName => {
+                const rest = results.rests.find(r => r.list === listName);
+                html += `
+                    <div class="repartition-row">
+                        <strong>${listName}</strong>
+                        <div>${lists[listName].voices}</div>
+                        <div>${results.firstDistribution[listName] || 0}</div>
+                        <div>${rest.rest.toFixed(2)}</div>
+                        <div style="font-weight: bold; color: #667eea;">${results.finalResults[listName]}</div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+
+            // Tableau des élus
+            html += '<h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Liste des candidats élus</h3>';
+
+            let allElected = [];
+
+            listOrder.forEach(listName => {
+                const totalSeats = results.finalResults[listName];
+                const candidates = lists[listName].candidates;
+                
+                // Ajouter les titulaires
+                for (let i = 0; i < totalSeats && i < candidates.length; i++) {
+                    allElected.push({
+                        list: listName,
+                        name: candidates[i],
+                        status: 'Titulaire',
+                        order: i + 1
+                    });
+                }
+                
+                // Ajouter les suppléants (même nombre que les titulaires)
+                for (let i = totalSeats; i < totalSeats + totalSeats && i < candidates.length; i++) {
+                    allElected.push({
+                        list: listName,
+                        name: candidates[i],
+                        status: 'Suppléant',
+                        order: (i - totalSeats) + 1
+                    });
+                }
+            });
+
+            if (allElected.length === 0) {
+                html += '<div class="no-results">Aucun candidat élus</div>';
+            } else {
+                html += '<table>';
+                html += '<thead><tr><th>Liste</th><th>Nom du candidat</th><th>Statut</th><th>Ordre</th></tr></thead>';
+                html += '<tbody>';
+
+                allElected.forEach(elected => {
+                    const statusClass = elected.status === 'Titulaire' ? 'status-titulaire' : 'status-suppleant';
+                    const statusHTML = `<span class="${statusClass}">${elected.status}</span>`;
+                    html += `
+                        <tr>
+                            <td><strong>${elected.list}</strong></td>
+                            <td>${elected.name}</td>
+                            <td>${statusHTML}</td>
+                            <td>${elected.order}</td>
+                        </tr>
+                    `;
+                });
+
+                html += '</tbody></table>';
+            }
+
+            content.innerHTML = html;
+            section.style.display = 'block';
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetAll() {
+            lists = {};
+            listOrder = [];
+            document.getElementById('listName').value = '';
+            document.getElementById('schoolType').value = '';
+            document.getElementById('numClasses').value = '';
+            document.getElementById('numStudents').value = '';
+            document.getElementById('listsContainer').innerHTML = '';
+            document.getElementById('voicesContainer').innerHTML = '';
+            document.getElementById('resultsSection').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
