@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Générateur de convocation au Conseil d'administration</title>
+<style>
+:root{
+  --bg:#f3f4f7; --panel:#fff; --ink:#1d2433; --muted:#667085; --line:#d9dde5;
+  --accent:#000091; --accent-soft:#e8e8fb; --danger:#c9191e; --ok:#18753c;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header.top{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:10px;padding:10px 18px;flex-wrap:wrap}
+header.top h1{font-size:16px;margin:0 auto 0 0;font-weight:700;letter-spacing:.01em}
+header.top h1 small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);
+  border-radius:6px;padding:6px 11px}
+button:hover{border-color:#a9b0bd}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+button.primary:hover{filter:brightness(1.15)}
+button.ghost{border-color:transparent;background:transparent;color:var(--muted);padding:4px 7px}
+button.ghost:hover{background:#eef0f4;color:var(--ink)}
+button.danger{color:var(--danger)}
+button.confirm{background:var(--danger);border-color:var(--danger);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(380px,520px) 1fr;gap:18px;padding:18px;align-items:start}
+@media (max-width:980px){.layout{grid-template-columns:1fr}}
+.forms{display:flex;flex-direction:column;gap:14px}
+details.card{background:var(--panel);border:1px solid var(--line);border-radius:10px}
+details.card>summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:650;display:flex;align-items:center;gap:8px}
+details.card>summary::-webkit-details-marker{display:none}
+details.card>summary::before{content:"▸";color:var(--muted);transition:transform .15s}
+details.card[open]>summary::before{transform:rotate(90deg)}
+details.card>summary .hint{font-weight:400;color:var(--muted);font-size:12px;margin-left:auto}
+.card-body{padding:2px 16px 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.grid .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);font-weight:550}
+input[type=text],input[type=date],input[type=time],input[type=number],select,textarea{
+  font:inherit;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;background:#fff;width:100%}
+textarea{resize:vertical;min-height:54px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+.check{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.muted{color:var(--muted);font-size:12px}
+.logo-zone{display:flex;gap:12px;align-items:center;border:1px dashed var(--line);border-radius:8px;padding:10px}
+.logo-zone img{max-width:72px;max-height:72px;object-fit:contain}
+.logo-zone .ph{width:72px;height:72px;display:grid;place-items:center;background:#f5f6f8;color:var(--muted);font-size:11px;border-radius:6px;text-align:center}
+.range{display:flex;align-items:center;gap:8px}
+.range input{flex:1}
+.range output{min-width:46px;text-align:right;font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted)}
+/* ODJ */
+.rub{border:1px solid var(--line);border-radius:8px;margin-bottom:10px;background:#fafbfc}
+.rub-head{display:flex;gap:6px;align-items:center;padding:8px}
+.rub-head input{font-weight:650}
+.points{padding:0 8px 8px}
+.pt{display:flex;gap:4px;align-items:center;margin-bottom:4px}
+.pt .num{width:22px;text-align:right;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;flex:none}
+.pt input{flex:1;background:#fff}
+.icons{display:flex;gap:0;flex:none}
+.icons button{padding:3px 6px;font-size:13px;line-height:1}
+.add-pt{margin-left:26px;font-size:12px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1d2433;color:#fff;
+  padding:9px 16px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;max-width:90vw}
+.toast.show{opacity:1}
+.warn{background:#fff4e5;border:1px solid #f5c27a;border-radius:8px;padding:8px 12px;font-size:12px;margin-bottom:8px}
+/* Aperçu */
+.preview{position:sticky;top:70px}
+.preview-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;color:var(--muted);font-size:12px}
+.pages{display:flex;flex-direction:column;gap:16px;align-items:center;max-height:calc(100vh - 110px);overflow:auto;padding-bottom:20px}
+.page{width:210mm;min-height:297mm;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 6px 20px rgba(0,0,0,.06);
+  position:relative;padding:15mm;overflow:hidden;color:#000;flex:none}
+.page .wm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
+.page .content{position:relative;z-index:1}
+.doc{font-family:var(--docfont),Arial,sans-serif;font-size:var(--docsize)}
+.doc .eh{display:grid;grid-template-columns:84.7mm 1fr;font-size:9.5pt;line-height:1.25}
+.doc .eh .r{padding-left:7mm}
+.doc .eh .r .d{margin-bottom:10mm}
+.doc .eh img{display:block;margin-bottom:2mm}
+.doc .ttl{text-align:center;font-weight:700;text-decoration:underline;margin:9mm 0 8mm}
+.doc p{margin:0}
+.doc .ind{text-indent:12.5mm;text-align:justify}
+.doc .sp{margin-bottom:2.8mm}
+.doc .box{border:1.5pt solid #000;text-align:center;font-weight:700;padding:1.8mm 2mm;margin:2mm 0 4mm}
+.doc .sig{margin-left:80mm;text-align:center}
+.doc .sig .n{margin-top:21mm}
+.doc .odj-t{text-align:center;font-weight:700;font-size:1.2em;margin-bottom:2mm}
+.doc .odj-r{text-align:center;font-style:italic;margin-bottom:6mm}
+.doc .rubt{font-weight:700;text-decoration:underline;margin:4mm 0 2mm}
+.doc ul,.doc ol{margin:0;padding-left:12.7mm}
+.doc li{text-align:justify;margin-bottom:.7mm;padding-left:1mm}
+.doc .miss{background:#ffe9a8;color:#7a4b00;font-weight:inherit;border-radius:2px}
+.empty-odj{color:#999;font-style:italic}
+input.file-hidden{display:none}
+</style>
+</head>
+<body>
+<header class="top">
+  <a href="index.html" style="color:var(--muted);text-decoration:none;font-size:13px;white-space:nowrap">← Portail</a>
+  <h1>Convocation au Conseil d'administration<small>Remplissez les champs : l'aperçu se met à jour, puis téléchargez le document Word.</small></h1>
+  <button id="btnNew" title="Vide la séance et les points de l'ordre du jour (conserve l'établissement et les rubriques)">Nouveau CA</button>
+  <button id="btnSave" title="Enregistre tout le paramétrage dans un fichier .json réutilisable ou partageable">Enregistrer le projet</button>
+  <button id="btnOpen" title="Ouvre un projet .json enregistré">Ouvrir un projet</button>
+  <input type="file" id="fileProject" class="file-hidden" accept=".json,application/json">
+  <button class="primary" id="btnDocx">⬇ Télécharger en Word</button>
+</header>
+
+<div class="layout">
+<div class="forms">
+
+  <details class="card" open>
+    <summary>1. Établissement <span class="hint">mémorisé d'une séance à l'autre</span></summary>
+    <div class="card-body">
+      <div class="grid">
+        <label class="f full">Nom de l'établissement
+          <input type="text" data-k="etab.nom" placeholder="Collège Jean Moulin"></label>
+        <label class="f full">Adresse
+          <input type="text" data-k="etab.adresse" placeholder="84, rue du Poirier Baron"></label>
+        <label class="f">Code postal
+          <input type="text" data-k="etab.cp" placeholder="95110"></label>
+        <label class="f">Ville
+          <input type="text" data-k="etab.ville" placeholder="Sannois"></label>
+        <label class="f">Téléphone
+          <input type="text" data-k="etab.tel" placeholder="01.34.11.75.55"></label>
+        <label class="f">Fax <span class="muted">(facultatif)</span>
+          <input type="text" data-k="etab.fax" placeholder=""></label>
+        <label class="f full">Courriel <span class="muted">(facultatif)</span>
+          <input type="text" data-k="etab.mail" placeholder="ce.0950000x@ac-versailles.fr"></label>
+        <label class="f">Chef d'établissement (nom)
+          <input type="text" data-k="etab.chef" placeholder="Prénom NOM"></label>
+        <label class="f">Fonction (signature)
+          <input type="text" data-k="etab.fonction" list="dlFonctions" placeholder="Le Principal"></label>
+        <label class="f full">Destinataires <span class="muted">(une ligne par ligne affichée)</span>
+          <textarea data-k="etab.destinataires" rows="2"></textarea></label>
+      </div>
+      <div style="margin-top:12px" class="logo-zone">
+        <div id="logoThumb"><div class="ph">Aucun logo</div></div>
+        <div style="flex:1">
+          <div style="font-weight:600;margin-bottom:4px">Logo de l'établissement</div>
+          <div class="row">
+            <button id="btnLogo">Choisir une image…</button>
+            <button id="btnLogoDel" class="ghost danger">Retirer</button>
+          </div>
+          <div class="muted" style="margin-top:4px">PNG ou JPG. Sert au filigrane et, si vous le souhaitez, à l'en-tête.</div>
+          <input type="file" id="fileLogo" class="file-hidden" accept="image/png,image/jpeg,image/gif,image/webp">
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" open>
+    <summary>2. Séance</summary>
+    <div class="card-body">
+      <div class="grid">
+        <label class="f">Date du conseil
+          <input type="date" data-k="seance.date"></label>
+        <label class="f">Heure <span class="muted">(ex. : 18h, 17h30)</span>
+          <input type="text" data-k="seance.heure" list="dlHeures" placeholder="18:00" autocomplete="off"></label>
+        <label class="f full">Affichage de l'heure
+          <select data-k="opts.formatHeure">
+            <option value="long">18 heures · 17 h 30</option>
+            <option value="h">18h00 · 17h30</option>
+            <option value="hs">18 h 00 · 17 h 30</option>
+          </select></label>
+        <label class="f full">Lieu <span class="muted">(ex. : salle Valadon)</span>
+          <input type="text" data-k="seance.lieu" placeholder="salle Valadon"></label>
+        <label class="f">Nature de la séance
+          <select data-k="seance.nature">
+            <option value="">Ordinaire</option>
+            <option value="extraordinaire">Extraordinaire</option>
+          </select></label>
+        <label class="f">Date du courrier
+          <input type="date" data-k="seance.dateCourrier"></label>
+        <label class="f full">Lieu de signature <span class="muted">(vide = ville de l'établissement)</span>
+          <input type="text" data-k="seance.lieuSignature" placeholder=""></label>
+      </div>
+    </div>
+  </details>
+
+  <details class="card" open>
+    <summary>3. Ordre du jour <span class="hint" id="odjCount"></span></summary>
+    <div class="card-body">
+      <div class="muted" style="margin-bottom:8px">Entrée = nouveau point. Coller plusieurs lignes dans un champ crée un point par ligne.</div>
+      <div id="odj"></div>
+      <div class="row">
+        <button id="btnAddRub">+ Ajouter une rubrique</button>
+        <button id="btnExample" class="ghost">Charger l'exemple (Collège Jean Moulin)</button>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <label class="check"><input type="checkbox" data-k="opts.questionsDiverses"> Terminer par « Question(s) diverse(s) »</label>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <label class="f" style="flex:1">Présentation des points
+          <select data-k="opts.liste">
+            <option value="puces">Puces (•)</option>
+            <option value="numeros">Numérotation continue (1, 2, 3…)</option>
+          </select></label>
+        <label class="check" style="flex:1;margin-top:14px"><input type="checkbox" data-k="opts.recap"> Rappel date/heure sous le titre</label>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>4. Textes du courrier <span class="hint">modifiables</span></summary>
+    <div class="card-body">
+      <div class="muted" style="margin-bottom:8px">Balises remplacées automatiquement : <code>{etablissement}</code> <code>{adresse}</code> <code>{ville}</code> <code>{nature}</code>. Un champ vidé n'apparaît pas.</div>
+      <div class="grid">
+        <label class="f full">Titre
+          <input type="text" data-k="textes.titre"></label>
+        <label class="f full">Formule d'appel
+          <input type="text" data-k="textes.appel"></label>
+        <label class="f full">Introduction (suivie de l'encadré date / lieu)
+          <textarea data-k="textes.intro" rows="3"></textarea></label>
+        <label class="f full">Questions à l'ordre du jour
+          <textarea data-k="textes.questions" rows="3"></textarea></label>
+        <label class="f full">Paragraphe complémentaire <span class="muted">(facultatif : suppléants, documents préparatoires…)</span>
+          <textarea data-k="textes.complement" rows="2"></textarea></label>
+        <label class="f full">Pièce jointe
+          <input type="text" data-k="textes.pj"></label>
+        <label class="f full">Formule de politesse
+          <textarea data-k="textes.politesse" rows="2"></textarea></label>
+        <label class="f full">Titre de la page d'ordre du jour
+          <input type="text" data-k="textes.odjTitre"></label>
+      </div>
+      <div class="row" style="margin-top:10px"><button id="btnResetTxt" class="ghost">Rétablir les textes d'origine</button></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>5. Mise en page &amp; filigrane</summary>
+    <div class="card-body">
+      <div class="grid">
+        <label class="check full"><input type="checkbox" data-k="opts.filigrane"> Logo en filigrane sur chaque page</label>
+        <label class="f">Intensité du filigrane
+          <span class="range"><input type="range" min="4" max="40" step="1" data-k="opts.wmOpacity"><output id="oOpacity"></output></span></label>
+        <label class="f">Largeur du filigrane
+          <span class="range"><input type="range" min="6" max="19" step="0.5" data-k="opts.wmLargeur"><output id="oWmW"></output></span></label>
+        <label class="check full"><input type="checkbox" data-k="opts.wmGris"> Filigrane en niveaux de gris</label>
+        <label class="check full"><input type="checkbox" data-k="opts.logoEntete"> Logo aussi en en-tête (en haut à gauche)</label>
+        <label class="f">Largeur du logo d'en-tête
+          <span class="range"><input type="range" min="2" max="6" step="0.1" data-k="opts.logoLargeur"><output id="oLogoW"></output></span></label>
+        <span></span>
+        <label class="f">Police
+          <select data-k="opts.police">
+            <option>Marianne</option><option>Arial</option><option>Calibri</option><option>Times New Roman</option>
+          </select></label>
+        <label class="f">Taille du texte
+          <select data-k="opts.taille">
+            <option value="10">10 pt</option><option value="11">11 pt</option><option value="11.5">11,5 pt</option><option value="12">12 pt</option>
+          </select></label>
+        <div class="full muted">Marianne est la police de l'État ; si elle n'est pas installée sur un poste, Word la remplace par une police proche.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<div class="preview">
+  <div class="preview-head">Aperçu <span id="zoomInfo"></span></div>
+  <div class="pages" id="pages"></div>
+</div>
+</div>
+
+<datalist id="dlFonctions">
+  <option value="Le Principal"><option value="La Principale"><option value="Le Proviseur"><option value="La Proviseure">
+  <option value="Le Directeur"><option value="La Directrice"><option value="Le Principal adjoint"><option value="La Principale adjointe">
+</datalist>
+<datalist id="dlRubriques">
+  <option value="Installation"><option value="Fonctionnement"><option value="Financier"><option value="Pédagogie">
+  <option value="Vie scolaire"><option value="Vie de l'établissement"><option value="Informations"><option value="Ressources humaines">
+</datalist>
+<datalist id="dlPoints"></datalist>
+<datalist id="dlHeures"><option value="8:00"><option value="8:30"><option value="9:00"><option value="9:30"><option value="10:00"><option value="10:30"><option value="11:00"><option value="11:30"><option value="12:00"><option value="12:30"><option value="13:00"><option value="13:30"><option value="14:00"><option value="14:30"><option value="15:00"><option value="15:30"><option value="16:00"><option value="16:30"><option value="17:00"><option value="17:30"><option value="18:00"><option value="18:30"><option value="19:00"><option value="19:30"><option value="20:00"><option value="20:30"></datalist>
+
+<div class="toast" id="toast"></div>
+
+<script>
+//<builder>
+/* ====== Modèle commun (aperçu + Word) ====== */
+const MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const JOURS = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+function parseISO(s){ const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||""); return m? new Date(+m[1],+m[2]-1,+m[3]) : null; }
+function fmtDate(s,withDay){
+  const d=parseISO(s); if(!d) return "";
+  const j=d.getDate()===1?"1er":String(d.getDate());
+  const t=`${j} ${MOIS[d.getMonth()]} ${d.getFullYear()}`;
+  return withDay? `${JOURS[d.getDay()]} ${t}` : t;
+}
+function fmtHeure(s,fmt){
+  s=(s||"").trim(); if(!s) return "";
+  const m=/^(\d{1,2})\s*(?:[:hH.]|heures?)?\s*(\d{2})?\s*$/.exec(s);
+  if(!m || +m[1]>23 || (m[2]&&+m[2]>59)) return s; // saisie libre conservée telle quelle
+  const h=+m[1], mn=m[2]?+m[2]:0, mm=String(mn).padStart(2,"0");
+  if(fmt==="h") return `${h}h${mm}`;
+  if(fmt==="hs") return `${h} h ${mm}`;
+  if(mn===0) return `${h} heure${h>1?"s":""}`;
+  return `${h} h ${mm}`;
+}
+const cap = s => s ? s.charAt(0).toUpperCase()+s.slice(1) : s;
+const MISS = "\u0001"; // marqueur de champ manquant
+function need(v,label){ return (v&&String(v).trim())? String(v).trim() : MISS+"["+label+"]"+MISS; }
+function lieuPhrase(l){
+  l=(l||"").trim(); if(!l) return "";
+  return /^(en|au|aux|à|a|dans|sur)\s/i.test(l) ? l : "en "+l;
+}
+function fillTokens(t,S){
+  const e=S.etab;
+  return (t||"")
+    .replace(/\{etablissement\}/g, need(e.nom,"Établissement"))
+    .replace(/\{adresse\}/g, need(e.adresse,"Adresse"))
+    .replace(/\{ville\}/g, need(e.ville,"Ville"))
+    .replace(/\{nature\}/g, S.seance.nature? " "+S.seance.nature : "")
+    .replace(/\s+([,.])/g,"$1").replace(/ {2,}/g," ").trim();
+}
+function buildModel(S){
+  const e=S.etab, se=S.seance, t=S.textes, o=S.opts;
+  const villeSig=(se.lieuSignature||"").trim()||(e.ville||"").trim();
+  const gauche=[e.adresse,[e.cp,(e.ville||"").toUpperCase()].filter(Boolean).join(" "),
+    e.tel?"Tél. : "+e.tel:"", e.fax?"Fax. : "+e.fax:"", e.mail||""].map(s=>(s||"").trim()).filter(Boolean);
+  const fonction=(e.fonction||"").trim();
+  const fonctionCourte=cap(fonction.replace(/^(le|la)\s+|^l['’]\s*/i,""));
+  const dateCourrier=fmtDate(se.dateCourrier);
+  const droite={
+    lieuDate: `${need(villeSig,"Ville")}, le ${need(dateCourrier,"date du courrier")}`,
+    nom: need(e.chef,"Nom du chef d'établissement"),
+    fonction: fonctionCourte || need("", "Fonction"),
+    destinataires: (e.destinataires||"").split(/\r?\n/).map(s=>s.trim()).filter(Boolean)
+  };
+  const dateLong=cap(fmtDate(se.date,true)), heure=fmtHeure(se.heure,o.formatHeure), lieu=lieuPhrase(se.lieu);
+  const encadre=[`${need(dateLong,"Date")} à ${need(heure,"Heure")}`, `${need(lieu,"Lieu")}.`];
+  const paras=k=>{ const v=fillTokens(t[k],S); return v? v.split(/\n+/).map(s=>s.trim()).filter(Boolean):[]; };
+  const rubriques=(S.odj||[]).map(r=>({titre:(r.titre||"").trim(), points:(r.points||[]).map(p=>(p||"").trim()).filter(Boolean)}))
+    .filter(r=>r.points.length);
+  return {
+    gauche, droite,
+    titre:(t.titre||"").trim(), appel:(t.appel||"").trim(),
+    intro:paras("intro"), encadre,
+    apres:[...paras("questions"),...paras("complement"),...paras("pj"),...paras("politesse")],
+    signature:{fonction: fonction||need("","Fonction"), nom: need(e.chef,"Nom du chef d'établissement")},
+    odj:{ titre:(t.odjTitre||"ORDRE DU JOUR").trim(),
+      recap: o.recap ? `Conseil d'administration${se.nature?" "+se.nature:""} du ${need(fmtDate(se.date,true),"date")} à ${need(heure,"heure")}` : "",
+      rubriques, questionsDiverses: !!o.questionsDiverses, numeros: o.liste==="numeros" }
+  };
+}
+function missingFields(M){
+  const out=new Set(), re=new RegExp(MISS+"\\[([^\\]]+)\\]"+MISS,"g");
+  const walk=v=>{ if(typeof v==="string") v.replace(re,(_,l)=>{out.add(l);return"";});
+    else if(v&&typeof v==="object") Object.values(v).forEach(walk); };
+  walk(M);
+  return [...out];
+}
+
+/* ====== Fabrication du .docx (XML + ZIP, sans dépendance) ====== */
+const NS_W="http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+      NS_R="http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+      NS_WP="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing",
+      NS_A="http://schemas.openxmlformats.org/drawingml/2006/main",
+      NS_PIC="http://schemas.openxmlformats.org/drawingml/2006/picture",
+      REL="http://schemas.openxmlformats.org/officeDocument/2006/relationships/";
+const xesc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+function wRuns(text,f={}){
+  // découpe sur les marqueurs de champs manquants => surlignage jaune dans Word
+  return String(text).split(MISS).map((seg,i)=>{
+    if(!seg) return "";
+    const hl = i%2===1;
+    let rp="";
+    if(f.b) rp+="<w:b/><w:bCs/>";
+    if(f.i) rp+="<w:i/><w:iCs/>";
+    if(f.sz) rp+=`<w:sz w:val="${f.sz}"/><w:szCs w:val="${f.sz}"/>`;
+    if(hl) rp+=`<w:highlight w:val="yellow"/>`;
+    if(f.u) rp+=`<w:u w:val="single"/>`;
+    const parts=seg.split("\n").map(x=>`<w:t xml:space="preserve">${xesc(x)}</w:t>`).join("<w:br/>");
+    return `<w:r>${rp?`<w:rPr>${rp}</w:rPr>`:""}${parts}</w:r>`;
+  }).join("");
+}
+function wP(inner,p={}){
+  let pp="";
+  if(p.keepNext) pp+="<w:keepNext/>";
+  if(p.pageBreakBefore) pp+="<w:pageBreakBefore/>";
+  if(p.numId) pp+=`<w:numPr><w:ilvl w:val="0"/><w:numId w:val="${p.numId}"/></w:numPr>`;
+  if(p.box) pp+=`<w:pBdr>${["top","left","bottom","right"].map(s=>`<w:${s} w:val="single" w:sz="12" w:space="${s==="top"||s==="bottom"?5:4}" w:color="000000"/>`).join("")}</w:pBdr>`;
+  if(p.before!=null||p.after!=null) pp+=`<w:spacing w:before="${p.before||0}" w:after="${p.after||0}"/>`;
+  if(p.ind) pp+=`<w:ind${p.ind.left!=null?` w:left="${p.ind.left}"`:""}${p.ind.right!=null?` w:right="${p.ind.right}"`:""}${p.ind.firstLine!=null?` w:firstLine="${p.ind.firstLine}"`:""}/>`;
+  if(p.jc) pp+=`<w:jc w:val="${p.jc}"/>`;
+  return `<w:p>${pp?`<w:pPr>${pp}</w:pPr>`:""}${inner||""}</w:p>`;
+}
+const CM=360000; // EMU par cm
+function picXml(rid,id,name,cx,cy){
+  return `<a:graphic xmlns:a="${NS_A}"><a:graphicData uri="${NS_PIC}"><pic:pic xmlns:pic="${NS_PIC}"><pic:nvPicPr><pic:cNvPr id="${id}" name="${name}"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="${rid}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${cx}" cy="${cy}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic>`;
+}
+function inlineImg(rid,id,cx,cy){
+  return `<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${cx}" cy="${cy}"/><wp:effectExtent l="0" t="0" r="0" b="0"/><wp:docPr id="${id}" name="Logo"/><wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="${NS_A}" noChangeAspect="1"/></wp:cNvGraphicFramePr>${picXml(rid,id,"logo.png",cx,cy)}</wp:inline></w:drawing></w:r>`;
+}
+function anchorWatermark(rid,id,cx,cy){
+  return `<w:r><w:drawing><wp:anchor distT="0" distB="0" distL="0" distR="0" simplePos="0" relativeHeight="0" behindDoc="1" locked="1" layoutInCell="1" allowOverlap="1"><wp:simplePos x="0" y="0"/><wp:positionH relativeFrom="page"><wp:align>center</wp:align></wp:positionH><wp:positionV relativeFrom="page"><wp:align>center</wp:align></wp:positionV><wp:extent cx="${cx}" cy="${cy}"/><wp:effectExtent l="0" t="0" r="0" b="0"/><wp:wrapNone/><wp:docPr id="${id}" name="Filigrane"/><wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="${NS_A}" noChangeAspect="1"/></wp:cNvGraphicFramePr>${picXml(rid,id,"filigrane.png",cx,cy)}</wp:anchor></w:drawing></w:r>`;
+}
+function fitCm(img,wCm,maxHcm){
+  let w=wCm, h=wCm*img.h/img.w;
+  if(maxHcm && h>maxHcm){ h=maxHcm; w=h*img.w/img.h; }
+  return [Math.round(w*CM), Math.round(h*CM)];
+}
+/* images = { logo:{bytes,w,h} | null, wm:{bytes,w,h} | null } (PNG) */
+function buildDocx(S,images){
+  const M=buildModel(S), o=S.opts;
+  const sz=Math.round(parseFloat(o.taille||"11.5")*2), small=19;
+  const PAGE_W=11906, MARG=851, TXT_W=PAGE_W-2*MARG, COL1=4800, COL2=TXT_W-COL1;
+  const useLogo = o.logoEntete && images.logo, useWm = o.filigrane && images.wm;
+  let body="";
+
+  /* En-tête : tableau sans bordure */
+  let c1="";
+  if(useLogo){ const [cx,cy]=fitCm(images.logo,parseFloat(o.logoLargeur)||3.7,4.5); c1+=wP(inlineImg("rIdLogo",1,cx,cy),{after:80}); }
+  M.gauche.forEach(l=>c1+=wP(wRuns(l,{sz:small}),{after:0}));
+  if(!c1) c1=wP("");
+  let c2=wP(wRuns(M.droite.lieuDate,{sz:small}),{after:560,ind:{left:400}});
+  c2+=wP(wRuns(M.droite.nom,{sz:small}),{after:0,ind:{left:400}});
+  c2+=wP(wRuns(M.droite.fonction,{sz:small}),{after:240,ind:{left:400}});
+  M.droite.destinataires.forEach(l=>c2+=wP(wRuns(l,{sz:small}),{after:0,ind:{left:400}}));
+  const nob=["top","left","bottom","right","insideH","insideV"].map(s=>`<w:${s} w:val="nil"/>`).join("");
+  const tc=(w,inner,va)=>`<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/>${va?`<w:vAlign w:val="${va}"/>`:""}</w:tcPr>${inner}</w:tc>`;
+  body+=`<w:tbl><w:tblPr><w:tblW w:w="${TXT_W}" w:type="dxa"/><w:tblBorders>${nob}</w:tblBorders><w:tblLayout w:type="fixed"/><w:tblCellMar><w:left w:w="0" w:type="dxa"/><w:right w:w="0" w:type="dxa"/></w:tblCellMar><w:tblLook w:val="0000"/></w:tblPr><w:tblGrid><w:gridCol w:w="${COL1}"/><w:gridCol w:w="${COL2}"/></w:tblGrid><w:tr>${tc(COL1,c1,"bottom")}${tc(COL2,c2,"bottom")}</w:tr></w:tbl>`;
+
+  if(M.titre) body+=wP(wRuns(M.titre,{b:1,u:1}),{before:600,after:480,jc:"center"});
+  if(M.appel) body+=wP(wRuns(M.appel),{after:240,ind:{firstLine:709}});
+  M.intro.forEach(t=>body+=wP(wRuns(t),{after:120,ind:{firstLine:709},jc:"both"}));
+  body+=wP(wRuns(M.encadre.join("\n"),{b:1}),{box:1,before:120,after:240,jc:"center",ind:{left:113,right:113}});
+  M.apres.forEach(t=>body+=wP(wRuns(t),{after:160,ind:{firstLine:709},jc:"both"}));
+  body+=wP(wRuns(M.signature.fonction),{before:480,after:0,ind:{left:4536},jc:"center",keepNext:1});
+  body+=wP(wRuns(M.signature.nom),{before:1200,after:0,ind:{left:4536},jc:"center"});
+
+  /* Ordre du jour */
+  const O=M.odj;
+  body+=wP(wRuns(O.titre,{b:1,sz:sz+5}),{pageBreakBefore:1,after:O.recap?80:360,jc:"center"});
+  if(O.recap) body+=wP(wRuns(O.recap,{i:1}),{after:360,jc:"center"});
+  const numId=O.numeros?2:1;
+  O.rubriques.forEach(r=>{
+    if(r.titre) body+=wP(wRuns(r.titre.replace(/\s*:?\s*$/,"")+" :",{b:1,u:1}),{before:240,after:120,keepNext:1});
+    r.points.forEach(p=>body+=wP(wRuns(p),{numId,after:40,jc:"both"}));
+  });
+  if(O.questionsDiverses) body+=wP(wRuns("Question(s) diverse(s) :",{b:1,u:1}),{before:360,after:0});
+
+  body+=`<w:sectPr>${useWm?`<w:headerReference w:type="default" r:id="rIdHdr"/>`:""}<w:pgSz w:w="${PAGE_W}" w:h="16838"/><w:pgMar w:top="${MARG}" w:right="${MARG}" w:bottom="${MARG}" w:left="${MARG}" w:header="425" w:footer="425" w:gutter="0"/></w:sectPr>`;
+
+  const documentXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:document xmlns:w="${NS_W}" xmlns:r="${NS_R}" xmlns:wp="${NS_WP}" xmlns:a="${NS_A}" xmlns:pic="${NS_PIC}"><w:body>${body}</w:body></w:document>`;
+
+  const font=xesc(o.police||"Arial");
+  const stylesXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:styles xmlns:w="${NS_W}"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="${font}" w:hAnsi="${font}" w:eastAsia="${font}" w:cs="${font}"/><w:sz w:val="${sz}"/><w:szCs w:val="${sz}"/><w:lang w:val="fr-FR" w:eastAsia="en-US" w:bidi="ar-SA"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="0" w:line="240" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style><w:style w:type="paragraph" w:styleId="Header"><w:name w:val="header"/><w:basedOn w:val="Normal"/></w:style><w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table"/><w:tblPr><w:tblInd w:w="0" w:type="dxa"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style></w:styles>`;
+
+  const lvl=(fmt,txt,rpr)=>`<w:lvl w:ilvl="0"><w:start w:val="1"/><w:numFmt w:val="${fmt}"/><w:lvlText w:val="${txt}"/><w:lvlJc w:val="left"/><w:pPr><w:ind w:left="720" w:hanging="360"/></w:pPr>${rpr||""}</w:lvl>`;
+  const numberingXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:numbering xmlns:w="${NS_W}"><w:abstractNum w:abstractNumId="0"><w:multiLevelType w:val="singleLevel"/>${lvl("bullet","•",`<w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial"/></w:rPr>`)}</w:abstractNum><w:abstractNum w:abstractNumId="1"><w:multiLevelType w:val="singleLevel"/>${lvl("decimal","%1.")}</w:abstractNum><w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num><w:num w:numId="2"><w:abstractNumId w:val="1"/></w:num></w:numbering>`;
+
+  const settingsXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:settings xmlns:w="${NS_W}"><w:defaultTabStop w:val="709"/><w:characterSpacingControl w:val="doNotCompress"/><w:compat><w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="15"/></w:compat></w:settings>`;
+
+  let rels=`<Relationship Id="rIdStyles" Type="${REL}styles" Target="styles.xml"/><Relationship Id="rIdNum" Type="${REL}numbering" Target="numbering.xml"/><Relationship Id="rIdSet" Type="${REL}settings" Target="settings.xml"/>`;
+  const files=[];
+  if(useLogo){ rels+=`<Relationship Id="rIdLogo" Type="${REL}image" Target="media/logo.png"/>`; files.push(["word/media/logo.png",images.logo.bytes]); }
+  if(useWm){
+    rels+=`<Relationship Id="rIdHdr" Type="${REL}header" Target="header1.xml"/>`;
+    const [cx,cy]=fitCm(images.wm,parseFloat(o.wmLargeur)||14,25);
+    files.push(["word/header1.xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:hdr xmlns:w="${NS_W}" xmlns:r="${NS_R}" xmlns:wp="${NS_WP}" xmlns:a="${NS_A}" xmlns:pic="${NS_PIC}"><w:p><w:pPr><w:pStyle w:val="Header"/><w:rPr><w:sz w:val="2"/></w:rPr></w:pPr>${anchorWatermark("rIdWm",2,cx,cy)}</w:p></w:hdr>`]);
+    files.push(["word/_rels/header1.xml.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rIdWm" Type="${REL}image" Target="media/filigrane.png"/></Relationships>`]);
+    files.push(["word/media/filigrane.png",images.wm.bytes]);
+  }
+  const ct=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/><Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/>${useWm?`<Override PartName="/word/header1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/>`:""}<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/></Types>`;
+  const now=new Date().toISOString().replace(/\.\d+Z$/,"Z");
+  const core=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc((M.titre||"Convocation")+" – "+(S.etab.nom||""))}</dc:title><dc:creator>${xesc(S.etab.nom||"")}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${now}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${now}</dcterms:modified></cp:coreProperties>`;
+
+  const all=[
+    ["[Content_Types].xml",ct],
+    ["_rels/.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="${REL}officeDocument" Target="word/document.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/></Relationships>`],
+    ["docProps/core.xml",core],
+    ["word/document.xml",documentXml],
+    ["word/_rels/document.xml.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${rels}</Relationships>`],
+    ["word/styles.xml",stylesXml],
+    ["word/numbering.xml",numberingXml],
+    ["word/settings.xml",settingsXml],
+    ...files
+  ];
+  return zipStore(all);
+}
+
+/* ZIP minimal (méthode « stockée ») */
+const CRC_T=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0;}return t;})();
+function crc32(b){let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=CRC_T[(c^b[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0;}
+function zipStore(entries){
+  const enc=new TextEncoder(), chunks=[], central=[]; let off=0;
+  const d=new Date(), dosT=(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1),
+        dosD=((d.getFullYear()-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate();
+  for(const [name,content] of entries){
+    const data= typeof content==="string"? enc.encode(content) : content;
+    const nm=enc.encode(name), crc=crc32(data);
+    const h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(8,0,true);
+    h.setUint16(10,dosT,true);h.setUint16(12,dosD,true);h.setUint32(14,crc,true);
+    h.setUint32(18,data.length,true);h.setUint32(22,data.length,true);h.setUint16(26,nm.length,true);h.setUint16(28,0,true);
+    chunks.push(new Uint8Array(h.buffer),nm,data);
+    const c=new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);c.setUint16(10,0,true);
+    c.setUint16(12,dosT,true);c.setUint16(14,dosD,true);c.setUint32(16,crc,true);c.setUint32(20,data.length,true);
+    c.setUint32(24,data.length,true);c.setUint16(28,nm.length,true);c.setUint16(30,0,true);c.setUint16(32,0,true);
+    c.setUint16(34,0,true);c.setUint16(36,0,true);c.setUint32(38,0,true);c.setUint32(42,off,true);
+    central.push(new Uint8Array(c.buffer),nm);
+    off+=30+nm.length+data.length;
+  }
+  const cdSize=central.reduce((a,b)=>a+b.length,0);
+  const e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true);e.setUint16(8,entries.length,true);e.setUint16(10,entries.length,true);
+  e.setUint32(12,cdSize,true);e.setUint32(16,off,true);
+  const parts=[...chunks,...central,new Uint8Array(e.buffer)];
+  const out=new Uint8Array(parts.reduce((a,b)=>a+b.length,0)); let p=0;
+  for(const x of parts){out.set(x,p);p+=x.length;}
+  return out;
+}
+
+/* Valeurs par défaut (reprises de la trame) */
+const TEXTES_DEFAUT={
+  titre:"INVITATION AU CONSEIL D'ADMINISTRATION",
+  appel:"Madame, Monsieur,",
+  intro:"J'ai l'honneur de vous inviter à participer à un Conseil d'Administration{nature} du {etablissement}, {adresse} à {ville} qui se tiendra le :",
+  questions:"Les éventuelles questions que vous souhaitez voir porter à l'ordre du jour devront parvenir soit par courrier, soit par mail, au bureau du Chef d'établissement, dans un délai raisonnable (environ 48h) avant la réunion du Conseil d'Administration.",
+  complement:"",
+  pj:"Vous trouverez l'ordre du jour en pièce jointe.",
+  politesse:"Je vous prie de bien vouloir agréer, Madame, Monsieur, l'expression de ma parfaite considération.",
+  odjTitre:"ORDRE DU JOUR"
+};
+function defaultState(){
+  return {
+    version:1,
+    etab:{nom:"",adresse:"",cp:"",ville:"",tel:"",fax:"",mail:"",chef:"",fonction:"",destinataires:"Aux\nMembres du Conseil d'administration"},
+    seance:{date:"",heure:"18:00",lieu:"",nature:"",dateCourrier:"",lieuSignature:""},
+    textes:{...TEXTES_DEFAUT},
+    opts:{formatHeure:"long",questionsDiverses:true,liste:"puces",recap:true,filigrane:true,wmOpacity:12,wmLargeur:14,wmGris:false,
+          logoEntete:true,logoLargeur:3.7,police:"Marianne",taille:"11.5"},
+    odj:[{titre:"Installation",points:[""]},{titre:"Fonctionnement",points:[""]},{titre:"Financier",points:[""]}]
+  };
+}
+const EXEMPLE={
+  etab:{nom:"Collège Jean Moulin",adresse:"84, rue du Poirier Baron",cp:"95110",ville:"Sannois",tel:"01.34.11.75.55",fax:"01.39.81.91.12",mail:"",
+        chef:"Jean Philippe DE AZEVEDO",fonction:"Le Principal",destinataires:"Aux\nMembres du Conseil d'administration"},
+  seance:{date:"2026-10-15",heure:"18:00",lieu:"salle Valadon",nature:""},
+  odj:[
+    {titre:"Installation",points:["Modification de l'ordre du jour.","Présentation de l'ordre du jour.","Désignation du secrétaire de séance.","Adoption du procès-verbal du Conseil d'Administration précédent.","Vote du règlement du Conseil d'Administration.","Vote de la non-création de la commission permanente.","Vote de la répartition des sièges dans les instances."]},
+    {titre:"Fonctionnement",points:["Vote de la convention avec le SESSAD.","Vote de la convention d'utilisation des équipements sportifs couverts.","Vote de la convention de mise à disposition de la piscine.","Vote de la convention pour l'école ouverte aux parents pour la réussite des élèves (OEPRE).","Vote de la journée de solidarité et de la date de la journée portes ouvertes.","Vote de l'autorisation donnée au chef d'établissement de signer les contrats de droit privé (recrutement des AED)."]},
+    {titre:"Financier",points:["Présentation et vote du voyage au ski.","Vote du budget prévisionnel du voyage au ski.","Acceptation du don du FSE pour le voyage au ski.","Présentation et vote du voyage à Strasbourg.","Vote du budget prévisionnel du voyage à Strasbourg.","Acceptation du don du FSE pour le voyage à Strasbourg.","Présentation et vote du voyage à Poitiers.","Vote du budget prévisionnel du voyage à Poitiers.","Acceptation du don du FSE pour le voyage à Poitiers.","Vote de la répartition fonctionnelle des logements de fonction.","Vote de la délégation du CA au chef d'établissement pour les marchés à incidence financière annuelle.","Vote des tarifs de vente de produits et des prestations de services (manuels scolaires, cartes de cantine, etc.).","Vote des modalités d'attribution du fonds social collégien.","Vote d'une DBM."]}
+  ]
+};
+const POINTS_COURANTS=["Adoption de l'ordre du jour.","Désignation du secrétaire de séance.","Adoption du procès-verbal du Conseil d'Administration précédent.",
+  "Vote du budget primitif.","Vote d'une DBM.","Information sur les DBM pour information.","Vote du compte financier.","Affectation du résultat.",
+  "Vote des tarifs de restauration.","Vote des voyages et sorties scolaires.","Acceptation de dons.","Vote des conventions.",
+  "Vote du règlement intérieur.","Vote du projet d'établissement.","Présentation de la DGH (dotation globale horaire).","Vote de la répartition de la DGH.",
+  "Vote des contrats et conventions.","Bilan de rentrée.","Rapport annuel sur le fonctionnement pédagogique.","Vote du calendrier des instances."];
+//</builder>
+
+/* ====== Interface ====== */
+const LS_KEY="convocationCA.v1";
+let S=defaultState();
+let LOGO=null; // {dataUrl,w,h}
+const $=s=>document.querySelector(s);
+
+function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function lsSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
+function merge(base,src){ if(!src||typeof src!=="object") return base;
+  for(const k of Object.keys(base)){ if(src[k]===undefined) continue;
+    if(Array.isArray(base[k])) base[k]=Array.isArray(src[k])?src[k]:base[k];
+    else if(base[k]&&typeof base[k]==="object") base[k]=merge(base[k],src[k]);
+    else base[k]=src[k]; }
+  return base; }
+function todayISO(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;}
+
+function save(){
+  lsSet(LS_KEY,JSON.stringify(S));
+  if(LOGO){ if(!lsSet(LS_KEY+".logo",JSON.stringify(LOGO))) toast("Logo trop volumineux pour être mémorisé dans le navigateur : il faudra le recharger."); }
+}
+let saveT; function saveSoon(){clearTimeout(saveT);saveT=setTimeout(save,400);}
+function load(){
+  const raw=lsGet(LS_KEY); if(raw){try{S=merge(defaultState(),JSON.parse(raw));}catch(e){}}
+  const lg=lsGet(LS_KEY+".logo"); if(lg){try{LOGO=JSON.parse(lg);}catch(e){}}
+  if(!S.seance.dateCourrier) S.seance.dateCourrier=todayISO();
+}
+
+const getK=k=>k.split(".").reduce((o,p)=>o?.[p],S);
+function setK(k,v){const ps=k.split(".");let o=S;for(let i=0;i<ps.length-1;i++)o=o[ps[i]];o[ps.at(-1)]=v;}
+
+function bindFields(){
+  document.querySelectorAll("[data-k]").forEach(el=>{
+    const k=el.dataset.k, ev=(el.type==="checkbox"||el.tagName==="SELECT"||el.type==="date")?"change":"input";
+    el.addEventListener(ev,()=>{
+      let v= el.type==="checkbox"? el.checked : el.type==="range"? parseFloat(el.value) : el.value;
+      setK(k,v); refreshOutputs(); render(); saveSoon();
+    });
+    if(el.type==="range") el.addEventListener("input",()=>{setK(k,parseFloat(el.value));refreshOutputs();render();saveSoon();});
+  });
+}
+function fillFields(){
+  document.querySelectorAll("[data-k]").forEach(el=>{
+    const v=getK(el.dataset.k);
+    if(el.type==="checkbox") el.checked=!!v; else el.value=(v??"");
+  });
+  refreshOutputs();
+}
+function refreshOutputs(){
+  $("#oOpacity").textContent=Math.round(S.opts.wmOpacity)+" %";
+  $("#oWmW").textContent=String(S.opts.wmLargeur).replace(".",",")+" cm";
+  $("#oLogoW").textContent=Number(S.opts.logoLargeur).toFixed(1).replace(".",",")+" cm";
+}
+
+/* ---- Ordre du jour ---- */
+function renderODJ(focus){
+  const box=$("#odj"); box.innerHTML="";
+  let n=0;
+  S.odj.forEach((r,ri)=>{
+    const div=document.createElement("div"); div.className="rub";
+    div.innerHTML=`<div class="rub-head">
+        <input type="text" list="dlRubriques" placeholder="Titre de la rubrique" value="${escA(r.titre)}">
+        <span class="icons">
+          <button class="ghost" data-a="rup" title="Monter la rubrique">↑</button>
+          <button class="ghost" data-a="rdown" title="Descendre la rubrique">↓</button>
+          <button class="ghost danger" data-a="rdel" title="Supprimer la rubrique">✕</button>
+        </span></div><div class="points"></div>
+        <button class="ghost add-pt" data-a="padd">+ point</button>`;
+    const tIn=div.querySelector(".rub-head input");
+    tIn.addEventListener("input",()=>{r.titre=tIn.value;render();saveSoon();});
+    const pts=div.querySelector(".points");
+    r.points.forEach((p,pi)=>{
+      if(p.trim()) n++;
+      const row=document.createElement("div"); row.className="pt";
+      row.innerHTML=`<span class="num">${p.trim()&&S.opts.liste==="numeros"?n+".":"•"}</span>
+        <input type="text" list="dlPoints" placeholder="Intitulé du point" value="${escA(p)}">
+        <span class="icons">
+          <button class="ghost" data-a="up" title="Monter">↑</button>
+          <button class="ghost" data-a="down" title="Descendre">↓</button>
+          <button class="ghost danger" data-a="del" title="Supprimer">✕</button>
+        </span>`;
+      const inp=row.querySelector("input");
+      inp.addEventListener("input",()=>{r.points[pi]=inp.value;render();saveSoon();updateCount();});
+      inp.addEventListener("change",()=>renderODJ());
+      inp.addEventListener("keydown",e=>{
+        if(e.key==="Enter"){e.preventDefault();r.points.splice(pi+1,0,"");renderODJ([ri,pi+1]);}
+        if(e.key==="Backspace"&&!inp.value&&r.points.length>1){e.preventDefault();r.points.splice(pi,1);renderODJ([ri,Math.max(0,pi-1)]);render();}
+      });
+      inp.addEventListener("paste",e=>{
+        const t=(e.clipboardData||window.clipboardData).getData("text");
+        if(t&&/\n/.test(t.trim())){
+          e.preventDefault();
+          const lines=t.split(/\r?\n/).map(s=>s.replace(/^\s*([-•*–·]|\d+[.)])\s*/,"").trim()).filter(Boolean);
+          const cur=inp.value.trim();
+          r.points.splice(pi,1,...(cur?[cur]:[]),...lines);
+          renderODJ([ri,pi+lines.length-(cur?0:1)]);render();saveSoon();
+        }
+      });
+      row.querySelector('[data-a="up"]').onclick=()=>movePoint(ri,pi,-1);
+      row.querySelector('[data-a="down"]').onclick=()=>movePoint(ri,pi,1);
+      row.querySelector('[data-a="del"]').onclick=()=>{r.points.splice(pi,1);if(!r.points.length)r.points.push("");renderODJ();render();saveSoon();};
+      pts.appendChild(row);
+    });
+    div.querySelector('[data-a="padd"]').onclick=()=>{r.points.push("");renderODJ([ri,r.points.length-1]);};
+    div.querySelector('[data-a="rup"]').onclick=()=>{if(ri>0){[S.odj[ri-1],S.odj[ri]]=[S.odj[ri],S.odj[ri-1]];renderODJ();render();saveSoon();}};
+    div.querySelector('[data-a="rdown"]').onclick=()=>{if(ri<S.odj.length-1){[S.odj[ri+1],S.odj[ri]]=[S.odj[ri],S.odj[ri+1]];renderODJ();render();saveSoon();}};
+    const del=div.querySelector('[data-a="rdel"]');
+    del.onclick=()=>{
+      const nonVide=r.points.some(p=>p.trim());
+      if(nonVide && !del.classList.contains("confirm")){armConfirm(del,"Supprimer ?");return;}
+      S.odj.splice(ri,1);renderODJ();render();saveSoon();
+    };
+    box.appendChild(div);
+  });
+  updateCount();
+  if(focus){const rub=box.children[focus[0]];const inp=rub?.querySelectorAll(".pt input")[focus[1]];inp?.focus();}
+}
+function movePoint(ri,pi,dir){
+  const r=S.odj[ri], p=r.points[pi];
+  const np=pi+dir;
+  if(np>=0&&np<r.points.length){ r.points.splice(pi,1); r.points.splice(np,0,p); renderODJ([ri,np]); }
+  else if(dir<0&&ri>0){ r.points.splice(pi,1); if(!r.points.length)r.points.push(""); S.odj[ri-1].points=S.odj[ri-1].points.filter(x=>x.trim()); S.odj[ri-1].points.push(p); renderODJ([ri-1,S.odj[ri-1].points.length-1]); }
+  else if(dir>0&&ri<S.odj.length-1){ r.points.splice(pi,1); if(!r.points.length)r.points.push(""); const t=S.odj[ri+1].points.filter(x=>x.trim()); t.unshift(p); S.odj[ri+1].points=t; renderODJ([ri+1,0]); }
+  render(); saveSoon();
+}
+function updateCount(){
+  const n=S.odj.reduce((a,r)=>a+r.points.filter(p=>p.trim()).length,0);
+  $("#odjCount").textContent=n? `${n} point${n>1?"s":""}` : "";
+}
+function armConfirm(btn,label){
+  const old=btn.textContent; btn.textContent=label; btn.classList.add("confirm");
+  setTimeout(()=>{btn.textContent=old;btn.classList.remove("confirm");},3000);
+}
+const escA=s=>String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+const escH=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function hm(s){ // texte du modèle -> HTML, champs manquants surlignés
+  return String(s).split(MISS).map((seg,i)=>i%2? `<span class="miss">${escH(seg)}</span>` : escH(seg).replace(/\n/g,"<br>")).join("");
+}
+
+/* ---- Aperçu ---- */
+function render(){
+  const M=buildModel(S), o=S.opts;
+  const wm = o.filigrane&&LOGO ? `<img class="wm" src="${LOGO.dataUrl}" style="width:${o.wmLargeur}cm;max-height:25cm;object-fit:contain;opacity:${o.wmOpacity/100};${o.wmGris?"filter:grayscale(1);":""}">` : "";
+  const docStyle=`--docfont:'${o.police}';--docsize:${String(o.taille)}pt`;
+  const logo = o.logoEntete&&LOGO ? `<img src="${LOGO.dataUrl}" style="width:${o.logoLargeur}cm;max-height:4.5cm;object-fit:contain">` : "";
+  const p1=`<div class="page">${wm}<div class="content doc" style="${docStyle}">
+    <div class="eh"><div style="align-self:end">${logo}${M.gauche.map(l=>`<div>${hm(l)}</div>`).join("")}</div>
+      <div class="r" style="align-self:end"><div class="d">${hm(M.droite.lieuDate)}</div><div>${hm(M.droite.nom)}</div>
+      <div style="margin-bottom:4mm">${hm(M.droite.fonction)}</div>${M.droite.destinataires.map(l=>`<div>${hm(l)}</div>`).join("")}</div></div>
+    ${M.titre?`<div class="ttl">${hm(M.titre)}</div>`:""}
+    ${M.appel?`<p class="ind" style="margin-bottom:4.2mm">${hm(M.appel)}</p>`:""}
+    ${M.intro.map(t=>`<p class="ind" style="margin-bottom:2mm">${hm(t)}</p>`).join("")}
+    <div class="box">${hm(M.encadre.join("\n"))}</div>
+    ${M.apres.map(t=>`<p class="ind sp">${hm(t)}</p>`).join("")}
+    <div class="sig" style="margin-top:8.5mm"><div>${hm(M.signature.fonction)}</div><div class="n">${hm(M.signature.nom)}</div></div>
+  </div></div>`;
+  const O=M.odj, L=O.numeros?"ol":"ul";
+  const body = O.rubriques.length ? O.rubriques.map(r=>`${r.titre?`<div class="rubt">${hm(r.titre.replace(/\s*:?\s*$/,""))} :</div>`:""}${r.points.length?`<${L}>${r.points.map(p=>`<li>${hm(p)}</li>`).join("")}</${L}>`:""}`).join("")
+    : `<p class="empty-odj">Aucun point saisi.</p>`;
+  const p2=`<div class="page">${wm}<div class="content doc" style="${docStyle}">
+    <div class="odj-t">${hm(O.titre)}</div>${O.recap?`<div class="odj-r">${hm(O.recap)}</div>`:`<div style="height:4mm"></div>`}
+    ${body}
+    ${O.questionsDiverses?`<div class="rubt" style="margin-top:6mm">Question(s) diverse(s) :</div>`:""}
+  </div></div>`;
+  $("#pages").innerHTML=p1+p2;
+  // numérotation continue dans l'aperçu
+  if(O.numeros){let n=1;document.querySelectorAll("#pages ol").forEach(ol=>{ol.start=n;n+=ol.children.length;});}
+  fitZoom();
+}
+function fitZoom(){
+  const w=$("#pages").clientWidth-24, pw=793.7;
+  const z=Math.min(1,Math.max(.3,w/pw));
+  document.querySelectorAll(".page").forEach(p=>p.style.zoom=z);
+  $("#zoomInfo").textContent=`(${Math.round(z*100)} %)`;
+}
+window.addEventListener("resize",fitZoom);
+
+/* ---- Logo ---- */
+function showLogoThumb(){
+  $("#logoThumb").innerHTML= LOGO? `<img src="${LOGO.dataUrl}" alt="Logo">` : `<div class="ph">Aucun logo</div>`;
+}
+function readLogo(file){
+  if(!file) return;
+  const fr=new FileReader();
+  fr.onload=()=>{
+    const img=new Image();
+    img.onload=()=>{
+      // normalise en PNG, 900 px max
+      const k=Math.min(1,900/Math.max(img.naturalWidth,img.naturalHeight));
+      const c=document.createElement("canvas"); c.width=Math.round(img.naturalWidth*k); c.height=Math.round(img.naturalHeight*k);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+      LOGO={dataUrl:c.toDataURL("image/png"),w:c.width,h:c.height};
+      showLogoThumb(); render(); save(); toast("Logo chargé.");
+    };
+    img.onerror=()=>toast("Image illisible : utilisez un PNG ou un JPG.");
+    img.src=fr.result;
+  };
+  fr.readAsDataURL(file);
+}
+function dataUrlBytes(u){const b=atob(u.split(",")[1]);const a=new Uint8Array(b.length);for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a;}
+function loadImg(src){return new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src;});}
+async function makeImages(){
+  if(!LOGO) return {logo:null,wm:null};
+  const img=await loadImg(LOGO.dataUrl);
+  const c=document.createElement("canvas"); c.width=img.naturalWidth; c.height=img.naturalHeight;
+  const ctx=c.getContext("2d"); ctx.drawImage(img,0,0);
+  const id=ctx.getImageData(0,0,c.width,c.height), d=id.data, a=S.opts.wmOpacity/100, g=S.opts.wmGris;
+  for(let i=0;i<d.length;i+=4){
+    if(g){const y=Math.round(.299*d[i]+.587*d[i+1]+.114*d[i+2]);d[i]=d[i+1]=d[i+2]=y;}
+    d[i+3]=Math.round(d[i+3]*a);
+  }
+  ctx.putImageData(id,0,0);
+  return { logo:{bytes:dataUrlBytes(LOGO.dataUrl),w:LOGO.w,h:LOGO.h},
+           wm:{bytes:dataUrlBytes(c.toDataURL("image/png")),w:c.width,h:c.height} };
+}
+
+/* ---- Téléchargement (page autonome ou artifact Claude) ---- */
+let DL=null;
+try{ if(window.claude&&typeof window.claude.use==="function") window.claude.use("downloads").then(n=>{DL=n;}).catch(()=>{}); }catch(e){}
+async function offerFile(filename,data,mime){
+  if(DL){
+    try{ await DL.save({filename,data:new Blob([data],{type:mime})}); return true; }
+    catch(err){ if(err&&err.code==="declined") return false; toast("Téléchargement impossible ici ("+(err&&err.code||"erreur")+")."); return false; }
+  }
+  const url=URL.createObjectURL(new Blob([data],{type:mime}));
+  const a=document.createElement("a"); a.href=url; a.download=filename; document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1500);
+  return true;
+}
+const slug=s=>(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^A-Za-z0-9]+/g,"_").replace(/^_|_$/g,"");
+
+let pendingMissing=false;
+$("#btnDocx").onclick=async()=>{
+  const miss=missingFields(buildModel(S));
+  const btn=$("#btnDocx");
+  if(miss.length && !pendingMissing){
+    pendingMissing=true; toast("Champs non remplis (surlignés en jaune) : "+miss.join(", ")+". Cliquez de nouveau pour télécharger quand même.");
+    btn.textContent="⬇ Télécharger quand même"; setTimeout(()=>{pendingMissing=false;btn.textContent="⬇ Télécharger en Word";},5000);
+    return;
+  }
+  pendingMissing=false; btn.textContent="⬇ Télécharger en Word";
+  try{
+    const images=await makeImages();
+    const bytes=buildDocx(S,images);
+    const name=`Convocation_CA_${slug(S.etab.nom)||"etablissement"}_${S.seance.date||"date"}.docx`;
+    // mémorise les points utilisés pour l'autocomplétion
+    const hist=new Set(JSON.parse(lsGet(LS_KEY+".hist")||"[]"));
+    S.odj.forEach(r=>r.points.forEach(p=>p.trim()&&hist.add(p.trim())));
+    lsSet(LS_KEY+".hist",JSON.stringify([...hist].slice(-300))); fillPointList();
+    const ok=await offerFile(name,bytes,"application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+    if(ok) toast("Document Word généré : "+name);
+  }catch(e){ console.error(e); toast("Erreur lors de la génération : "+e.message); }
+};
+
+$("#btnSave").onclick=async()=>{
+  const data=JSON.stringify({...S,logo:LOGO},null,1);
+  const name=`Projet_CA_${slug(S.etab.nom)||"etablissement"}_${S.seance.date||todayISO()}.json`;
+  if(await offerFile(name,data,"application/json")) toast("Projet enregistré.");
+};
+$("#btnOpen").onclick=()=>$("#fileProject").click();
+$("#fileProject").onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  f.text().then(t=>{
+    const j=JSON.parse(t); S=merge(defaultState(),j); LOGO=j.logo||LOGO;
+    fillFields(); renderODJ(); showLogoThumb(); render(); save(); toast("Projet ouvert.");
+  }).catch(()=>toast("Fichier de projet illisible."));
+  e.target.value="";
+};
+$("#btnLogo").onclick=()=>$("#fileLogo").click();
+$("#fileLogo").onchange=e=>{readLogo(e.target.files[0]);e.target.value="";};
+$("#btnLogoDel").onclick=()=>{LOGO=null;try{localStorage.removeItem(LS_KEY+".logo");}catch(e){}showLogoThumb();render();};
+$("#btnAddRub").onclick=()=>{S.odj.push({titre:"",points:[""]});renderODJ();$("#odj").lastElementChild.querySelector("input").focus();saveSoon();};
+$("#btnExample").onclick=function(){
+  const hasData=S.etab.nom||S.odj.some(r=>r.points.some(p=>p.trim()));
+  if(hasData&&!this.classList.contains("confirm")){armConfirm(this,"Remplacer vos saisies par l'exemple ?");return;}
+  S.etab={...EXEMPLE.etab}; Object.assign(S.seance,EXEMPLE.seance); S.odj=JSON.parse(JSON.stringify(EXEMPLE.odj));
+  fillFields(); renderODJ(); render(); save(); toast("Exemple chargé (ajoutez le logo pour le filigrane).");
+};
+$("#btnNew").onclick=function(){
+  if(!this.classList.contains("confirm")){armConfirm(this,"Vider la séance et les points ?");return;}
+  this.classList.remove("confirm"); this.textContent="Nouveau CA";
+  Object.assign(S.seance,{date:"",lieu:"",nature:"",dateCourrier:todayISO()});
+  S.odj=S.odj.map(r=>({titre:r.titre,points:[""]}));
+  fillFields(); renderODJ(); render(); save(); toast("Prêt pour un nouveau conseil.");
+};
+$("#btnResetTxt").onclick=()=>{S.textes={...TEXTES_DEFAUT};fillFields();render();saveSoon();toast("Textes rétablis.");};
+
+function fillPointList(){
+  const hist=JSON.parse(lsGet(LS_KEY+".hist")||"[]");
+  const all=[...new Set([...hist,...POINTS_COURANTS])];
+  $("#dlPoints").innerHTML=all.map(p=>`<option value="${escA(p)}">`).join("");
+}
+let toastT;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),4500);}
+
+load(); fillFields(); bindFields(); renderODJ(); showLogoThumb(); fillPointList(); render();
+</script>
+</body>
+</html>
