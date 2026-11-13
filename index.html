@@ -78,6 +78,40 @@
       color: rgba(255,255,255,.45);
     }
 
+
+    /* ── MENU DÉROULANT ──────────────────────────────── */
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .nav-wrap { position: relative; }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      color: #fff; border-radius: 7px; padding: 6px 12px;
+      font: 600 .8rem 'Inter', system-ui, sans-serif; cursor: pointer;
+    }
+    .nav-btn:hover, .nav-btn[aria-expanded="true"] { background: rgba(255,255,255,.2); }
+    .nav-btn .chev { transition: transform .15s; }
+    .nav-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+    .nav-panel {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      width: 340px; max-height: calc(100vh - 80px); overflow-y: auto;
+      background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(15,23,42,.18); padding: 8px; display: none;
+    }
+    .nav-panel.open { display: block; }
+    .nav-group { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); padding: 10px 10px 4px; }
+    .nav-group:first-child { padding-top: 4px; }
+    .nav-panel a {
+      display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 6px;
+      color: var(--ink); text-decoration: none; font-size: .85rem;
+    }
+    .nav-panel a:hover, .nav-panel a:focus { background: var(--sky-soft); color: var(--sky); outline: none; }
+    .nav-panel a .ni { width: 22px; text-align: center; flex-shrink: 0; }
+    @media (max-width: 640px) {
+      .nav-panel { width: calc(100vw - 32px); }
+      .header-sub { display: none; }
+    }
+
     /* ── HERO ────────────────────────────────────────── */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, #1e4080 55%, #2563eb 100%);
@@ -311,10 +345,16 @@
 <body>
 
 <header>
-  <a class="logo" href="index.html">
-    <span class="logo-badge">EDU</span>
-    Portail Scolaire
-  </a>
+  <div class="header-left">
+    <div class="nav-wrap">
+      <button class="nav-btn" id="navBtn" aria-haspopup="true" aria-expanded="false" aria-controls="navPanel">☰ Menu <svg class="chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <nav class="nav-panel" id="navPanel" aria-label="Outils du portail"></nav>
+    </div>
+    <a class="logo" href="index.html">
+      <span class="logo-badge">EDU</span>
+      Portail Scolaire
+    </a>
+  </div>
   <span class="header-sub">Données ouvertes · MEN &amp; Académie de Versailles</span>
 </header>
 
@@ -672,5 +712,26 @@
   Licence ouverte · Les données peuvent ne pas être à jour · Usage à titre indicatif
 </footer>
 
+
+<script>
+/* Menu déroulant : construit à partir des cartes de la page (un outil ajouté à l'index apparaît automatiquement) */
+(function(){
+  const btn=document.getElementById('navBtn'), panel=document.getElementById('navPanel');
+  const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  let html='', group=null;
+  document.querySelectorAll('main .section-label, main a.card').forEach(el=>{
+    if(el.classList.contains('section-label')){ const t=el.textContent.trim(); if(t) group=t; return; }
+    if(group){ html+=`<div class="nav-group">${esc(group)}</div>`; group=null; }
+    const title=el.querySelector('.card-title')?.textContent.trim()||el.getAttribute('href');
+    const icon=el.querySelector('.card-icon')?.textContent.trim()||'•';
+    html+=`<a href="${el.getAttribute('href')}"><span class="ni">${esc(icon)}</span>${esc(title)}</a>`;
+  });
+  panel.innerHTML=html;
+  const open=v=>{ panel.classList.toggle('open',v); btn.setAttribute('aria-expanded',v); if(v) panel.querySelector('a')?.focus(); };
+  btn.addEventListener('click',e=>{ e.stopPropagation(); open(!panel.classList.contains('open')); });
+  document.addEventListener('click',e=>{ if(!panel.contains(e.target)) open(false); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape' && panel.classList.contains('open')){ open(false); btn.focus(); } });
+})();
+</script>
 </body>
 </html>
