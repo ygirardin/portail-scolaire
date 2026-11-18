@@ -1,0 +1,353 @@
+/*
+ * Portail Scolaire — Identité visuelle partagée
+ * Styles isolés par data-portal-page pour préserver calculs, cartes et données.
+ * Feuille chargée après les styles historiques de chaque outil.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --portal-navy: #19224e;
+  --portal-navy-light: #313e98;
+  --portal-indigo: #5458df;
+  --portal-cyan: #4ba9d8;
+  --portal-mint: #c2f09a;
+  --portal-bg: #f6f8fd;
+  --portal-text: #17213b;
+  --portal-muted: #69758c;
+  --portal-border: #e0e7f2;
+  --portal-shadow: 0 10px 34px rgba(25, 34, 78, .08);
+}
+html[data-portal-page] { color-scheme: light; }
+html[data-portal-page] body { font-family: 'Inter',system-ui,-apple-system,sans-serif; }
+html[data-portal-page] :focus-visible { outline: 3px solid #ffbd70; outline-offset: 2px; }
+html[data-portal-page] button,html[data-portal-page] input,html[data-portal-page] select,html[data-portal-page] textarea { font-family: inherit; }
+html[data-portal-page] button,html[data-portal-page] a,html[data-portal-page] select { -webkit-tap-highlight-color: transparent; }
+html[data-portal-page] button:not(:disabled) { transition: background-color .16s ease,box-shadow .16s ease,transform .16s ease; }
+html[data-portal-page] input:focus,html[data-portal-page] select:focus,html[data-portal-page] textarea:focus { outline: 3px solid rgba(84,88,223,.14);outline-offset:1px; }
+
+/* En-tête commun pour guides, tableaux et glossaire */
+html[data-portal-page="guide"],html[data-portal-page="data"],html[data-portal-page="affelnet"] {
+  --navy:#19224e; --sky:#4c59d9; --sky-soft:#edf0ff; --teal:#078d88;
+  --violet:#7954ce; --ink:#17213b; --ink2:#42506b; --muted:#68758f;
+  --rule:#e0e7f2; --surface:#f6f8fd; --white:#fff;
+}
+html[data-portal-page="guide"] header,
+html[data-portal-page="data"] header,
+html[data-portal-page="affelnet"] header {
+  background: linear-gradient(110deg,#19224e,#343f99);
+  border-bottom:1px solid rgba(255,255,255,.13);
+  box-shadow:0 4px 18px rgba(20,27,77,.12);
+}
+html[data-portal-page="guide"] .header-title,
+html[data-portal-page="data"] .header-title {
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;letter-spacing:-.012em;
+}
+html[data-portal-page="guide"] .back-btn,
+html[data-portal-page="data"] .back-btn,
+html[data-portal-page="affelnet"] header a[href="index.html"] {
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:11px;
+  color:#fff;
+  padding:8px 12px;
+  text-decoration:none;
+  font-weight:700;
+  white-space:nowrap;
+}
+html[data-portal-page="guide"] .back-btn:hover,
+html[data-portal-page="data"] .back-btn:hover,
+html[data-portal-page="affelnet"] header a[href="index.html"]:hover {
+  background:rgba(255,255,255,.22);
+}
+html[data-portal-page="guide"] .hero {
+  background:linear-gradient(120deg,#1c275b 0%,#444db4 75%,#5c66c6 100%);
+  border-radius:20px;
+  box-shadow:var(--portal-shadow);
+}
+html[data-portal-page="guide"] .hero-title { font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em; }
+html[data-portal-page="guide"] .hero-tag { border-radius:100px;padding:3px 10px; }
+html[data-portal-page="guide"] .toc { scrollbar-color:#c5c9e6 transparent; }
+html[data-portal-page="guide"] .toc-item { border-radius:0 8px 8px 0; }
+html[data-portal-page="guide"] .toc-item:hover,
+html[data-portal-page="guide"] .toc-item.active { background:#e8edff;color:#4242bd;border-left-color:#5458df; }
+html[data-portal-page="guide"] .section-num { color:#555acc; }
+html[data-portal-page="guide"] .section-title { color:#19224e;border-bottom-color:#dfe3f2; }
+html[data-portal-page="guide"] .step,
+html[data-portal-page="guide"] .info-card,
+html[data-portal-page="guide"] .color-item {
+  border-radius:14px;box-shadow:0 3px 12px rgba(20,35,77,.035);
+}
+html[data-portal-page="guide"] .step-num { background:#5559d5; }
+html[data-portal-page="guide"] .step.warn .step-num,
+html[data-portal-page="guide"] .step.important .step-num { background:#bf7919; }
+html[data-portal-page="guide"] .step.required .step-num { background:#c83838; }
+html[data-portal-page="guide"] .alert { border-radius:13px; }
+html[data-portal-page="guide"] .content { line-height:1.68; }
+
+/* Glossaire et tableaux de données */
+html[data-portal-page="data"] .search-bar,
+html[data-portal-page="data"] .alpha-bar,
+html[data-portal-page="data"] .controls,
+html[data-portal-page="data"] .results-bar { border-bottom-color:var(--portal-border); }
+html[data-portal-page="data"] .entry {
+  border-radius:14px;background:#fff;
+  box-shadow:0 3px 12px rgba(20,35,77,.035);
+}
+html[data-portal-page="data"] .entry:hover { border-color:#b5b8f2;box-shadow:var(--portal-shadow); }
+html[data-portal-page="data"] .entry-sigle { color:#4b50b9; }
+html[data-portal-page="data"] .letter-title { color:var(--portal-navy); }
+html[data-portal-page="data"] .alpha-btn { border-radius:8px; }
+html[data-portal-page="data"] .alpha-btn.active,
+html[data-portal-page="data"] .btn-reset,
+html[data-portal-page="data"] .page-btn.active {
+  background:#4e54c7;border-color:#4e54c7;color:#fff;
+}
+html[data-portal-page="data"] .alpha-btn:hover,
+html[data-portal-page="data"] .page-btn:hover { border-color:#555acb;color:#4b50b9; }
+html[data-portal-page="data"] .count-badge { background:#595bcf;color:#fff; }
+html[data-portal-page="data"] .table-wrap table {
+  background:white;border-radius:14px;overflow:hidden;
+  box-shadow:var(--portal-shadow);
+}
+html[data-portal-page="data"] thead,
+html[data-portal-page="data"] thead tr { background:#222f70;color:white; }
+html[data-portal-page="data"] tbody tr:hover { background:#f0f2ff; }
+html[data-portal-page="data"] .ctrl input,
+html[data-portal-page="data"] .ctrl select,
+html[data-portal-page="data"] .search-wrap input { border-radius:11px; }
+html[data-portal-page="data"] .ctrl input:focus,
+html[data-portal-page="data"] .ctrl select:focus { border-color:#5357ce; }
+html[data-portal-page="data"] .pagination { flex-wrap:wrap; }
+
+/* Affectation : barre de filtres et table lisibles */
+html[data-portal-page="affelnet"] {
+  --bleu:#19224e;--ciel:#5358c9;--accent:#b4e790;--fond:#f6f8fd;
+  --blanc:#fff;--gris1:#dfe6f1;--gris2:#69758c;
+  --texte:#17213b;--ligne:#edf0f6;
+}
+html[data-portal-page="affelnet"] header { padding-top:24px;padding-bottom:24px;flex-wrap:wrap;row-gap:12px; }
+html[data-portal-page="affelnet"] .header-logo {
+  background:linear-gradient(140deg,#bff1a0,#69cce5);color:#19224e;
+  border-radius:13px;box-shadow:0 4px 14px rgba(9,14,46,.16);
+}
+html[data-portal-page="affelnet"] .header-text h1 { letter-spacing:-.025em; }
+html[data-portal-page="affelnet"] .controls {
+  background:#fff;border-bottom:1px solid #e0e7f2;
+  box-shadow:0 5px 15px rgba(15,26,67,.035);
+}
+html[data-portal-page="affelnet"] .ctrl-group input,
+html[data-portal-page="affelnet"] .ctrl-group select { background:#f8faff;border-radius:11px; }
+html[data-portal-page="affelnet"] .ctrl-group input:focus,
+html[data-portal-page="affelnet"] .ctrl-group select:focus { border-color:#555bca; }
+html[data-portal-page="affelnet"] .btn-reset {
+  background:#5458ce;border-radius:11px;font-weight:700;
+}
+html[data-portal-page="affelnet"] .btn-reset:hover { background:#363da8; }
+html[data-portal-page="affelnet"] .count-badge { background:#d3f4b9;color:#244b33; }
+html[data-portal-page="affelnet"] table { box-shadow:var(--portal-shadow);border-radius:15px; }
+html[data-portal-page="affelnet"] thead { background:#222f70; }
+html[data-portal-page="affelnet"] tbody tr:hover { background:#f0f3ff; }
+html[data-portal-page="affelnet"] .page-btn { border-radius:9px; }
+html[data-portal-page="affelnet"] .page-btn.active { background:#5358c8;border-color:#5358c8;color:white; }
+
+/* Cartes classiques : SEGPA, ULIS, sections */
+html[data-portal-page="map-light"] {
+  --accent:var(--portal-page-accent,#5358cf);
+  --accent-bg:var(--portal-page-soft,#edf0ff);
+  --accent-dark:var(--portal-page-dark,#373b98);
+}
+html[data-portal-page="map-light"] body { background:#f6f8fd; }
+html[data-portal-page="map-light"] body>a[href="index.html"][style*="position:fixed"] { display:none!important; }
+html[data-portal-page="map-light"] header {
+  height:62px;min-height:62px;padding:0 20px;
+  background:linear-gradient(110deg,#19224e,#303b91);color:white;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  box-shadow:0 5px 20px rgba(15,24,71,.14);
+}
+html[data-portal-page="map-light"] .back {
+  display:inline-flex;align-items:center;
+  padding:8px 12px;border-radius:10px;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.25);
+  color:#fff;text-decoration:none;white-space:nowrap;
+}
+html[data-portal-page="map-light"] .back:hover { color:white;background:rgba(255,255,255,.21); }
+html[data-portal-page="map-light"] .htitle { color:white;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em; }
+html[data-portal-page="map-light"] #hcount { color:#d7def7; }
+html[data-portal-page="map-light"] .badge { border-radius:100px;padding:4px 10px;background:var(--accent); }
+html[data-portal-page="map-light"] .panel { background:#fff;border-left-color:#dfe6f2;width:340px;box-shadow:-9px 0 30px rgba(20,32,76,.06); }
+html[data-portal-page="map-light"] .p-head { padding:21px 19px;border-bottom-color:#e3e8f3; }
+html[data-portal-page="map-light"] .p-head h2 { font-family:'Space Grotesk',sans-serif;color:#1a2650;font-size:1.05rem; }
+html[data-portal-page="map-light"] .count-bar { padding:10px 19px; }
+html[data-portal-page="map-light"] .item { padding:13px 19px;border-bottom-color:#edf0f7; }
+html[data-portal-page="map-light"] .item:hover { background:#f4f6fe; }
+html[data-portal-page="map-light"] .item.active { padding-left:16px;background:var(--accent-bg); }
+html[data-portal-page="map-light"] .iname { color:#1c2945; }
+html[data-portal-page="map-light"] input[type=text],
+html[data-portal-page="map-light"] select {
+  border-radius:10px;border-color:#dce3f1;background:#f8faff;
+  min-height:39px;
+}
+html[data-portal-page="map-light"] input[type=text]:focus,
+html[data-portal-page="map-light"] select:focus { border-color:var(--accent);background:white; }
+html[data-portal-page="map-light"] .leaflet-popup-content-wrapper { border-radius:14px; }
+@media(max-width:700px){
+ html[data-portal-page="map-light"] header { height:auto;min-height:58px;padding:9px 12px;gap:8px;flex-wrap:wrap; }
+ html[data-portal-page="map-light"] #hcount { font-size:.7rem; }
+ html[data-portal-page="map-light"] .htitle { font-size:.8rem; }
+ html[data-portal-page="map-light"] .wrap { flex-direction:column;min-height:0; }
+ html[data-portal-page="map-light"] #map { min-height:0;flex:1 1 auto; }
+ html[data-portal-page="map-light"] .panel {
+   display:flex!important;width:100%;height:min(37dvh,275px);min-height:160px;
+   flex:0 0 auto;border-left:0;border-top:1px solid #dce3ee;
+   box-shadow:0 -8px 20px rgba(16,30,71,.06);
+ }
+ html[data-portal-page="map-light"] .p-head { padding:10px 14px; }
+ html[data-portal-page="map-light"] .p-head h2 { margin-bottom:7px;font-size:.85rem; }
+ html[data-portal-page="map-light"] .p-head select { margin-top:5px; }
+ html[data-portal-page="map-light"] .count-bar { padding:6px 14px; }
+ html[data-portal-page="map-light"] .item { padding:9px 14px; }
+}
+
+/* Cartes immersives : collèges et lycées */
+html[data-portal-page="map-dark"] body { font-family:'Inter',system-ui,sans-serif; }
+html[data-portal-page="map-dark"] body > a[href="index.html"][style*="position:fixed"] {
+  background:linear-gradient(110deg,#19224e,#454bbb)!important;
+  border:1px solid rgba(255,255,255,.4)!important;
+  border-radius:12px!important;
+  padding:10px 15px!important;
+  font-weight:750!important;
+  box-shadow:0 8px 24px rgba(10,14,41,.25)!important;
+  color:white!important;
+}
+html[data-portal-page="map-dark"] body > a[href="index.html"][style*="position:fixed"]:hover { background:#373cb1!important; }
+html[data-portal-page="map-dark"] #panel { width:310px;gap:12px; }
+html[data-portal-page="map-dark"] #panel .card {
+  border-color:rgba(157,172,238,.22);
+  background:rgba(22,28,51,.96);
+  border-radius:19px;
+  box-shadow:0 14px 44px rgba(0,0,0,.4);
+  backdrop-filter:blur(14px);
+}
+html[data-portal-page="map-dark"] #panel .card h1 { font-family:'Space Grotesk',sans-serif;font-size:1.08rem;line-height:1.4; }
+html[data-portal-page="map-dark"] #panel .pill {
+  background:rgba(153,162,248,.17);border-color:rgba(162,171,250,.38);
+  color:#cbd1ff;border-radius:100px;padding:5px 12px;
+}
+html[data-portal-page="map-dark"] #panel input[type=text] {
+  border-color:#454c74;background:#252e4b;color:#fff;border-radius:10px;
+}
+html[data-portal-page="map-dark"] #panel input[type=text]:focus { border-color:#9da8ff; }
+html[data-portal-page="map-dark"] #panel input[type=text]::placeholder { color:#aab6ce; }
+html[data-portal-page="map-dark"] #panel .btn {
+  background:linear-gradient(110deg,#5869ed,#6c60d9);
+  border-radius:11px;min-height:42px;
+}
+html[data-portal-page="map-dark"] #panel .stats,
+html[data-portal-page="map-dark"] #panel .stat { border-color:#394464; }
+html[data-portal-page="map-dark"] #panel .sl,
+html[data-portal-page="map-dark"] #panel .ld-sub { color:#a9b6d0; }
+html[data-portal-page="map-dark"] .ac { background:#242d47;border-color:#475176; }
+html[data-portal-page="map-dark"] .aci:hover { background:#343f71; }
+html[data-portal-page="map-dark"] .leaflet-popup-content-wrapper {
+  border-radius:16px!important;background:#19223c!important;
+}
+html[data-portal-page="map-dark"] #hint {
+  background:rgba(25,34,78,.94);border:1px solid rgba(194,204,246,.2);
+  color:#e1e7fc;box-shadow:0 7px 25px rgba(20,24,60,.16);
+}
+@media(max-width:700px){
+ html[data-portal-page="map-dark"] #panel { width:min(310px,calc(100vw - 28px));top:65px;left:14px;max-height:calc(100dvh - 132px);overflow-y:auto; }
+ html[data-portal-page="map-dark"] body > a[href="index.html"][style*="position:fixed"] { top:10px!important;right:14px!important; }
+ html[data-portal-page="map-dark"] #hint { display:none; }
+}
+
+/* Outil de répartition des sièges */
+html[data-portal-page="ececa"] body {
+  background:radial-gradient(ellipse at 0 0,#e7edff 0,transparent 55%),#f4f7fd;
+  color:#192541;
+}
+html[data-portal-page="ececa"] .container { border-radius:22px;box-shadow:0 20px 62px rgba(26,35,83,.12); }
+html[data-portal-page="ececa"] .container > header {
+  background:linear-gradient(115deg,#19224e,#4954b9);text-align:left;
+  padding:30px 36px;
+}
+html[data-portal-page="ececa"] .container > header h1 {
+  font-family:'Space Grotesk',sans-serif;letter-spacing:-.03em;
+}
+html[data-portal-page="ececa"] section {
+  border-radius:16px;border-left-color:#6064d5;background:#f8faff;
+}
+html[data-portal-page="ececa"] section h2,html[data-portal-page="ececa"] .results h2 {
+  color:#343f9d;border-color:#aeb8f0;font-family:'Space Grotesk',sans-serif;
+}
+html[data-portal-page="ececa"] .list-container { border-radius:12px;border-left-color:#6368da;box-shadow:0 2px 12px rgba(25,37,72,.045); }
+html[data-portal-page="ececa"] .results { border-radius:15px;border-top-color:#6268d8; }
+html[data-portal-page="ececa"] .stat-box { background:linear-gradient(115deg,#3845a6,#7178dc);border-radius:12px; }
+html[data-portal-page="ececa"] input,
+html[data-portal-page="ececa"] select { border-radius:9px; }
+html[data-portal-page="ececa"] .portal-return,
+html[data-portal-page="affelnet"] .portal-return {
+  display:inline-flex;align-items:center;gap:8px;
+  color:#fff;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:11px;padding:9px 13px;text-decoration:none;
+  font-weight:700;font-size:.8rem;white-space:nowrap;
+}
+html[data-portal-page="ececa"] .portal-return:hover { background:rgba(255,255,255,.22); }
+
+/* Générateur Word : la prévisualisation .page est intentionnellement inchangée */
+html[data-portal-page="document"] {
+  --bg:#f6f8fd;--panel:#fff;--ink:#1d2947;--muted:#66758e;
+  --line:#e0e6f1;--accent:#5458d2;--accent-soft:#e8ebff;
+}
+html[data-portal-page="document"] header.top {
+  background:linear-gradient(110deg,#19224e,#303b91);
+  color:white;border-bottom:1px solid #344183;box-shadow:0 4px 16px rgba(17,28,74,.12);
+  padding:13px 20px;gap:11px;
+}
+html[data-portal-page="document"] header.top h1 { font-family:'Space Grotesk',sans-serif;font-size:16px; }
+html[data-portal-page="document"] header.top h1 small { color:#c8d2fa; }
+html[data-portal-page="document"] header.top>a[href="index.html"] {
+  color:white!important;border:1px solid rgba(255,255,255,.25);
+  padding:9px 12px;background:rgba(255,255,255,.11);
+  border-radius:11px;text-decoration:none;font-weight:700;
+}
+html[data-portal-page="document"] header.top>a[href="index.html"]:hover { background:rgba(255,255,255,.2); }
+html[data-portal-page="document"] header.top button { border-radius:10px;border-color:rgba(255,255,255,.27); }
+html[data-portal-page="document"] header.top button:not(.primary) {
+  background:rgba(255,255,255,.11);color:#fff;
+}
+html[data-portal-page="document"] header.top button.primary { background:#c2ef9b;border-color:#c2ef9b;color:#1c4734; }
+html[data-portal-page="document"] header.top button:hover { filter:brightness(1.08); }
+html[data-portal-page="document"] details.card { border-radius:15px;box-shadow:0 5px 20px rgba(28,38,76,.045);overflow:hidden; }
+html[data-portal-page="document"] details.card>summary { padding:15px 17px;color:#24345e; }
+html[data-portal-page="document"] details.card[open]>summary { background:#f3f5ff;border-bottom:1px solid #e5e9f7; }
+html[data-portal-page="document"] .rub { border-radius:12px;background:#f7f9fd; }
+html[data-portal-page="document"] input[type=text],
+html[data-portal-page="document"] input[type=date],
+html[data-portal-page="document"] input[type=time],
+html[data-portal-page="document"] input[type=number],
+html[data-portal-page="document"] select,
+html[data-portal-page="document"] textarea { border-radius:9px;background:#fff; }
+html[data-portal-page="document"] button { border-radius:9px; }
+html[data-portal-page="document"] button.primary { background:#535acb;border-color:#535acb; }
+html[data-portal-page="document"] .preview-head { color:#485876; }
+
+/* Transitions douces et accessibilité */
+@media(prefers-reduced-motion:reduce){
+ html[data-portal-page] *,html[data-portal-page] *::before,html[data-portal-page] *::after { animation-duration:.01ms!important;transition-duration:.01ms!important; }
+}
+@media(max-width:760px){
+ html[data-portal-page="guide"] .layout { padding:0 15px; }
+ html[data-portal-page="guide"] .content { padding-left:0; }
+ html[data-portal-page="data"] header { padding-left:13px;padding-right:13px; }
+ html[data-portal-page="affelnet"] header { padding:18px 14px; }
+ html[data-portal-page="affelnet"] .header-text h1 { font-size:1.18rem; }
+ html[data-portal-page="ececa"] body { padding:12px; }
+ html[data-portal-page="ececa"] .container > header { padding:20px; }
+ html[data-portal-page="ececa"] .content { padding:16px;gap:14px; }
+ html[data-portal-page="document"] .layout { padding:12px; }
+ html[data-portal-page="document"] header.top { padding:10px 13px; }
+}
