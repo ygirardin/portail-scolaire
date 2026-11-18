@@ -351,3 +351,55 @@ html[data-portal-page="document"] .preview-head { color:#485876; }
  html[data-portal-page="document"] .layout { padding:12px; }
  html[data-portal-page="document"] header.top { padding:10px 13px; }
 }
+
+
+/* Carte nationale des bassins : même navigation que les autres outils cartographiques */
+html[data-portal-page="map-bassins"] {
+  --navy:#19224e;--sky:#4f5bd0;--sky-soft:#eef0ff;
+  --teal:#0b8d8a;--violet:#7954d0;--ink:#17213b;--ink2:#42506b;
+  --muted:#68758f;--rule:#e0e7f2;--surface:#f6f8fd;--white:#fff;
+}
+html[data-portal-page="map-bassins"] header {
+  background:linear-gradient(110deg,#19224e,#343f99);
+  min-height:62px;height:62px;padding:0 20px;gap:13px;
+  box-shadow:0 5px 20px rgba(17,26,74,.14);
+}
+html[data-portal-page="map-bassins"] .back-btn {
+  display:inline-flex;align-items:center;padding:8px 12px;
+  border-radius:11px;background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:750;
+  text-decoration:none;white-space:nowrap;
+}
+html[data-portal-page="map-bassins"] .back-btn:hover { background:rgba(255,255,255,.2); }
+html[data-portal-page="map-bassins"] .header-title { font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em; }
+html[data-portal-page="map-bassins"] .header-stats { color:#c8d1f3; }
+html[data-portal-page="map-bassins"] .stat-val { color:#fff; }
+html[data-portal-page="map-bassins"] #panel {
+  background:#fff;border-color:#e0e7f2;
+  box-shadow:-10px 0 30px rgba(21,35,83,.065);
+}
+html[data-portal-page="map-bassins"] .panel-header { padding:18px;border-bottom-color:#e0e7f2; }
+html[data-portal-page="map-bassins"] .panel-name { color:#1d2852;font-size:1.07rem; }
+html[data-portal-page="map-bassins"] .panel-search { padding:11px 15px; }
+html[data-portal-page="map-bassins"] .panel-search input {
+  height:40px;border-radius:11px;border-color:#dce3f1;background:#f8faff;
+}
+html[data-portal-page="map-bassins"] .panel-search input:focus { border-color:#5759d1; }
+html[data-portal-page="map-bassins"] .panel-filters { padding:10px 14px; }
+html[data-portal-page="map-bassins"] .fb { height:28px;border-radius:100px; }
+html[data-portal-page="map-bassins"] .fb.active { background:#5058c8;border-color:#5058c8;color:white; }
+html[data-portal-page="map-bassins"] .etab-card { padding:13px 15px; }
+html[data-portal-page="map-bassins"] .etab-card:hover { background:#f0f2ff; }
+html[data-portal-page="map-bassins"] .legend { border:1px solid #e1e7f2;border-radius:13px; }
+@media(max-width:768px){
+ html[data-portal-page="map-bassins"] header {
+  min-height:58px;height:auto;flex-wrap:wrap;padding:10px 13px;gap:7px;
+ }
+ html[data-portal-page="map-bassins"] .header-title { font-size:.8rem; }
+ html[data-portal-page="map-bassins"] .header-stats { width:100%;margin-left:0;font-size:.63rem;gap:10px; }
+ html[data-portal-page="map-bassins"] #map { flex:1;min-height:0;height:auto; }
+ html[data-portal-page="map-bassins"] #panel:not(.hidden) {
+  width:100%;height:min(43dvh,340px);flex-shrink:0;border-left:0;border-top:1px solid #dce3f0;
+ }
+ html[data-portal-page="map-bassins"] #panel.hidden { height:0; }
+}
