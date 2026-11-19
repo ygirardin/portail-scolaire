@@ -86,7 +86,15 @@ header{background:var(--navy);padding:0 20px;height:52px;display:flex;align-item
   #panel{width:100%;border-left:none;border-top:1px solid var(--rule);height:45vh;}
 }
 </style>
-</head>
+<style>
+.basin-source{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:7px 14px;background:#fff;border-bottom:1px solid #dce3f1;font-size:.72rem;color:#42506b;flex-shrink:0}
+.basin-source a,.basin-source label{color:#2563eb;font-weight:700}
+.basin-source input{max-width:250px;font-size:.72rem}
+#kml-status{font-size:.72rem}
+html,body{height:100%;width:100%;overflow:hidden}body{height:100dvh}
+.layout,#map{min-width:0;min-height:0}
+@media(max-width:768px){#map{height:auto;flex:1 1 0}#panel.hidden{height:0;width:100%;border:0}#panel:not(.hidden){height:min(40dvh,320px);width:100%}.panel-filters{flex-wrap:wrap}}
+</style></head>
 <body>
 
 <header>
@@ -95,6 +103,7 @@ header{background:var(--navy);padding:0 20px;height:52px;display:flex;align-item
   <span class="header-sub">6 bassins · 158 établissements · Cliquez sur un bassin</span>
 </header>
 
+<div class="basin-source"><span>Contours historiques indicatifs</span><a href="https://www.google.com/maps/d/u/0/edit?mid=15BfC0jCIMVWrhtXFCZyHJbJrlF5KfDo&ll=49.074967658320276%2C2.102068500000014&z=11" target="_blank" rel="noopener">Carte Google de référence ↗</a><label for="kml-import">Aperçu de nouveaux contours (.kml)</label><input type="file" id="kml-import" accept=".kml,application/vnd.google-earth.kml+xml"><span id="kml-status" role="status"></span></div>
 <div class="layout">
   <div id="map"></div>
 
@@ -157,7 +166,7 @@ legend.addTo(map);
 let activeLayer = null;
 const layers = {};
 
-BASSINS_GEO.features.forEach(feature => {
+function addBasinLayer(feature) {
   const nom = feature.properties.nom;
   const color = feature.properties.color;
 
@@ -194,7 +203,8 @@ BASSINS_GEO.features.forEach(feature => {
 
   layer.addTo(map);
   layers[nom] = layer;
-});
+}
+BASSINS_GEO.features.forEach(addBasinLayer);
 
 // ── PANEL ────────────────────────────────────────────────────────────────────
 let activeBassin = null;
@@ -302,6 +312,45 @@ function renderList() {
     </div>`;
   }).join('');
 }
+
+
+/* Aperçu KML : uniquement des polygones explicitement nommés ou rangés par bassin.
+   Aucun calcul de frontière à partir de points. */
+(function(){
+ const input=document.getElementById('kml-import'),status=document.getElementById('kml-status');
+ const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const aliases=[['argenteuil','Argenteuil'],['enghien','Enghien-Montmorency'],['cergy','Cergy'],['pontoise','Pontoise-Vexin'],['sarcelles','Sarcelles-Lochères'],['gonesse','Gonesse-Roissy']];
+ function directName(el){return [...el.children].find(n=>n.localName==='name')?.textContent||''}
+ function readRing(el){const raw=el?.getElementsByTagNameNS('*','coordinates')[0]?.textContent?.trim()||'';const pts=raw.split(/\s+/).map(v=>v.split(',').slice(0,2).map(Number));if(pts.length<4||pts.some(p=>p.length!==2||!p.every(Number.isFinite)||Math.abs(p[0])>180||Math.abs(p[1])>90))return null;const a=pts[0],z=pts[pts.length-1];if(a[0]!==z[0]||a[1]!==z[1])pts.push([...a]);return pts}
+ input.addEventListener('change',async()=>{
+ if(!input.files[0])return;
+ try{
+ const doc=new DOMParser().parseFromString(await input.files[0].text(),'application/xml');
+ if(doc.querySelector('parsererror'))throw Error('Fichier KML invalide.');
+ const by=new Map();
+ for(const mark of doc.getElementsByTagNameNS('*','Placemark')){
+  let parent=mark,nom=null;
+  while(parent&&!nom){const n=norm(directName(parent));const found=aliases.filter(([a])=>n.includes(a));if(found.length===1)nom=found[0][1];parent=parent.parentElement}
+  if(!nom)continue;
+  for(const p of mark.getElementsByTagNameNS('*','Polygon')){
+   const outer=p.getElementsByTagNameNS('*','outerBoundaryIs')[0],ring=readRing(outer);
+   if(!ring)continue;
+   const holes=[...p.getElementsByTagNameNS('*','innerBoundaryIs')].map(readRing).filter(Boolean);
+   if(!by.has(nom))by.set(nom,[]);
+   by.get(nom).push([ring,...holes]);
+  }
+ }
+ if(by.size!==6)throw Error(by.size+' bassin(s) reconnu(s) sur 6. Aucun contour remplacé. Vérifiez les noms des calques/polygones du KML.');
+ const next=BASSINS_GEO.features.map(f=>({type:'Feature',properties:{...f.properties},geometry:{type:'MultiPolygon',coordinates:by.get(f.properties.nom)}}));
+ if(next.some(f=>!f.geometry.coordinates?.length))throw Error('Un bassin n’a pas de polygone.');
+ for(const key of Object.keys(layers)){map.removeLayer(layers[key]);delete layers[key]}
+ BASSINS_GEO.features=next;next.forEach(addBasinLayer);
+ activeBassin=null;closePanel();
+ map.invalidateSize();map.fitBounds(L.featureGroup(Object.values(layers)).getBounds(),{padding:[30,30]});
+ status.textContent='6 bassins chargés depuis le KML (aperçu local non enregistré).';document.querySelector('.basin-source>span').textContent='Contours KML importés';
+ }catch(e){status.textContent=e.message}
+ });
+})();
 
 // Init filtres boutons
 const filterMap = {'all':'f-all','CLG':'f-clg','LGT':'f-lgt','LPO':'f-lpo','LP':'f-lp'};
