@@ -1,1 +1,595 @@
-[{"uai":"9710035L","nom":"Collège Mireille Choisy","adr":"Gustavia","cp":"97098","ville":"Saint-Barthélemy","dept":"97","lat":17.898658406466016,"lng":-62.84943972424056,"tel":"05 90 29 60 00","mail":"ce.9710035l@ac-guadeloupe.fr","web":"https://mireillechoisy.clg.ac-guadeloupe.fr"}]
+[
+  {
+    "uai": "9710035L",
+    "nom": "Collège Mireille Choisy",
+    "adr": "Gustavia",
+    "cp": "97098",
+    "ville": "Saint-Barthélemy",
+    "dept": "97",
+    "lat": 17.898658406466016,
+    "lng": -62.84943972424056,
+    "tel": "05 90 29 60 00",
+    "mail": "ce.9710035l@ac-guadeloupe.fr",
+    "web": "https://mireillechoisy.clg.ac-guadeloupe.fr",
+    "specialites": [],
+    "source": "Inventaire antérieur — spécialité à vérifier"
+  },
+  {
+    "uai": "0170059X",
+    "nom": "Collège Agrippa d'Aubigné",
+    "adr": "6 rue du Cormier",
+    "cp": "17100",
+    "ville": "Saintes",
+    "dept": "17",
+    "lat": 45.74898,
+    "lng": -0.61291,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0762176C",
+    "nom": "Collège Albert Calmette",
+    "adr": "Rue Jean Maridor",
+    "cp": "76330",
+    "ville": "Port-Jérôme-sur-Seine",
+    "dept": "76",
+    "lat": 49.49487,
+    "lng": 0.57391,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0760118R",
+    "nom": "Collège Albert Camus",
+    "adr": "17 rue Rétimare",
+    "cp": "76194",
+    "ville": "Yvetot",
+    "dept": "76",
+    "lat": 49.61752,
+    "lng": 0.76794,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0595171A",
+    "nom": "Collège Albert Châtelet",
+    "adr": "357 rue Marceline",
+    "cp": "59508",
+    "ville": "Douai",
+    "dept": "59",
+    "lat": 50.37387,
+    "lng": 3.08555,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0332768E",
+    "nom": "Collège Aliénor d'Aquitaine",
+    "adr": "16 rue DOM DEVIENNE",
+    "cp": "33800",
+    "ville": "Bordeaux",
+    "dept": "33",
+    "lat": 44.82936,
+    "lng": -0.56064,
+    "specialites": [
+      "Musique",
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0120101V",
+    "nom": "Collège Amans-Joseph Fabre",
+    "adr": "2 boulevard BELLE ISLE",
+    "cp": "12000",
+    "ville": "Rodez",
+    "dept": "12",
+    "lat": 44.35352,
+    "lng": 2.57579,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0800020M",
+    "nom": "Collège Amiral Lejeune",
+    "adr": "7 rue de l'Amiral Lejeune",
+    "cp": "80000",
+    "ville": "Amiens",
+    "dept": "80",
+    "lat": 49.8928,
+    "lng": 2.29112,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0692693C",
+    "nom": "Collège Ampère",
+    "adr": "31 rue DE LA BOURSE",
+    "cp": "69289",
+    "ville": "Lyon 2e  Arrondissement",
+    "dept": "69",
+    "lat": 45.76528,
+    "lng": 4.837,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0470049Y",
+    "nom": "Collège Anatole France",
+    "adr": "30  AVENUE DE FUMEL",
+    "cp": "47300",
+    "ville": "Villeneuve-sur-Lot",
+    "dept": "47",
+    "lat": 44.40729,
+    "lng": 0.71861,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0931196V",
+    "nom": "Collège Angela Davis",
+    "adr": "2 rue des Coquetiers",
+    "cp": "93000",
+    "ville": "Bobigny",
+    "dept": "93",
+    "lat": 48.91081,
+    "lng": 2.44653,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0941102M",
+    "nom": "Collège Clément Guyard",
+    "adr": "54 rue Saint-Simon",
+    "cp": "94000",
+    "ville": "Créteil",
+    "dept": "94",
+    "lat": 48.79522,
+    "lng": 2.44451,
+    "specialites": [
+      "Musique",
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0596694F",
+    "nom": "Collège Félix del Marle",
+    "adr": "62 rue Henri Barbusse",
+    "cp": "59620",
+    "ville": "Aulnoye-Aymeries",
+    "dept": "59",
+    "lat": 50.19848,
+    "lng": 3.83475,
+    "specialites": [
+      "Musique",
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0920653K",
+    "nom": "Collège Alain Fournier",
+    "adr": "44 rue de la Division Leclerc",
+    "cp": "92140",
+    "ville": "Clamart",
+    "dept": "92",
+    "lat": 48.79542,
+    "lng": 2.27046,
+    "specialites": [
+      "Musique",
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0593168Y",
+    "nom": "Collège Carnot",
+    "adr": "43 boulevard Carnot",
+    "cp": "59002",
+    "ville": "Lille",
+    "dept": "59",
+    "lat": 50.63975,
+    "lng": 3.0667,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0490004N",
+    "nom": "Collège Chevreul",
+    "adr": "4  RUE PREBAUDELLE",
+    "cp": "49100",
+    "ville": "Angers",
+    "dept": "49",
+    "lat": 47.46863,
+    "lng": -0.54412,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0931213N",
+    "nom": "Collège Colonel Fabien",
+    "adr": "81 avenue du Colonel Fabien",
+    "cp": "93100",
+    "ville": "Montreuil",
+    "dept": "93",
+    "lat": 48.8753,
+    "lng": 2.45338,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0560048Y",
+    "nom": "Collège de Rhuys",
+    "adr": "22 rue A REGENT",
+    "cp": "56370",
+    "ville": "Sarzeau",
+    "dept": "56",
+    "lat": 47.52777,
+    "lng": -2.75942,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0650031F",
+    "nom": "Collège Desaix",
+    "adr": "28 bis rue DESAIX",
+    "cp": "65016",
+    "ville": "Tarbes",
+    "dept": "65",
+    "lat": 43.23055,
+    "lng": 0.07809,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0171184V",
+    "nom": "Collège Eugène Fromentin",
+    "adr": "2 rue Jaillot",
+    "cp": "17001",
+    "ville": "La Rochelle",
+    "dept": "17",
+    "lat": 46.16407,
+    "lng": -1.1509,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0840114T",
+    "nom": "Collège François Raspail",
+    "adr": "QUARTIER DE L ELEPHANT",
+    "cp": "84205",
+    "ville": "Carpentras",
+    "dept": "84",
+    "lat": 44.06288,
+    "lng": 5.05518,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0762091K",
+    "nom": "Collège Fontenelle",
+    "adr": "20 rue des Requis",
+    "cp": "76044",
+    "ville": "Rouen",
+    "dept": "76",
+    "lat": 49.44416,
+    "lng": 1.10377,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0280658N",
+    "nom": "Collège Albert Camus",
+    "adr": "7 avenue du Général Leclerc",
+    "cp": "28105",
+    "ville": "Dreux",
+    "dept": "28",
+    "lat": 48.74037,
+    "lng": 1.37323,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0100009F",
+    "nom": "Collège Albert Camus",
+    "adr": "46 avenue Jean Jaurès",
+    "cp": "10601",
+    "ville": "La Chapelle-Saint-Luc",
+    "dept": "10",
+    "lat": 48.3107,
+    "lng": 4.03976,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0691666L",
+    "nom": "Collège Aimé Césaire",
+    "adr": "2 rue DES FRERES BERTRAND",
+    "cp": "69120",
+    "ville": "Vaulx-en-Velin",
+    "dept": "69",
+    "lat": 45.78503,
+    "lng": 4.91588,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0560223N",
+    "nom": "Collège Antoine de Saint-Exupéry",
+    "adr": "1  RUE GUSTAVE COURBET",
+    "cp": "56000",
+    "ville": "Vannes",
+    "dept": "56",
+    "lat": 47.67612,
+    "lng": -2.77103,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0520049W",
+    "nom": "Collège Anne Frank",
+    "adr": "1 boulevard Salvador Allende",
+    "cp": "52105",
+    "ville": "Saint-Dizier",
+    "dept": "52",
+    "lat": 48.64699,
+    "lng": 4.96832,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0530484N",
+    "nom": "Collège Alain Gerbault",
+    "adr": "4 rue MORTIER",
+    "cp": "53000",
+    "ville": "Laval",
+    "dept": "53",
+    "lat": 48.06139,
+    "lng": -0.74811,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "9710030F",
+    "nom": "Collège Alexandre Macal",
+    "adr": null,
+    "cp": "97118",
+    "ville": "Saint-François",
+    "dept": "971",
+    "lat": 16.25035,
+    "lng": -61.2968,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0681190Z",
+    "nom": "Collège Alice Mosnier",
+    "adr": "20 route de Colmar",
+    "cp": "68320",
+    "ville": "Fortschwihr",
+    "dept": "68",
+    "lat": 48.09529,
+    "lng": 7.441,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0550703R",
+    "nom": "Collège André Theuriet",
+    "adr": "4 place de la République",
+    "cp": "55000",
+    "ville": "Bar-le-Duc",
+    "dept": "55",
+    "lat": 48.77318,
+    "lng": 5.1659,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0110037F",
+    "nom": "Collège Alain",
+    "adr": "RUE EMILE ALAIN",
+    "cp": "11870",
+    "ville": "Carcassonne",
+    "dept": "11",
+    "lat": 43.21095,
+    "lng": 2.33163,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0010802S",
+    "nom": "Collège Ampère",
+    "adr": null,
+    "cp": "01101",
+    "ville": "Oyonnax",
+    "dept": "01",
+    "lat": 46.2536,
+    "lng": 5.63792,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0594402P",
+    "nom": "Collège André Canivez",
+    "adr": "417 rue Berthe Garnier",
+    "cp": "59508",
+    "ville": "Douai",
+    "dept": "59",
+    "lat": 50.38557,
+    "lng": 3.07438,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0171129K",
+    "nom": "Collège André Dulin",
+    "adr": "Rue de Saint-Christophe",
+    "cp": "17290",
+    "ville": "Aigrefeuille-d'Aunis",
+    "dept": "17",
+    "lat": 46.11837,
+    "lng": -0.93712,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0171211Z",
+    "nom": "Collège André Malraux",
+    "adr": "Avenue Surcouf",
+    "cp": "17340",
+    "ville": "Châtelaillon-Plage",
+    "dept": "17",
+    "lat": 46.07928,
+    "lng": -1.08745,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0790010G",
+    "nom": "Collège Antoine de Saint-Exupéry",
+    "adr": "17 rue Saint-Exupéry",
+    "cp": "79170",
+    "ville": "Brioux-sur-Boutonne",
+    "dept": "79",
+    "lat": 46.14412,
+    "lng": -0.2282,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0780420H",
+    "nom": "Collège Blaise Pascal",
+    "adr": "Avenue Charles de Gaulle",
+    "cp": "78373",
+    "ville": "Plaisir",
+    "dept": "78",
+    "lat": 48.82477,
+    "lng": 1.94927,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0941296Y",
+    "nom": "Collège Jean Macé",
+    "adr": "1 rue Paul Eluard",
+    "cp": "94120",
+    "ville": "Fontenay-sous-Bois",
+    "dept": "94",
+    "lat": 48.85652,
+    "lng": 2.48039,
+    "specialites": [
+      "Théâtre"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0330059K",
+    "nom": "Collège Anatole France",
+    "adr": "28 chemin DES BARIES",
+    "cp": "33410",
+    "ville": "Cadillac-sur-Garonne",
+    "dept": "33",
+    "lat": 44.63085,
+    "lng": -0.30624,
+    "specialites": [
+      "Arts plastiques"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0030019E",
+    "nom": "Collège des Chenevières",
+    "adr": "PLACE RENE FALLET",
+    "cp": "03220",
+    "ville": "Jaligny-sur-Besbre",
+    "dept": "03",
+    "lat": 46.38153,
+    "lng": 3.59304,
+    "specialites": [
+      "Arts plastiques"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0693093M",
+    "nom": "Collège du cinéma - Bertrand Tavernier",
+    "adr": "2 allée DU LYS ORANGE",
+    "cp": "69616",
+    "ville": "Villeurbanne",
+    "dept": "69",
+    "lat": 45.77638,
+    "lng": 4.86371,
+    "specialites": [
+      "Cinéma"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  }
+]
