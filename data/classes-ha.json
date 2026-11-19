@@ -1718,5 +1718,47 @@
       ]
     },
     "source": "Éduscol ; coordonnées du référentiel local"
+  },
+  {
+    "uai": "0951801S",
+    "nom": "Collège Les Merisiers",
+    "adr": "Place Hector Berlioz",
+    "cp": "95280",
+    "ville": "Jouy-le-Moutier",
+    "dept": "95",
+    "lat": 49.01255,
+    "lng": 2.02449,
+    "specialites": [
+      "Musique"
+    ],
+    "sourcesSpecialites": {
+      "Musique": [
+        "https://www.conservatoire-cergypontoise.fr/fr/contenu/entree-en-cham-et-chad-en-2026"
+      ]
+    },
+    "source": "Conservatoire de Cergy-Pontoise — inscriptions 2026"
+  },
+  {
+    "uai": "0950937C",
+    "nom": "Collège Les Touleuses",
+    "adr": "1 avenue du Bois",
+    "cp": "95000",
+    "ville": "Cergy",
+    "dept": "95",
+    "lat": 49.02824,
+    "lng": 2.07992,
+    "specialites": [
+      "Musique",
+      "Danse"
+    ],
+    "sourcesSpecialites": {
+      "Musique": [
+        "https://www.conservatoire-cergypontoise.fr/fr/contenu/entree-en-cham-et-chad-en-2026"
+      ],
+      "Danse": [
+        "https://www.conservatoire-cergypontoise.fr/fr/contenu/entree-en-cham-et-chad-en-2026"
+      ]
+    },
+    "source": "Conservatoire de Cergy-Pontoise — inscriptions 2026"
   }
 ]

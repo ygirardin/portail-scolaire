@@ -26,7 +26,7 @@ function parse(geo,kind,local=[]){
   const typeText=get(/^(ens|structure|etablissement) type( |$)/,/^type (ens|structure|etablissement)( |$)/)||nom;
   const type=/coll/.test(norm(typeText))?'Collège':/lycee|lyc/.test(norm(typeText))?'Lycée':/ecole/.test(norm(typeText))?'École':/erea|regional d enseignement adapte/.test(norm(typeText))?'EREA':'Autre';
   const cp=get(/^(ens|structure|etablissement) (code postal|cp)( |$)/,/^code postal( |$)/,/^cp$/)||fallback.cp||values.find(v=>/^\d{5}$/.test(v))||'';
-  const dept=get(/^(ens|structure|etablissement) (code )?departement( |$)/,/^code departement( |$)/)||fallback.dept||(cp.startsWith('97')||cp.startsWith('98')?cp.slice(0,3):cp.slice(0,2));
+  const rawDept=get(/^(ens|structure|etablissement) (code )?departement( |$)/,/^code departement( |$)/); const dept=fallback.dept||rawDept.match(/^(2[AB]|97[1-8]|98[0-9]|\d{2})(?:\s|$|\s*-)/i)?.[1]||(cp.startsWith('97')||cp.startsWith('98')?cp.slice(0,3):cp.slice(0,2));
   const ville=get(/^(ens|structure|etablissement) (commune|ville)( |$)/,/^(commune|ville)( |$)/)||fallback.ville||'';
   const adr=get(/^(ens|structure|etablissement) adresse( |$)/,/^adresse( |$)/)||fallback.adr||'';
   const academie=get(/^(ens|structure|etablissement) academie( |$)/,/^academie( |$)/)||fallback.academie||'';
@@ -47,7 +47,7 @@ function parse(geo,kind,local=[]){
  }
  if(out.size<Math.max(local.length,kind==='upe2a'?100:100))throw Error('Le catalogue ne fournit que '+out.size+' correspondances utilisables. L’inventaire local est conservé.');
  // Ne pas perdre les dispositifs locaux spécifiquement documentés et absents du catalogue.
- for(const item of local){const e=out.get(item.uai);if(e){if(item.sourcesSpecialites){e.sourcesSpecialites=item.sourcesSpecialites;e.specialites=[...new Set([...e.specialites,...item.specialites])]}if(item.nsa===true){e.nsa=true;e.specialites=[...new Set([...e.specialites,'UPE2A-NSA'])]}for(const k of ['ville','adr','cp','dept','tel','web'])if(!e[k]&&item[k])e[k]=item[k]}else out.set(item.uai,item)}
+ for(const item of local){const e=out.get(item.uai);if(e){if(item.sourcesSpecialites){e.sourcesSpecialites=item.sourcesSpecialites;e.specialites=[...new Set([...e.specialites,...item.specialites])]}if(item.nsa===true){e.nsa=true;e.specialites=[...new Set([...e.specialites,'UPE2A-NSA'])]}for(const k of ['ville','adr','cp','dept','tel','web','academie'])if(!e[k]&&item[k])e[k]=item[k]}else out.set(item.uai,item)}
  return{rows:[...out.values()],relevant,unlocated};
 }
 async function load(kind,local=[],file=null){
