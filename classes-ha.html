@@ -117,7 +117,13 @@ body>header,.htitle,.wrap,#map{min-width:0}
 @media(max-width:700px){.wrap{flex-direction:column}.panel{flex-shrink:0}.htitle{font-size:.8rem}}
 .data-notice{padding:9px 14px;font-size:.73rem;line-height:1.45;background:#fff5df;color:#75480b;border-bottom:1px solid #ead7ad}
 </style>
-</head>
+<style>
+.cha-import{display:grid;gap:5px;margin-top:9px;font-size:.7rem;color:#42506b}
+.cha-import button{border:1px solid #c7c9f1;background:#eef0ff;color:#3638a6;border-radius:8px;padding:8px;font:inherit;font-weight:700;cursor:pointer}
+.cha-import input{width:100%;font-size:.7rem}
+#specialite{margin-top:6px;width:100%}
+.cha-type{font-size:.68rem;color:#5444ad;font-weight:700;margin-top:4px}
+</style></head>
 <body>
 <a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
 
@@ -142,7 +148,9 @@ body>header,.htitle,.wrap,#map{min-width:0}
         <span class="search-icon">🔍</span>
         <input id="q" type="text" placeholder="Nom ou commune…" />
       </div>
-      <select id="dept"></select>
+      <select id="dept" aria-label="Département"></select>
+      <select id="specialite" aria-label="Spécialité"><option value="">Toutes les spécialités</option></select>
+      <div class="cha-import"><button id="cha-refresh" type="button">Charger le catalogue national Onisep</button><a href="https://www.data.gouv.fr/datasets/ideo-actions-de-dispositif" target="_blank" rel="noopener">Source officielle · ODbL</a><label for="cha-file">Ou importer le fichier GeoJSON Onisep téléchargé</label><input type="file" id="cha-file" accept=".geojson,.json,application/geo+json,application/json"></div>
     </div>
     <div class="data-notice" id="data-notice" hidden></div>
     <div class="count-bar" id="cbar">—</div>
@@ -153,6 +161,8 @@ body>header,.htitle,.wrap,#map{min-width:0}
 <script>
 const DATA_URL = 'data/classes-ha.json';
 const LABEL    = 'Classe à horaires aménagés';
+const norm = x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const escapeHtml=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const COLOR    = '#7e3af2';
 
 const map = L.map('map').setView([46.6, 2.3], 6);
@@ -189,10 +199,10 @@ function mkPopup(e) {
   ].filter(Boolean).join('');
 
   return `
-    <div class="pu-title">${e.nom}</div>
-    <span class="pu-badge">${LABEL}</span>
+    <div class="pu-title">${escapeHtml(e.nom)}</div>
+    <span class="pu-badge">${escapeHtml((e.specialites||[]).join(" · ")||LABEL)}</span>
     <div class="pu-info">
-      ${e.adr ? e.adr + '<br>' : ''}${e.cp} ${e.ville}
+      ${e.adr ? escapeHtml(e.adr) + '<br>' : ''}${escapeHtml(e.cp)} ${escapeHtml(e.ville)}
     </div>
     ${contact ? `<div class="pu-contact">${contact}</div>` : ''}
   `;
@@ -203,7 +213,8 @@ function filtered() {
   const dept = document.getElementById('dept').value;
   return allData.filter(e =>
     (!q    || e.nom.toLowerCase().includes(q) || e.ville.toLowerCase().includes(q)) &&
-    (!dept || e.dept === dept)
+    (!dept || e.dept === dept) &&
+    (!document.getElementById('specialite').value || (e.specialites||[]).includes(document.getElementById('specialite').value))
   );
 }
 
@@ -229,8 +240,8 @@ function render(data) {
 
   list.innerHTML = data.map(e =>
     `<div class="item" data-uai="${e.uai}">
-      <div class="iname">${e.nom}</div>
-      <div class="iloc">${e.cp} ${e.ville}${e.tel ? ' · ' + e.tel : ''}</div>
+      <div class="iname">${escapeHtml(e.nom)}</div>
+      <div class="iloc">${escapeHtml(e.cp)} ${escapeHtml(e.ville)}${e.tel ? ' · ' + escapeHtml(e.tel) : ''}</div><div class="cha-type">${escapeHtml((e.specialites||[]).join(" · ")||"Spécialité à vérifier")}</div>
     </div>`
   ).join('');
 
@@ -255,34 +266,50 @@ function applyFilters(reframe = false) {
   }
 }
 
-(async () => {
-  try {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    allData = await res.json();
 
-    const depts = [...new Set(allData.map(e => e.dept).filter(Boolean))].sort();
-    const sel = document.getElementById('dept');
-    sel.innerHTML = '<option value="">Tous les départements</option>' +
-      depts.map(d => `<option value="${d}">Dépt. ${d}</option>`).join('');
-
-    document.getElementById('hcount').textContent = `${allData.length} collège${allData.length===1?'':'s'} référencé${allData.length===1?'':'s'}`;
-    if (allData.length <= 1) {
-      const notice = document.getElementById('data-notice');
-      notice.textContent = 'Inventaire incomplet : seules les données actuellement disponibles sont affichées. L’absence d’un établissement ne signifie pas qu’il ne propose pas de CHA.';
-      notice.hidden = false;
-    }
-    applyFilters(true);
-    document.getElementById('q').addEventListener('input', applyFilters);
-    sel.addEventListener('change', () => applyFilters(true));
-
-  } catch (err) {
-    document.getElementById('loading').innerHTML =
-      `<span style="color:#dc2626">Erreur : ${err.message}<br>Vérifiez que data/classes-ha.json existe.</span>`;
-    return;
-  }
-  document.getElementById('loading').style.display = 'none';
-})();
+const notice=document.getElementById('data-notice');
+function setNotice(message){notice.textContent=message;notice.hidden=false}
+function setupData(data,source){
+ allData=data;
+ const depts=[...new Set(allData.map(e=>e.dept).filter(Boolean))].sort();
+ const specs=[...new Set(allData.flatMap(e=>e.specialites||[]))].sort((a,b)=>a.localeCompare(b,'fr'));
+ const fill=(id,items,label)=>{const select=document.getElementById(id);select.replaceChildren(new Option(label,''));items.forEach(v=>select.add(new Option(id==='dept'?'Dépt. '+v:v,v)))};
+ fill('dept',depts,'Tous les départements');fill('specialite',specs,'Toutes les spécialités');
+ document.getElementById('hcount').textContent=allData.length+' établissements référencés';
+ setNotice(source);applyFilters(true);document.getElementById('loading').style.display='none';
+}
+const geoUrl='https://data.onisep.fr/api/v1/downloads/60867458bb600/60867458bb600.geojson';
+function parseOnisep(geo,dict){
+ if(geo.type!=='FeatureCollection'||!Array.isArray(geo.features))throw Error('Le fichier doit être le GeoJSON « Idéo-Actions de dispositif ».');
+ const out=new Map();
+ for(const f of geo.features){
+  const p=f.properties||{},vals=Object.entries(p).filter(([,v])=>typeof v==='string');
+  const labels=vals.map(([,v])=>v).filter(v=>/classe[s]? a horaires? amenages?/.test(norm(v)));
+  if(!labels.length)continue;
+  const uai=vals.map(([,v])=>v.trim().toUpperCase()).find(v=>/^\d{7}[A-Z]$/.test(v));if(!uai)continue;
+  const d=dict[uai]; // référentiel local des collèges publics, jointure stricte par UAI
+  if(!d||!Number.isFinite(d.lat)||!Number.isFinite(d.lon))continue;
+  let e=out.get(uai);if(!e){e={uai,nom:d.nom,adr:d.adresse,cp:d.cp,ville:d.commune,dept:d.dept,lat:d.lat,lng:d.lon,specialites:[],source:'Onisep — Idéo-Actions de dispositif'};out.set(uai,e)}
+  const labelsFound=[];for(const label of labels){const n=norm(label);for(const [test,title] of [['musique','Musique'],['danse','Danse'],['theatre','Théâtre'],['arts plastiques','Arts plastiques'],['cinema','Cinéma'],['mathematiques','Mathématiques et sciences']])if(n.includes(test))labelsFound.push(title)}
+  for(const spec of labelsFound.length?labelsFound:['Autre CHA'])if(!e.specialites.includes(spec))e.specialites.push(spec);
+ }
+ if(out.size<42)throw Error('Le catalogue n’a pas fourni assez de collèges reconnus ; le référentiel local est conservé.');
+ return [...out.values()];
+}
+let loadingNational=false;
+async function loadNational(file){
+ if(loadingNational)return;loadingNational=true;const btn=document.getElementById('cha-refresh');btn.disabled=true;
+ setNotice('Chargement et rapprochement du fichier Onisep…');
+ try{const [geo,dict]=await Promise.all([file?file.text().then(JSON.parse):fetch(geoUrl,{signal:AbortSignal.timeout(60000)}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}),fetch('data/colleges-dict.json').then(r=>{if(!r.ok)throw Error('Référentiel indisponible');return r.json()})]);const rows=parseOnisep(geo,dict);setupData(rows,'Source : Onisep / Idéo-Actions de dispositif (ODbL), croisement avec les collèges publics du référentiel local. Offres à confirmer auprès des établissements.');}
+ catch(err){setNotice('Import national non abouti : '+err.message+'. Inventaire local conservé. Téléchargez le GeoJSON depuis la source officielle pour l’importer manuellement.');}
+ finally{btn.disabled=false;loadingNational=false}
+}
+document.getElementById('cha-refresh').addEventListener('click',()=>loadNational());
+document.getElementById('cha-file').addEventListener('change',e=>{if(e.target.files[0])loadNational(e.target.files[0])});
+document.getElementById('q').addEventListener('input',()=>applyFilters());
+document.getElementById('dept').addEventListener('change',()=>applyFilters(true));
+document.getElementById('specialite').addEventListener('change',()=>applyFilters(true));
+(async()=>{try{const res=await fetch(DATA_URL,{cache:'no-cache'});if(!res.ok)throw Error('HTTP '+res.status);setupData(await res.json(),'Inventaire local partiel : établissements repérés dans les listes Onisep et rapprochés du référentiel géographique. Chargez le catalogue national pour compléter.');}catch(err){document.getElementById('loading').textContent='Données indisponibles : '+err.message;}})();
 </script>
 </body>
 </html>
