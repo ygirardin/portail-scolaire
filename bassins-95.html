@@ -89,6 +89,26 @@ header{background:var(--navy);padding:0 20px;height:52px;display:flex;align-item
 <link rel="stylesheet" href="portail-theme.css?v=20261119">
 <link rel="stylesheet" href="portal-shell.css?v=20261119">
 <script defer src="portal-shell.js?v=20261119"></script>
+<style>
+/* La carte doit tenir dans l’espace disponible sous l’en-tête commun. */
+html,body{width:100%;height:100%;overflow:hidden}
+body{height:100vh;height:100dvh}
+body>header{min-width:0}
+body>header .header-title{min-width:0;overflow-wrap:anywhere}
+body>header .header-sub{color:#e1e7fa;white-space:normal;text-align:right}
+.layout{min-width:0;min-height:0}
+#map{min-width:0;min-height:0;flex:1 1 0}
+#panel{max-width:100%}
+@media(max-width:768px){
+  body>header .header-sub{width:100%;margin-left:0;text-align:left;font-size:.72rem}
+  body>header .header-title{font-size:.85rem}
+  #map{height:auto}
+  #panel:not(.hidden){height:min(40dvh,340px);width:100%;flex:0 0 auto}
+  #panel.hidden{width:100%;height:0;border:0}
+  .panel-filters{flex-wrap:wrap}
+  .legend{max-width:calc(100vw - 30px)}
+}
+</style>
 </head>
 <body>
 
@@ -136,10 +156,25 @@ const BASSINS_GEO = {"type":"FeatureCollection","features":[{"type":"Feature","p
 // ── CARTE ────────────────────────────────────────────────────────────────────
 const map = L.map('map', {zoomControl:true}).setView([49.05, 2.18], 10);
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution:'© OpenStreetMap © CARTO',
-  maxZoom:18
+// Fond public OpenStreetMap : ni clé API, ni dépendance à CARTO.
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom:19
 }).addTo(map);
+
+// La navigation commune et le panneau latéral modifient la taille de la carte.
+const mapElement = document.getElementById('map');
+let resizeFrame;
+function resizeMap() {
+  cancelAnimationFrame(resizeFrame);
+  resizeFrame = requestAnimationFrame(() => map.invalidateSize({pan:false, debounceMoveend:true}));
+}
+if ('ResizeObserver' in window) {
+  new ResizeObserver(resizeMap).observe(mapElement);
+} else {
+  window.addEventListener('resize', resizeMap);
+}
+window.addEventListener('load', resizeMap, {once:true});
 
 // Légende
 const legend = L.control({position:'bottomleft'});
@@ -202,6 +237,7 @@ BASSINS_GEO.features.forEach(feature => {
 // ── PANEL ────────────────────────────────────────────────────────────────────
 let activeBassin = null;
 let activeFilter = 'all';
+let bassinZoomTimer;
 
 function selectBassin(nom) {
   // Reset ancien bassin
@@ -234,11 +270,18 @@ function selectBassin(nom) {
   document.getElementById('panel').classList.remove('hidden');
   renderList();
 
-  // Zoom sur le bassin
-  map.fitBounds(layers[nom].getBounds(), {padding:[40,40]});
+  // Attendre la fin du redimensionnement avant le cadrage du bassin.
+  resizeMap();
+  clearTimeout(bassinZoomTimer);
+  bassinZoomTimer = setTimeout(() => {
+    if (activeBassin !== nom) return;
+    map.invalidateSize({pan:false});
+    map.fitBounds(layers[nom].getBounds(), {padding:[40,40]});
+  }, 280);
 }
 
 function closePanel() {
+  clearTimeout(bassinZoomTimer);
   if (activeBassin && layers[activeBassin]) {
     const color = BASSINS_GEO.features.find(f=>f.properties.nom===activeBassin)?.properties.color;
     layers[activeBassin].setStyle({fillOpacity:0.18, weight:2.5, color:color});
