@@ -1579,5 +1579,144 @@
       "Mathématiques et sciences"
     ],
     "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0950722U",
+    "nom": "Collège Jean Moulin",
+    "adr": "84 rue du Poirier Baron",
+    "cp": "95110",
+    "ville": "Sannois",
+    "dept": "95",
+    "lat": 48.97861,
+    "lng": 2.24227,
+    "specialites": [
+      "Mathématiques et sciences",
+      "Musique"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://fr.linkedin.com/posts/isabel-albar-757785224_accompagnement-des-classes-%C3%A0-horaires-am%C3%A9nag%C3%A9s-activity-7475218494691835904-OXqJ",
+        "Signalement de l'utilisateur"
+      ],
+      "Musique": [
+        "https://www.ville-sannois.fr/sites/sannois/files/document/2025-09/plaquette-ecole-de-musique-2025v6.pdf"
+      ]
+    },
+    "source": "CHAM : ville de Sannois ; CHAMS : signalement utilisateur et publication sur les équipes CHAMS 95",
+    "web": "https://clg-moulin-sannois.ac-versailles.fr/"
+  },
+  {
+    "uai": "0950893E",
+    "nom": "Collège André Chenier",
+    "adr": "Rue André Chénier",
+    "cp": "95600",
+    "ville": "Eaubonne",
+    "dept": "95",
+    "lat": 48.99494,
+    "lng": 2.28867,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://fr.linkedin.com/posts/isabel-albar-757785224_accompagnement-des-classes-%C3%A0-horaires-am%C3%A9nag%C3%A9s-activity-7475218494691835904-OXqJ"
+      ]
+    },
+    "source": "Équipes CHAMS du Val-d’Oise (publication académique relayée sur LinkedIn), coordonnées du référentiel local ; ouverture à confirmer auprès du collège"
+  },
+  {
+    "uai": "0952128X",
+    "nom": "Collège Georges Charpak",
+    "adr": "Rue Pierre de Coubertin",
+    "cp": "95190",
+    "ville": "Goussainville",
+    "dept": "95",
+    "lat": 49.0263,
+    "lng": 2.46235,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://fr.linkedin.com/posts/isabel-albar-757785224_accompagnement-des-classes-%C3%A0-horaires-am%C3%A9nag%C3%A9s-activity-7475218494691835904-OXqJ"
+      ]
+    },
+    "source": "Équipes CHAMS du Val-d’Oise (publication académique relayée sur LinkedIn), coordonnées du référentiel local ; ouverture à confirmer auprès du collège"
+  },
+  {
+    "uai": "0951154N",
+    "nom": "Collège Camille Claudel",
+    "adr": "Rue de la Verneuil",
+    "cp": "95370",
+    "ville": "Montigny-lès-Cormeilles",
+    "dept": "95",
+    "lat": 48.98946,
+    "lng": 2.18955,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://fr.linkedin.com/posts/isabel-albar-757785224_accompagnement-des-classes-%C3%A0-horaires-am%C3%A9nag%C3%A9s-activity-7475218494691835904-OXqJ"
+      ]
+    },
+    "source": "Équipes CHAMS du Val-d’Oise (publication académique relayée sur LinkedIn), coordonnées du référentiel local ; ouverture à confirmer auprès du collège"
+  },
+  {
+    "uai": "0951672B",
+    "nom": "Collège Léonard de Vinci",
+    "adr": "79 rue de Pierrelaye la Butte",
+    "cp": "95610",
+    "ville": "Éragny-sur-Oise",
+    "dept": "95",
+    "lat": 49.02233,
+    "lng": 2.11061,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://fr.linkedin.com/posts/isabel-albar-757785224_accompagnement-des-classes-%C3%A0-horaires-am%C3%A9nag%C3%A9s-activity-7475218494691835904-OXqJ"
+      ]
+    },
+    "source": "Équipes CHAMS du Val-d’Oise (publication académique relayée sur LinkedIn), coordonnées du référentiel local ; ouverture à confirmer auprès du collège"
+  },
+  {
+    "uai": "0952326M",
+    "nom": "Collège Marie-José Pérec",
+    "adr": "131 rue de Livilliers",
+    "cp": "95520",
+    "ville": "Osny",
+    "dept": "95",
+    "lat": 49.0688,
+    "lng": 2.06814,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://fr.linkedin.com/posts/isabel-albar-757785224_accompagnement-des-classes-%C3%A0-horaires-am%C3%A9nag%C3%A9s-activity-7475218494691835904-OXqJ"
+      ]
+    },
+    "source": "Équipes CHAMS du Val-d’Oise (publication académique relayée sur LinkedIn), coordonnées du référentiel local ; ouverture à confirmer auprès du collège"
+  },
+  {
+    "uai": "0490783K",
+    "nom": "Collège Jean Mermoz",
+    "adr": "26  RUE DU MARECHAL JUIN",
+    "cp": "49035",
+    "ville": "Angers",
+    "dept": "49",
+    "lat": 47.45169,
+    "lng": -0.56824,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "sourcesSpecialites": {
+      "Mathématiques et sciences": [
+        "https://eduscol.education.gouv.fr/7028/classes-horaires-amenages-en-mathematiques-et-en-sciences"
+      ]
+    },
+    "source": "Éduscol ; coordonnées du référentiel local"
   }
 ]

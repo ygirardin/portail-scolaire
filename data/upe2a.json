@@ -1,0 +1,1060 @@
+[
+  {
+    "uai": "0542418K",
+    "nom": "Collège Théodore Monod",
+    "adr": "1 rue DU 19 MARS 1962",
+    "cp": "54190",
+    "ville": "Villerupt",
+    "dept": "54",
+    "lat": 49.4619,
+    "lng": 5.92548,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0682018Z",
+    "nom": "Collège du Hugstein",
+    "adr": "3 rue de la Fabrique",
+    "cp": "68530",
+    "ville": "Buhl",
+    "dept": "68",
+    "lat": 47.92202,
+    "lng": 7.19555,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0090574A",
+    "nom": "Collège Mont Valier",
+    "adr": "Esplanade MENDES FRANCE",
+    "cp": "09201",
+    "ville": "Saint-Girons",
+    "dept": "09",
+    "lat": 42.97773,
+    "lng": 1.15048,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0580599L",
+    "nom": "Collège Adam Billaut",
+    "adr": "55 rue Claude Parent",
+    "cp": "58000",
+    "ville": "Nevers",
+    "dept": "58",
+    "lat": 47.00667,
+    "lng": 3.15849,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0261088S",
+    "nom": "Collège Alain Borne",
+    "adr": "10 place Du théâtre",
+    "cp": "26216",
+    "ville": "Montélimar",
+    "dept": "26",
+    "lat": 44.55528,
+    "lng": 4.74551,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0560029C",
+    "nom": "Collège Auguste Brizeux",
+    "adr": "RUE PERAULT",
+    "cp": "56321",
+    "ville": "Lorient",
+    "dept": "56",
+    "lat": 47.74406,
+    "lng": -3.361,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0810051R",
+    "nom": "Collège Aristide Bruant",
+    "adr": "32 rue DE BITCHE",
+    "cp": "81000",
+    "ville": "Albi",
+    "dept": "81",
+    "lat": 43.92262,
+    "lng": 2.15488,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0221698B",
+    "nom": "Collège Albert Camus",
+    "adr": "2 RUE DE KERPAOUR",
+    "cp": "22205",
+    "ville": "Guingamp",
+    "dept": "22",
+    "lat": 48.5606,
+    "lng": -3.17311,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0251348E",
+    "nom": "Collège Albert Camus",
+    "adr": "100 rue de Vesoul",
+    "cp": "25000",
+    "ville": "Besançon",
+    "dept": "25",
+    "lat": 47.25971,
+    "lng": 6.01056,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0910049J",
+    "nom": "Collège Albert Camus",
+    "adr": "72 route de Grigny",
+    "cp": "91130",
+    "ville": "Ris-Orangis",
+    "dept": "91",
+    "lat": 48.65199,
+    "lng": 2.40026,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0132326H",
+    "nom": "Collège Albert Camus",
+    "adr": "BOULEVARD GUY DE MAUPASSANT",
+    "cp": "13140",
+    "ville": "Miramas",
+    "dept": "13",
+    "lat": 43.57503,
+    "lng": 5.0004,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0810993P",
+    "nom": "Collège Albert Camus",
+    "adr": "7 avenue Albert Camus",
+    "cp": "81600",
+    "ville": "Gaillac",
+    "dept": "81",
+    "lat": 43.90209,
+    "lng": 1.90673,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0311689T",
+    "nom": "Collège Albert Camus",
+    "adr": "RUE URBAIN VIGNERES",
+    "cp": "31340",
+    "ville": "Villemur-sur-Tarn",
+    "dept": "31",
+    "lat": 43.85875,
+    "lng": 1.50463,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0631522M",
+    "nom": "Collège Albert Camus",
+    "adr": "Rue DU SOUS MARIN CASABIANCA",
+    "cp": "63100",
+    "ville": "Clermont-Ferrand",
+    "dept": "63",
+    "lat": 45.80771,
+    "lng": 3.10766,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0771172F",
+    "nom": "Collège Albert Camus",
+    "adr": "Rue Albert Camus",
+    "cp": "77333",
+    "ville": "Meaux",
+    "dept": "77",
+    "lat": 48.94843,
+    "lng": 2.90905,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0950893E",
+    "nom": "Collège André Chenier",
+    "adr": "Rue André Chénier",
+    "cp": "95600",
+    "ville": "Eaubonne",
+    "dept": "95",
+    "lat": 48.99494,
+    "lng": 2.28867,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0940042K",
+    "nom": "Collège Adolphe Chérioux",
+    "adr": "247 rue Edouard Tremblay",
+    "cp": "94408",
+    "ville": "Vitry-sur-Seine",
+    "dept": "94",
+    "lat": 48.78007,
+    "lng": 2.36952,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0451544J",
+    "nom": "Collège André Chene Les Jacobins",
+    "adr": "36 rue du 11 Novembre",
+    "cp": "45400",
+    "ville": "Fleury-les-Aubrais",
+    "dept": "45",
+    "lat": 47.93326,
+    "lng": 1.91225,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0754305X",
+    "nom": "Collège André Citroën",
+    "adr": "208 rue Saint-Charles",
+    "cp": "75015",
+    "ville": "Paris 15e  Arrondissement",
+    "dept": "75",
+    "lat": 48.83886,
+    "lng": 2.27859,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0911334F",
+    "nom": "Collège Aimé Césaire",
+    "adr": "1 rue de Vendée",
+    "cp": "91940",
+    "ville": "Les Ulis",
+    "dept": "91",
+    "lat": 48.68264,
+    "lng": 2.16305,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0691666L",
+    "nom": "Collège Aimé Césaire",
+    "adr": "2 rue DES FRERES BERTRAND",
+    "cp": "69120",
+    "ville": "Vaulx-en-Velin",
+    "dept": "69",
+    "lat": 45.78503,
+    "lng": 4.91588,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0383370G",
+    "nom": "Collège Aimé Césaire",
+    "adr": "2 rue AIME CESAIRE",
+    "cp": "38037",
+    "ville": "Grenoble",
+    "dept": "38",
+    "lat": 45.17361,
+    "lng": 5.70629,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0061002G",
+    "nom": "Collège Alphonse Daudet",
+    "adr": "176 rue de France",
+    "cp": "06000",
+    "ville": "Nice",
+    "dept": "06",
+    "lat": 43.69202,
+    "lng": 7.2464,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0840761W",
+    "nom": "Collège Alphonse Daudet",
+    "adr": "4  RUE JEAN MONNET",
+    "cp": "84201",
+    "ville": "Carpentras",
+    "dept": "84",
+    "lat": 44.04756,
+    "lng": 5.03127,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0440016D",
+    "nom": "Collège Anne de Bretagne",
+    "adr": "36  ALLEE DE LA BOURGONNIERE",
+    "cp": "44800",
+    "ville": "Saint-Herblain",
+    "dept": "44",
+    "lat": 47.20651,
+    "lng": -1.65682,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0560223N",
+    "nom": "Collège Antoine de Saint-Exupéry",
+    "adr": "1  RUE GUSTAVE COURBET",
+    "cp": "56000",
+    "ville": "Vannes",
+    "dept": "56",
+    "lat": 47.67612,
+    "lng": -2.77103,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0711135Y",
+    "nom": "Collège Antoine de Saint-Exupéry",
+    "adr": "1 avenue Antoine de Saint-Exupéry",
+    "cp": "71307",
+    "ville": "Montceau-les-Mines",
+    "dept": "71",
+    "lat": 46.67938,
+    "lng": 4.37047,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0921550K",
+    "nom": "Collège Alfred de Vigny",
+    "adr": "18 rue Lambrechts",
+    "cp": "92401",
+    "ville": "Courbevoie",
+    "dept": "92",
+    "lat": 48.89802,
+    "lng": 2.25773,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0132491M",
+    "nom": "Collège Alexandre Dumas",
+    "adr": "37  TRAVERSE DE GIBRALTAR",
+    "cp": "13014",
+    "ville": "Marseille 14e  Arrondissement",
+    "dept": "13",
+    "lat": 43.31616,
+    "lng": 5.3923,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0911022S",
+    "nom": "Collège André Dunoyer de Segonzac",
+    "adr": "Place Jules Ferry",
+    "cp": "91800",
+    "ville": "Boussy-Saint-Antoine",
+    "dept": "91",
+    "lat": 48.68072,
+    "lng": 2.52699,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0851304F",
+    "nom": "Collège Auguste et Jean Renoir",
+    "adr": "18 allée JEAN PAUL SARTRE",
+    "cp": "85016",
+    "ville": "La Roche-sur-Yon",
+    "dept": "85",
+    "lat": 46.65974,
+    "lng": -1.408,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0280918W",
+    "nom": "Collège Anatole France",
+    "adr": "5 rue Anatole France",
+    "cp": "28200",
+    "ville": "Châteaudun",
+    "dept": "28",
+    "lat": 48.08123,
+    "lng": 1.3506,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0370044X",
+    "nom": "Collège Anatole France",
+    "adr": "1 rue des Amandiers",
+    "cp": "37000",
+    "ville": "Tours",
+    "dept": "37",
+    "lat": 47.39713,
+    "lng": 0.69083,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0311332E",
+    "nom": "Collège Anatole France",
+    "adr": "4  AVENUE DE LESPINET",
+    "cp": "31400",
+    "ville": "Toulouse",
+    "dept": "31",
+    "lat": 43.58604,
+    "lng": 1.46237,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0132561N",
+    "nom": "Collège Anatole France",
+    "adr": "8  COURS PIERRE PUGET",
+    "cp": "13006",
+    "ville": "Marseille  6e  Arrondissement",
+    "dept": "13",
+    "lat": 43.29057,
+    "lng": 5.37691,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0681757R",
+    "nom": "Collège Anne Frank",
+    "adr": "8 rue des Iris",
+    "cp": "68110",
+    "ville": "Illzach",
+    "dept": "68",
+    "lat": 47.76341,
+    "lng": 7.36823,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0010964T",
+    "nom": "Collège Anne Frank",
+    "adr": "135 rue DU FIGUIER",
+    "cp": "01705",
+    "ville": "Miribel",
+    "dept": "01",
+    "lat": 45.82801,
+    "lng": 4.96814,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0950723V",
+    "nom": "Collège Jean Lurcat",
+    "adr": "37 rue Marius Delpech",
+    "cp": "95200",
+    "ville": "Sarcelles",
+    "dept": "95",
+    "lat": 48.97574,
+    "lng": 2.37908,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0951617S",
+    "nom": "Collège Gérard Philipe",
+    "adr": "5 allée des Vanneaux",
+    "cp": "95800",
+    "ville": "Cergy",
+    "dept": "95",
+    "lat": 49.04673,
+    "lng": 2.04356,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A",
+      "UPE2A-NSA"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": true
+  },
+  {
+    "uai": "0951230W",
+    "nom": "Collège Eugénie Cotton",
+    "adr": "2 rue de Rethondes",
+    "cp": "95104",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.94644,
+    "lng": 2.23016,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A",
+      "UPE2A-NSA"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": true
+  },
+  {
+    "uai": "0951195H",
+    "nom": "Collège Marcel Pagnol",
+    "adr": "2 rue Louise Weiss",
+    "cp": "95310",
+    "ville": "Saint-Ouen-l'Aumône",
+    "dept": "95",
+    "lat": 49.03416,
+    "lng": 2.11524,
+    "type": "Collège",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0630018C",
+    "nom": "Lycée général Blaise Pascal",
+    "adr": "36 avenue Carnot",
+    "cp": "63037",
+    "ville": "Clermont-Ferrand",
+    "dept": "63",
+    "lat": 45.77528,
+    "lng": 3.09415,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0383242T",
+    "nom": "Lycée général international Europole",
+    "adr": "4 place DE SFAX",
+    "cp": "38000",
+    "ville": "Grenoble",
+    "dept": "38",
+    "lat": 45.19475,
+    "lng": 5.71165,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0260034W",
+    "nom": "Lycée général Emile Loubet",
+    "adr": "2 rue du Lycée",
+    "cp": "26021",
+    "ville": "Valence",
+    "dept": "26",
+    "lat": 44.92773,
+    "lng": 4.88732,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0740005D",
+    "nom": "Lycée général et technologique Gabriel Fauré",
+    "adr": "2 avenue DU RHONE",
+    "cp": "74000",
+    "ville": "Annecy",
+    "dept": "74",
+    "lat": 45.89763,
+    "lng": 6.12085,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0380008C",
+    "nom": "Lycée général et technologique L'Oiselet",
+    "adr": "Rue Vaucanson",
+    "cp": "38301",
+    "ville": "Bourgoin-Jallieu",
+    "dept": "38",
+    "lat": 45.59087,
+    "lng": 5.26971,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0261277X",
+    "nom": "Lycée général et technologique Les trois sources",
+    "adr": "110 chemin DU VALENTIN",
+    "cp": "26500",
+    "ville": "Bourg-lès-Valence",
+    "dept": "26",
+    "lat": 44.95562,
+    "lng": 4.89822,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0230018V",
+    "nom": "Lycée des Métiers du Bâtiment - Lycée des métiers du bâtiment",
+    "adr": "Route D'AUBUSSON",
+    "cp": "23500",
+    "ville": "Felletin",
+    "dept": "23",
+    "lat": 45.88698,
+    "lng": 2.17497,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0760007V",
+    "nom": "Lycée professionnel Auguste Bartholdi",
+    "adr": "142 rue Denis Papin",
+    "cp": "76360",
+    "ville": "Barentin",
+    "dept": "76",
+    "lat": 49.54064,
+    "lng": 0.95801,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0271606Z",
+    "nom": "Lycée professionnel Augustin Boismard - Lycée des métiers d'art, bois, tissu, cuir",
+    "adr": "Rue Emile Neuville",
+    "cp": "27800",
+    "ville": "Brionne",
+    "dept": "27",
+    "lat": 49.19908,
+    "lng": 0.71347,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0670062D",
+    "nom": "Lycée professionnel Aristide Briand",
+    "adr": "12 rue du barrage",
+    "cp": "67301",
+    "ville": "Schiltigheim",
+    "dept": "67",
+    "lat": 48.60384,
+    "lng": 7.75191,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0010001W",
+    "nom": "Lycée professionnel Alexandre Bérard - Lycée des métiers de la Plaine de l'Ain et du Bugey",
+    "adr": "223 rue ALEXANDRE BERARD",
+    "cp": "01500",
+    "ville": "Ambérieu-en-Bugey",
+    "dept": "1",
+    "lat": 45.97467,
+    "lng": 5.35092,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0640031L",
+    "nom": "Lycée professionnel expérimental André Campa - Lycée des métiers du transport, de la logistique, de la mobilité et de l'industrie",
+    "adr": "29 avenue JOLIOT CURIE",
+    "cp": "64110",
+    "ville": "Jurançon",
+    "dept": "64",
+    "lat": 43.29126,
+    "lng": -0.40104,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0692968B",
+    "nom": "Lycée professionnel André Cuzin - Lycée des métiers de l'habitat et du développement durable",
+    "adr": "42 chemin DE CREPIEUX",
+    "cp": "69300",
+    "ville": "Caluire-et-Cuire",
+    "dept": "69",
+    "lat": 45.801,
+    "lng": 4.8566,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0840113S",
+    "nom": "Lycée professionnel Alexandre Dumas - Lycée des métiers de la route, de la relation client et des arts de la table",
+    "adr": "RUE ALPHONSE JAUFFRET",
+    "cp": "84300",
+    "ville": "Cavaillon",
+    "dept": "84",
+    "lat": 43.82877,
+    "lng": 5.04412,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0940138P",
+    "nom": "Lycée professionnel Armand Guillaumin - Lycée des métiers des soins à la personne",
+    "adr": "10 rue Pierre Corneille",
+    "cp": "94310",
+    "ville": "Orly",
+    "dept": "94",
+    "lat": 48.74891,
+    "lng": 2.4032,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0270018Y",
+    "nom": "Lycée professionnel Augustin Hébert - Lycée des métiers de éco-construction et de la transition énergétique et numérique du bâtiment",
+    "adr": "20 rue du Guesclin",
+    "cp": "27040",
+    "ville": "Evreux",
+    "dept": "27",
+    "lat": 49.01777,
+    "lng": 1.17126,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0770944H",
+    "nom": "Lycée professionnel Auguste Perdonnet",
+    "adr": "1 allée du Château",
+    "cp": "77400",
+    "ville": "Thorigny-sur-Marne",
+    "dept": "77",
+    "lat": 48.88733,
+    "lng": 2.72812,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0911343R",
+    "nom": "Lycée professionnel Auguste Perret",
+    "adr": "1 avenue de la Liberté",
+    "cp": "91000",
+    "ville": "Evry-Courcouronnes",
+    "dept": "91",
+    "lat": 48.64044,
+    "lng": 2.43501,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0261100E",
+    "nom": "Lycée Professionnel Amblard - Lycée des métiers d'art de la bijouterie-joaillerie",
+    "adr": "43 rue AMBLARD",
+    "cp": "26000",
+    "ville": "Valence",
+    "dept": "26",
+    "lat": 44.92787,
+    "lng": 4.90152,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0130072H",
+    "nom": "Lycée professionnel Ampère",
+    "adr": "56  BOULEVARD ROMAIN ROLLAND",
+    "cp": "13363",
+    "ville": "Marseille 10e  Arrondissement",
+    "dept": "13",
+    "lat": 43.27944,
+    "lng": 5.42317,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0630024J",
+    "nom": "Lycée professionnel Amédée Gasquet - Lycée des métiers des services aux entreprises",
+    "adr": "12 rue JEAN BAPTISTE TORRILHON",
+    "cp": "63000",
+    "ville": "Clermont-Ferrand",
+    "dept": "63",
+    "lat": 45.77775,
+    "lng": 3.07478,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0430023S",
+    "nom": "Lycée professionnel Auguste Aymard",
+    "adr": "2 rue SAINT MARCEL",
+    "cp": "43000",
+    "ville": "Espaly-Saint-Marcel",
+    "dept": "43",
+    "lat": 45.04909,
+    "lng": 3.86845,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0420049A",
+    "nom": "Lycée professionnel Benoît Charvet - Lycée des métiers du tertiaire, du sport, des services et des soins à la personne",
+    "adr": "19 bis rue DE LAHARPE",
+    "cp": "42001",
+    "ville": "Saint-Etienne",
+    "dept": "42",
+    "lat": 45.44622,
+    "lng": 4.37767,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0770943G",
+    "nom": "Lycée professionnel Benjamin Franklin - Lycée des métiers du bâtiment",
+    "adr": "Rue de la Forêt",
+    "cp": "77000",
+    "ville": "La Rochette",
+    "dept": "77",
+    "lat": 48.50938,
+    "lng": 2.66344,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  },
+  {
+    "uai": "0690003D",
+    "nom": "Lycée professionnel Barthélémy Thimonnier",
+    "adr": "160 avenue ANDRE LASSAGNE",
+    "cp": "69210",
+    "ville": "L'Arbresle",
+    "dept": "69",
+    "lat": 45.83432,
+    "lng": 4.61305,
+    "type": "Lycée",
+    "specialites": [
+      "UPE2A"
+    ],
+    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "nsa": null
+  }
+]
