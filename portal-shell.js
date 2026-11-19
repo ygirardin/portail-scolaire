@@ -5,7 +5,7 @@
  if(document.getElementById('ps-shell') || window.self!==window.top)return;
  const groups=[
  ['Orientation',[['voeux-versailles.html','Affelnet — vœux Versailles']]],
- ['Cartes',[['colleges.html','Collèges publics'],['lycees.html','Lycées publics'],['carte-bassins-france.html','Bassins d’éducation — France'],['bassins-95.html','Bassins du Val-d’Oise'],['segpa.html','SEGPA'],['ulis.html','ULIS'],['classes-ha.html','Classes à horaires aménagés'],['sections-sportives.html','Sections sportives'],['sections-internationales.html','Sections internationales']]],
+ ['Cartes',[['colleges.html','Collèges publics'],['lycees.html','Lycées publics'],['carte-bassins-france.html','Bassins d’éducation — France'],['bassins-95.html','Bassins du Val-d’Oise'],['segpa.html','SEGPA'],['ulis.html','ULIS'],['upe2a.html','UPE2A — élèves allophones'],['classes-ha.html','Classes à horaires aménagés'],['sections-sportives.html','Sections sportives'],['sections-internationales.html','Sections internationales']]],
  ['Statistiques',[['tableau-ecoles.html','Effectifs des écoles'],['tableau-colleges.html','Effectifs et IPS des collèges'],['tableau-lycees.html','Effectifs et IPS des lycées']]],
  ['Gestion',[['repartition-sieges-ececa.html','Répartition des sièges — ECECA'],['convocation-ca.html','Convocation au conseil d’administration']]],
  ['Guides & ressources',[['guide-aed.html','Gestion des AED'],['guide-digicod.html','DIGICOD'],['guide-demact.html','Dém’Act'],['glossaire.html','Glossaire des sigles']]]

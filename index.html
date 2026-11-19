@@ -234,7 +234,7 @@ footer a:hover{color:#fff}
         <a class="hero-secondary" href="#affelnet">Voir Affelnet&nbsp; →</a>
       </div>
       <div class="hero-meta">
-        <span><strong>17</strong> outils accessibles</span>
+        <span><strong id="toolTotal">18</strong> outils accessibles</span>
         <span><strong>7</strong> rubriques</span>
         <span>✓ Accès sans compte</span>
       </div>
@@ -380,6 +380,7 @@ footer a:hover{color:#fff}
         <div class="card-cta tag-teal">Voir la carte →</div>
       </div>
     </a>
+<a class="card theme-teal" href="upe2a.html"><div class="card-bar bar-teal"></div><div class="card-body"><div class="card-tag tag-teal">Dispositif inclusif</div><div class="card-icon">🌍</div><div class="card-title">UPE2A — Élèves allophones</div><div class="card-desc">Localiser les établissements accueillant les élèves allophones nouvellement arrivés, dont les UPE2A-NSA lorsque renseignées. Recherche et filtres territoriaux.</div><div class="card-meta"><div><div class="cm-val">France</div><div class="cm-lbl">Inventaire Onisep</div></div></div><div class="card-cta tag-teal">Voir la carte →</div></div></a>
 <a class="card theme-rose" href="sections-sportives.html">
       <div class="card-bar bar-rose"></div>
       <div class="card-body">
@@ -607,6 +608,7 @@ footer a:hover{color:#fff}
   const panel = document.getElementById('navPanel');
   const sections = Array.from(document.querySelectorAll('.tool-section'));
   const cards = Array.from(document.querySelectorAll('.tool-section a.card'));
+  document.getElementById('toolTotal').textContent=cards.length;
   const input = document.getElementById('toolSearch');
   const result = document.getElementById('searchCount');
   const clearBtn = document.getElementById('clearSearch');

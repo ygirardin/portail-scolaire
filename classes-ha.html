@@ -129,7 +129,8 @@ body>header,.htitle,.wrap,#map{min-width:0}
 .cha-legend{padding:7px 12px;background:white;border-bottom:1px solid #e0e7f2;font-size:.71rem;color:#42506b;line-height:1.5}
 .cha-legend summary{cursor:pointer;font-weight:700}
 .cha-legend .cha-badges{margin-top:7px}
-</style></head>
+</style><script src="onisep-dispositifs.js?v=20261119"></script>
+</head>
 <body>
 <a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
 
@@ -225,14 +226,15 @@ function mkPopup(e) {
       ${e.adr ? escapeHtml(e.adr) + '<br>' : ''}${escapeHtml(e.cp)} ${escapeHtml(e.ville)}
     </div>
     ${contact ? `<div class="pu-contact">${contact}</div>` : ''}
+    ${e.source ? `<div class="pu-info" style="font-size:.7rem;margin-top:8px">Source : ${escapeHtml(e.source)}</div>` : ''}
   `;
 }
 
 function filtered() {
-  const q    = document.getElementById('q').value.trim().toLowerCase();
+  const q    = norm(document.getElementById('q').value.trim());
   const dept = document.getElementById('dept').value;
   return allData.filter(e =>
-    (!q    || e.nom.toLowerCase().includes(q) || e.ville.toLowerCase().includes(q)) &&
+    (!q    || norm([e.nom,e.ville,e.uai].join(' ')).includes(q)) &&
     (!dept || e.dept === dept) &&
     (!document.getElementById('specialite').value || (e.specialites||[]).includes(document.getElementById('specialite').value))
   );
@@ -298,29 +300,11 @@ function setupData(data,source){
  document.getElementById('hcount').textContent=allData.length+' établissements référencés';
  setNotice(source);applyFilters(true);document.getElementById('loading').style.display='none';
 }
-const geoUrl='https://data.onisep.fr/api/v1/downloads/60867458bb600/60867458bb600.geojson';
-function parseOnisep(geo,dict){
- if(geo.type!=='FeatureCollection'||!Array.isArray(geo.features))throw Error('Le fichier doit être le GeoJSON « Idéo-Actions de dispositif ».');
- const out=new Map();
- for(const f of geo.features){
-  const p=f.properties||{},vals=Object.entries(p).filter(([,v])=>typeof v==='string');
-  const labels=vals.map(([,v])=>v).filter(v=>/classe[s]? a horaires? amenages?/.test(norm(v)));
-  if(!labels.length)continue;
-  const uai=vals.map(([,v])=>v.trim().toUpperCase()).find(v=>/^\d{7}[A-Z]$/.test(v));if(!uai)continue;
-  const d=dict[uai]; // référentiel local des collèges publics, jointure stricte par UAI
-  if(!d||!Number.isFinite(d.lat)||!Number.isFinite(d.lon))continue;
-  let e=out.get(uai);if(!e){e={uai,nom:d.nom,adr:d.adresse,cp:d.cp,ville:d.commune,dept:d.dept,lat:d.lat,lng:d.lon,specialites:[],source:'Onisep — Idéo-Actions de dispositif'};out.set(uai,e)}
-  const labelsFound=[];for(const label of labels){const n=norm(label);for(const [test,title] of [['musique','Musique'],['danse','Danse'],['theatre','Théâtre'],['arts plastiques','Arts plastiques'],['cinema','Cinéma'],['mathematiques','Mathématiques et sciences'],['arts et metiers du spectacle','Arts et métiers du spectacle']])if(n.includes(test))labelsFound.push(title)}
-  for(const spec of labelsFound.length?labelsFound:['Autre CHA'])if(!e.specialites.includes(spec))e.specialites.push(spec);
- }
- if(out.size<allData.length)throw Error('Le catalogue n’a pas fourni assez de collèges reconnus ; le référentiel local est conservé.');
- return [...out.values()];
-}
 let loadingNational=false;
 async function loadNational(file){
  if(loadingNational)return;loadingNational=true;const btn=document.getElementById('cha-refresh');btn.disabled=true;
- setNotice('Chargement et rapprochement du fichier Onisep…');
- try{const [geo,dict]=await Promise.all([file?file.text().then(JSON.parse):fetch(geoUrl,{signal:AbortSignal.timeout(60000)}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}),fetch('data/colleges-dict.json').then(r=>{if(!r.ok)throw Error('Référentiel indisponible');return r.json()})]);const rows=parseOnisep(geo,dict);setupData(rows,'Source : Onisep / Idéo-Actions de dispositif (ODbL), croisement avec les collèges publics du référentiel local. Offres à confirmer auprès des établissements.');}
+ const previous=allData.slice();setNotice('Chargement du catalogue national Onisep… la base locale reste disponible.');
+ try{const result=await PortalOnisep.load('cha',previous,file);setupData(result.rows,'Catalogue Onisep (ODbL) et compléments locaux : '+result.rows.length+' établissements ; '+result.unlocated+' lignes sans coordonnées. Recensement non exhaustif.');}
  catch(err){setNotice('Import national non abouti : '+err.message+'. Inventaire local conservé. Téléchargez le GeoJSON depuis la source officielle pour l’importer manuellement.');}
  finally{btn.disabled=false;loadingNational=false}
 }
@@ -329,7 +313,7 @@ document.getElementById('cha-file').addEventListener('change',e=>{if(e.target.fi
 document.getElementById('q').addEventListener('input',()=>applyFilters());
 document.getElementById('dept').addEventListener('change',()=>applyFilters(true));
 document.getElementById('specialite').addEventListener('change',()=>applyFilters(true));
-(async()=>{try{const res=await fetch(DATA_URL,{cache:'no-cache'});if(!res.ok)throw Error('HTTP '+res.status);setupData(await res.json(),'Inventaire local partiel : établissements repérés dans les listes Onisep et rapprochés du référentiel géographique. Chargez le catalogue national pour compléter.');}catch(err){document.getElementById('loading').textContent='Données indisponibles : '+err.message;}})();
+(async()=>{try{const res=await fetch(DATA_URL,{cache:'no-cache'});if(!res.ok)throw Error('HTTP '+res.status);setupData(await res.json(),'Inventaire local partiel : établissements repérés dans les listes Onisep et rapprochés du référentiel géographique. Actualisation nationale en cours.');if(allData.length<400)loadNational();}catch(err){document.getElementById('loading').textContent='Données indisponibles : '+err.message;}})();
 </script>
 </body>
 </html>
