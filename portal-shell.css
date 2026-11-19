@@ -1,0 +1,49 @@
+
+/* Navigation commune indépendante des styles historiques des outils. */
+:root{--ps-nav-height:64px;--ps-secondary-height:52px;--ps-ink:#19224e;--ps-indigo:#5458df;--ps-line:#e0e7f2}
+#ps-shell,#ps-shell *{box-sizing:border-box}
+#ps-shell{position:sticky!important;top:0!important;z-index:2147483000!important;isolation:isolate;flex:0 0 var(--ps-nav-height);height:var(--ps-nav-height);min-height:var(--ps-nav-height);width:100%;align-self:stretch;background:#fff;color:var(--ps-ink);border-bottom:1px solid var(--ps-line);box-shadow:0 3px 16px rgba(25,34,78,.07);font:600 14px/1.35 Inter,system-ui,-apple-system,sans-serif;text-align:left;letter-spacing:normal}
+#ps-shell [hidden]{display:none!important}
+#ps-shell .ps-inner{max-width:1440px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;justify-content:space-between}
+#ps-shell a{text-decoration:none;color:inherit}
+#ps-shell .ps-brand{display:flex;align-items:center;gap:10px;flex-shrink:0;font:700 17px/1.1 'Space Grotesk',Inter,system-ui,sans-serif;white-space:nowrap;letter-spacing:-.03em}
+#ps-shell .ps-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(140deg,#5b57e9,#228cba);color:white;box-shadow:0 5px 14px rgba(76,85,215,.2);font:800 12px/1 Inter,system-ui,sans-serif;letter-spacing:.04em}
+#ps-shell .ps-nav{display:flex;align-items:center;gap:4px;margin:0;padding:0;position:static;width:auto;height:auto;border:0;overflow:visible;background:none;color:var(--ps-ink)}
+#ps-shell button{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:transparent;color:#42506b;border:1px solid transparent;border-radius:10px;padding:9px 10px;font:700 13px/1.35 Inter,system-ui,sans-serif;white-space:nowrap;cursor:pointer;box-shadow:none;min-height:38px;margin:0;transform:none}
+#ps-shell button:hover,#ps-shell button[aria-expanded=true],#ps-shell .ps-group.is-current>button{background:#eef0ff;color:#393ab9}
+#ps-shell .ps-caret{font-size:11px}
+#ps-shell .ps-group{position:relative}
+#ps-shell .ps-panel{position:absolute;right:0;top:calc(100% + 9px);width: min(300px,calc(100vw - 24px));max-height:calc(100dvh - 88px);overflow:auto;background:#fff;color:var(--ps-ink);border:1px solid var(--ps-line);border-radius:16px;padding:7px;box-shadow:0 20px 45px rgba(25,34,78,.2)}
+#ps-shell .ps-panel a{display:block;border:0;border-radius:9px;padding:11px 12px;font:600 13px/1.4 Inter,system-ui,sans-serif;color:#42506b;white-space:normal}
+#ps-shell .ps-panel a:hover,#ps-shell .ps-panel a[aria-current=page]{background:#edf0ff;color:#3538ad}
+#ps-shell .ps-panel a[aria-current=page]{font-weight:800}
+#ps-shell :focus-visible{outline:3px solid #e29c36!important;outline-offset:2px}
+#ps-shell .ps-toggle{display:none;border-color:var(--ps-line);background:#f6f8fd;color:var(--ps-ink)}
+html.ps-ready body>.site-header{display:none!important}
+html.ps-ready body>a[href="index.html"][style*="position:fixed"],html.ps-ready header>a[href="index.html"],html.ps-ready header .portal-return{display:none!important}
+html.ps-ready{scroll-padding-top:var(--ps-nav-height)}
+html.ps-ready[data-portal-page=guide] body>header,html.ps-ready[data-portal-page=data] body>header,html.ps-ready[data-portal-page=document] header.top{top:var(--ps-nav-height)!important}
+html.ps-ready[data-portal-page=guide] .toc{top:calc(var(--ps-nav-height) + var(--ps-secondary-height))!important;height:calc(100dvh - var(--ps-nav-height) - var(--ps-secondary-height));max-height:calc(100dvh - var(--ps-nav-height) - var(--ps-secondary-height) - 12px)!important}
+html.ps-ready[data-portal-page=guide] body.aed-guide .toc{top:calc(var(--ps-nav-height) + var(--ps-secondary-height) + 16px)!important;height:auto}
+html.ps-ready[data-portal-page=data] .search-bar{top:calc(var(--ps-nav-height) + var(--ps-secondary-height))!important}
+html.ps-ready[data-portal-page=data] .alpha-bar{top:calc(var(--ps-nav-height) + var(--ps-secondary-height) + var(--ps-search-height,53px))!important}
+html.ps-ready[data-portal-page=document] .preview{top:calc(var(--ps-nav-height) + var(--ps-secondary-height) + 12px)!important}
+html.ps-ready[data-portal-page=map-dark] #map,html.ps-ready[data-portal-page=map-dark] #loader{top:var(--ps-nav-height)!important}
+html.ps-ready[data-portal-page=map-dark] #panel{top:calc(var(--ps-nav-height) + 12px)!important;max-height:calc(100dvh - var(--ps-nav-height) - 24px);overflow-y:auto}
+html.ps-ready[data-portal-page=map-light] .wrap,html.ps-ready[data-portal-page=map-bassins] .layout{min-height:0}
+html.ps-ready[data-portal-page=ececa] body{padding:0!important}
+html.ps-ready[data-portal-page=ececa] .container{margin:20px auto!important;width:calc(100% - 32px)}
+html.ps-ready[data-portal-page=maintenance] body{flex-direction:column;justify-content:flex-start;padding:0;background:#f6f8fd;color:#19224e}
+html.ps-ready[data-portal-page=maintenance] .box{margin:24px auto;max-width:calc(100% - 32px);color:#e8eaf0}
+html.ps-ready[data-portal-page=frame] body{display:flex;flex-direction:column;height:100dvh;margin:0;overflow:hidden}
+html.ps-ready[data-portal-page=frame] #ps-frame{flex:1 1 auto;min-height:0;width:100%;border:0;display:block}
+@media(max-width:920px){
+ #ps-shell .ps-inner{padding:0 14px;gap:10px}
+ #ps-shell .ps-toggle{display:inline-flex}
+ #ps-shell .ps-nav{display:none;position:absolute;top:100%;left:0;right:0;width:100%;height:auto;max-height:calc(100dvh - var(--ps-nav-height));overflow-y:auto;flex-direction:column;align-items:stretch;background:white;padding:10px 14px 18px;border-bottom:1px solid var(--ps-line);box-shadow:0 16px 28px rgba(25,34,78,.15)}
+ #ps-shell .ps-nav.is-open{display:flex}
+ #ps-shell .ps-group>button{width:100%;justify-content:space-between}
+ #ps-shell .ps-panel{position:static;width:100%;max-height:none;box-shadow:none;border:0;background:#f6f8fd;margin:3px 0 6px}
+}
+@media(max-width:420px){#ps-shell .ps-brand{font-size:15px;gap:8px}#ps-shell .ps-mark{width:34px;height:34px}#ps-shell .ps-inner{padding:0 10px}}
+@media print{#ps-shell{display:none!important}html.ps-ready{scroll-padding-top:0}}
