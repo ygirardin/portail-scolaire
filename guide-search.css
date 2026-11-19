@@ -1,0 +1,14 @@
+
+.guide-find{background:#fff;border:1px solid #dce3f1;border-radius:15px;padding:16px;margin:0 0 20px;box-shadow:0 6px 20px #19224e0d;color:#19224e}
+.guide-find label{display:block;font-weight:750;font-size:.88rem;margin-bottom:7px}
+.guide-find .gf-row{display:flex;gap:8px}
+.guide-find input{width:100%;min-width:0;border:1px solid #cbd5e6;border-radius:9px;padding:11px;font:inherit;color:#19224e;background:#f8faff}
+.guide-find button{border:1px solid #dce3f1;border-radius:9px;background:#eef0ff;color:#3538ad;padding:8px 12px;font:inherit;cursor:pointer}
+.guide-find .gf-status{font-size:.78rem;color:#52617d;margin:8px 0 0}
+.guide-find .gf-results{max-height:360px;overflow:auto;margin-top:9px}
+.guide-find .gf-results a{display:block;padding:11px 8px;text-decoration:none;border-top:1px solid #e0e7f2;color:#3638a6;font-size:.85rem;font-weight:700}
+.guide-find .gf-results a:hover{background:#f1f3ff}
+.guide-find .gf-snippet{display:block;color:#42506b;font-size:.77rem;font-weight:400;margin-top:4px;line-height:1.5}
+.guide-find mark,.gf-match{background:#ffebae;color:#473600;border-radius:2px}
+.gf-target{scroll-margin-top:calc(var(--ps-nav-height,0px) + var(--ps-secondary-height,52px) + 18px)!important}
+@media print{.guide-find{display:none!important}.gf-match{background:none;color:inherit}}
