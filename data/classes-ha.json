@@ -81,7 +81,8 @@
     "lng": -0.56064,
     "specialites": [
       "Musique",
-      "Théâtre"
+      "Théâtre",
+      "Danse"
     ],
     "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
   },
@@ -109,7 +110,8 @@
     "lat": 49.8928,
     "lng": 2.29112,
     "specialites": [
-      "Musique"
+      "Musique",
+      "Danse"
     ],
     "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
   },
@@ -364,7 +366,8 @@
     "lat": 47.67612,
     "lng": -2.77103,
     "specialites": [
-      "Théâtre"
+      "Théâtre",
+      "Musique"
     ],
     "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
   },
@@ -406,7 +409,8 @@
     "lat": 16.25035,
     "lng": -61.2968,
     "specialites": [
-      "Théâtre"
+      "Théâtre",
+      "Danse"
     ],
     "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
   },
@@ -589,6 +593,990 @@
     "lng": 4.86371,
     "specialites": [
       "Cinéma"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0580599L",
+    "nom": "Collège Adam Billaut",
+    "adr": "55 rue Claude Parent",
+    "cp": "58000",
+    "ville": "Nevers",
+    "dept": "58",
+    "lat": 47.00667,
+    "lng": 3.15849,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0440049P",
+    "nom": "Collège Aristide Briand",
+    "adr": "19 rue Louis Blanc",
+    "cp": "44200",
+    "ville": "Nantes",
+    "dept": "44",
+    "lat": 47.2059,
+    "lng": -1.55463,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0951139X",
+    "nom": "Collège Albert Camus",
+    "adr": "291 avenue Jean Jaurès",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.94121,
+    "lng": 2.21373,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0940042K",
+    "nom": "Collège Adolphe Chérioux",
+    "adr": "247 rue Edouard Tremblay",
+    "cp": "94408",
+    "ville": "Vitry-sur-Seine",
+    "dept": "94",
+    "lat": 48.78007,
+    "lng": 2.36952,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0561330S",
+    "nom": "Collège Anita Conti",
+    "adr": "Rue MONISTROL",
+    "cp": "56321",
+    "ville": "Lorient",
+    "dept": "56",
+    "lat": 47.7367,
+    "lng": -3.38051,
+    "specialites": [
+      "Musique",
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0941679P",
+    "nom": "Collège Albert Cron",
+    "adr": "5 rue Marcel Sembat",
+    "cp": "94270",
+    "ville": "Le Kremlin-Bicêtre",
+    "dept": "94",
+    "lat": 48.80822,
+    "lng": 2.35012,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0840761W",
+    "nom": "Collège Alphonse Daudet",
+    "adr": "4  RUE JEAN MONNET",
+    "cp": "84201",
+    "ville": "Carpentras",
+    "dept": "84",
+    "lat": 44.04756,
+    "lng": 5.03127,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0941025D",
+    "nom": "Collège Assia Djebar",
+    "adr": "54 rue Maurice Gunsbourg",
+    "cp": "94200",
+    "ville": "Ivry-sur-Seine",
+    "dept": "94",
+    "lat": 48.81187,
+    "lng": 2.40217,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0930884F",
+    "nom": "Collège Aimé et Eugénie Cotton",
+    "adr": "4 rue du Docteur Calmette",
+    "cp": "93151",
+    "ville": "Le Blanc-Mesnil",
+    "dept": "93",
+    "lat": 48.93987,
+    "lng": 2.47426,
+    "specialites": [
+      "Musique",
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0911143Y",
+    "nom": "Collège Alexandre Fleming",
+    "adr": "10 rue Alexandre Fléming",
+    "cp": "91401",
+    "ville": "Orsay",
+    "dept": "91",
+    "lat": 48.69469,
+    "lng": 2.1858,
+    "specialites": [
+      "Musique",
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0370044X",
+    "nom": "Collège Anatole France",
+    "adr": "1 rue des Amandiers",
+    "cp": "37000",
+    "ville": "Tours",
+    "dept": "37",
+    "lat": 47.39713,
+    "lng": 0.69083,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0251677M",
+    "nom": "Collège André Malraux",
+    "adr": "3 chemin du Larmont",
+    "cp": "25302",
+    "ville": "Pontarlier",
+    "dept": "25",
+    "lat": 46.89491,
+    "lng": 6.36514,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0132312T",
+    "nom": "Collège André Malraux",
+    "adr": "250 rue Albert Einstein",
+    "cp": "13013",
+    "ville": "Marseille 13e  Arrondissement",
+    "dept": "13",
+    "lat": 43.34212,
+    "lng": 5.44615,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0371248F",
+    "nom": "Collège André Malraux",
+    "adr": "15 BIS RUE DU CLOS DES GARDES",
+    "cp": "37400",
+    "ville": "Amboise",
+    "dept": "37",
+    "lat": 47.39745,
+    "lng": 0.98431,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0260997T",
+    "nom": "Collège André Malraux",
+    "adr": "1 avenue Georges Pompidou",
+    "cp": "26100",
+    "ville": "Romans-sur-Isère",
+    "dept": "26",
+    "lat": 45.05518,
+    "lng": 5.06284,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0291661Y",
+    "nom": "Collège Anna Marly",
+    "adr": "8  RUE JULES LESVEN",
+    "cp": "29200",
+    "ville": "Brest",
+    "dept": "29",
+    "lat": 48.40264,
+    "lng": -4.47375,
+    "specialites": [
+      "Musique",
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0672130B",
+    "nom": "Collège André Maurois",
+    "adr": "1 rue du Lycée",
+    "cp": "67242",
+    "ville": "Bischwiller",
+    "dept": "67",
+    "lat": 48.77833,
+    "lng": 7.84677,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0541568L",
+    "nom": "Collège Alfred Mézières",
+    "adr": "19 rue ALFRED MEZIERES",
+    "cp": "54000",
+    "ville": "Nancy",
+    "dept": "54",
+    "lat": 48.70143,
+    "lng": 6.17008,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0780507C",
+    "nom": "Collège Auguste Renoir",
+    "adr": "71 rue Auguste Renoir",
+    "cp": "78400",
+    "ville": "Chatou",
+    "dept": "78",
+    "lat": 48.90264,
+    "lng": 2.16051,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0900018F",
+    "nom": "Collège Arthur Rimbaud",
+    "adr": "45 faubourg des Ancêtres",
+    "cp": "90000",
+    "ville": "Belfort",
+    "dept": "90",
+    "lat": 47.64001,
+    "lng": 6.85622,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0780506B",
+    "nom": "Collège Arthur Rimbaud",
+    "adr": "Rue du Bois de Tonnerre",
+    "cp": "78410",
+    "ville": "Aubergenville",
+    "dept": "78",
+    "lat": 48.95124,
+    "lng": 1.85551,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0131888G",
+    "nom": "Collège Alain Savary",
+    "adr": "AVENUE DE RADOLFZELL",
+    "cp": "13800",
+    "ville": "Istres",
+    "dept": "13",
+    "lat": 43.50142,
+    "lng": 4.99488,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0351638R",
+    "nom": "Collège Anne de Bretagne",
+    "adr": "15 rue MARTENOT",
+    "cp": "35069",
+    "ville": "Rennes",
+    "dept": "35",
+    "lat": 48.11327,
+    "lng": -1.67198,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0440311Z",
+    "nom": "Collège Anne Frank",
+    "adr": "2 allée Anne Frank",
+    "cp": "44800",
+    "ville": "Saint-Herblain",
+    "dept": "44",
+    "lat": 47.21965,
+    "lng": -1.61271,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0430917N",
+    "nom": "Collège Anne Frank",
+    "adr": "Clos DE CORSAC",
+    "cp": "43700",
+    "ville": "Brives-Charensac",
+    "dept": "43",
+    "lat": 45.05145,
+    "lng": 3.91498,
+    "specialites": [
+      "Musique"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0761703N",
+    "nom": "Collège Albert Camus",
+    "adr": "Avenue Charles Nicolle",
+    "cp": "76370",
+    "ville": "Dieppe",
+    "dept": "76",
+    "lat": 49.92647,
+    "lng": 1.10673,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0870817R",
+    "nom": "Collège Auguste Renoir",
+    "adr": "119 rue SAINTE-CLAIRE",
+    "cp": "87000",
+    "ville": "Limoges",
+    "dept": "87",
+    "lat": 45.82335,
+    "lng": 1.24174,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0910979V",
+    "nom": "Collège Bellevue",
+    "adr": "102 rue du Vieux Château",
+    "cp": "91560",
+    "ville": "Crosne",
+    "dept": "91",
+    "lat": 48.71858,
+    "lng": 2.47607,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "9740080U",
+    "nom": "Collège Bourbon",
+    "adr": "189 rue Jean Chatel",
+    "cp": "97400",
+    "ville": "Saint-Denis",
+    "dept": "974",
+    "lat": -20.8851,
+    "lng": 55.45225,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0711448N",
+    "nom": "Collège Camille Chevalier",
+    "adr": "33 rue DE LA BANQUE",
+    "cp": "71321",
+    "ville": "Chalon-sur-Saône",
+    "dept": "71",
+    "lat": 46.78234,
+    "lng": 4.84877,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0781205L",
+    "nom": "Collège Claude Debussy",
+    "adr": "31 rue Alexandre Dumas",
+    "cp": "78100",
+    "ville": "Saint-Germain-en-Laye",
+    "dept": "78",
+    "lat": 48.89287,
+    "lng": 2.09636,
+    "specialites": [
+      "Danse"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0572496D",
+    "nom": "Collège Jean Seitlinger",
+    "adr": "38 RUE DE MONTBRONN",
+    "cp": "57410",
+    "ville": "Rohrbach-lès-Bitche",
+    "dept": "57",
+    "lat": 49.04008,
+    "lng": 7.27423,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0890090P",
+    "nom": "Collège Albert Camus",
+    "adr": "17 avenue HAUSSMANN",
+    "cp": "89015",
+    "ville": "Auxerre",
+    "dept": "89",
+    "lat": 47.80988,
+    "lng": 3.57094,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0210041F",
+    "nom": "Collège André Lallemand",
+    "adr": "23 rue Pasteur",
+    "cp": "21320",
+    "ville": "Pouilly-en-Auxois",
+    "dept": "21",
+    "lat": 47.26818,
+    "lng": 4.55138,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0070010Y",
+    "nom": "Collège Albert Mercoyrol",
+    "adr": "Rue Du verger",
+    "cp": "07350",
+    "ville": "Cruas",
+    "dept": "07",
+    "lat": 44.65885,
+    "lng": 4.76448,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0331662C",
+    "nom": "Collège Alain Fournier",
+    "adr": "83 rue SAINT GENES",
+    "cp": "33000",
+    "ville": "Bordeaux",
+    "dept": "33",
+    "lat": 44.8277,
+    "lng": -0.58006,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0333531J",
+    "nom": "Collège Alice Milliat",
+    "adr": "12 rue Marceline Desbordes-Valmore",
+    "cp": "33300",
+    "ville": "Bordeaux",
+    "dept": "33",
+    "lat": 44.88094,
+    "lng": -0.56902,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0692417C",
+    "nom": "Collège Boris Vian",
+    "adr": "115 rue DU GRISARD",
+    "cp": "69800",
+    "ville": "Saint-Priest",
+    "dept": "69",
+    "lat": 45.69675,
+    "lng": 4.96119,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0740274W",
+    "nom": "Collège Beauregard",
+    "adr": "39 avenue BEAUREGARD",
+    "cp": "74960",
+    "ville": "Annecy",
+    "dept": "74",
+    "lat": 45.90218,
+    "lng": 6.10661,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0690080M",
+    "nom": "Collège Bois Franc",
+    "adr": "525 route DU BEAUJOLAIS",
+    "cp": "69830",
+    "ville": "Saint-Georges-de-Reneins",
+    "dept": "69",
+    "lat": 46.06065,
+    "lng": 4.71302,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0291592Y",
+    "nom": "Collège Brizeux",
+    "adr": "8 rue BOURG LES BOURGS",
+    "cp": "29191",
+    "ville": "Quimper",
+    "dept": "29",
+    "lat": 47.99246,
+    "lng": -4.11317,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0741501E",
+    "nom": "Collège Camille Claudel",
+    "adr": "720 avenue D'ANTERNE",
+    "cp": "74970",
+    "ville": "Marignier",
+    "dept": "74",
+    "lat": 46.08345,
+    "lng": 6.50278,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0891186F",
+    "nom": "Collège Claude Debussy",
+    "adr": "Rue Antoine de Saint-Exupéry",
+    "cp": "89340",
+    "ville": "Villeneuve-la-Guyard",
+    "dept": "89",
+    "lat": 48.33937,
+    "lng": 3.07285,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0240029B",
+    "nom": "Collège Clos Chassaing",
+    "adr": "38 rue DU CLOS CHASSAING",
+    "cp": "24001",
+    "ville": "Périgueux",
+    "dept": "24",
+    "lat": 45.1898,
+    "lng": 0.71625,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0730901H",
+    "nom": "Collège Côte Rousse",
+    "adr": "244 avenue DANIEL ROPS",
+    "cp": "73000",
+    "ville": "Chambéry",
+    "dept": "73",
+    "lat": 45.59074,
+    "lng": 5.92081,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0691824H",
+    "nom": "Collège Daisy Georges Martin",
+    "adr": "24 rue DU 11 NOVEMBRE 1918",
+    "cp": "69540",
+    "ville": "Irigny",
+    "dept": "69",
+    "lat": 45.67271,
+    "lng": 4.81686,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0071320X",
+    "nom": "Collège de Crussol",
+    "adr": "15 rue Raoul Follereau",
+    "cp": "07130",
+    "ville": "Saint-Péray",
+    "dept": "07",
+    "lat": 44.94977,
+    "lng": 4.84074,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0351852Y",
+    "nom": "Collège de Fontenay",
+    "adr": "35 rue ANTOINE CHATEL",
+    "cp": "35176",
+    "ville": "Chartres-de-Bretagne",
+    "dept": "35",
+    "lat": 48.04155,
+    "lng": -1.69784,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0260001K",
+    "nom": "Collège de l'Europe Jean-Monnet",
+    "adr": "16 avenue A. VALLON",
+    "cp": "26303",
+    "ville": "Bourg-de-Péage",
+    "dept": "26",
+    "lat": 45.04,
+    "lng": 5.05755,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0772499Y",
+    "nom": "Collège de la Dhuis",
+    "adr": "Chemin de Crécy",
+    "cp": "77100",
+    "ville": "Nanteuil-lès-Meaux",
+    "dept": "77",
+    "lat": 48.9303,
+    "lng": 2.88201,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0640048E",
+    "nom": "Collège des Cordeliers",
+    "adr": "Rue DES REMPARTS",
+    "cp": "64400",
+    "ville": "Oloron-Sainte-Marie",
+    "dept": "64",
+    "lat": 43.1892,
+    "lng": -0.60698,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0210050R",
+    "nom": "Collège Dinet",
+    "adr": "23 bis grande rue DU FG ST MICHEL",
+    "cp": "21250",
+    "ville": "Seurre",
+    "dept": "21",
+    "lat": 46.99969,
+    "lng": 5.15033,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0593251N",
+    "nom": "Collège Docteur Ernest Schaffner",
+    "adr": "Avenue Martyrs de la Résistance",
+    "cp": "59286",
+    "ville": "Roost-Warendin",
+    "dept": "59",
+    "lat": 50.41353,
+    "lng": 3.10833,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0382100B",
+    "nom": "Collège du Grésivaudan",
+    "adr": "Place DE L'AGORA",
+    "cp": "38330",
+    "ville": "Saint-Ismier",
+    "dept": "38",
+    "lat": 45.24123,
+    "lng": 5.82096,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0740041T",
+    "nom": "Collège du Mont des Princes",
+    "adr": "252 rue Des oudets",
+    "cp": "74910",
+    "ville": "Seyssel",
+    "dept": "74",
+    "lat": 45.95953,
+    "lng": 5.83983,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0770020D",
+    "nom": "Collège du Montois",
+    "adr": "34 route de Provins",
+    "cp": "77520",
+    "ville": "Donnemarie-Dontilly",
+    "dept": "77",
+    "lat": 48.47891,
+    "lng": 3.14136,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0771563F",
+    "nom": "Collège Eugène Delacroix",
+    "adr": "12 rue Eugène Delacroix",
+    "cp": "77680",
+    "ville": "Roissy-en-Brie",
+    "dept": "77",
+    "lat": 48.79606,
+    "lng": 2.66473,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0801511H",
+    "nom": "Collège Eugène Lefebvre",
+    "adr": "2 boulevard Camille Roland",
+    "cp": "80800",
+    "ville": "Corbie",
+    "dept": "80",
+    "lat": 49.91236,
+    "lng": 2.50754,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0761782Z",
+    "nom": "Collège Eugène Varlin",
+    "adr": "3 rue Eugène Varlin",
+    "cp": "76610",
+    "ville": "Le Havre",
+    "dept": "76",
+    "lat": 49.5161,
+    "lng": 0.17157,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0693365H",
+    "nom": "Collège Françoise Dolto",
+    "adr": "58 avenue PAUL DOUMER",
+    "cp": "69630",
+    "ville": "Chaponost",
+    "dept": "69",
+    "lat": 45.71039,
+    "lng": 4.74576,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0141597K",
+    "nom": "Collège Fernand Lechanteur",
+    "adr": "17 avenue Nicolas Copernic",
+    "cp": "14070",
+    "ville": "Caen",
+    "dept": "14",
+    "lat": 49.20063,
+    "lng": -0.35457,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0381776Z",
+    "nom": "Collège Fantin Latour",
+    "adr": "26 rue NICOLAS CHORIER",
+    "cp": "38000",
+    "ville": "Grenoble",
+    "dept": "38",
+    "lat": 45.18643,
+    "lng": 5.71459,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0100902B",
+    "nom": "Collège Gaston Bachelard",
+    "adr": "33 rue GASTON BACHELARD",
+    "cp": "10200",
+    "ville": "Bar-sur-Aube",
+    "dept": "10",
+    "lat": 48.22838,
+    "lng": 4.70313,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0211756V",
+    "nom": "Collège Georges Brassens",
+    "adr": "12 bis rue DE LATTRE DE TASSIGNY",
+    "cp": "21470",
+    "ville": "Brazey-en-Plaine",
+    "dept": "21",
+    "lat": 47.13025,
+    "lng": 5.21727,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0740035L",
+    "nom": "Collège Gaspard Monge",
+    "adr": "560 avenue Trémercier",
+    "cp": "74490",
+    "ville": "Saint-Jeoire",
+    "dept": "74",
+    "lat": 46.13593,
+    "lng": 6.465,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0731441V",
+    "nom": "Collège George Sand",
+    "adr": "2351 avenue René Cassin",
+    "cp": "73290",
+    "ville": "La Motte-Servolex",
+    "dept": "73",
+    "lat": 45.60192,
+    "lng": 5.86905,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0010820L",
+    "nom": "Collège George Sand",
+    "adr": "Avenue des Sports",
+    "cp": "01290",
+    "ville": "Pont-de-Veyle",
+    "dept": "01",
+    "lat": 46.26401,
+    "lng": 4.88504,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0271094T",
+    "nom": "Collège Guillaume de Conches",
+    "adr": "Place Pierre de Coubertin",
+    "cp": "27190",
+    "ville": "Conches-en-Ouche",
+    "dept": "27",
+    "lat": 48.95208,
+    "lng": 0.94177,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0731113N",
+    "nom": "Collège Henry Bordeaux",
+    "adr": "4 rue du Collège",
+    "cp": "73160",
+    "ville": "Cognin",
+    "dept": "73",
+    "lat": 45.56379,
+    "lng": 5.89048,
+    "specialites": [
+      "Mathématiques et sciences"
+    ],
+    "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
+  },
+  {
+    "uai": "0931379U",
+    "nom": "Collège Pablo Neruda",
+    "adr": "4 rue du Docteur Fleming",
+    "cp": "93604",
+    "ville": "Aulnay-sous-Bois",
+    "dept": "93",
+    "lat": 48.95052,
+    "lng": 2.5189,
+    "specialites": [
+      "Mathématiques et sciences"
     ],
     "source": "Onisep — fiche de formation ; coordonnées du référentiel des collèges"
   }
