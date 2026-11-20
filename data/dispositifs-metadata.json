@@ -1,0 +1,42 @@
+{
+  "source": "Annuaire de l’éducation nationale",
+  "date": "2026-11-20",
+  "cartes": {
+    "ulis": {
+      "etablissements": 4155,
+      "val_d_oise": 94,
+      "source": 4177,
+      "coordonnees_invalides": 9,
+      "doublons": 13,
+      "ajouts": 16,
+      "absents_de_la_source": 0
+    },
+    "segpa": {
+      "etablissements": 1491,
+      "val_d_oise": 28,
+      "source": 1497,
+      "coordonnees_invalides": 6,
+      "doublons": 0,
+      "ajouts": 3,
+      "absents_de_la_source": 1
+    },
+    "sections-sportives": {
+      "etablissements": 2715,
+      "val_d_oise": 44,
+      "source": 2725,
+      "coordonnees_invalides": 5,
+      "doublons": 5,
+      "ajouts": 36,
+      "absents_de_la_source": 25
+    },
+    "sections-internationales": {
+      "etablissements": 185,
+      "val_d_oise": 1,
+      "source": 185,
+      "coordonnees_invalides": 0,
+      "doublons": 0,
+      "ajouts": 2,
+      "absents_de_la_source": 1
+    }
+  }
+}
