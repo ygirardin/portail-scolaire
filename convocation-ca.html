@@ -114,7 +114,24 @@ input.file-hidden{display:none}
 
 <div class="layout">
 <div class="forms">
-  <details class="card"><summary>Préparation du procès-verbal</summary><div class="card-body"><p>Le PV reprend automatiquement l’établissement, la séance prévue, les rubriques et tous les points de l’ordre du jour. Il comporte les présences, le quorum, les observations, les décisions, les résultats de vote (si applicable), la clôture et les signatures.</p><p class="muted">La trame est à compléter d’après le déroulement réel de la séance et le règlement intérieur du CA. Aucun vote, quorum ou décision n’est présumé. Voir <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042728200" target="_blank" rel="noopener noreferrer">article R. 421-25 du Code de l’éducation</a>.</p><label class="check"><input type="checkbox" id="pvVotes" checked> Prévoir un espace de vote sous chaque point (à conserver uniquement si nécessaire)</label></div></details>
+  <details class="card" open><summary>Préparation du procès-verbal</summary><div class="card-body"><p>Le PV reprend automatiquement l’établissement, la séance prévue, les rubriques et tous les points de l’ordre du jour. Il comporte les présences, le quorum, les observations, les décisions, les résultats de vote (si applicable), la clôture et les signatures.</p><p class="muted">La trame est à compléter d’après le déroulement réel de la séance et le règlement intérieur du CA. Aucun vote, quorum ou décision n’est présumé. Voir <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042728200" target="_blank" rel="noopener noreferrer">article R. 421-25 du Code de l’éducation</a>.</p><div class="grid" style="margin:12px 0">
+<label class="f full">Composition réglementaire du CA
+<select data-k="opts.caType" id="caType">
+<option value="">Choisir la composition</option>
+<option value="c24">Collège de moins de 600 élèves sans SEGPA – 24 sièges</option>
+<option value="c30">Collège de 600 élèves ou plus sans SEGPA – 30 sièges</option>
+<option value="csegpa">Collège avec SEGPA – 30 sièges</option>
+<option value="lycee">Lycée général, technologique ou polyvalent – 30 sièges</option>
+<option value="lp">Lycée professionnel – 30 sièges</option>
+<option value="erea">EREA – 24 sièges</option>
+</select></label>
+<label class="check"><input type="checkbox" data-k="opts.caAdjoint"> Chef d'établissement adjoint en poste</label>
+<label class="check"><input type="checkbox" data-k="opts.caCpe"> CPE en poste</label>
+<label class="check"><input type="checkbox" data-k="opts.caDdf"> DDFPT en poste (lycée/LP/EREA)</label>
+<label class="check"><input type="checkbox" data-k="opts.caEpci"> EPCI existant</label>
+<div class="f full" id="caComposition" role="status"></div>
+</div><p class="muted">Vérifier la configuration effective et les désignations. Une ligne par siège, avec nom du titulaire, nom du remplaçant éventuel et présence. Les invités et participants consultatifs sont séparés, hors quorum. Références : <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006071191/LEGISCTA000018377446/" target="_blank" rel="noopener noreferrer">articles R. 421-14 à R. 421-19</a>.</p>
+<label class="check"><input type="checkbox" id="pvVotes" data-k="opts.pvVotes" checked> Prévoir un espace de vote sous chaque point (à conserver uniquement si nécessaire)</label></div></details>
 
   <details class="card" open>
     <summary>1. Établissement <span class="hint">mémorisé d'une séance à l'autre</span></summary>
@@ -491,6 +508,53 @@ function buildDocx(S,images,mode="convocation",pvVotes=true){
   return zipStore(all);
 }
 
+/* Composition légale : R.421-14, R.421-16, R.421-17 et R.421-15. */
+function caComposition(o){
+ const type=o.caType;
+ if(!["c24","c30","csegpa","lycee","lp","erea"].includes(type))return null;
+ const small=type==="c24",erea=type==="erea",lp=type==="lp",lycee=type==="lycee"||lp,nominal=small||erea?24:30;
+ const roles=["Chef d’établissement (présidence)"];
+ if(o.caAdjoint)roles.push("Chef d’établissement adjoint");
+ roles.push("Adjoint gestionnaire");
+ if(erea){if(o.caCpe||o.caDdf)roles.push(o.caCpe?"CPE le plus ancien (ou DDFPT selon désignation)":"Directeur délégué aux formations professionnelles et technologiques");}
+ else if(lp){if(!o.caAdjoint&&o.caCpe)roles.push("CPE le plus ancien (en l’absence d’adjoint)");}
+ else if(o.caCpe)roles.push("CPE le plus ancien");
+ if(type==="csegpa")roles.push("Directeur adjoint chargé de la SEGPA");
+ if(lycee&&o.caDdf)roles.push("Directeur délégué aux formations professionnelles et technologiques");
+ const groups=[{title:"Membres de droit – administration",roles}];
+ const territorial=erea||lycee?"Région / collectivité compétente":"Département / collectivité compétente";
+ groups.push({title:"Collectivités territoriales",roles:[territorial+" – siège 1",territorial+" – siège 2"]});
+ groups.push({title:"Commune et intercommunalité",roles:small||erea?["Commune siège"]:o.caEpci?["Commune siège","EPCI"]:["Commune siège – siège 1","Commune siège – siège 2"]});
+ const q=lp?2:roles.length<(small||erea?4:5)?2:1;
+ groups.push({title:lp?"Personnalités qualifiées – monde économique":"Personnalités qualifiées",roles:Array.from({length:q},(_,i)=>"Personnalité qualifiée "+(i+1))});
+ const add=(title,n)=>groups.push({title,roles:Array.from({length:n},(_,i)=>"Siège "+(i+1))});
+ add("Personnels d’enseignement et d’éducation",erea?4:small?6:7);
+ if(erea){add("Personnels administratifs, techniques, ouvriers et de service",2);add("Personnels sociaux et de santé",2);}
+ else add("Personnels administratifs, sociaux, de santé, techniques, ouvriers et de service",small?2:3);
+ add("Représentants des parents d’élèves",erea||lycee?5:small?6:7);
+ add("Représentants des élèves",erea?3:lycee?5:small?2:3);
+ const total=groups.reduce((a,g)=>a+g.roles.length,0);
+ const consult=[];
+ if((small||erea)&&o.caEpci)consult.push("Représentant EPCI (consultatif)");
+ if(lp&&o.caAdjoint&&o.caCpe)consult.push("CPE (consultatif s’il ne siège pas au titre des élus)");
+ return {groups,total,nominal,consult,lycee};
+}
+function caRosterXml(C){
+ const widths=[380,2940,2700,2400,1684],sum=widths.reduce((a,b)=>a+b,0);
+ const cell=(v,i,b=false)=>'<w:tc><w:tcPr><w:tcW w:w="'+widths[i]+'" w:type="dxa"/>'+(b?'<w:shd w:fill="EAF0F8"/>':'')+'</w:tcPr>'+wP(wRuns(v,{b:b?1:0,sz:19}),{after:40,before:40})+'</w:tc>';
+ const row=(vals,header=false)=>'<w:tr><w:trPr><w:cantSplit/>'+(header?'<w:tblHeader/>':'')+'</w:trPr>'+vals.map((v,i)=>cell(v,i,header)).join("")+'</w:tr>';
+ const borders=["top","left","bottom","right","insideH","insideV"].map(k=>'<w:'+k+' w:val="single" w:sz="4" w:color="BFC8D3"/>').join("");
+ let xml="",n=0;
+ for(const g of C.groups){
+  xml+=wP(wRuns(g.title+" ("+g.roles.length+")",{b:1,sz:21}),{before:160,after:70,keepNext:1});
+  xml+='<w:tbl><w:tblPr><w:tblW w:w="'+sum+'" w:type="dxa"/><w:tblBorders>'+borders+'</w:tblBorders><w:tblLayout w:type="fixed"/></w:tblPr><w:tblGrid>'+widths.map(w=>'<w:gridCol w:w="'+w+'"/>').join("")+'</w:tblGrid>';
+  xml+=row(["N°","Fonction / siège","Nom du titulaire","Nom du remplaçant (si autorisé)","Présence"],true);
+  for(const role of g.roles)xml+=row([String(++n),role,"","",""]);
+  xml+="</w:tbl>";
+ }
+ return xml;
+}
+
 /* Trame de PV préparatoire : aucune donnée de séance effective n'est déduite. */
 function buildPVBody(S,M,images,sz,small,pvVotes){
  const w=(t,f={},p={})=>wP(wRuns(t,f),p);
@@ -512,7 +576,16 @@ function buildPVBody(S,M,images,sz,small,pvVotes){
  if(e.chef)body+=w("Chef d’établissement : "+e.chef,{sz:small},{after:80});
  body+=fill("Secrétaire de séance");
  body+=head("1. Présences et quorum");
- for(const label of ["Membres titulaires présents","Suppléants siégeant en remplacement","Membres absents excusés","Membres absents non excusés","Invités / personnes entendues"]) {body+=fill(label);body+=blank();}
+ const C=caComposition(S.opts);
+ if(!C)throw Error("Choisir la composition du CA avant de générer le procès-verbal.");
+ body+=line("Composition de référence : "+C.nominal+" sièges. Lignes préparées : "+C.total+".");
+ if(C.total!==C.nominal)body+=w("Configuration particulière : vérifier la composition effective et les désignations avec les autorités compétentes.",{b:1,sz:small},{after:100});
+ body+=w("Renseigner les noms dans les cellules vides. Présence : P = présent ; E = excusé ; A = absent ; V = siège vacant. Si remplacement autorisé, noter le nom du remplaçant et sa présence. Un seul siège est compté.",{i:1,sz:small},{after:100});
+ if(C.lycee)body+=w("Représentants des élèves : identifier au moins un représentant des classes post-baccalauréat si elles existent.",{i:1,sz:small},{after:80});
+ body+=caRosterXml(C);
+ body+=head("Participants consultatifs / invités – hors quorum");
+ for(const label of C.consult)body+=fill(label);
+ body+=fill("Autres invités / personnes entendues")+blank()+blank();
  body+=line("Membres en exercice : ……    Membres présents habilités à siéger à l’ouverture : ……");
  body+=line("Quorum requis (majorité des membres en exercice) : ……");
  body+=line("Quorum constaté : ☐ atteint  ☐ non atteint  ☐ nouvelle réunion après défaut de quorum");
@@ -598,7 +671,7 @@ function defaultState(){
     etab:{nom:"",adresse:"",cp:"",ville:"",tel:"",fax:"",mail:"",chef:"",fonction:"",destinataires:"Aux\nMembres du Conseil d'administration"},
     seance:{date:"",heure:"18:00",lieu:"",nature:"",dateCourrier:"",lieuSignature:""},
     textes:{...TEXTES_DEFAUT},
-    opts:{formatHeure:"long",questionsDiverses:true,liste:"puces",recap:true,filigrane:true,wmOpacity:12,wmLargeur:14,wmGris:false,
+    opts:{caType:"",caAdjoint:true,caCpe:true,caDdf:true,caEpci:false,pvVotes:true,formatHeure:"long",questionsDiverses:true,liste:"puces",recap:true,filigrane:true,wmOpacity:12,wmLargeur:14,wmGris:false,
           logoEntete:true,logoLargeur:3.7,police:"Marianne",taille:"11.5"},
     odj:[{titre:"Installation",points:[""]},{titre:"Fonctionnement",points:[""]},{titre:"Financier",points:[""]}]
   };
@@ -668,6 +741,8 @@ function fillFields(){
   refreshOutputs();
 }
 function refreshOutputs(){
+  const C=caComposition(S.opts);
+  $("#caComposition").textContent=C?C.total+" lignes – "+C.groups.map(g=>g.roles.length+" "+g.title.toLowerCase()).join(" · ")+(C.total!==C.nominal?" — Configuration particulière à vérifier (référence "+C.nominal+" sièges).":""):"Sélectionner le type de CA pour générer la liste nominative.";
   $("#oOpacity").textContent=Math.round(S.opts.wmOpacity)+" %";
   $("#oWmW").textContent=String(S.opts.wmLargeur).replace(".",",")+" cm";
   $("#oLogoW").textContent=Number(S.opts.logoLargeur).toFixed(1).replace(".",",")+" cm";
@@ -877,6 +952,7 @@ $("#btnDocx").onclick=async()=>{
 let pendingPV="";
 async function exportPV(pack){
  const btn=$("#"+(pack?"btnPackCA":"btnPV"));
+ if(!caComposition(S.opts)){toast("Choisissez d’abord la composition du CA dans Préparation du procès-verbal.");$("#caType").focus();return;}
  const model=buildModel(S);
  const missing=pack?missingFields(model):[...(!S.etab.nom.trim()?["Établissement"]:[]),...(!S.seance.date?["Date"]:[]),...(!S.seance.heure.trim()?["Heure"]:[]),...(!S.seance.lieu.trim()?["Lieu"]:[])];
  const key=(pack?"pack:":"pv:")+missing.join("|");
