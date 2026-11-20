@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Générateur de convocation au Conseil d'administration</title>
+<title>Générateur de convocation et de procès-verbal du Conseil d'administration</title>
 <style>
 :root{
   --bg:#f3f4f7; --panel:#fff; --ink:#1d2433; --muted:#667085; --line:#d9dde5;
@@ -102,16 +102,19 @@ input.file-hidden{display:none}
 <body>
 <header class="top">
   <a href="index.html" style="color:var(--muted);text-decoration:none;font-size:13px;white-space:nowrap">← Portail</a>
-  <h1>Convocation au Conseil d'administration<small>Remplissez les champs : l'aperçu se met à jour, puis téléchargez le document Word.</small></h1>
+  <h1>Conseil d'administration – Convocation et procès-verbal<small>Une seule saisie pour générer la convocation, l'ordre du jour et la trame de PV. L'aperçu présente la convocation et son ordre du jour.</small></h1>
   <button id="btnNew" title="Vide la séance et les points de l'ordre du jour (conserve l'établissement et les rubriques)">Nouveau CA</button>
   <button id="btnSave" title="Enregistre tout le paramétrage dans un fichier .json réutilisable ou partageable">Enregistrer le projet</button>
   <button id="btnOpen" title="Ouvre un projet .json enregistré">Ouvrir un projet</button>
   <input type="file" id="fileProject" class="file-hidden" accept=".json,application/json">
-  <button class="primary" id="btnDocx">⬇ Télécharger en Word</button>
+  <button id="btnDocx" title="Convocation et ordre du jour dans un document Word">⬇ Convocation + ODJ (.docx)</button>
+  <button id="btnPV" title="Trame de procès-verbal modifiable, reprenant les points saisis">⬇ Trame PV (.docx)</button>
+  <button class="primary" id="btnPackCA" title="Deux fichiers Word dans une seule archive ZIP">⬇ Dossier CA complet (.zip)</button>
 </header>
 
 <div class="layout">
 <div class="forms">
+  <details class="card"><summary>Préparation du procès-verbal</summary><div class="card-body"><p>Le PV reprend automatiquement l’établissement, la séance prévue, les rubriques et tous les points de l’ordre du jour. Il comporte les présences, le quorum, les observations, les décisions, les résultats de vote (si applicable), la clôture et les signatures.</p><p class="muted">La trame est à compléter d’après le déroulement réel de la séance et le règlement intérieur du CA. Aucun vote, quorum ou décision n’est présumé. Voir <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042728200" target="_blank" rel="noopener noreferrer">article R. 421-25 du Code de l’éducation</a>.</p><label class="check"><input type="checkbox" id="pvVotes" checked> Prévoir un espace de vote sous chaque point (à conserver uniquement si nécessaire)</label></div></details>
 
   <details class="card" open>
     <summary>1. Établissement <span class="hint">mémorisé d'une séance à l'autre</span></summary>
@@ -405,13 +408,16 @@ function fitCm(img,wCm,maxHcm){
   return [Math.round(w*CM), Math.round(h*CM)];
 }
 /* images = { logo:{bytes,w,h} | null, wm:{bytes,w,h} | null } (PNG) */
-function buildDocx(S,images){
+function buildDocx(S,images,mode="convocation",pvVotes=true){
   const M=buildModel(S), o=S.opts;
   const sz=Math.round(parseFloat(o.taille||"11.5")*2), small=19;
   const PAGE_W=11906, MARG=851, TXT_W=PAGE_W-2*MARG, COL1=4800, COL2=TXT_W-COL1;
   const useLogo = o.logoEntete && images.logo, useWm = o.filigrane && images.wm;
   let body="";
 
+  if(mode==="pv"){
+    body=buildPVBody(S,M,images,sz,small,pvVotes);
+  }else{
   /* En-tête : tableau sans bordure */
   let c1="";
   if(useLogo){ const [cx,cy]=fitCm(images.logo,parseFloat(o.logoLargeur)||3.7,4.5); c1+=wP(inlineImg("rIdLogo",1,cx,cy),{after:80}); }
@@ -444,6 +450,7 @@ function buildDocx(S,images){
   });
   if(O.questionsDiverses) body+=wP(wRuns("Question(s) diverse(s) :",{b:1,u:1}),{before:360,after:0});
 
+  }
   body+=`<w:sectPr>${useWm?`<w:headerReference w:type="default" r:id="rIdHdr"/>`:""}<w:pgSz w:w="${PAGE_W}" w:h="16838"/><w:pgMar w:top="${MARG}" w:right="${MARG}" w:bottom="${MARG}" w:left="${MARG}" w:header="425" w:footer="425" w:gutter="0"/></w:sectPr>`;
 
   const documentXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:document xmlns:w="${NS_W}" xmlns:r="${NS_R}" xmlns:wp="${NS_WP}" xmlns:a="${NS_A}" xmlns:pic="${NS_PIC}"><w:body>${body}</w:body></w:document>`;
@@ -468,7 +475,7 @@ function buildDocx(S,images){
   }
   const ct=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/><Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/>${useWm?`<Override PartName="/word/header1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/>`:""}<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/></Types>`;
   const now=new Date().toISOString().replace(/\.\d+Z$/,"Z");
-  const core=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc((M.titre||"Convocation")+" – "+(S.etab.nom||""))}</dc:title><dc:creator>${xesc(S.etab.nom||"")}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${now}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${now}</dcterms:modified></cp:coreProperties>`;
+  const core=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc((mode==="pv"?"Trame de procès-verbal":(M.titre||"Convocation"))+" – "+(S.etab.nom||""))}</dc:title><dc:creator>${xesc(S.etab.nom||"")}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${now}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${now}</dcterms:modified></cp:coreProperties>`;
 
   const all=[
     ["[Content_Types].xml",ct],
@@ -482,6 +489,63 @@ function buildDocx(S,images){
     ...files
   ];
   return zipStore(all);
+}
+
+/* Trame de PV préparatoire : aucune donnée de séance effective n'est déduite. */
+function buildPVBody(S,M,images,sz,small,pvVotes){
+ const w=(t,f={},p={})=>wP(wRuns(t,f),p);
+ const head=t=>w(t,{b:1,sz:sz+2},{before:220,after:90,keepNext:1});
+ const line=t=>w(t,{}, {after:100});
+ const fill=t=>line(t+" : ........................................................................................");
+ const blank=()=>line("........................................................................................................................");
+ const e=S.etab,se=S.seance,O=M.odj;
+ let body="";
+ if(S.opts.logoEntete&&images.logo){const [cx,cy]=fitCm(images.logo,parseFloat(S.opts.logoLargeur)||3.7,4.5);body+=wP(inlineImg("rIdLogo",1,cx,cy),{after:100});}
+ body+=w(need(e.nom,"Établissement"),{b:1,sz:sz+3},{after:40});
+ body+=w([e.adresse,[e.cp,e.ville].filter(Boolean).join(" ")].filter(Boolean).join(" – "),{sz:small},{after:180});
+ body+=w("PROCÈS-VERBAL DU CONSEIL D’ADMINISTRATION",{b:1,sz:sz+7},{jc:"center",after:80,keepNext:1});
+ body+=w("TRAME PRÉPARATOIRE — À COMPLÉTER ET À SOUMETTRE À VALIDATION",{i:1,sz:small},{jc:"center",after:240});
+ body+=line("Séance "+(se.nature==="extraordinaire"?"extraordinaire":"ordinaire")+" prévue le "+need(fmtDate(se.date,true),"date")+" à "+need(fmtHeure(se.heure,S.opts.formatHeure),"heure")+" – "+need(se.lieu,"lieu"));
+ body+=fill("Date effective (si différente)");
+ body+=fill("Heure effective d’ouverture");
+ body+=fill("Présidence de séance");
+ if(e.chef)body+=w("Chef d’établissement : "+e.chef,{sz:small},{after:80});
+ body+=fill("Secrétaire de séance");
+ body+=head("1. Présences et quorum");
+ for(const label of ["Membres titulaires présents","Suppléants siégeant en remplacement","Membres absents excusés","Membres absents non excusés","Invités / personnes entendues"]) {body+=fill(label);body+=blank();}
+ body+=line("Membres en exercice : ……    Membres présents habilités à siéger à l’ouverture : ……");
+ body+=line("Quorum requis (majorité des membres en exercice) : ……");
+ body+=line("Quorum constaté : ☐ atteint  ☐ non atteint  ☐ nouvelle réunion après défaut de quorum");
+ body+=fill("Observations / date de la précédente réunion le cas échéant");
+ body+=w("Rappel : article R. 421-25 du Code de l’éducation. Si le quorum n’est pas atteint à la première réunion, une nouvelle réunion est convoquée dans le délai réglementaire ; elle peut alors délibérer quel que soit le nombre de membres présents.",{i:1,sz:small},{after:160});
+ body+=head("2. Déroulement de la séance – points de l’ordre du jour");
+ body+=w("Indiquer les modifications éventuelles de l’ordre du jour et compléter les points effectivement examinés. Supprimer les rubriques de vote sans objet.",{i:1,sz:small},{after:120});
+ body+=fill("Ordre du jour effectivement examiné / modifications");
+ let n=0;
+ function point(p){
+   let z=w((++n)+". "+p,{b:1},{before:180,after:70,keepNext:1});
+   z+=w("Présentation, échanges et observations :",{b:1,sz:small},{after:40,keepNext:1})+blank()+blank();
+   z+=w("Décision / avis / suites à donner :",{b:1,sz:small},{after:40,keepNext:1})+blank();
+   if(pvVotes){
+     z+=w("Vote (si applicable – sinon supprimer) :",{b:1,sz:small},{after:40,keepNext:1});
+     z+=line("Modalité : …………  Votants : ……  Pour : ……  Contre : ……  Abstentions : ……");
+     z+=line("Blancs / nuls : ……   Résultat : ………………………   Référence de l’acte : ……………");
+   }
+   return z;
+ }
+ for(const rub of O.rubriques){
+   if(rub.titre)body+=head(rub.titre);
+   for(const p of rub.points)body+=point(p);
+ }
+ if(!O.rubriques.length)body+=point("[Point à compléter]");
+ if(O.questionsDiverses)body+=point("Questions diverses");
+ body+=head("3. Clôture de séance");
+ body+=fill("Heure de levée de séance")+fill("Prochaine séance (si fixée)")+fill("Annexes / documents joints");
+ body+=head("4. Validation et signatures");
+ body+=fill("Date d’adoption / de validation (selon les modalités applicables)");
+ body+=w("Présidence de séance                                      Secrétariat de séance",{b:1},{before:120,after:640});
+ body+=line("Nom et signature :                                            Nom et signature :");
+ return body;
 }
 
 /* ZIP minimal (méthode « stockée ») */
@@ -792,10 +856,10 @@ $("#btnDocx").onclick=async()=>{
   const btn=$("#btnDocx");
   if(miss.length && !pendingMissing){
     pendingMissing=true; toast("Champs non remplis (surlignés en jaune) : "+miss.join(", ")+". Cliquez de nouveau pour télécharger quand même.");
-    btn.textContent="⬇ Télécharger quand même"; setTimeout(()=>{pendingMissing=false;btn.textContent="⬇ Télécharger en Word";},5000);
+    btn.textContent="⬇ Télécharger quand même"; setTimeout(()=>{pendingMissing=false;btn.textContent="⬇ Convocation + ODJ (.docx)";},5000);
     return;
   }
-  pendingMissing=false; btn.textContent="⬇ Télécharger en Word";
+  pendingMissing=false; btn.textContent="⬇ Convocation + ODJ (.docx)";
   try{
     const images=await makeImages();
     const bytes=buildDocx(S,images);
@@ -808,6 +872,31 @@ $("#btnDocx").onclick=async()=>{
     if(ok) toast("Document Word généré : "+name);
   }catch(e){ console.error(e); toast("Erreur lors de la génération : "+e.message); }
 };
+
+/* Un seul ZIP évite les blocages de téléchargements multiples. */
+let pendingPV="";
+async function exportPV(pack){
+ const btn=$("#"+(pack?"btnPackCA":"btnPV"));
+ const model=buildModel(S);
+ const missing=pack?missingFields(model):[...(!S.etab.nom.trim()?["Établissement"]:[]),...(!S.seance.date?["Date"]:[]),...(!S.seance.heure.trim()?["Heure"]:[]),...(!S.seance.lieu.trim()?["Lieu"]:[])];
+ const key=(pack?"pack:":"pv:")+missing.join("|");
+ if(missing.length&&pendingPV!==key){pendingPV=key;toast("Champs non remplis : "+missing.join(", ")+". Cliquez de nouveau pour générer la trame.");setTimeout(()=>{if(pendingPV===key)pendingPV="";},6000);return;}
+ pendingPV="";btn.disabled=true;
+ try{
+   const images=await makeImages(), suffix=(slug(S.etab.nom)||"etablissement")+"_"+(S.seance.date||"date");
+   const pvName="Trame_PV_CA_"+suffix+".docx";
+   const mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+   const pv=buildDocx(S,images,"pv",$("#pvVotes").checked);
+   if(pack){
+     const convName="Convocation_CA_"+suffix+".docx";
+     const conv=buildDocx(S,images);
+     const zip=zipStore([[convName,conv],[pvName,pv]]);
+     if(await offerFile("Dossier_CA_"+suffix+".zip",zip,"application/zip"))toast("Dossier généré : deux documents Word.");
+   }else if(await offerFile(pvName,pv,mime))toast("Trame de procès-verbal générée.");
+ }catch(e){console.error(e);toast("Erreur lors de la génération : "+e.message);}finally{btn.disabled=false;}
+}
+$("#btnPV").onclick=()=>exportPV(false);
+$("#btnPackCA").onclick=()=>exportPV(true);
 
 $("#btnSave").onclick=async()=>{
   const data=JSON.stringify({...S,logo:LOGO},null,1);
