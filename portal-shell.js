@@ -8,6 +8,7 @@
  ['Cartes',[['colleges.html','Collèges publics'],['lycees.html','Lycées publics'],['carte-bassins-france.html','Bassins d’éducation — France'],['bassins-95.html','Bassins du Val-d’Oise'],['segpa.html','SEGPA'],['ulis.html','ULIS'],['upe2a.html','UPE2A — élèves allophones'],['classes-ha.html','Classes à horaires aménagés'],['sections-sportives.html','Sections sportives'],['sections-internationales.html','Sections internationales']]],
  ['Statistiques',[['tableau-ecoles.html','Effectifs des écoles'],['tableau-colleges.html','Effectifs et IPS des collèges'],['tableau-lycees.html','Effectifs et IPS des lycées']]],
  ['Gestion',[['repartition-sieges-ececa.html','Répartition des sièges — ECECA'],['convocation-ca.html','Convocation au conseil d’administration']]],
+ ['Outils pratiques',[["outils-pratiques.html#dnb","Simulateur DNB 2027"],["outils-pratiques.html#absences","Guide des absences"],["outils-pratiques.html#calendrier","Calendrier administratif"],["outils-pratiques.html#travail","Calculateur de temps de travail"],["outils-pratiques.html#courriers","Générateur de courriers"],["outils-pratiques.html#sorties","Sorties scolaires"],["outils-pratiques.html#delais","Calculateur de délais"],["outils-pratiques.html#partiel","Calculateur de temps partiel"],["outils-pratiques.html#applications","Annuaire des applications"]]],
  ['Guides & ressources',[['guide-aed.html','Gestion des AED'],['guide-digicod.html','DIGICOD'],['guide-demact.html','Dém’Act'],['glossaire.html','Glossaire des sigles']]]
  ];
  if(!document.querySelector('link[rel~="icon"]')){const icon=document.createElement('link');icon.rel='icon';icon.type='image/svg+xml';icon.href='logo-ressources.svg';document.head.append(icon)}
@@ -30,7 +31,7 @@
   const group=document.createElement('div');group.className='ps-group';
   const button=document.createElement('button');button.type='button';button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls','ps-panel-'+i);button.append(document.createTextNode(label));const caret=document.createElement('span');caret.className='ps-caret';caret.textContent='▾';caret.setAttribute('aria-hidden','true');button.append(caret);
   const panel=document.createElement('div');panel.className='ps-panel';panel.id='ps-panel-'+i;panel.hidden=true;
-  links.forEach(([href,title])=>{const a=document.createElement('a');a.href=href;a.textContent=title;if(current===href){a.setAttribute('aria-current','page');group.classList.add('is-current')}panel.append(a)});
+  links.forEach(([href,title])=>{const a=document.createElement('a');a.href=href;a.textContent=title;if(current===href || current+location.hash===href){a.setAttribute('aria-current','page');group.classList.add('is-current')}a.addEventListener('click',closeMobile);panel.append(a)});
   group.append(button,panel);nav.append(group);const item={button,panel};items.push(item);
   button.addEventListener('click',()=>{const open=panel.hidden;closeAll();if(open){panel.hidden=false;button.setAttribute('aria-expanded','true')}});
  });
