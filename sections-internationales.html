@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carte Section intl. — Collèges publics France</title>
+  <title>Collèges avec section internationale — France</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -101,13 +101,13 @@
     .pu-contact a { color: #1a56db; text-decoration: none; }
     .pu-contact a:hover { text-decoration: underline; }
 
-    @media (max-width: 650px) { .panel { display: none; } }
+    @media (max-width: 650px) { .wrap { flex-direction:column; } .panel { width:100%;max-height:48vh;border-left:0;border-top:1px solid #ddd; } .p-head { padding:7px;max-height:30vh;overflow:auto; } #map { min-height:30vh; } }
   </style>
   <link rel="stylesheet" href="portail-theme.css?v=20261118">
 <link rel="stylesheet" href="portal-shell.css?v=20261119">
 <script defer src="portal-shell.js?v=20261119"></script>
 </head>
-<body>
+<body data-dispositif="sections-internationales">
 <a href="index.html" style="position:fixed;top:12px;right:14px;z-index:9999;display:inline-flex;align-items:center;gap:5px;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 13px;box-shadow:0 2px 12px rgba(0,0,0,.25);font-family:system-ui,sans-serif;letter-spacing:.01em;transition:background .15s" onmouseover="this.style.background='rgba(30,64,128,.9)'" onmouseout="this.style.background='rgba(15,23,42,.85)'">← Portail</a>
 
 <header>
@@ -131,123 +131,18 @@
         <span class="search-icon">🔍</span>
         <input id="q" type="text" placeholder="Nom ou commune…" />
       </div>
-      <select id="dept"></select>
+      <select id="dept" aria-label="Département"></select>
+      <select id="acad" aria-label="Académie"></select>
+      <select id="statut" aria-label="Statut"></select>
+      <select id="detail" aria-label="Spécialité" hidden></select>
+      <button id="export" type="button" style="margin-top:8px;padding:5px 10px;border:1px solid #ddd;border-radius:6px">Exporter CSV (Excel)</button>
+      <div style="font-size:.72rem;margin-top:8px;line-height:1.4"><span id="source-status" role="status">Chargement des sources…</span> <a id="source-link" target="_blank" rel="noopener">Annuaire officiel</a> · <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053618879" target="_blank" rel="noopener">Arrêté 2026</a></div>
     </div>
     <div class="count-bar" id="cbar">—</div>
     <div class="list" id="list"></div>
   </div>
 </div>
 
-<script>
-const DATA_URL = 'data/sections-internationales.json';
-const LABEL    = 'Section internationale';
-const COLOR    = '#7e3af2';
-
-const map = L.map('map').setView([46.6, 2.3], 6);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors',
-  maxZoom: 19
-}).addTo(map);
-
-const markerLayer = L.layerGroup().addTo(map);
-let allData = [], markers = {};
-
-function mkIcon() {
-  return L.divIcon({
-    className: '',
-    html: `<div style="width:10px;height:10px;border-radius:50%;background:${COLOR};border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35)"></div>`,
-    iconSize: [10, 10], iconAnchor: [5, 5]
-  });
-}
-
-function mkPopup(e) {
-  const contact = [
-    e.tel  ? `📞 <a href="tel:${e.tel}">${e.tel}</a>` : '',
-    e.mail ? `✉️ <a href="mailto:${e.mail}">${e.mail}</a>` : '',
-    e.web  ? `🌐 <a href="${e.web}" target="_blank">Site web</a>` : '',
-  ].filter(Boolean).join('');
-
-  return `
-    <div class="pu-title">${e.nom}</div>
-    <span class="pu-badge">${LABEL}</span>
-    <div class="pu-info">
-      ${e.adr ? e.adr + '<br>' : ''}${e.cp} ${e.ville}
-    </div>
-    ${contact ? `<div class="pu-contact">${contact}</div>` : ''}
-  `;
-}
-
-function filtered() {
-  const q    = document.getElementById('q').value.trim().toLowerCase();
-  const dept = document.getElementById('dept').value;
-  return allData.filter(e =>
-    (!q    || e.nom.toLowerCase().includes(q) || e.ville.toLowerCase().includes(q)) &&
-    (!dept || e.dept === dept)
-  );
-}
-
-function render(data) {
-  markerLayer.clearLayers(); markers = {};
-  const icon = mkIcon();
-
-  data.forEach(e => {
-    const m = L.marker([e.lat, e.lng], { icon });
-    m.bindPopup(mkPopup(e), { maxWidth: 280 });
-    markerLayer.addLayer(m);
-    markers[e.uai] = m;
-  });
-
-  const list = document.getElementById('list');
-  document.getElementById('cbar').textContent =
-    `${data.length} établissement${data.length > 1 ? 's' : ''}`;
-
-  if (!data.length) {
-    list.innerHTML = '<div class="empty">Aucun résultat.</div>';
-    return;
-  }
-
-  list.innerHTML = data.map(e =>
-    `<div class="item" data-uai="${e.uai}">
-      <div class="iname">${e.nom}</div>
-      <div class="iloc">${e.cp} ${e.ville}${e.tel ? ' · ' + e.tel : ''}</div>
-    </div>`
-  ).join('');
-
-  list.querySelectorAll('.item').forEach(el => {
-    el.addEventListener('click', () => {
-      const m = markers[el.dataset.uai];
-      if (m) { map.flyTo(m.getLatLng(), 14, { duration: .7 }); m.openPopup(); }
-      list.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
-      el.classList.add('active');
-    });
-  });
-}
-
-function applyFilters() { render(filtered()); }
-
-(async () => {
-  try {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    allData = await res.json();
-
-    const depts = [...new Set(allData.map(e => e.dept).filter(Boolean))].sort();
-    const sel = document.getElementById('dept');
-    sel.innerHTML = '<option value="">Tous les départements</option>' +
-      depts.map(d => `<option value="${d}">Dépt. ${d}</option>`).join('');
-
-    document.getElementById('hcount').textContent = `${allData.length} collèges`;
-    applyFilters();
-    document.getElementById('q').addEventListener('input', applyFilters);
-    sel.addEventListener('change', applyFilters);
-
-  } catch (err) {
-    document.getElementById('loading').innerHTML =
-      `<span style="color:#dc2626">Erreur : ${err.message}<br>Vérifiez que data/sections-internationales.json existe.</span>`;
-    return;
-  }
-  document.getElementById('loading').style.display = 'none';
-})();
-</script>
+<script src="dispositifs-cartes.js?v=20261120"></script>
 </body>
 </html>

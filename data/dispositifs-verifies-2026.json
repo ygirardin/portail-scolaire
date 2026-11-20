@@ -1,0 +1,713 @@
+{
+  "sports": [
+    {
+      "uai": "0952114G",
+      "nom": "Collège Ariane",
+      "adr": "9 avenue de l'Espace",
+      "cp": "95100",
+      "ville": "Argenteuil",
+      "dept": "95",
+      "lat": 48.96075,
+      "lng": 2.25628,
+      "academie": "Versailles",
+      "details": [
+        "Judo"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951138W",
+      "nom": "Collège Jean-Jacques Rousseau",
+      "adr": "13 rue Jean-Jacques Rousseau",
+      "cp": "95100",
+      "ville": "Argenteuil",
+      "dept": "95",
+      "lat": 48.93661,
+      "lng": 2.22503,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951230W",
+      "nom": "Collège Eugénie Cotton",
+      "adr": "2 rue de Rethondes",
+      "cp": "95104",
+      "ville": "Argenteuil",
+      "dept": "95",
+      "lat": 48.94644,
+      "lng": 2.23016,
+      "academie": "Versailles",
+      "details": [
+        "Escalade"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950886X",
+      "nom": "Collège Claude Monet",
+      "adr": "2 mail Stendhal",
+      "cp": "95104",
+      "ville": "Argenteuil",
+      "dept": "95",
+      "lat": 48.9551,
+      "lng": 2.22339,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951823R",
+      "nom": "Collège Charles François Daubigny",
+      "adr": "6 rue Pierre Bérégovoy",
+      "cp": "95430",
+      "ville": "Auvers-sur-Oise",
+      "dept": "95",
+      "lat": 49.07628,
+      "lng": 2.16125,
+      "academie": "Versailles",
+      "details": [
+        "VTT"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950887Y",
+      "nom": "Collège Gabriel Péri",
+      "adr": "30 rue Pierre Altmeyer",
+      "cp": "95870",
+      "ville": "Bezons",
+      "dept": "95",
+      "lat": 48.93096,
+      "lng": 2.2043,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951401G",
+      "nom": "Collège La Justice",
+      "adr": "8 chemin des Mérites",
+      "cp": "95000",
+      "ville": "Cergy",
+      "dept": "95",
+      "lat": 49.04612,
+      "lng": 2.07113,
+      "academie": "Versailles",
+      "details": [
+        "Athlétisme"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950937C",
+      "nom": "Collège Les Touleuses",
+      "adr": "1 avenue du Bois",
+      "cp": "95000",
+      "ville": "Cergy",
+      "dept": "95",
+      "lat": 49.02824,
+      "lng": 2.07992,
+      "academie": "Versailles",
+      "details": [
+        "Canoë-kayak",
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0952236P",
+      "nom": "Collège Louise Weiss",
+      "adr": "1 avenue Georges Daressy",
+      "cp": "95240",
+      "ville": "Cormeilles-en-Parisis",
+      "dept": "95",
+      "lat": 48.95606,
+      "lng": 2.1893,
+      "academie": "Versailles",
+      "details": [
+        "Handball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950941G",
+      "nom": "Collège Jean Bullant",
+      "adr": "16 avenue Foch",
+      "cp": "95440",
+      "ville": "Ecouen",
+      "dept": "95",
+      "lat": 49.02826,
+      "lng": 2.36983,
+      "academie": "Versailles",
+      "details": [
+        "Badminton"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950930V",
+      "nom": "Collège Georges Pompidou",
+      "adr": "20 rue de la Coussaye",
+      "cp": "95880",
+      "ville": "Enghien-les-Bains",
+      "dept": "95",
+      "lat": 48.96482,
+      "lng": 2.30411,
+      "academie": "Versailles",
+      "details": [
+        "Voile"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951672B",
+      "nom": "Collège Léonard de Vinci",
+      "adr": "79 rue de Pierrelaye la Butte",
+      "cp": "95610",
+      "ville": "Éragny-sur-Oise",
+      "dept": "95",
+      "lat": 49.02233,
+      "lng": 2.11061,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950739M",
+      "nom": "Collège Antoine de Saint-Exupéry",
+      "adr": "25 rue du Syndicat",
+      "cp": "95120",
+      "ville": "Ermont",
+      "dept": "95",
+      "lat": 48.99422,
+      "lng": 2.24989,
+      "academie": "Versailles",
+      "details": [
+        "Volley-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950022H",
+      "nom": "Collège Bel Air",
+      "adr": "Ruelle du Moulin",
+      "cp": "95130",
+      "ville": "Franconville",
+      "dept": "95",
+      "lat": 48.99351,
+      "lng": 2.22345,
+      "academie": "Versailles",
+      "details": [
+        "VTT"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951100E",
+      "nom": "Collège Epine Guyon",
+      "adr": "46 rue des Onze Arpents",
+      "cp": "95130",
+      "ville": "Franconville",
+      "dept": "95",
+      "lat": 48.99049,
+      "lng": 2.21628,
+      "academie": "Versailles",
+      "details": [
+        "Gymnastique"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0952088D",
+      "nom": "Collège Jean-François Clervoy",
+      "adr": "8 avenue des Marais",
+      "cp": "95130",
+      "ville": "Franconville",
+      "dept": "95",
+      "lat": 48.98851,
+      "lng": 2.22056,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball féminin"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951098C",
+      "nom": "Collège Pablo Picasso",
+      "adr": "202 avenue Stalingrad",
+      "cp": "95140",
+      "ville": "Garges-lès-Gonesse",
+      "dept": "95",
+      "lat": 48.97262,
+      "lng": 2.41705,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950025L",
+      "nom": "Collège Philippe Auguste",
+      "adr": "4 rue de l'Eglantier",
+      "cp": "95500",
+      "ville": "Gonesse",
+      "dept": "95",
+      "lat": 48.98884,
+      "lng": 2.44134,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951920W",
+      "nom": "Collège François Truffaut",
+      "adr": "Avenue Léon Blum",
+      "cp": "95500",
+      "ville": "Gonesse",
+      "dept": "95",
+      "lat": 49.00438,
+      "lng": 2.42385,
+      "academie": "Versailles",
+      "details": [
+        "Athlétisme"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951050A",
+      "nom": "Collège Pierre Curie",
+      "adr": "166 boulevard Paul Vaillant Couturier",
+      "cp": "95190",
+      "ville": "Goussainville",
+      "dept": "95",
+      "lat": 49.03827,
+      "lng": 2.47878,
+      "academie": "Versailles",
+      "details": [
+        "Athlétisme"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950026M",
+      "nom": "Collège Maximilien de Robespierre",
+      "adr": "1 rue Claude Bernard",
+      "cp": "95190",
+      "ville": "Goussainville",
+      "dept": "95",
+      "lat": 49.03288,
+      "lng": 2.45561,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951921X",
+      "nom": "Collège Michel de Montaigne",
+      "adr": "7 avenue des Demoiselles",
+      "cp": "95190",
+      "ville": "Goussainville",
+      "dept": "95",
+      "lat": 49.0285,
+      "lng": 2.4544,
+      "academie": "Versailles",
+      "details": [
+        "Danse"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0952205F",
+      "nom": "Collège Isabelle Autissier",
+      "adr": "1 rue Jacques Tati",
+      "cp": "95220",
+      "ville": "Herblay-sur-Seine",
+      "dept": "95",
+      "lat": 49.00088,
+      "lng": 2.13895,
+      "academie": "Versailles",
+      "details": [
+        "Triathlon"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951527U",
+      "nom": "Collège Henri Guillaumet",
+      "adr": "Place Icare",
+      "cp": "95280",
+      "ville": "Jouy-le-Moutier",
+      "dept": "95",
+      "lat": 49.00847,
+      "lng": 2.04252,
+      "academie": "Versailles",
+      "details": [
+        "Voile"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950908W",
+      "nom": "Collège François Mauriac",
+      "adr": "80 rue de Paris",
+      "cp": "95380",
+      "ville": "Louvres",
+      "dept": "95",
+      "lat": 49.04281,
+      "lng": 2.50783,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951357J",
+      "nom": "Collège Anna de Noailles",
+      "adr": "Place de l'Europe",
+      "cp": "95270",
+      "ville": "Luzarches",
+      "dept": "95",
+      "lat": 49.10865,
+      "lng": 2.42341,
+      "academie": "Versailles",
+      "details": [
+        "Ultimate"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951051B",
+      "nom": "Collège Marcel Pagnol",
+      "adr": "Rue Emile Combres",
+      "cp": "95560",
+      "ville": "Montsoult",
+      "dept": "95",
+      "lat": 49.06709,
+      "lng": 2.32309,
+      "academie": "Versailles",
+      "details": [
+        "Ultimate"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951403J",
+      "nom": "Collège La Bruyère",
+      "adr": "118 chaussée Jules César",
+      "cp": "95520",
+      "ville": "Osny",
+      "dept": "95",
+      "lat": 49.05898,
+      "lng": 2.0459,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950934Z",
+      "nom": "Collège Georges Brassens",
+      "adr": "15 rue Jean Catelas",
+      "cp": "95340",
+      "ville": "Persan",
+      "dept": "95",
+      "lat": 49.15453,
+      "lng": 2.27426,
+      "academie": "Versailles",
+      "details": [
+        "Athlétisme"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0952325L",
+      "nom": "Collège Suzanne Lenglen",
+      "adr": "Impasse Louis Odinot",
+      "cp": "95340",
+      "ville": "Persan",
+      "dept": "95",
+      "lat": 49.1447,
+      "lng": 2.27188,
+      "academie": "Versailles",
+      "details": [
+        "Badminton"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950895G",
+      "nom": "Collège Simone Veil",
+      "adr": "3 rue Pierre de Coubertin",
+      "cp": "95000",
+      "ville": "Pontoise",
+      "dept": "95",
+      "lat": 49.04471,
+      "lng": 2.08324,
+      "academie": "Versailles",
+      "details": [
+        "Futsal"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950931W",
+      "nom": "Collège L'Ardillière de Nezant",
+      "adr": "Avenue de la Division Leclerc",
+      "cp": "95350",
+      "ville": "Saint-Brice-sous-Forêt",
+      "dept": "95",
+      "lat": 48.99568,
+      "lng": 2.34673,
+      "academie": "Versailles",
+      "details": [
+        "Futsal"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950037Z",
+      "nom": "Collège Jean Zay",
+      "adr": "6 rue Pierre Curie",
+      "cp": "95210",
+      "ville": "Saint-Gratien",
+      "dept": "95",
+      "lat": 48.96342,
+      "lng": 2.28094,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951190C",
+      "nom": "Collège Langevin-Wallon",
+      "adr": "19 rue Parmentier",
+      "cp": "95210",
+      "ville": "Saint-Gratien",
+      "dept": "95",
+      "lat": 48.96825,
+      "lng": 2.27955,
+      "academie": "Versailles",
+      "details": [
+        "Escrime"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951195H",
+      "nom": "Collège Marcel Pagnol",
+      "adr": "2 rue Louise Weiss",
+      "cp": "95310",
+      "ville": "Saint-Ouen-l'Aumône",
+      "dept": "95",
+      "lat": 49.03416,
+      "lng": 2.11524,
+      "academie": "Versailles",
+      "details": [
+        "Handball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950039B",
+      "nom": "Collège Le Parc",
+      "adr": "9 rue du Parc",
+      "cp": "95310",
+      "ville": "Saint-Ouen-l'Aumône",
+      "dept": "95",
+      "lat": 49.04077,
+      "lng": 2.11061,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951945Y",
+      "nom": "Collège Victor Hugo",
+      "adr": "68 rue Victor Hugo",
+      "cp": "95200",
+      "ville": "Sarcelles",
+      "dept": "95",
+      "lat": 48.99723,
+      "lng": 2.38194,
+      "academie": "Versailles",
+      "details": [
+        "Raid multisports"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950900M",
+      "nom": "Collège Anatole France",
+      "adr": "34 bis avenue Pierre Koenig",
+      "cp": "95200",
+      "ville": "Sarcelles",
+      "dept": "95",
+      "lat": 48.98068,
+      "lng": 2.38706,
+      "academie": "Versailles",
+      "details": [
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950943J",
+      "nom": "Collège Chantereine",
+      "adr": "Avenue de Chantereine",
+      "cp": "95200",
+      "ville": "Sarcelles",
+      "dept": "95",
+      "lat": 48.98449,
+      "lng": 2.37608,
+      "academie": "Versailles",
+      "details": [
+        "Rugby"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950045H",
+      "nom": "Collège Evariste Galois",
+      "adr": "13 rue Jean Giraudoux",
+      "cp": "95200",
+      "ville": "Sarcelles",
+      "dept": "95",
+      "lat": 48.97515,
+      "lng": 2.37466,
+      "academie": "Versailles",
+      "details": [
+        "Savoir nager"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951636M",
+      "nom": "Collège Les Toupets",
+      "adr": "46 avenue Louise Michel",
+      "cp": "95490",
+      "ville": "Vauréal",
+      "dept": "95",
+      "lat": 49.02166,
+      "lng": 2.02996,
+      "academie": "Versailles",
+      "details": [
+        "Basket-ball"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0951705M",
+      "nom": "Collège La Bussie",
+      "adr": "1 rue de la Sérénade",
+      "cp": "95490",
+      "ville": "Vauréal",
+      "dept": "95",
+      "lat": 49.03249,
+      "lng": 2.01986,
+      "academie": "Versailles",
+      "details": [
+        "Triathlon"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    },
+    {
+      "uai": "0950749Y",
+      "nom": "Collège Saint-Exupéry",
+      "adr": "42 avenue Pierre Sémard",
+      "cp": "95400",
+      "ville": "Villiers-le-Bel",
+      "dept": "95",
+      "lat": 49.00169,
+      "lng": 2.40563,
+      "academie": "Versailles",
+      "details": [
+        "Athlétisme",
+        "Football"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    }
+  ],
+  "international": [
+    {
+      "uai": "0950894F",
+      "nom": "Collège Jean-Claude Chabanne",
+      "adr": "10 impasse Chabanne",
+      "cp": "95300",
+      "ville": "Pontoise",
+      "dept": "95",
+      "lat": 49.05271,
+      "lng": 2.10171,
+      "academie": "Versailles",
+      "details": [
+        "Arabe",
+        "Britannique"
+      ],
+      "verification": "Rentrée 2026",
+      "statut": "Public"
+    }
+  ]
+}
