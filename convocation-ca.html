@@ -108,13 +108,14 @@ input.file-hidden{display:none}
   <button id="btnOpen" title="Ouvre un projet .json enregistré">Ouvrir un projet</button>
   <input type="file" id="fileProject" class="file-hidden" accept=".json,application/json">
   <button id="btnDocx" title="Convocation et ordre du jour dans un document Word">⬇ Convocation + ODJ (.docx)</button>
-  <button id="btnPV" title="Trame de procès-verbal modifiable, reprenant les points saisis">⬇ Trame PV (.docx)</button>
-  <button class="primary" id="btnPackCA" title="Deux fichiers Word dans une seule archive ZIP">⬇ Dossier CA complet (.zip)</button>
+  <button id="btnPV" title="Trame de procès-verbal modifiable avec feuille d’émargement en annexe">⬇ Trame PV (.docx)</button>
+  <button id="btnAttendance" title="Feuille d’émargement seule, prête à compléter et imprimer">⬇ Émargement (.docx)</button>
+  <button class="primary" id="btnPackCA" title="Convocation, procès-verbal et feuille d’émargement dans une archive ZIP">⬇ Dossier CA complet (.zip)</button>
 </header>
 
 <div class="layout">
 <div class="forms">
-  <details class="card" open><summary>Préparation du procès-verbal</summary><div class="card-body"><p>Le PV reprend automatiquement l’établissement, la séance prévue, les rubriques et tous les points de l’ordre du jour. Il comporte les présences, le quorum, les observations, les décisions, les résultats de vote (si applicable), la clôture et les signatures.</p><p class="muted">La trame est à compléter d’après le déroulement réel de la séance et le règlement intérieur du CA. Aucun vote, quorum ou décision n’est présumé. Voir <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042728200" target="_blank" rel="noopener noreferrer">article R. 421-25 du Code de l’éducation</a>.</p><div class="grid" style="margin:12px 0">
+  <details class="card" open><summary>Préparation du procès-verbal</summary><div class="card-body"><p>Le PV reprend automatiquement l’établissement, la séance prévue, les rubriques et tous les points de l’ordre du jour. Il comporte le quorum, les observations, les décisions, les résultats de vote (si applicable), la clôture et les signatures. Une feuille d’émargement compacte est annexée au PV et peut aussi être téléchargée seule.</p><p class="muted">La trame est à compléter d’après le déroulement réel de la séance et le règlement intérieur du CA. Aucun vote, quorum ou décision n’est présumé. Voir <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042728200" target="_blank" rel="noopener noreferrer">article R. 421-25 du Code de l’éducation</a>.</p><div class="grid" style="margin:12px 0">
 <label class="f full">Composition réglementaire du CA
 <select data-k="opts.caType" id="caType">
 <option value="">Choisir la composition</option>
@@ -429,10 +430,12 @@ function buildDocx(S,images,mode="convocation",pvVotes=true){
   const M=buildModel(S), o=S.opts;
   const sz=Math.round(parseFloat(o.taille||"11.5")*2), small=19;
   const PAGE_W=11906, MARG=851, TXT_W=PAGE_W-2*MARG, COL1=4800, COL2=TXT_W-COL1;
-  const useLogo = o.logoEntete && images.logo, useWm = o.filigrane && images.wm;
+  const useLogo = mode!=="attendance" && o.logoEntete && images.logo, useWm = mode!=="attendance" && o.filigrane && images.wm;
   let body="";
 
-  if(mode==="pv"){
+  if(mode==="attendance"){
+    body=buildAttendanceBody(S,small,false);
+  }else if(mode==="pv"){
     body=buildPVBody(S,M,images,sz,small,pvVotes);
   }else{
   /* En-tête : tableau sans bordure */
@@ -492,7 +495,7 @@ function buildDocx(S,images,mode="convocation",pvVotes=true){
   }
   const ct=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/><Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/>${useWm?`<Override PartName="/word/header1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/>`:""}<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/></Types>`;
   const now=new Date().toISOString().replace(/\.\d+Z$/,"Z");
-  const core=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc((mode==="pv"?"Trame de procès-verbal":(M.titre||"Convocation"))+" – "+(S.etab.nom||""))}</dc:title><dc:creator>${xesc(S.etab.nom||"")}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${now}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${now}</dcterms:modified></cp:coreProperties>`;
+  const core=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xesc((mode==="attendance"?"Liste d’émargement":mode==="pv"?"Trame de procès-verbal":(M.titre||"Convocation"))+" – "+(S.etab.nom||""))}</dc:title><dc:creator>${xesc(S.etab.nom||"")}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${now}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${now}</dcterms:modified></cp:coreProperties>`;
 
   const all=[
     ["[Content_Types].xml",ct],
@@ -539,20 +542,44 @@ function caComposition(o){
  if(lp&&o.caAdjoint&&o.caCpe)consult.push("CPE (consultatif s’il ne siège pas au titre des élus)");
  return {groups,total,nominal,consult,lycee};
 }
+/* Feuille d'émargement compacte, inspirée de la trame fournie. */
 function caRosterXml(C){
- const widths=[380,2940,2700,2400,1684],sum=widths.reduce((a,b)=>a+b,0);
- const cell=(v,i,b=false)=>'<w:tc><w:tcPr><w:tcW w:w="'+widths[i]+'" w:type="dxa"/>'+(b?'<w:shd w:fill="EAF0F8"/>':'')+'</w:tcPr>'+wP(wRuns(v,{b:b?1:0,sz:19}),{after:40,before:40})+'</w:tc>';
- const row=(vals,header=false)=>'<w:tr><w:trPr><w:cantSplit/>'+(header?'<w:tblHeader/>':'')+'</w:trPr>'+vals.map((v,i)=>cell(v,i,header)).join("")+'</w:tr>';
- const borders=["top","left","bottom","right","insideH","insideV"].map(k=>'<w:'+k+' w:val="single" w:sz="4" w:color="BFC8D3"/>').join("");
- let xml="",n=0;
- for(const g of C.groups){
-  xml+=wP(wRuns(g.title+" ("+g.roles.length+")",{b:1,sz:21}),{before:160,after:70,keepNext:1});
-  xml+='<w:tbl><w:tblPr><w:tblW w:w="'+sum+'" w:type="dxa"/><w:tblBorders>'+borders+'</w:tblBorders><w:tblLayout w:type="fixed"/></w:tblPr><w:tblGrid>'+widths.map(w=>'<w:gridCol w:w="'+w+'"/>').join("")+'</w:tblGrid>';
-  xml+=row(["N°","Fonction / siège","Nom du titulaire","Nom du remplaçant (si autorisé)","Présence"],true);
-  for(const role of g.roles)xml+=row([String(++n),role,"","",""]);
-  xml+="</w:tbl>";
+ const widths=[2550,2900,2850,1904],sum=widths.reduce((a,b)=>a+b,0);
+ const cell=(v,i,opt={})=>{
+   const span=opt.span||1, width=widths.slice(i,i+span).reduce((a,b)=>a+b,0);
+   const diagonal=opt.blocked?'<w:tcBorders><w:tl2br w:val="single" w:sz="4" w:color="777777"/><w:tr2bl w:val="single" w:sz="4" w:color="777777"/></w:tcBorders>':'';
+   return '<w:tc><w:tcPr><w:tcW w:w="'+width+'" w:type="dxa"/>'+(span>1?'<w:gridSpan w:val="'+span+'"/>':'')+(opt.merge?'<w:vMerge'+(opt.merge==="restart"?' w:val="restart"':'')+'/>':'')+diagonal+(opt.fill?'<w:shd w:val="clear" w:fill="'+opt.fill+'"/>':'')+'<w:vAlign w:val="center"/></w:tcPr>'+wP(wRuns(v,{b:opt.bold?1:0,sz:opt.sz||18}),{before:0,after:0,jc:opt.align||"center"})+'</w:tc>';
+ };
+ const row=(cells,height,header=false)=>'<w:tr><w:trPr><w:cantSplit/>'+(header?'<w:tblHeader/>':'')+'<w:trHeight w:val="'+height+'" w:hRule="atLeast"/></w:trPr>'+cells.join("")+'</w:tr>';
+ const borders=["top","left","bottom","right","insideH","insideV"].map(k=>'<w:'+k+' w:val="single" w:sz="6" w:color="424B58"/>').join("");
+ let xml='<w:tbl><w:tblPr><w:tblW w:w="'+sum+'" w:type="dxa"/><w:tblBorders>'+borders+'</w:tblBorders><w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="20" w:type="dxa"/><w:left w:w="70" w:type="dxa"/><w:bottom w:w="20" w:type="dxa"/><w:right w:w="70" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>'+widths.map(w=>'<w:gridCol w:w="'+w+'"/>').join("")+'</w:tblGrid>';
+ xml+=row([cell("Catégorie de membres",0,{merge:"restart",fill:"E5EAF2",bold:true}),cell("Membres",1,{span:2,fill:"E5EAF2",bold:true}),cell("Présence / signature",3,{merge:"restart",fill:"E5EAF2",bold:true})],330,true);
+ xml+=row([cell("",0,{merge:"continue",fill:"E5EAF2"}),cell("Titulaire",1,{bold:true,fill:"F0F3F8"}),cell("Suppléant",2,{bold:true,fill:"F0F3F8"}),cell("",3,{merge:"continue",fill:"E5EAF2"})],330,true);
+ let n=0;
+ const ranked=g=>g.title.startsWith("Personnalités qualifiées")?1:g.title.startsWith("Représentants des élèves")?2:0;
+ const groups=C.groups.slice().sort((a,b)=>ranked(a)-ranked(b));
+ for(const g of groups){
+  const blocked=g.title.startsWith("Membres de droit")||g.title.startsWith("Personnalités qualifiées");
+  const category=g.title.replace("Membres de droit – administration","Membres de droit").replace("Collectivités territoriales","Collectivité de rattachement").replace("Commune et intercommunalité","Commune siège / EPCI").replace("Personnels administratifs, sociaux, de santé, techniques, ouvriers et de service","Personnels ATOSS");
+  g.roles.forEach((role,i)=>{
+    const fill=(n++%2===0)?"DEE6F4":"FFFFFF";
+    xml+=row([cell(i===0?category+" ("+g.roles.length+")":"",0,{merge:i===0?"restart":"continue",fill:"FFFFFF",bold:true,sz:17}),cell("",1,{fill,align:"left"}),cell("",2,{fill:blocked?"B8BCC2":fill,blocked,align:"left"}),cell("",3,{fill})],390);
+  });
  }
- return xml;
+ return xml+"</w:tbl>";
+}
+function buildAttendanceBody(S,small,pageBreak){
+ const C=caComposition(S.opts);
+ if(!C)throw Error("Choisir la composition du CA.");
+ const e=S.etab,se=S.seance;
+ let body=wP(wRuns("LISTE D’ÉMARGEMENT – CONSEIL D’ADMINISTRATION",{b:1,sz:25}),{jc:"center",after:90,keepNext:1,pageBreakBefore:pageBreak?1:0});
+ body+=wP(wRuns(need(e.nom,"Établissement")+" – "+need(fmtDate(se.date,true),"date")+" à "+need(fmtHeure(se.heure,S.opts.formatHeure),"heure"),{sz:19}),{jc:"center",after:80,keepNext:1});
+ body+=wP(wRuns(C.total+" sièges à renseigner"+(C.total!==C.nominal?" (configuration particulière à vérifier)":"")+" • Une seule présence comptée par siège.",{sz:18,i:1}),{jc:"center",after:100,keepNext:1});
+ body+=caRosterXml(C);
+ body+=wP(wRuns("Présence : P = présent ; E = excusé ; A = absent ; V = vacant. Cases grisées : pas de suppléance ordinaire. Pour les élus, le suppléant est indiqué selon les règles de remplacement applicables.",{sz:16}),{before:80,after:40});
+ body+=wP(wRuns("Membres en exercice : ………     Présents habilités : ………     Quorum : ………",{sz:18,b:1}),{before:50,after:0});
+ if(C.consult.length)body+=wP(wRuns("Participants consultatifs (hors quorum) : "+C.consult.join(" ; ")+" — nom(s) : ………………………",{sz:16}),{before:50,after:0});
+ return body;
 }
 
 /* Trame de PV préparatoire : aucune donnée de séance effective n'est déduite. */
@@ -582,7 +609,7 @@ function buildPVBody(S,M,images,sz,small,pvVotes){
  if(C.total!==C.nominal)body+=w("Configuration particulière : vérifier la composition effective et les désignations avec les autorités compétentes.",{b:1,sz:small},{after:100});
  body+=w("Renseigner les noms dans les cellules vides. Présence : P = présent ; E = excusé ; A = absent ; V = siège vacant. Si remplacement autorisé, noter le nom du remplaçant et sa présence. Un seul siège est compté.",{i:1,sz:small},{after:100});
  if(C.lycee)body+=w("Représentants des élèves : identifier au moins un représentant des classes post-baccalauréat si elles existent.",{i:1,sz:small},{after:80});
- body+=caRosterXml(C);
+ body+=line("Liste nominative : voir la feuille d’émargement annexée au présent procès-verbal.");
  body+=head("Participants consultatifs / invités – hors quorum");
  for(const label of C.consult)body+=fill(label);
  body+=fill("Autres invités / personnes entendues")+blank()+blank();
@@ -618,6 +645,7 @@ function buildPVBody(S,M,images,sz,small,pvVotes){
  body+=fill("Date d’adoption / de validation (selon les modalités applicables)");
  body+=w("Présidence de séance                                      Secrétariat de séance",{b:1},{before:120,after:640});
  body+=line("Nom et signature :                                            Nom et signature :");
+ body+=buildAttendanceBody(S,small,true);
  return body;
 }
 
@@ -966,13 +994,23 @@ async function exportPV(pack){
    if(pack){
      const convName="Convocation_CA_"+suffix+".docx";
      const conv=buildDocx(S,images);
-     const zip=zipStore([[convName,conv],[pvName,pv]]);
-     if(await offerFile("Dossier_CA_"+suffix+".zip",zip,"application/zip"))toast("Dossier généré : deux documents Word.");
+     const sheet=buildDocx(S,{logo:null,wm:null},"attendance");
+     const zip=zipStore([[convName,conv],[pvName,pv],["Emargement_CA_"+suffix+".docx",sheet]]);
+     if(await offerFile("Dossier_CA_"+suffix+".zip",zip,"application/zip"))toast("Dossier généré : trois documents Word.");
    }else if(await offerFile(pvName,pv,mime))toast("Trame de procès-verbal générée.");
  }catch(e){console.error(e);toast("Erreur lors de la génération : "+e.message);}finally{btn.disabled=false;}
 }
 $("#btnPV").onclick=()=>exportPV(false);
 $("#btnPackCA").onclick=()=>exportPV(true);
+$("#btnAttendance").onclick=async()=>{
+ if(!caComposition(S.opts)){toast("Choisissez d’abord la composition du CA.");$("#caType").focus();return;}
+ const btn=$("#btnAttendance");btn.disabled=true;
+ try{
+  const suffix=(slug(S.etab.nom)||"etablissement")+"_"+(S.seance.date||"date");
+  const bytes=buildDocx(S,{logo:null,wm:null},"attendance");
+  if(await offerFile("Emargement_CA_"+suffix+".docx",bytes,"application/vnd.openxmlformats-officedocument.wordprocessingml.document"))toast("Feuille d’émargement générée.");
+ }catch(e){console.error(e);toast("Erreur : "+e.message);}finally{btn.disabled=false;}
+};
 
 $("#btnSave").onclick=async()=>{
   const data=JSON.stringify({...S,logo:LOGO},null,1);
