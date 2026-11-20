@@ -1,0 +1,31 @@
+name: Actualisation et contrôle des cartes
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/actualiser-dispositifs.py'
+      - '.github/workflows/actualiser-dispositifs.yml'
+  schedule:
+    - cron: '23 5 10 * *'
+permissions:
+  contents: write
+concurrency:
+  group: actualiser-dispositifs
+  cancel-in-progress: false
+jobs:
+  controle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger et valider les quatre annuaires
+        run: python3 scripts/actualiser-dispositifs.py
+      - name: Publier les exports contrôlés
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/ulis.json data/segpa.json data/sections-sportives.json data/sections-internationales.json data/dispositifs-metadata.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Actualiser les annuaires des dispositifs (MEN)"
+          git push origin HEAD:main
