@@ -1,0 +1,4492 @@
+{
+  "date": "2026-11-20",
+  "source": "https://data.onisep.fr/api/v1/downloads/60867458bb600/60867458bb600.csv",
+  "licence": "ODbL",
+  "ulis": {
+    "rows": {}
+  },
+  "segpa": {
+    "rows": {
+      "0131703F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0491675E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771661M": [
+        "HAS",
+        "PI"
+      ],
+      "0931181D": [
+        "Habitat",
+        "PI"
+      ],
+      "0220081U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594398K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0271336F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0720007S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0730904L": [
+        "HAS",
+        "PI"
+      ],
+      "0594301E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132401P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850117R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0570073V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0060840F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0350916F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0530005T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0920077J": [
+        "HAS",
+        "VDL"
+      ],
+      "0490028P": [
+        "ERE",
+        "HAS"
+      ],
+      "0720989J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0671984T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0240037K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0381903M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0691670R": [
+        "Habitat",
+        "VDL"
+      ],
+      "0950945L": [
+        "Habitat",
+        "VDL"
+      ],
+      "0640211G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0291880L": [
+        "ERE",
+        "Habitat"
+      ],
+      "0132217P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620099W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132208E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761691A": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0332288H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061237M": [
+        "HAS"
+      ],
+      "0692576A": [
+        "Habitat",
+        "VDL"
+      ],
+      "0931614Z": [
+        "HAS",
+        "VDL"
+      ],
+      "0211527W": [
+        "HAS",
+        "VDL"
+      ],
+      "0951190C": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0830181W": [
+        "ERE",
+        "HAS"
+      ],
+      "0780264N": [
+        "ERE",
+        "HAS"
+      ],
+      "0751707Y": [
+        "ERE",
+        "HAS"
+      ],
+      "0720847E": [
+        "ERE",
+        "HAS"
+      ],
+      "0890823L": [
+        "HAS",
+        "VDL"
+      ],
+      "0941015T": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720446C": [
+        "ERE",
+        "HAS"
+      ],
+      "0622574L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0596860L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622790W": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720021R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950891C": [
+        "Habitat",
+        "VDL"
+      ],
+      "0622264Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593673X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0240121B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951401G": [
+        "Habitat",
+        "VDL"
+      ],
+      "0572350V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572023P": [
+        "Habitat",
+        "VDL"
+      ],
+      "9740734E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0240962R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0211477S": [
+        "ERE",
+        "HAS"
+      ],
+      "0730810J": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720469C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0021688Z": [
+        "HAS",
+        "PI"
+      ],
+      "0880005C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0640227Z": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0240040N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0790978J": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0800018K": [
+        "ERE",
+        "HAS"
+      ],
+      "0890980G": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0620055Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0332283C": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0771657H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0760026R": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "9740909V": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0470104H": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0880154P": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "9720012F": [
+        "ERE",
+        "HAS"
+      ],
+      "9740596E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0881102V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850074U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593246H": [
+        "Habitat"
+      ],
+      "0730008M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780183A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692342W": [
+        "HAS",
+        "VDL"
+      ],
+      "0594402P": [
+        "VDL"
+      ],
+      "0441613P": [
+        "ERE",
+        "HAS"
+      ],
+      "0752187V": [
+        "ERE",
+        "Habitat"
+      ],
+      "0761951H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0573244S": [
+        "ERE",
+        "VDL"
+      ],
+      "0061666D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0491930G": [
+        "ERE",
+        "HAS"
+      ],
+      "0271482P": [
+        "HAS",
+        "PI"
+      ],
+      "0931497X": [
+        "PI"
+      ],
+      "0595163S": [
+        "Habitat"
+      ],
+      "0560002Y": [
+        "ERE",
+        "HAS"
+      ],
+      "0692579D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0595337F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601469W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0441930J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0600027D": [
+        "HAS",
+        "PI"
+      ],
+      "0720811R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0560020T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911027X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0470046V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0700786Z": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "9740093H": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0940791Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771363N": [
+        "HAS",
+        "PI"
+      ],
+      "0350970P": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0421454C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0720014Z": [
+        "ERE",
+        "Habitat"
+      ],
+      "0791002K": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0561330S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0331885V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0595595L": [
+        "ERE",
+        "HAS"
+      ],
+      "0790052C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692420F": [
+        "Habitat",
+        "VDL"
+      ],
+      "0530007V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0240047W": [
+        "Habitat",
+        "VDL"
+      ],
+      "0930620U": [
+        "HAS",
+        "PI"
+      ],
+      "0692339T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020055Z": [
+        "Habitat",
+        "VDL"
+      ],
+      "0740931K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0221509W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0470678G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0240924Z": [
+        "ERE",
+        "HAS"
+      ],
+      "0622576N": [
+        "Habitat",
+        "VDL"
+      ],
+      "0830182X": [
+        "Habitat",
+        "VDL"
+      ],
+      "0762091K": [
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0010974D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061001F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572009Z": [
+        "Habitat",
+        "VDL"
+      ],
+      "0594297A": [
+        "Habitat"
+      ],
+      "0251208C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0592714E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780420H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771513B": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0881120P": [
+        "ERE",
+        "Habitat",
+        "VDL"
+      ],
+      "0350775C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0211070Z": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0570010B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0762289A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0800034C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020056A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0170389F": [
+        "HAS",
+        "PI"
+      ],
+      "0931184G": [
+        "HAS",
+        "PI"
+      ],
+      "0801616X": [
+        "ERE",
+        "Habitat"
+      ],
+      "9740652R": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0950898K": [
+        "Habitat",
+        "VDL"
+      ],
+      "0880041S": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740812P": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0760118R": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0911252S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572587C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0940575P": [
+        "HAS",
+        "PI"
+      ],
+      "0390924T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0381810L": [
+        "Habitat",
+        "VDL"
+      ],
+      "0271173D": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0941025D": [
+        "ERE",
+        "Habitat"
+      ],
+      "0640608N": [
+        "HAS",
+        "Habitat",
+        "PI",
+        "VDL"
+      ],
+      "0740021W": [
+        "HAS",
+        "VDL"
+      ],
+      "9741346V": [
+        "HAS",
+        "PI"
+      ],
+      "0131262B": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0120878P": [
+        "Habitat",
+        "VDL"
+      ],
+      "0593666P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0590062X": [
+        "ERE",
+        "Habitat"
+      ],
+      "0593680E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0332187Y": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0010964T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620021L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440283U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0251589S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421798B": [
+        "Habitat"
+      ],
+      "0572180K": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0350895H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0755779Z": [
+        "ERE",
+        "PI"
+      ],
+      "0572017H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0694406P": [
+        "ERE",
+        "VDL"
+      ],
+      "0021492L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0491674D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0573361U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421451Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620219B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020067M": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740932V": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0440534S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911570M": [
+        "HAS",
+        "PI"
+      ],
+      "0550758A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0290045S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931433C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0331663D": [
+        "HAS",
+        "PI"
+      ],
+      "0931377S": [
+        "HAS",
+        "PI"
+      ],
+      "0931214P": [
+        "Habitat",
+        "PI"
+      ],
+      "0850147Y": [
+        "ERE",
+        "HAS"
+      ],
+      "0910973N": [
+        "Habitat",
+        "VDL"
+      ],
+      "0771422C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0801510G": [
+        "ERE",
+        "Habitat"
+      ],
+      "0251080N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0670017E": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0900007U": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0673006D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601847G": [
+        "ERE",
+        "Habitat"
+      ],
+      "0761950G": [
+        "HAS",
+        "PI"
+      ],
+      "0380278W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0332190B": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0623018U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0271284Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0581009G": [
+        "HAS"
+      ],
+      "0011067E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0790945Y": [
+        "Habitat",
+        "PI",
+        "VDL"
+      ],
+      "0440023L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572488V": [
+        "PI",
+        "VDL"
+      ],
+      "9740618D": [
+        "Habitat",
+        "VDL"
+      ],
+      "0131611F": [
+        "ERE",
+        "Habitat"
+      ],
+      "0800029X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0221513A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0160864C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0851716D": [
+        "Habitat",
+        "VDL"
+      ],
+      "0601449Z": [
+        "Habitat",
+        "VDL"
+      ],
+      "0550011N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0330108N": [
+        "ERE",
+        "HAS"
+      ],
+      "0400727Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0801371F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594300D": [
+        "Habitat",
+        "VDL"
+      ],
+      "0951230W": [
+        "PI",
+        "VDL"
+      ],
+      "0831196Z": [
+        "PI"
+      ],
+      "0671986V": [
+        "HAS",
+        "VDL"
+      ],
+      "0132407W": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0570326V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0730982W": [
+        "HAS",
+        "VDL"
+      ],
+      "0830013N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911745C": [
+        "ERE",
+        "VDL"
+      ],
+      "0761739C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594634S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0800019L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0700016M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061668F": [
+        "ERE",
+        "HAS"
+      ],
+      "0771759U": [
+        "ERE",
+        "VDL"
+      ],
+      "0601799E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0021598B": [
+        "Habitat",
+        "VDL"
+      ],
+      "0641392R": [
+        "HAS"
+      ],
+      "0070006U": [
+        "HAS",
+        "VDL"
+      ],
+      "0931148T": [
+        "Habitat",
+        "PI"
+      ],
+      "0910021D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622090K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0400026L": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0060911H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840035G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840437U": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0762080Y": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0561546B": [
+        "ERE"
+      ],
+      "0831053U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0170035W": [
+        "ERE",
+        "HAS"
+      ],
+      "0752900V": [
+        "Habitat"
+      ],
+      "0931707A": [
+        "ERE",
+        "HAS"
+      ],
+      "0332191C": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0640609P": [
+        "Habitat",
+        "VDL"
+      ],
+      "0400005N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0752385K": [
+        "HAS"
+      ],
+      "0331754C": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0740263J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0220184F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692343X": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720470D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0271316J": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0640069C": [
+        "ERE",
+        "HAS"
+      ],
+      "0021494N": [
+        "ERE",
+        "HAS"
+      ],
+      "0271317K": [
+        "ERE",
+        "HAS",
+        "VDL"
+      ],
+      "0631412T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0573268T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0781695U": [
+        "ERE",
+        "HAS"
+      ],
+      "0622094P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0890789Z": [
+        "ERE",
+        "PI"
+      ],
+      "0801512J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0071169H": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "9720513A": [
+        "ERE",
+        "HAS"
+      ],
+      "0623014P": [
+        "HAS",
+        "VDL"
+      ],
+      "0780185C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572088K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020002S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0251090Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0930891N": [
+        "HAS",
+        "PI"
+      ],
+      "0350891D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594309N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850082C": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0601487R": [
+        "HAS",
+        "VDL"
+      ],
+      "0720067G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0441608J": [
+        "HAS",
+        "VDL"
+      ],
+      "0331669K": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0270041Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0171118Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601190T": [
+        "Habitat"
+      ],
+      "0631522M": [
+        "Habitat",
+        "VDL"
+      ],
+      "0910009R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0801786G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593242D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0350708E": [
+        "HAS",
+        "Habitat"
+      ],
+      "7200612C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771878Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0760046M": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0261010G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572690P": [
+        "PI",
+        "VDL"
+      ],
+      "0931229F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020063H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771361L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572477H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0470105J": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0441859G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0290149E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0624343J": [
+        "HAS"
+      ],
+      "0260115J": [
+        "Habitat",
+        "VDL"
+      ],
+      "0211136W": [
+        "HAS",
+        "VDL"
+      ],
+      "0890822K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0560118Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0211230Y": [
+        "HAS",
+        "VDL"
+      ],
+      "0920855E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0801537L": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0030838V": [
+        "ERE",
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0331890A": [
+        "HAS",
+        "PI"
+      ],
+      "0931381W": [
+        "ERE",
+        "HAS"
+      ],
+      "0801485E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931145P": [
+        "Habitat",
+        "VDL"
+      ],
+      "0071156U": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0691799F": [
+        "ERE",
+        "HAS"
+      ],
+      "0931221X": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0681318N": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0880065T": [
+        "ERE",
+        "HAS"
+      ],
+      "0131605Z": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0850104B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950936B": [
+        "HAS",
+        "VDL"
+      ],
+      "0150016L": [
+        "Habitat"
+      ],
+      "0881146T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0720023J": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0593251N": [
+        "Habitat"
+      ],
+      "0441657M": [
+        "Habitat",
+        "VDL"
+      ],
+      "0780179W": [
+        "ERE",
+        "HAS"
+      ],
+      "0911127F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0561384A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931190N": [
+        "ERE",
+        "HAS"
+      ],
+      "0601367K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622095R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0580610Y": [
+        "PI",
+        "VDL"
+      ],
+      "0350969N": [
+        "HAS",
+        "Habitat"
+      ],
+      "9760008E": [
+        "ERE",
+        "HAS"
+      ],
+      "0021826Z": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0382786X": [
+        "HAS",
+        "VDL"
+      ],
+      "0061068D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0470720C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0922701L": [
+        "Habitat",
+        "VDL"
+      ],
+      "0641411L": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0061239P": [
+        "ERE",
+        "HAS"
+      ],
+      "0830928H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780507C": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720010D": [
+        "ERE",
+        "HAS"
+      ],
+      "0131608C": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI",
+        "VDL"
+      ],
+      "0730765K": [
+        "ERE",
+        "Habitat",
+        "VDL"
+      ],
+      "0670056X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0921908Z": [
+        "ERE",
+        "HAS"
+      ],
+      "0762764S": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0071320X": [
+        "ERE",
+        "HAS"
+      ],
+      "0470775M": [
+        "ERE",
+        "HAS"
+      ],
+      "0622269E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0160117R": [
+        "Habitat",
+        "VDL"
+      ],
+      "0741666J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0711252A": [
+        "HAS",
+        "PI"
+      ],
+      "0622874M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941224V": [
+        "HAS",
+        "PI"
+      ],
+      "0771656G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931223Z": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0771176K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622084D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421487N": [
+        "ERE",
+        "HAS"
+      ],
+      "0631763Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0160100X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941296Y": [
+        "ERE",
+        "Habitat",
+        "VDL"
+      ],
+      "0800002T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0721364S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132412B": [
+        "Habitat",
+        "VDL"
+      ],
+      "0950886X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950896H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911334F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0491764B": [
+        "ERE",
+        "HAS"
+      ],
+      "0601193W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0030860U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601297J": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0271098X": [
+        "HAS",
+        "PI"
+      ],
+      "0594389A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020090M": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0671690Y": [
+        "Habitat",
+        "VDL"
+      ],
+      "0351851X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0691728D": [
+        "HAS",
+        "VDL"
+      ],
+      "0760009X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0160866E": [
+        "HAS",
+        "PI"
+      ],
+      "0580620J": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0921496B": [
+        "HAS",
+        "VDL"
+      ],
+      "0860023H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0910971L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0741139L": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0631161V": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0132411A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0753936W": [
+        "HAS",
+        "VDL"
+      ],
+      "0911255V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0710155H": [
+        "Habitat",
+        "VDL"
+      ],
+      "0692583H": [
+        "HAS",
+        "Habitat"
+      ],
+      "7200012A": [
+        "ERE",
+        "PI"
+      ],
+      "0131746C": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0383437E": [
+        "Habitat",
+        "VDL"
+      ],
+      "0840664R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593254S": [
+        "Habitat",
+        "VDL"
+      ],
+      "0860076R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0010024W": [
+        "ERE",
+        "HAS"
+      ],
+      "0710534V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622868F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0311325X": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0430899U": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0560110R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0890035E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0351849V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593488W": [
+        "ERE",
+        "HAS"
+      ],
+      "0780262L": [
+        "ERE",
+        "Habitat"
+      ],
+      "0830823U": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0801341Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0291635V": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740841W": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "9740094J": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0921675W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0740032H": [
+        "ERE",
+        "HAS"
+      ],
+      "0911490A": [
+        "ERE",
+        "HAS"
+      ],
+      "0641561Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0560215E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0762227H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692700K": [
+        "Habitat",
+        "VDL"
+      ],
+      "0601834T": [
+        "HAS",
+        "PI"
+      ],
+      "0382428H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840068T": [
+        "Habitat",
+        "VDL"
+      ],
+      "0350963G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593681F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622299M": [
+        "Habitat",
+        "VDL"
+      ],
+      "0060841G": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720472F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0331884U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911491B": [
+        "ERE",
+        "HAS"
+      ],
+      "0860876K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0131968U": [
+        "ERE",
+        "HAS"
+      ],
+      "0593217B": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0132573B": [
+        "ERE",
+        "HAS"
+      ],
+      "0594648G": [
+        "ERE",
+        "HAS"
+      ],
+      "0491703K": [
+        "HAS",
+        "VDL"
+      ],
+      "0771567K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0890790A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951195H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0131369T": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0330103H": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0760075U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061130W": [
+        "ERE"
+      ],
+      "0260978X": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0711449P": [
+        "HAS",
+        "PI"
+      ],
+      "0781098V": [
+        "ERE",
+        "HAS"
+      ],
+      "0851193K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911025V": [
+        "ERE",
+        "HAS"
+      ],
+      "0771172F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0631120A": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0530779J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0251130T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0420968Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951527U": [
+        "ERE",
+        "HAS"
+      ],
+      "0890006Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0134022B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0391002C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0351909K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0760105B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572176F": [
+        "PI",
+        "VDL"
+      ],
+      "0700787A": [
+        "VDL"
+      ],
+      "7200160L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0381905P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850149A": [
+        "HAS",
+        "Habitat"
+      ],
+      "9741313J": [
+        "ERE",
+        "Habitat",
+        "PI"
+      ],
+      "0441935P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0030048L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0595178H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620051U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0762173Z": [
+        "ERE",
+        "HAS"
+      ],
+      "0331667H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0291089B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622791X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0700045U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620119T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020030X": [
+        "ERE",
+        "Habitat",
+        "VDL"
+      ],
+      "0950941G": [
+        "HAS",
+        "VDL"
+      ],
+      "0594640Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0351053E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0921242A": [
+        "Habitat",
+        "VDL"
+      ],
+      "0622268D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421607U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593244F": [
+        "VDL"
+      ],
+      "0382104F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594638W": [
+        "Habitat"
+      ],
+      "0261030D": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0900351T": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0291661Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0690075G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0250003T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601607W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572355A": [
+        "HAS",
+        "PI"
+      ],
+      "0590031N": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740011U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771420A": [
+        "Habitat",
+        "VDL"
+      ],
+      "0851304F": [
+        "ERE",
+        "HAS"
+      ],
+      "0692423J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0740124H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593663L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620014D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0671697F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0210029T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132409Y": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0840114T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440235S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931200Z": [
+        "HAS",
+        "PI"
+      ],
+      "0761778V": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0220104U": [
+        "ERE",
+        "HAS"
+      ],
+      "0595277R": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0720986F": [
+        "Habitat",
+        "VDL"
+      ],
+      "0291591X": [
+        "ERE",
+        "HAS"
+      ],
+      "0622420U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941035P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0270010P": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0620130E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0763406P": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0491859E": [
+        "HAS",
+        "VDL"
+      ],
+      "0840018N": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0594411Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0211162Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0441610L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0430820H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622943M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0921590D": [
+        "ERE",
+        "HAS"
+      ],
+      "0762459K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0211756V": [
+        "HAS",
+        "VDL"
+      ],
+      "0950934Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950926R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132327J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0241041B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761785C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0221991V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593482P": [
+        "Habitat"
+      ],
+      "0752198G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950045H": [
+        "HAS",
+        "PI"
+      ],
+      "0711490J": [
+        "Habitat",
+        "VDL"
+      ],
+      "0594362W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601177D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0830180V": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0950937C": [
+        "Habitat",
+        "VDL"
+      ],
+      "0760079Y": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0441545R": [
+        "ERE",
+        "HAS"
+      ],
+      "0731044N": [
+        "ERE",
+        "HAS"
+      ],
+      "0780569V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0580553L": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0291087Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761647C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0290151G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0130007M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0430906B": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0570097W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0631604B": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0240650B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440147W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840108L": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0050025A": [
+        "HAS",
+        "VDL"
+      ],
+      "0622273J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761782Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0790710T": [
+        "ERE",
+        "HAS",
+        "PI"
+      ],
+      "0593235W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0670066H": [
+        "Habitat",
+        "VDL"
+      ],
+      "0592733A": [
+        "Habitat"
+      ],
+      "0491262F": [
+        "HAS",
+        "VDL"
+      ],
+      "0692155T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931212M": [
+        "ERE",
+        "HAS"
+      ],
+      "0382043P": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0530078X": [
+        "ERE",
+        "Habitat"
+      ],
+      "0622799F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0782115A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0271095U": [
+        "ERE",
+        "HAS",
+        "PI"
+      ],
+      "0211225T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0932311G": [
+        "HAS",
+        "VDL"
+      ],
+      "0622096S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0560044U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0711054K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0691675W": [
+        "Habitat"
+      ],
+      "0680111B": [
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0594632P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061131X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132786H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0791134D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780506B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771912K": [
+        "ERE",
+        "HAS"
+      ],
+      "0931489N": [
+        "PI"
+      ],
+      "0560226S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0681373Y": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0950023J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0331759H": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0940006W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0730903K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594294X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0760108E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761954L": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0941229A": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0160882X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0710056A": [
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0260997T": [
+        "ERE",
+        "HAS"
+      ],
+      "0910042B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0681125D": [
+        "ERE"
+      ],
+      "0620026S": [
+        "ERE",
+        "Habitat"
+      ],
+      "0594287P": [
+        "Habitat"
+      ],
+      "0592905M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622863A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061244V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572174D": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720412R": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0240030C": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0331621H": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0720004N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0240053C": [
+        "ERE",
+        "HAS"
+      ],
+      "6200055R": [
+        "Habitat",
+        "VDL"
+      ],
+      "0692160Y": [
+        "HAS",
+        "VDL"
+      ],
+      "0672606U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0490953V": [
+        "ERE",
+        "Habitat"
+      ],
+      "0241011U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0030890B": [
+        "ERE",
+        "HAS"
+      ],
+      "0590050J": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740651P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780419G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0730853F": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0211150L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0050480V": [
+        "ERE",
+        "Habitat"
+      ],
+      "0490048L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0881145S": [
+        "ERE",
+        "Habitat"
+      ],
+      "9741048W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132323E": [
+        "HAS"
+      ],
+      "0311690U": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740572D": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0596059R": [
+        "Habitat"
+      ],
+      "0550020Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780256E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620170Y": [
+        "ERE",
+        "Habitat"
+      ],
+      "0021490J": [
+        "Habitat",
+        "VDL"
+      ],
+      "0593240B": [
+        "HAS",
+        "VDL"
+      ],
+      "0830145G": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0221748F": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0593231S": [
+        "Habitat"
+      ],
+      "0800041K": [
+        "ERE",
+        "HAS"
+      ],
+      "0160120U": [
+        "ERE",
+        "Habitat",
+        "VDL"
+      ],
+      "9720351Z": [
+        "ERE",
+        "HAS"
+      ],
+      "0530077W": [
+        "Habitat",
+        "VDL"
+      ],
+      "0622795B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941596Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0671691Z": [
+        "HAS"
+      ],
+      "0593237Y": [
+        "Habitat"
+      ],
+      "0772090D": [
+        "HAS",
+        "VDL"
+      ],
+      "0331757F": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0060842H": [
+        "ERE",
+        "HAS"
+      ],
+      "0850063G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941411Y": [
+        "ERE",
+        "PI"
+      ],
+      "0330084M": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0690007H": [
+        "ERE",
+        "HAS"
+      ],
+      "0622418S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692336P": [
+        "Habitat"
+      ],
+      "0351791G": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720428H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0580005R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0851159Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0755433Y": [
+        "HAS"
+      ],
+      "0931612X": [
+        "HAS",
+        "PI"
+      ],
+      "0900295G": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0040055N": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0221698B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0090573Z": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0381779C": [
+        "HAS",
+        "VDL"
+      ],
+      "7200727C": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740042C": [
+        "ERE",
+        "HAS"
+      ],
+      "0221537B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840029A": [
+        "ERE",
+        "HAS"
+      ],
+      "0382035F": [
+        "ERE",
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0691482L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780267S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780187E": [
+        "HAS",
+        "Habitat"
+      ],
+      "6200006M": [
+        "ERE",
+        "PI"
+      ],
+      "0840116V": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0170390G": [
+        "HAS",
+        "PI"
+      ],
+      "0771960M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0595190W": [
+        "Habitat"
+      ],
+      "0631126G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440348P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0752196E": [
+        "Habitat"
+      ],
+      "0620071R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951352D": [
+        "HAS",
+        "PI"
+      ],
+      "0830956N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931194T": [
+        "HAS",
+        "PI"
+      ],
+      "0761703N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0470103G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0640212H": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740702V": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0061211J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061277F": [
+        "HAS",
+        "VDL"
+      ],
+      "0790943W": [
+        "ERE",
+        "HAS"
+      ],
+      "0890977D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593494C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0560223N": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0594408W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0800017J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780265P": [
+        "HAS",
+        "VDL"
+      ],
+      "0921228K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440314C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0211452P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622428C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0830069Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931232J": [
+        "HAS",
+        "PI"
+      ],
+      "0680020C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950943J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0550014S": [
+        "ERE",
+        "VDL"
+      ],
+      "0260032U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601445V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594636U": [
+        "Habitat",
+        "VDL"
+      ],
+      "0940583Y": [
+        "HAS",
+        "VDL"
+      ],
+      "0290132L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941220R": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720565G": [
+        "HAS"
+      ],
+      "0741117M": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0681370V": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "9830474Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421570D": [
+        "Habitat",
+        "VDL"
+      ],
+      "0950932X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0390883Y": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0596694F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594527A": [
+        "HAS",
+        "VDL"
+      ],
+      "0251394E": [
+        "HAS",
+        "VDL"
+      ],
+      "0593252P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0881369K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0332347X": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0594401N": [
+        "Habitat"
+      ],
+      "0491928E": [
+        "ERE",
+        "HAS"
+      ],
+      "0641414P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0150729L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0690080M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0920880G": [
+        "HAS",
+        "PI"
+      ],
+      "9720084J": [
+        "HAS",
+        "PI"
+      ],
+      "0620024P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780258G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382110M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0260766S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761695E": [
+        "HAS",
+        "Habitat"
+      ],
+      "9741546M": [
+        "Habitat",
+        "VDL"
+      ],
+      "0330091V": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0421176A": [
+        "HAS",
+        "VDL"
+      ],
+      "0850604V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620096T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622951W": [
+        "ERE",
+        "HAS"
+      ],
+      "0440018F": [
+        "HAS",
+        "VDL"
+      ],
+      "0250056A": [
+        "ERE",
+        "HAS"
+      ],
+      "0271286B": [
+        "ERE",
+        "HAS",
+        "PI"
+      ],
+      "0692159X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0930593P": [
+        "HAS",
+        "PI"
+      ],
+      "0930893R": [
+        "HAS",
+        "PI"
+      ],
+      "0672130B": [
+        "HAS",
+        "VDL"
+      ],
+      "0931143M": [
+        "PI"
+      ],
+      "0921541A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0420916T": [
+        "ERE",
+        "HAS"
+      ],
+      "9740036W": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720447D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593658F": [
+        "VDL"
+      ],
+      "0691484N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0420035K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0170063B": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0762128A": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0011193S": [
+        "ERE",
+        "HAS"
+      ],
+      "0692414Z": [
+        "Habitat",
+        "VDL"
+      ],
+      "0830163B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0932272P": [
+        "PI"
+      ],
+      "0780571X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840759U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0132212J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0860792U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771342R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421919H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692340U": [
+        "ERE",
+        "VDL"
+      ],
+      "0332285E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382268J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0350967L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0800036E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0762170W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931226C": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740577J": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0750478M": [
+        "HAS",
+        "VDL"
+      ],
+      "0421797A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0470066S": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0761781Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0221621T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622871J": [
+        "ERE",
+        "HAS"
+      ],
+      "0332246M": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0572164T": [
+        "ERE",
+        "HAS"
+      ],
+      "0400103V": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0881147U": [
+        "Habitat",
+        "PI"
+      ],
+      "0590030M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622572J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0750445B": [
+        "Habitat",
+        "VDL"
+      ],
+      "0850639H": [
+        "ERE",
+        "VDL"
+      ],
+      "0260789S": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0271289E": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0010041P": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0690099H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911443Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0623023Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0260850H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622789V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0160106D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0333213N": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0390028U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0010008D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951697D": [
+        "HAS",
+        "PI"
+      ],
+      "0131756N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0830837J": [
+        "Habitat",
+        "VDL"
+      ],
+      "0951100E": [
+        "Habitat",
+        "PI"
+      ],
+      "0692335N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0691666L": [
+        "HAS",
+        "VDL"
+      ],
+      "6200041A": [
+        "Habitat",
+        "VDL"
+      ],
+      "0490844B": [
+        "ERE",
+        "HAS"
+      ],
+      "0741341F": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0400096M": [
+        "HAS",
+        "Habitat",
+        "PI",
+        "VDL"
+      ],
+      "0701192R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0950888Z": [
+        "Habitat",
+        "VDL"
+      ],
+      "0831218Y": [
+        "ERE",
+        "HAS"
+      ],
+      "9760230W": [
+        "ERE",
+        "HAS"
+      ],
+      "0911036G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0781108F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0330140Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0623115Z": [
+        "ERE",
+        "HAS"
+      ],
+      "0940551N": [
+        "ERE",
+        "HAS"
+      ],
+      "0390798F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850067L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593103C": [
+        "HAS"
+      ],
+      "0550701N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0590271Z": [
+        "Habitat"
+      ],
+      "0170142M": [
+        "HAS",
+        "VDL"
+      ],
+      "0331880P": [
+        "HAS",
+        "VDL"
+      ],
+      "0595176F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0131704G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0772246Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620036C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593672W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0430135N": [
+        "HAS",
+        "PI"
+      ],
+      "0380357G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771478N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0381907S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0680084X": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "PI",
+        "VDL"
+      ],
+      "0021493M": [
+        "PI",
+        "VDL"
+      ],
+      "0941095E": [
+        "Habitat",
+        "VDL"
+      ],
+      "0601524F": [
+        "Habitat",
+        "VDL"
+      ],
+      "0440311Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0550840P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601188R": [
+        "HAS",
+        "PI"
+      ],
+      "0030050N": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0330163Y": [
+        "HAS",
+        "PI"
+      ],
+      "0530053V": [
+        "HAS",
+        "VDL"
+      ],
+      "0120622L": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720682J": [
+        "HAS",
+        "PI"
+      ],
+      "0752190Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622947S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593120W": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0950939E": [
+        "ERE",
+        "VDL"
+      ],
+      "0783248G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622907Y": [
+        "ERE",
+        "VDL"
+      ],
+      "0771475K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0921545E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0830734X": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0861457S": [
+        "ERE"
+      ],
+      "9740574F": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "9720448E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0741665H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0010938P": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0121297V": [
+        "HAS",
+        "PI"
+      ],
+      "0931379U": [
+        "Habitat",
+        "VDL"
+      ],
+      "0631688T": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0831610Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0921168V": [
+        "ERE",
+        "HAS"
+      ],
+      "0762679Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0441724K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0620180J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0780572Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0781662H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0331619F": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "9740645H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0921239X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0121430P": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0560108N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0640214K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0131705H": [
+        "HAS",
+        "Habitat"
+      ],
+      "9740735F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0770051M": [
+        "PI",
+        "VDL"
+      ],
+      "0560214D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0560102G": [
+        "ERE",
+        "HAS"
+      ],
+      "0910859P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0721090U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0290064M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771659K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0622261W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0631451K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440308W": [
+        "Habitat",
+        "VDL"
+      ],
+      "0761956N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0580017D": [
+        "ERE",
+        "PI"
+      ],
+      "0311580Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0760017F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382174G": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0620088J": [
+        "ERE",
+        "Habitat"
+      ],
+      "0593180L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0700904C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0441862K": [
+        "Habitat",
+        "VDL"
+      ],
+      "0451788Z": [
+        "ERE",
+        "HAS"
+      ],
+      "0050519M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911146B": [
+        "Habitat",
+        "VDL"
+      ],
+      "0382147C": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0801373H": [
+        "Habitat",
+        "VDL"
+      ],
+      "0921543C": [
+        "ERE",
+        "VDL"
+      ],
+      "0291102R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941603G": [
+        "ERE"
+      ],
+      "0010802S": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0381908T": [
+        "Habitat",
+        "VDL"
+      ],
+      "0801264P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601153C": [
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0593185S": [
+        "Habitat"
+      ],
+      "0780263M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0491648A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0692157V": [
+        "Habitat",
+        "VDL"
+      ],
+      "0593662K": [
+        "Habitat"
+      ],
+      "0421172W": [
+        "ERE",
+        "VDL"
+      ],
+      "0911185U": [
+        "HAS",
+        "PI"
+      ],
+      "0020075W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594394F": [
+        "ERE",
+        "HAS"
+      ],
+      "0771339M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0060799L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0752252R": [
+        "Habitat",
+        "VDL"
+      ],
+      "0931610V": [
+        "HAS",
+        "PI"
+      ],
+      "0691664J": [
+        "VDL"
+      ],
+      "0441548U": [
+        "ERE",
+        "Habitat"
+      ],
+      "0750507U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0595172B": [
+        "ERE",
+        "HAS"
+      ],
+      "0350913C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911257X": [
+        "Habitat",
+        "VDL"
+      ],
+      "0311330C": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0220082V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771331D": [
+        "Habitat",
+        "VDL"
+      ],
+      "0911029Z": [
+        "HAS",
+        "PI"
+      ],
+      "0240119Z": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0061738G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941022A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0830003C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951098C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020024R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0291875F": [
+        "ERE",
+        "HAS"
+      ],
+      "0720001K": [
+        "ERE",
+        "PI"
+      ],
+      "0690036P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0570317K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0270032N": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0720797A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0061824A": [
+        "ERE",
+        "HAS"
+      ],
+      "9740811N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0131548M": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0931713G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0060019N": [
+        "ERE",
+        "HAS"
+      ],
+      "0880151L": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0690626F": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0940617K": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931528F": [
+        "ERE",
+        "HAS"
+      ],
+      "0931151W": [
+        "Habitat",
+        "PI"
+      ],
+      "0631238D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601192V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440008V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0711294W": [
+        "HAS",
+        "Habitat"
+      ],
+      "7200086F": [
+        "VDL"
+      ],
+      "0070042H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0530061D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0251395F": [
+        "HAS",
+        "VDL"
+      ],
+      "0622262X": [
+        "Habitat",
+        "VDL"
+      ],
+      "0720902P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941033M": [
+        "HAS",
+        "PI",
+        "VDL"
+      ],
+      "0762093M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0130163G": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0421852K": [
+        "ERE",
+        "Habitat"
+      ],
+      "0030010V": [
+        "ERE",
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0590103S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593667R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0831012Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594412A": [
+        "HAS",
+        "VDL"
+      ],
+      "0771768D": [
+        "HAS"
+      ],
+      "0692419E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382036G": [
+        "HAS",
+        "PI"
+      ],
+      "0291867X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593674Y": [
+        "HAS",
+        "Habitat"
+      ],
+      "0711069B": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0590091D": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720861D": [
+        "HAS"
+      ],
+      "0530041G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0840583C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0440221B": [
+        "HAS",
+        "PI"
+      ],
+      "0440316E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421686E": [
+        "Habitat",
+        "VDL"
+      ],
+      "0040022C": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0921394R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0931607S": [
+        "HAS",
+        "PI"
+      ],
+      "0382426F": [
+        "HAS"
+      ],
+      "0430917N": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382115T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0572348T": [
+        "HAS",
+        "Habitat"
+      ],
+      "9720017L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0711293V": [
+        "ERE",
+        "HAS"
+      ],
+      "9740598G": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0911574S": [
+        "Habitat",
+        "VDL"
+      ],
+      "0350002M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594645D": [
+        "HAS",
+        "Habitat"
+      ],
+      "0270043A": [
+        "HAS",
+        "PI"
+      ],
+      "0950739M": [
+        "HAS"
+      ],
+      "9740035V": [
+        "HAS",
+        "Habitat"
+      ],
+      "0441616T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0920885M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593484S": [
+        "HAS",
+        "Habitat"
+      ],
+      "0720069J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911335G": [
+        "HAS",
+        "VDL"
+      ],
+      "7200025P": [
+        "HAS",
+        "Habitat"
+      ],
+      "0421084A": [
+        "Habitat",
+        "VDL"
+      ],
+      "0332090T": [
+        "HAS",
+        "Habitat"
+      ],
+      "0690053H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0492004M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0601178E": [
+        "ERE",
+        "HAS",
+        "PI"
+      ],
+      "0950026M": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0930894S": [
+        "ERE",
+        "PI"
+      ],
+      "0740071A": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0631153L": [
+        "HAS",
+        "Habitat"
+      ],
+      "0754528P": [
+        "Habitat",
+        "VDL"
+      ],
+      "0572166V": [
+        "HAS",
+        "PI"
+      ],
+      "0860984C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850145W": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382266G": [
+        "HAS",
+        "Habitat"
+      ],
+      "0594290T": [
+        "Habitat"
+      ],
+      "0170071K": [
+        "ERE",
+        "HAS"
+      ],
+      "0754355B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941971G": [
+        "HAS"
+      ],
+      "0132491M": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0861073Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0771766B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0070848J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0490962E": [
+        "ERE",
+        "Habitat"
+      ],
+      "0740038P": [
+        "ERE",
+        "HAS"
+      ],
+      "0601191U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941348E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0561332U": [
+        "HAS",
+        "Habitat"
+      ],
+      "0020007X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0382495F": [
+        "HAS",
+        "Habitat"
+      ],
+      "0860053R": [
+        "HAS",
+        "Habitat"
+      ],
+      "0941299B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0210014B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0593155J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0770019C": [
+        "HAS",
+        "Habitat"
+      ],
+      "0442807M": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0170081W": [
+        "HAS",
+        "Habitat",
+        "PI",
+        "VDL"
+      ],
+      "0251949H": [
+        "HAS",
+        "Habitat"
+      ],
+      "0740910M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0920624D": [
+        "HAS",
+        "VDL"
+      ],
+      "0291085X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0850065J": [
+        "HAS",
+        "Habitat"
+      ],
+      "0951142A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761701L": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ],
+      "0352069J": [
+        "ERE",
+        "HAS",
+        "Habitat"
+      ],
+      "0251373G": [
+        "HAS"
+      ],
+      "0622424Y": [
+        "ERE",
+        "Habitat"
+      ],
+      "0150029A": [
+        "HAS",
+        "Habitat"
+      ],
+      "0580669M": [
+        "HAS",
+        "Habitat"
+      ],
+      "0761741E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0831274J": [
+        "ERE",
+        "HAS"
+      ],
+      "0590002G": [
+        "Habitat"
+      ],
+      "0851158X": [
+        "HAS",
+        "Habitat"
+      ],
+      "0390907Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0530484N": [
+        "HAS",
+        "VDL"
+      ],
+      "0710536X": [
+        "HAS",
+        "PI"
+      ],
+      "0131712R": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0640229B": [
+        "HAS",
+        "Habitat"
+      ],
+      "0290333E": [
+        "ERE",
+        "Habitat"
+      ],
+      "0490860U": [
+        "HAS",
+        "Habitat",
+        "VDL"
+      ],
+      "0911396Y": [
+        "ERE",
+        "HAS"
+      ],
+      "0250005V": [
+        "HAS",
+        "PI"
+      ],
+      "0622793Z": [
+        "HAS",
+        "Habitat"
+      ],
+      "0911402E": [
+        "HAS",
+        "Habitat"
+      ],
+      "0171120A": [
+        "HAS",
+        "Habitat",
+        "PI"
+      ]
+    }
+  }
+}
