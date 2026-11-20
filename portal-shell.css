@@ -6,8 +6,8 @@
 #ps-shell [hidden]{display:none!important}
 #ps-shell .ps-inner{max-width:1440px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;justify-content:space-between}
 #ps-shell a{text-decoration:none;color:inherit}
-#ps-shell .ps-brand{display:flex;align-items:center;gap:10px;flex-shrink:0;font:700 17px/1.1 'Space Grotesk',Inter,system-ui,sans-serif;white-space:nowrap;letter-spacing:-.03em}
-#ps-shell .ps-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(140deg,#5b57e9,#228cba);color:white;box-shadow:0 5px 14px rgba(76,85,215,.2);font:800 12px/1 Inter,system-ui,sans-serif;letter-spacing:.04em}
+#ps-shell .ps-brand{display:flex;align-items:center;gap:10px;flex-shrink:0;font:700 17px/1.1 'Space Grotesk',Inter,system-ui,sans-serif;white-space:normal;min-width:0;letter-spacing:-.03em}
+#ps-shell .ps-mark{flex:0 0 auto;width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(140deg,#5b57e9,#228cba);color:white;box-shadow:0 5px 14px rgba(76,85,215,.2);font:800 12px/1 Inter,system-ui,sans-serif;letter-spacing:.04em}
 #ps-shell .ps-nav{display:flex;align-items:center;gap:4px;margin:0;padding:0;position:static;width:auto;height:auto;border:0;overflow:visible;background:none;color:var(--ps-ink)}
 #ps-shell button{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:transparent;color:#42506b;border:1px solid transparent;border-radius:10px;padding:9px 10px;font:700 13px/1.35 Inter,system-ui,sans-serif;white-space:nowrap;cursor:pointer;box-shadow:none;min-height:38px;margin:0;transform:none}
 #ps-shell button:hover,#ps-shell button[aria-expanded=true],#ps-shell .ps-group.is-current>button{background:#eef0ff;color:#393ab9}
@@ -37,7 +37,7 @@ html.ps-ready[data-portal-page=maintenance] body{flex-direction:column;justify-c
 html.ps-ready[data-portal-page=maintenance] .box{margin:24px auto;max-width:calc(100% - 32px);color:#e8eaf0}
 html.ps-ready[data-portal-page=frame] body{display:flex;flex-direction:column;height:100dvh;margin:0;overflow:hidden}
 html.ps-ready[data-portal-page=frame] #ps-frame{flex:1 1 auto;min-height:0;width:100%;border:0;display:block}
-@media(max-width:920px){
+@media(max-width:1040px){
  #ps-shell .ps-inner{padding:0 14px;gap:10px}
  #ps-shell .ps-toggle{display:inline-flex}
  #ps-shell .ps-nav{display:none;position:absolute;top:100%;left:0;right:0;width:100%;height:auto;max-height:calc(100dvh - var(--ps-nav-height));overflow-y:auto;flex-direction:column;align-items:stretch;background:white;padding:10px 14px 18px;border-bottom:1px solid var(--ps-line);box-shadow:0 16px 28px rgba(25,34,78,.15)}
@@ -47,3 +47,9 @@ html.ps-ready[data-portal-page=frame] #ps-frame{flex:1 1 auto;min-height:0;width
 }
 @media(max-width:420px){#ps-shell .ps-brand{font-size:15px;gap:8px}#ps-shell .ps-mark{width:34px;height:34px}#ps-shell .ps-inner{padding:0 10px}}
 @media print{#ps-shell{display:none!important}html.ps-ready{scroll-padding-top:0}}
+
+#ps-shell .ps-mark svg{display:block;width:23px;height:23px}
+#ps-shell .ps-brand-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+#ps-shell .ps-brand-name{line-height:1.1}
+#ps-shell .ps-brand-sub{font:600 11px/1.2 Inter,system-ui,sans-serif;color:#68758f;letter-spacing:0}
+@media(max-width:420px){#ps-shell .ps-brand{flex:1 1 auto;font-size:14px}#ps-shell .ps-brand-sub{font-size:10px}#ps-shell .ps-toggle{flex:0 0 auto}#ps-shell .ps-mark svg{width:21px;height:21px}}

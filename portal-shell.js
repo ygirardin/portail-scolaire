@@ -1,5 +1,5 @@
 
-/* Menu unique du Portail scolaire. Le catalogue ne dépend pas d'une page particulière. */
+/* Menu unique de Ressources administratives. Le catalogue ne dépend pas d'une page particulière. */
 (function(){
  'use strict';
  if(document.getElementById('ps-shell') || window.self!==window.top)return;
@@ -10,12 +10,13 @@
  ['Gestion',[['repartition-sieges-ececa.html','Répartition des sièges — ECECA'],['convocation-ca.html','Convocation au conseil d’administration']]],
  ['Guides & ressources',[['guide-aed.html','Gestion des AED'],['guide-digicod.html','DIGICOD'],['guide-demact.html','Dém’Act'],['glossaire.html','Glossaire des sigles']]]
  ];
+ if(!document.querySelector('link[rel~="icon"]')){const icon=document.createElement('link');icon.rel='icon';icon.type='image/svg+xml';icon.href='logo-ressources.svg';document.head.append(icon)}
  const raw=location.pathname.split('/').pop()||'index.html';
  const current=raw==='tableau-ecoles-portail.html'?'tableau-ecoles.html':raw;
  const shell=document.createElement('div');shell.id='ps-shell';shell.setAttribute('role','banner');
  const inner=document.createElement('div');inner.className='ps-inner';shell.append(inner);
- const brand=document.createElement('a');brand.href='index.html';brand.className='ps-brand';brand.setAttribute('aria-label','Portail scolaire — accueil');
- brand.innerHTML='<span class="ps-mark" aria-hidden="true">EDU</span><span>Portail Scolaire</span>';
+ const brand=document.createElement('a');brand.href='index.html';brand.className='ps-brand';brand.setAttribute('aria-label','Ressources administratives — accueil');
+ brand.innerHTML='<span class="ps-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 4.5h4v15H3zM9 4.5h4v15H9zM15.5 5.5l3.7-1.2 4.1 13.9-3.8 1.2zM3 8h4m2 0h4M3 16h4m2 0h4"/></svg></span><span class="ps-brand-copy"><span class="ps-brand-name">Ressources administratives</span><span class="ps-brand-sub">Éducation nationale</span></span>';
  if(current==='index.html')brand.setAttribute('aria-current','page');
  inner.append(brand);
  const mobile=document.createElement('button');mobile.type='button';mobile.className='ps-toggle';mobile.textContent='☰ Menu';mobile.setAttribute('aria-expanded','false');mobile.setAttribute('aria-controls','ps-nav');
