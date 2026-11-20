@@ -10,11 +10,13 @@
     "lng": 5.92548,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Nancy-Metz"
+    "academie": "Nancy-Metz",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0682018Z",
@@ -27,11 +29,21 @@
     "lng": 7.19555,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A-EANA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
     "nsa": null,
-    "academie": "Strasbourg"
+    "academie": "Strasbourg",
+    "sourceDate": "2026-2027",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026",
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ]
   },
   {
     "uai": "0090574A",
@@ -44,11 +56,13 @@
     "lng": 1.15048,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Toulouse"
+    "academie": "Toulouse",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0580599L",
@@ -61,11 +75,13 @@
     "lng": 3.15849,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Dijon"
+    "academie": "Dijon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0261088S",
@@ -78,11 +94,13 @@
     "lng": 4.74551,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0560029C",
@@ -95,11 +113,13 @@
     "lng": -3.361,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Rennes"
+    "academie": "Rennes",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0810051R",
@@ -112,11 +132,13 @@
     "lng": 2.15488,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Toulouse"
+    "academie": "Toulouse",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0221698B",
@@ -129,11 +151,13 @@
     "lng": -3.17311,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Rennes"
+    "academie": "Rennes",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0251348E",
@@ -146,11 +170,13 @@
     "lng": 6.01056,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Besançon"
+    "academie": "Besançon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0910049J",
@@ -163,11 +189,13 @@
     "lng": 2.40026,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0132326H",
@@ -180,11 +208,13 @@
     "lng": 5.0004,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Aix-Marseille"
+    "academie": "Aix-Marseille",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0810993P",
@@ -197,11 +227,13 @@
     "lng": 1.90673,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Toulouse"
+    "academie": "Toulouse",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0311689T",
@@ -214,11 +246,13 @@
     "lng": 1.50463,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Toulouse"
+    "academie": "Toulouse",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0631522M",
@@ -231,11 +265,13 @@
     "lng": 3.10766,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Clermont-Ferrand"
+    "academie": "Clermont-Ferrand",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0771172F",
@@ -248,11 +284,13 @@
     "lng": 2.90905,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Créteil"
+    "academie": "Créteil",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0950893E",
@@ -265,11 +303,21 @@
     "lng": 2.28867,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A-EANA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": "2025-2026",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025",
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ]
   },
   {
     "uai": "0940042K",
@@ -282,11 +330,13 @@
     "lng": 2.36952,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Créteil"
+    "academie": "Créteil",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0451544J",
@@ -299,11 +349,13 @@
     "lng": 1.91225,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Orléans-Tours"
+    "academie": "Orléans-Tours",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0754305X",
@@ -316,11 +368,13 @@
     "lng": 2.27859,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Paris"
+    "academie": "Paris",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0911334F",
@@ -333,11 +387,13 @@
     "lng": 2.16305,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0691666L",
@@ -350,11 +406,13 @@
     "lng": 4.91588,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Lyon"
+    "academie": "Lyon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0383370G",
@@ -367,11 +425,13 @@
     "lng": 5.70629,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0061002G",
@@ -384,11 +444,13 @@
     "lng": 7.2464,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Nice"
+    "academie": "Nice",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0840761W",
@@ -401,11 +463,13 @@
     "lng": 5.03127,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Aix-Marseille"
+    "academie": "Aix-Marseille",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0440016D",
@@ -418,11 +482,13 @@
     "lng": -1.65682,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Nantes"
+    "academie": "Nantes",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0560223N",
@@ -435,11 +501,13 @@
     "lng": -2.77103,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Rennes"
+    "academie": "Rennes",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0711135Y",
@@ -452,11 +520,13 @@
     "lng": 4.37047,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Dijon"
+    "academie": "Dijon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0921550K",
@@ -469,11 +539,13 @@
     "lng": 2.25773,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0132491M",
@@ -486,11 +558,13 @@
     "lng": 5.3923,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Aix-Marseille"
+    "academie": "Aix-Marseille",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0911022S",
@@ -503,11 +577,13 @@
     "lng": 2.52699,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0851304F",
@@ -520,11 +596,13 @@
     "lng": -1.408,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Nantes"
+    "academie": "Nantes",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0280918W",
@@ -537,11 +615,13 @@
     "lng": 1.3506,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Orléans-Tours"
+    "academie": "Orléans-Tours",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0370044X",
@@ -554,11 +634,13 @@
     "lng": 0.69083,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Orléans-Tours"
+    "academie": "Orléans-Tours",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0311332E",
@@ -571,11 +653,13 @@
     "lng": 1.46237,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Toulouse"
+    "academie": "Toulouse",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0132561N",
@@ -588,11 +672,13 @@
     "lng": 5.37691,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Aix-Marseille"
+    "academie": "Aix-Marseille",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0681757R",
@@ -605,11 +691,21 @@
     "lng": 7.36823,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A-EANA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
     "nsa": null,
-    "academie": "Strasbourg"
+    "academie": "Strasbourg",
+    "sourceDate": "2026-2027",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026",
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ]
   },
   {
     "uai": "0010964T",
@@ -622,11 +718,13 @@
     "lng": 4.96814,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Lyon"
+    "academie": "Lyon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0950723V",
@@ -639,11 +737,21 @@
     "lng": 2.37908,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A-EANA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": "2025-2026",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025",
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ]
   },
   {
     "uai": "0951617S",
@@ -656,12 +764,21 @@
     "lng": 2.04356,
     "type": "Collège",
     "specialites": [
-      "UPE2A",
       "UPE2A-NSA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
     "nsa": true,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": "2025-2026",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025",
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ]
   },
   {
     "uai": "0951230W",
@@ -674,12 +791,21 @@
     "lng": 2.23016,
     "type": "Collège",
     "specialites": [
-      "UPE2A",
       "UPE2A-NSA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
     "nsa": true,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": "2025-2026",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025",
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ]
   },
   {
     "uai": "0951195H",
@@ -692,11 +818,21 @@
     "lng": 2.11524,
     "type": "Collège",
     "specialites": [
-      "UPE2A"
+      "UPE2A-EANA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-college-classe-pour-non-francophones",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": "2025-2026",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025",
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ]
   },
   {
     "uai": "0630018C",
@@ -709,11 +845,13 @@
     "lng": 3.09415,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Clermont-Ferrand"
+    "academie": "Clermont-Ferrand",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0383242T",
@@ -726,11 +864,13 @@
     "lng": 5.71165,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0260034W",
@@ -743,11 +883,13 @@
     "lng": 4.88732,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0740005D",
@@ -760,11 +902,13 @@
     "lng": 6.12085,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0380008C",
@@ -777,11 +921,13 @@
     "lng": 5.26971,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0261277X",
@@ -794,11 +940,13 @@
     "lng": 4.89822,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0230018V",
@@ -811,11 +959,13 @@
     "lng": 2.17497,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Limoges"
+    "academie": "Limoges",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0760007V",
@@ -828,11 +978,13 @@
     "lng": 0.95801,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Normandie"
+    "academie": "Normandie",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0271606Z",
@@ -845,11 +997,13 @@
     "lng": 0.71347,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Normandie"
+    "academie": "Normandie",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0670062D",
@@ -862,11 +1016,21 @@
     "lng": 7.75191,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A-EANA"
     ],
-    "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
     "nsa": null,
-    "academie": "Strasbourg"
+    "academie": "Strasbourg",
+    "sourceDate": "2026-2027",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026",
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ]
   },
   {
     "uai": "0010001W",
@@ -879,11 +1043,13 @@
     "lng": 5.35092,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": ""
+    "academie": "",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0640031L",
@@ -896,11 +1062,13 @@
     "lng": -0.40104,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Bordeaux"
+    "academie": "Bordeaux",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0692968B",
@@ -913,11 +1081,13 @@
     "lng": 4.8566,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Lyon"
+    "academie": "Lyon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0840113S",
@@ -930,11 +1100,13 @@
     "lng": 5.04412,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Aix-Marseille"
+    "academie": "Aix-Marseille",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0940138P",
@@ -947,11 +1119,13 @@
     "lng": 2.4032,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Créteil"
+    "academie": "Créteil",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0270018Y",
@@ -964,11 +1138,13 @@
     "lng": 1.17126,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Normandie"
+    "academie": "Normandie",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0770944H",
@@ -981,11 +1157,13 @@
     "lng": 2.72812,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Créteil"
+    "academie": "Créteil",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0911343R",
@@ -998,11 +1176,13 @@
     "lng": 2.43501,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Versailles"
+    "academie": "Versailles",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0261100E",
@@ -1015,11 +1195,13 @@
     "lng": 4.90152,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Grenoble"
+    "academie": "Grenoble",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0130072H",
@@ -1032,11 +1214,13 @@
     "lng": 5.42317,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Aix-Marseille"
+    "academie": "Aix-Marseille",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0630024J",
@@ -1049,11 +1233,13 @@
     "lng": 3.07478,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Clermont-Ferrand"
+    "academie": "Clermont-Ferrand",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0430023S",
@@ -1066,11 +1252,13 @@
     "lng": 3.86845,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Clermont-Ferrand"
+    "academie": "Clermont-Ferrand",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0420049A",
@@ -1083,11 +1271,13 @@
     "lng": 4.37767,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Lyon"
+    "academie": "Lyon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0770943G",
@@ -1100,11 +1290,13 @@
     "lng": 2.66344,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Créteil"
+    "academie": "Créteil",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
   },
   {
     "uai": "0690003D",
@@ -1117,10 +1309,3125 @@
     "lng": 4.61305,
     "type": "Lycée",
     "specialites": [
-      "UPE2A"
+      "UPE2A – modalité non précisée"
     ],
     "source": "https://www.onisep.fr/ressources/univers-formation/formations/lycees/unite-pedagogique-pour-eleves-allophones-arrivants-en-lycee-classe-pour-non-francophones",
     "nsa": null,
-    "academie": "Lyon"
+    "academie": "Lyon",
+    "sourceDate": null,
+    "sourceLabel": "Onisep — inventaire initial, date non établie"
+  },
+  {
+    "uai": "0951725J",
+    "nom": "Collège Jacques-Yves Cousteau",
+    "adr": "Rue Courtil Bajou",
+    "cp": "95540",
+    "ville": "Méry-sur-Oise",
+    "dept": "95",
+    "lat": 49.06508,
+    "lng": 2.18226,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0952325L",
+    "nom": "Collège Suzanne Lenglen",
+    "adr": "Impasse Louis Odinot",
+    "cp": "95340",
+    "ville": "Persan",
+    "dept": "95",
+    "lat": 49.1447,
+    "lng": 2.27188,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950895G",
+    "nom": "Collège Simone Veil",
+    "adr": "3 rue Pierre de Coubertin",
+    "cp": "95000",
+    "ville": "Pontoise",
+    "dept": "95",
+    "lat": 49.04471,
+    "lng": 2.08324,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951964U",
+    "nom": "Collège Les Explorateurs",
+    "adr": "Boulevard des Explorateurs",
+    "cp": "95800",
+    "ville": "Cergy",
+    "dept": "95",
+    "lat": 49.05207,
+    "lng": 2.00738,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951401G",
+    "nom": "Collège La Justice",
+    "adr": "8 chemin des Mérites",
+    "cp": "95000",
+    "ville": "Cergy",
+    "dept": "95",
+    "lat": 49.04612,
+    "lng": 2.07113,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA",
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951697D",
+    "nom": "Collège Moulin à Vent",
+    "adr": "24 avenue du Terroir",
+    "cp": "95800",
+    "ville": "Cergy",
+    "dept": "95",
+    "lat": 49.04771,
+    "lng": 2.01664,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950886X",
+    "nom": "Collège Claude Monet",
+    "adr": "2 mail Stendhal",
+    "cp": "95104",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.9551,
+    "lng": 2.22339,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951094Y",
+    "nom": "Collège Paul Vaillant Couturier",
+    "adr": "22 rue de Calais",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.94341,
+    "lng": 2.24632,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951139X",
+    "nom": "Collège Albert Camus",
+    "adr": "291 avenue Jean Jaurès",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.94121,
+    "lng": 2.21373,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951138W",
+    "nom": "Collège Jean-Jacques Rousseau",
+    "adr": "13 rue Jean-Jacques Rousseau",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.93661,
+    "lng": 2.22503,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951356H",
+    "nom": "Collège Lucie Aubrac",
+    "adr": "10 allée Romain Rolland",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.95228,
+    "lng": 2.23038,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0952114G",
+    "nom": "Collège Ariane",
+    "adr": "9 avenue de l'Espace",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.96075,
+    "lng": 2.25628,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950888Z",
+    "nom": "Collège Henri Wallon",
+    "adr": "41 rue des Brigadières",
+    "cp": "95875",
+    "ville": "Bezons",
+    "dept": "95",
+    "lat": 48.93199,
+    "lng": 2.21522,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951154N",
+    "nom": "Collège Camille Claudel",
+    "adr": "Rue de la Verneuil",
+    "cp": "95370",
+    "ville": "Montigny-lès-Cormeilles",
+    "dept": "95",
+    "lat": 48.98946,
+    "lng": 2.18955,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950022H",
+    "nom": "Collège Bel Air",
+    "adr": "Ruelle du Moulin",
+    "cp": "95130",
+    "ville": "Franconville",
+    "dept": "95",
+    "lat": 48.99351,
+    "lng": 2.22345,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950748X",
+    "nom": "Collège Wanda Landowska",
+    "adr": "8 avenue des Diablots",
+    "cp": "95320",
+    "ville": "Saint-Leu-la-Forêt",
+    "dept": "95",
+    "lat": 49.01122,
+    "lng": 2.23652,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950722U",
+    "nom": "Collège Jean Moulin",
+    "adr": "84 rue du Poirier Baron",
+    "cp": "95110",
+    "ville": "Sannois",
+    "dept": "95",
+    "lat": 48.97861,
+    "lng": 2.24227,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950046J",
+    "nom": "Collège Descartes",
+    "adr": "4 avenue Descartes",
+    "cp": "95230",
+    "ville": "Soisy-sous-Montmorency",
+    "dept": "95",
+    "lat": 48.98036,
+    "lng": 2.29764,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951197K",
+    "nom": "Collège Georges Brassens",
+    "adr": "10 rue Jeanne Planche",
+    "cp": "95153",
+    "ville": "Taverny",
+    "dept": "95",
+    "lat": 49.01497,
+    "lng": 2.21221,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951909J",
+    "nom": "Collège Maurice Utrillo",
+    "adr": "8 rue Jules Ferry",
+    "cp": "95360",
+    "ville": "Montmagny",
+    "dept": "95",
+    "lat": 48.96445,
+    "lng": 2.33894,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951196J",
+    "nom": "Collège Voltaire",
+    "adr": "22 boulevard Galvani",
+    "cp": "95206",
+    "ville": "Sarcelles",
+    "dept": "95",
+    "lat": 48.99693,
+    "lng": 2.37201,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950045H",
+    "nom": "Collège Evariste Galois",
+    "adr": "13 rue Jean Giraudoux",
+    "cp": "95200",
+    "ville": "Sarcelles",
+    "dept": "95",
+    "lat": 48.97515,
+    "lng": 2.37466,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950939E",
+    "nom": "Collège Léon Blum",
+    "adr": "2 rue Léon Blum",
+    "cp": "95400",
+    "ville": "Villiers-le-Bel",
+    "dept": "95",
+    "lat": 49.00421,
+    "lng": 2.4121,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950023J",
+    "nom": "Collège Henri Wallon",
+    "adr": "2 rue du Tiers Pot",
+    "cp": "95140",
+    "ville": "Garges-lès-Gonesse",
+    "dept": "95",
+    "lat": 48.96594,
+    "lng": 2.40788,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0952036X",
+    "nom": "Collège Henri Matisse",
+    "adr": "Avenue de la Division Leclerc",
+    "cp": "95140",
+    "ville": "Garges-lès-Gonesse",
+    "dept": "95",
+    "lat": 48.96903,
+    "lng": 2.39857,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951098C",
+    "nom": "Collège Pablo Picasso",
+    "adr": "202 avenue Stalingrad",
+    "cp": "95140",
+    "ville": "Garges-lès-Gonesse",
+    "dept": "95",
+    "lat": 48.97262,
+    "lng": 2.41705,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950025L",
+    "nom": "Collège Philippe Auguste",
+    "adr": "4 rue de l'Eglantier",
+    "cp": "95500",
+    "ville": "Gonesse",
+    "dept": "95",
+    "lat": 48.98884,
+    "lng": 2.44134,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951050A",
+    "nom": "Collège Pierre Curie",
+    "adr": "166 boulevard Paul Vaillant Couturier",
+    "cp": "95190",
+    "ville": "Goussainville",
+    "dept": "95",
+    "lat": 49.03827,
+    "lng": 2.47878,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950908W",
+    "nom": "Collège François Mauriac",
+    "adr": "80 rue de Paris",
+    "cp": "95380",
+    "ville": "Louvres",
+    "dept": "95",
+    "lat": 49.04281,
+    "lng": 2.50783,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950896H",
+    "nom": "Collège Nicolas Flamel",
+    "adr": "23 boulevard de l'Europe",
+    "cp": "95300",
+    "ville": "Pontoise",
+    "dept": "95",
+    "lat": 49.05894,
+    "lng": 2.08495,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950885W",
+    "nom": "Collège Irène Joliot-Curie",
+    "adr": "12 rue de Maully",
+    "cp": "95106",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.95721,
+    "lng": 2.28067,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950037Z",
+    "nom": "Collège Jean Zay",
+    "adr": "6 rue Pierre Curie",
+    "cp": "95210",
+    "ville": "Saint-Gratien",
+    "dept": "95",
+    "lat": 48.96342,
+    "lng": 2.28094,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950900M",
+    "nom": "Collège Anatole France",
+    "adr": "34 bis avenue Pierre Koenig",
+    "cp": "95200",
+    "ville": "Sarcelles",
+    "dept": "95",
+    "lat": 48.98068,
+    "lng": 2.38706,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951993A",
+    "nom": "Collège Martin Luther King",
+    "adr": "1 rue du Docteur Rampont",
+    "cp": "95400",
+    "ville": "Villiers-le-Bel",
+    "dept": "95",
+    "lat": 49.00527,
+    "lng": 2.38628,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950711G",
+    "nom": "Collège Paul Eluard",
+    "adr": "11 rue Claude Monet",
+    "cp": "95140",
+    "ville": "Garges-lès-Gonesse",
+    "dept": "95",
+    "lat": 48.97704,
+    "lng": 2.39829,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951920W",
+    "nom": "Collège François Truffaut",
+    "adr": "Avenue Léon Blum",
+    "cp": "95500",
+    "ville": "Gonesse",
+    "dept": "95",
+    "lat": 49.00438,
+    "lng": 2.42385,
+    "type": "Collège",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0950649P",
+    "nom": "Lycée polyvalent Camille Pissarro - Lycée des métiers de la santé, du social et de l'aide à la personne",
+    "adr": "1 rue Henri Matisse",
+    "cp": "95000",
+    "ville": "Pontoise",
+    "dept": "95",
+    "lat": 49.05697,
+    "lng": 2.09035,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951756T",
+    "nom": "Lycée polyvalent Jules Verne",
+    "adr": "1 rue Michel Strogoff",
+    "cp": "95800",
+    "ville": "Cergy",
+    "dept": "95",
+    "lat": 49.05179,
+    "lng": 2.00983,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0950641F",
+    "nom": "Lycée polyvalent Jean Jaurès",
+    "adr": "25 rue Charles Lecoq",
+    "cp": "95100",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.93994,
+    "lng": 2.22618,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951811C",
+    "nom": "Lycée polyvalent Fernand et Nadia Léger, lycée des métiers du social, de la santé, des services",
+    "adr": "7 allée Fernand et Nadia Léger",
+    "cp": "95104",
+    "ville": "Argenteuil",
+    "dept": "95",
+    "lat": 48.95159,
+    "lng": 2.22646,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0952196W",
+    "nom": "Lycée polyvalent Gustave Monod, lycée des métiers de l'ingénierie industrielle",
+    "adr": "71 avenue de Ceinture",
+    "cp": "95880",
+    "ville": "Enghien-les-Bains",
+    "dept": "95",
+    "lat": 48.972,
+    "lng": 2.29573,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0951922Y",
+    "nom": "Lycée général et technologique Camille Saint-Saëns",
+    "adr": "18 rue Guynemer",
+    "cp": "95170",
+    "ville": "Deuil-la-Barre",
+    "dept": "95",
+    "lat": 48.97196,
+    "lng": 2.3362,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951090U",
+    "nom": "Lycée polyvalent Pierre Mendès France, lycée des métiers de l'éco-construction et du bâtiment",
+    "adr": "1 rue de Goussainville",
+    "cp": "95400",
+    "ville": "Villiers-le-Bel",
+    "dept": "95",
+    "lat": 49.00458,
+    "lng": 2.41605,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0950709E",
+    "nom": "Lycée polyvalent Virginia Henderson",
+    "adr": "100 avenue Charles Vaillant",
+    "cp": "95400",
+    "ville": "Arnouville",
+    "dept": "95",
+    "lat": 48.98544,
+    "lng": 2.40725,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0950667J",
+    "nom": "Lycée polyvalent Romain Rolland",
+    "adr": "21 avenue de Montmorency",
+    "cp": "95190",
+    "ville": "Goussainville",
+    "dept": "95",
+    "lat": 49.03009,
+    "lng": 2.45285,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0950656X",
+    "nom": "Lycée professionnel Le Corbusier, lycée des métiers du bâtiment",
+    "adr": "2 rue Paul Bloch",
+    "cp": "95240",
+    "ville": "Cormeilles-en-Parisis",
+    "dept": "95",
+    "lat": 48.97893,
+    "lng": 2.19973,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0950657Y",
+    "nom": "Lycée professionnel Ferdinand Buisson",
+    "adr": "245 rue Ferdinand Buisson",
+    "cp": "95120",
+    "ville": "Ermont",
+    "dept": "95",
+    "lat": 48.97972,
+    "lng": 2.27194,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      },
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0950949R",
+    "nom": "Lycée professionnel Jean Mermoz - Lycée des métiers de l'électrotechnique, des services commerciaux et administratifs",
+    "adr": "21 rue Emile Combres",
+    "cp": "95560",
+    "ville": "Montsoult",
+    "dept": "95",
+    "lat": 49.06709,
+    "lng": 2.32309,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951974E",
+    "nom": "Lycée polyvalent Louis Armand",
+    "adr": "32 rue Stéphane Proust",
+    "cp": "95600",
+    "ville": "Eaubonne",
+    "dept": "95",
+    "lat": 48.99563,
+    "lng": 2.28755,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "MODAC"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "MODAC"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0951787B",
+    "nom": "Lycée polyvalent Arthur Rimbaud - Lycée des métiers de l'automobile du commerce, de la logistique et du transport",
+    "adr": "99 avenue de la Division Leclerc",
+    "cp": "95140",
+    "ville": "Garges-lès-Gonesse",
+    "dept": "95",
+    "lat": 48.96931,
+    "lng": 2.3952,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "MODAP"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+        "annee": "2025-2026",
+        "libelle": "DSDEN 95 — carte rentrée 2025",
+        "dispositif": "MODAP"
+      }
+    ],
+    "sourceDate": "2025-2026",
+    "source": "https://www.ac-versailles.fr/sites/ac_versailles/files/2025-11/img95-carte-upe2a-2d-59589.png",
+    "sourceLabel": "DSDEN 95 — carte rentrée 2025"
+  },
+  {
+    "uai": "0781983G",
+    "nom": "Lycée professionnel Adrienne Bolland - Lycée des métiers d'art, des services et de la mode",
+    "adr": "62 boulevard Devaux",
+    "cp": "78300",
+    "ville": "Poissy",
+    "dept": "78",
+    "lat": 48.93281,
+    "lng": 2.05037,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0781948U",
+    "nom": "Lycée polyvalent Antoine Lavoisier",
+    "adr": "40 boulevard de la République",
+    "cp": "78440",
+    "ville": "Porcheville",
+    "dept": "78",
+    "lat": 48.97363,
+    "lng": 1.77509,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0782593V",
+    "nom": "Lycée professionnel Jean Perrin",
+    "adr": "1 rue Lucien Sampaix",
+    "cp": "78210",
+    "ville": "Saint-Cyr-l'Ecole",
+    "dept": "78",
+    "lat": 48.80286,
+    "lng": 2.05957,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0783549J",
+    "nom": "Lycée d'enseignement général International",
+    "adr": "Rue du Fer à Cheval",
+    "cp": "78101",
+    "ville": "Saint-Germain-en-Laye",
+    "dept": "78",
+    "lat": 48.89637,
+    "lng": 2.0627,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0783431F",
+    "nom": "Lycée polyvalent Jules Verne, lycée des métiers de la sécurité, des arts et du spectacle",
+    "adr": "2 rue de la Constituante",
+    "cp": "78500",
+    "ville": "Sartrouville",
+    "dept": "78",
+    "lat": 48.9428,
+    "lng": 2.16025,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0910676R",
+    "nom": "Lycée polyvalent Clément Ader",
+    "adr": "37 bis rue G. Anthonioz de Gaulle",
+    "cp": "91200",
+    "ville": "Athis-Mons",
+    "dept": "91",
+    "lat": 48.71114,
+    "lng": 2.3927,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0910975R",
+    "nom": "Lycée polyvalent Jean-Pierre Timbaud",
+    "adr": "4 rue Henri Douard",
+    "cp": "91220",
+    "ville": "Brétigny-sur-Orge",
+    "dept": "91",
+    "lat": 48.60958,
+    "lng": 2.31284,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0911254U",
+    "nom": "Lycée polyvalent Charles Baudelaire, lycée des métiers de la relation client, de la beauté, du soin et des services à la personne",
+    "adr": "Avenue de la Liberté",
+    "cp": "91080",
+    "ville": "Evry-Courcouronnes",
+    "dept": "91",
+    "lat": 48.63762,
+    "lng": 2.43391,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0910632T",
+    "nom": "Lycée professionnel Gustave Eiffel",
+    "adr": "9 avenue de la République",
+    "cp": "91300",
+    "ville": "Massy",
+    "dept": "91",
+    "lat": 48.73645,
+    "lng": 2.29577,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0912433A",
+    "nom": "Lycée International-Palaiseau-Paris-Saclay",
+    "adr": "19 cours Pierre Vasseur",
+    "cp": "91120",
+    "ville": "Palaiseau",
+    "dept": "91",
+    "lat": 48.71301,
+    "lng": 2.20537,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0911578W",
+    "nom": "Lycée polyvalent Pierre Mendès France",
+    "adr": "1 place Frédéric Chichin",
+    "cp": "91130",
+    "ville": "Ris-Orangis",
+    "dept": "91",
+    "lat": 48.63932,
+    "lng": 2.41119,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0912142J",
+    "nom": "Lycée polyvalent Gaspard Monge, lycée des métiers de l'automobile et de la logistique",
+    "adr": "1 place Gaspard Monge",
+    "cp": "91600",
+    "ville": "Savigny-sur-Orge",
+    "dept": "91",
+    "lat": 48.68574,
+    "lng": 2.34658,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0921676X",
+    "nom": "Lycée professionnel Théodore Monod, lycée des métiers de l'hôtellerie et des services à vocation internationale",
+    "adr": "26 avenue Léon Jouhaux",
+    "cp": "92160",
+    "ville": "Antony",
+    "dept": "92",
+    "lat": 48.73513,
+    "lng": 2.30729,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0920150N",
+    "nom": "Lycée polyvalent de Prony - Lycée des métiers du bois, de l'habitat, de la gestion administrative, du commerce et de l'accueil",
+    "adr": "4 rue de Bretagne",
+    "cp": "92600",
+    "ville": "Asnières-sur-Seine",
+    "dept": "92",
+    "lat": 48.90435,
+    "lng": 2.28439,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0922443F",
+    "nom": "Lycée polyvalent Etienne-Jules Marey",
+    "adr": "154 rue de Silly",
+    "cp": "92100",
+    "ville": "Boulogne-Billancourt",
+    "dept": "92",
+    "lat": 48.83218,
+    "lng": 2.23377,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0920136Y",
+    "nom": "Lycée polyvalent Newton-Enrea",
+    "adr": "1 place Jules Verne",
+    "cp": "92110",
+    "ville": "Clichy",
+    "dept": "92",
+    "lat": 48.90905,
+    "lng": 2.3069,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0920158X",
+    "nom": "Lycée polyvalent La Tournelle - Lycée des métiers du numérique et de l'électricité - Lycée des métiers de l'accueil, du commerce et de la gestion",
+    "adr": "87 boulevard National",
+    "cp": "92250",
+    "ville": "La Garenne-Colombes",
+    "dept": "92",
+    "lat": 48.90694,
+    "lng": 2.23781,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0921399W",
+    "nom": "Lycée général et technologique Maurice Genevoix",
+    "adr": "29 avenue du Fort",
+    "cp": "92120",
+    "ville": "Montrouge",
+    "dept": "92",
+    "lat": 48.81053,
+    "lng": 2.32299,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0920164D",
+    "nom": "Lycée professionnel Jean Monnet , lycée des métiers de la construction et de la gestion administrative",
+    "adr": "128 avenue Jean Jaurès",
+    "cp": "92120",
+    "ville": "Montrouge",
+    "dept": "92",
+    "lat": 48.81281,
+    "lng": 2.30529,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0920144G",
+    "nom": "Lycée général et technologique L'Agora",
+    "adr": "120 rue de Verdun",
+    "cp": "92816",
+    "ville": "Puteaux",
+    "dept": "92",
+    "lat": 48.87813,
+    "lng": 2.23471,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0921500F",
+    "nom": "Lycée professionnel Voilin - Lycée des métiers de la vente et du commerce",
+    "adr": "26 rue Lucien Voilin",
+    "cp": "92800",
+    "ville": "Puteaux",
+    "dept": "92",
+    "lat": 48.88279,
+    "lng": 2.23702,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0922276Z",
+    "nom": "Lycée polyvalent Santos Dumont - Lycée des métiers de l'hôtellerie, de la gestion et du commerce",
+    "adr": "39 rue Pasteur",
+    "cp": "92210",
+    "ville": "Saint-Cloud",
+    "dept": "92",
+    "lat": 48.8414,
+    "lng": 2.19902,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0920171L",
+    "nom": "Lycée professionnel Louis Blériot, lycée des métiers des énergies",
+    "adr": "67 rue de Verdun",
+    "cp": "92150",
+    "ville": "Suresnes",
+    "dept": "92",
+    "lat": 48.87429,
+    "lng": 2.23039,
+    "type": "Lycée",
+    "academie": "Versailles",
+    "specialites": [
+      "UPE2A – modalité non précisée"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+        "annee": "2026-2027",
+        "libelle": "Onisep — Après la 3e Versailles, extraction 23/02/2026",
+        "dispositif": "UPE2A – modalité non précisée"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://oriane.info/cms-service/guide-apres-3e-versailles/download",
+    "sourceLabel": "Onisep — Après la 3e Versailles, extraction 23/02/2026"
+  },
+  {
+    "uai": "0681654D",
+    "nom": "Collège de la Cité Scolaire Lazare de Schwendi",
+    "adr": "17 route de Turckheim",
+    "cp": "68040",
+    "ville": "Ingersheim",
+    "dept": "68",
+    "lat": 48.09115,
+    "lng": 7.29727,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680084X",
+    "nom": "Collège Molière",
+    "adr": "36 avenue de Paris",
+    "cp": "68025",
+    "ville": "Colmar",
+    "dept": "68",
+    "lat": 48.07362,
+    "lng": 7.32905,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681123B",
+    "nom": "Collège Hector Berlioz",
+    "adr": "42 rue Ampère",
+    "cp": "68025",
+    "ville": "Colmar",
+    "dept": "68",
+    "lat": 48.08907,
+    "lng": 7.37594,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680009R",
+    "nom": "Collège Pfeffel",
+    "adr": "36 route d'Ingersheim",
+    "cp": "68000",
+    "ville": "Colmar",
+    "dept": "68",
+    "lat": 48.08392,
+    "lng": 7.34696,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681127F",
+    "nom": "Collège Bourtzwiller",
+    "adr": "16 rue de Toulon",
+    "cp": "68092",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.77568,
+    "lng": 7.33274,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA",
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      },
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681284B",
+    "nom": "Collège Wolf",
+    "adr": "4 rue de la Belette",
+    "cp": "68100",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.75986,
+    "lng": 7.33956,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681395X",
+    "nom": "Collège François Villon",
+    "adr": "24 avenue DMC",
+    "cp": "68060",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.75197,
+    "lng": 7.31144,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680110A",
+    "nom": "Collège Jean Macé",
+    "adr": "1 rue Jean-François Millet",
+    "cp": "68093",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.73356,
+    "lng": 7.29438,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681369U",
+    "nom": "Collège Emile Zola",
+    "adr": "2 A rue Pierre de Coubertin",
+    "cp": "68260",
+    "ville": "Kingersheim",
+    "dept": "68",
+    "lat": 47.78648,
+    "lng": 7.3284,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681957H",
+    "nom": "Collège Pierre Pflimlin",
+    "adr": "14 rue Arthur Ashe",
+    "cp": "68350",
+    "ville": "Brunstatt-Didenheim",
+    "dept": "68",
+    "lat": 47.72639,
+    "lng": 7.3163,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681930D",
+    "nom": "Collège Irène Joliot-Curie",
+    "adr": "2 A rue de l'espérance",
+    "cp": "68274",
+    "ville": "Wittenheim",
+    "dept": "68",
+    "lat": 47.80119,
+    "lng": 7.32949,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680129W",
+    "nom": "Collège Capitaine Dreyfus",
+    "adr": "10 rue du Temple",
+    "cp": "68172",
+    "ville": "Rixheim",
+    "dept": "68",
+    "lat": 47.74604,
+    "lng": 7.39727,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681370V",
+    "nom": "Collège du Nonnenbruch",
+    "adr": "2 rue de la Forêt",
+    "cp": "68460",
+    "ville": "Lutterbach",
+    "dept": "68",
+    "lat": 47.7627,
+    "lng": 7.27799,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681747E",
+    "nom": "Collège Georges Forlen",
+    "adr": "14 rue de Village neuf",
+    "cp": "68301",
+    "ville": "Saint-Louis",
+    "dept": "68",
+    "lat": 47.59988,
+    "lng": 7.55444,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680065B",
+    "nom": "Collège René Schickelé",
+    "adr": "6 rue Saint Exupéry",
+    "cp": "68300",
+    "ville": "Saint-Louis",
+    "dept": "68",
+    "lat": 47.57488,
+    "lng": 7.55816,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680111B",
+    "nom": "Collège Saint-Exupéry",
+    "adr": "11 rue du Languedoc",
+    "cp": "68090",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.75964,
+    "lng": 7.36361,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680105V",
+    "nom": "Collège Kennedy",
+    "adr": "13 avenue du Président Kennedy",
+    "cp": "68200",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.74935,
+    "lng": 7.33375,
+    "type": "Collège",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Colleges_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680010S",
+    "nom": "Lycée polyvalent Blaise Pascal",
+    "adr": "74 rue du Logelbach",
+    "cp": "68025",
+    "ville": "Colmar",
+    "dept": "68",
+    "lat": 48.08339,
+    "lng": 7.34334,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681817F",
+    "nom": "Lycée polyvalent Lazare de Schwendi - Lycée des métiers",
+    "adr": "19 route de Turckheim",
+    "cp": "68040",
+    "ville": "Ingersheim",
+    "dept": "68",
+    "lat": 48.09071,
+    "lng": 7.29655,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680041A",
+    "nom": "Lycée professionnel du Rebberg",
+    "adr": "1 rue de Verdun",
+    "cp": "68050",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.74,
+    "lng": 7.34553,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680037W",
+    "nom": "Lycée professionnel Charles Stoessel",
+    "adr": "1 rue du Fil",
+    "cp": "68068",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.74765,
+    "lng": 7.31962,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680031P",
+    "nom": "Lycée général et technologique Albert Schweitzer",
+    "adr": "8 boulevard de la Marne",
+    "cp": "68068",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.74522,
+    "lng": 7.32531,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681761V",
+    "nom": "Lycée général et technologique Lambert",
+    "adr": "73 rue Josué Heilmann",
+    "cp": "68100",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.75448,
+    "lng": 7.33008,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681768C",
+    "nom": "Lycée polyvalent Lavoisier",
+    "adr": "42 rue Lavoisier",
+    "cp": "68059",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.75356,
+    "lng": 7.32518,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681810Y",
+    "nom": "Lycée polyvalent Gustave Eiffel",
+    "adr": "Rue Gustave Eiffel",
+    "cp": "68701",
+    "ville": "Cernay",
+    "dept": "68",
+    "lat": 47.80372,
+    "lng": 7.18305,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681888H",
+    "nom": "Lycée polyvalent Amélie Zurcher",
+    "adr": "30 rue Jean Mermoz",
+    "cp": "68310",
+    "ville": "Wittelsheim",
+    "dept": "68",
+    "lat": 47.79825,
+    "lng": 7.23628,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680001G",
+    "nom": "Lycée polyvalent Jean Jacques Henner",
+    "adr": "20 rue de Hirtzbach",
+    "cp": "68130",
+    "ville": "Altkirch",
+    "dept": "68",
+    "lat": 47.61205,
+    "lng": 7.23283,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681882B",
+    "nom": "Lycée polyvalent Martin Schongauer",
+    "adr": "25 rue Voltaire",
+    "cp": "68025",
+    "ville": "Colmar",
+    "dept": "68",
+    "lat": 48.06951,
+    "lng": 7.35128,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0681809X",
+    "nom": "Lycée polyvalent E. Bugatti - Lycée des métiers de l'automobile, du transport et de la logistique",
+    "adr": "8 rue des Jonquilles",
+    "cp": "68110",
+    "ville": "Illzach",
+    "dept": "68",
+    "lat": 47.76223,
+    "lng": 7.36772,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0680039Y",
+    "nom": "Lycée professionnel F.D. Roosevelt",
+    "adr": "17 boulevard du président Roosevelt",
+    "cp": "68060",
+    "ville": "Mulhouse",
+    "dept": "68",
+    "lat": 47.74882,
+    "lng": 7.33034,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Haut-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_Haut-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Haut-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0670083B",
+    "nom": "Lycée général Marie Curie",
+    "adr": "7 rue de Leicester",
+    "cp": "67084",
+    "ville": "Strasbourg",
+    "dept": "67",
+    "lat": 48.57778,
+    "lng": 7.77209,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0670082A",
+    "nom": "Lycée général et technologique Louis Pasteur",
+    "adr": "24 rue Humann",
+    "cp": "67085",
+    "ville": "Strasbourg",
+    "dept": "67",
+    "lat": 48.57546,
+    "lng": 7.73769,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0670078W",
+    "nom": "Lycée général et technologique Jean Monnet",
+    "adr": "2 place Albert Schweitzer",
+    "cp": "67028",
+    "ville": "Strasbourg",
+    "dept": "67",
+    "lat": 48.56358,
+    "lng": 7.76993,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0670087F",
+    "nom": "Lycée polyvalent Alexandre Dumas - Lycée des métiers, école d'hôtellerie et de tourisme",
+    "adr": "2 rue Eugénie Brazier",
+    "cp": "67400",
+    "ville": "Illkirch-Graffenstaden",
+    "dept": "67",
+    "lat": 48.52757,
+    "lng": 7.73169,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0670085D",
+    "nom": "Lycée polyvalent Louis Couffignal",
+    "adr": "190 avenue de Colmar",
+    "cp": "67100",
+    "ville": "Strasbourg",
+    "dept": "67",
+    "lat": 48.56091,
+    "lng": 7.74704,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0670129B",
+    "nom": "Lycée professionnel Jean Geiler",
+    "adr": "14 rue des bateliers",
+    "cp": "67000",
+    "ville": "Strasbourg",
+    "dept": "67",
+    "lat": 48.58015,
+    "lng": 7.75568,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0671509B",
+    "nom": "Lycée polyvalent Heinrich-Nessel",
+    "adr": "123 route de Strasbourg",
+    "cp": "67504",
+    "ville": "Haguenau",
+    "dept": "67",
+    "lat": 48.80084,
+    "lng": 7.76673,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0671832C",
+    "nom": "Lycée polyvalent Jean-Baptiste Schwilgué",
+    "adr": "8 avenue Adrien Zeller",
+    "cp": "67604",
+    "ville": "Sélestat",
+    "dept": "67",
+    "lat": 48.25231,
+    "lng": 7.44899,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-EANA"
+    ],
+    "nsa": null,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-EANA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0672806L",
+    "nom": "Lycée polyvalent Marcel Rudloff",
+    "adr": "21 avenue François Mitterrand",
+    "cp": "67200",
+    "ville": "Strasbourg",
+    "dept": "67",
+    "lat": 48.58523,
+    "lng": 7.69488,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
+  },
+  {
+    "uai": "0672198A",
+    "nom": "Lycée polyvalent Le Corbusier",
+    "adr": "15 rue Lixenbuhl",
+    "cp": "67400",
+    "ville": "Illkirch-Graffenstaden",
+    "dept": "67",
+    "lat": 48.52942,
+    "lng": 7.72513,
+    "type": "Lycée",
+    "academie": "Strasbourg",
+    "specialites": [
+      "UPE2A-NSA"
+    ],
+    "nsa": true,
+    "sources": [
+      {
+        "url": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+        "annee": "2026-2027",
+        "libelle": "CASNAV Bas-Rhin — rentrée 2026",
+        "dispositif": "UPE2A-NSA"
+      }
+    ],
+    "sourceDate": "2026-2027",
+    "source": "https://pedagogie.ac-strasbourg.fr/fileadmin/pedagogie/casnav/Scolarisation/UPE2A_Lycees_du_Bas-Rhin_2026-2027.pdf",
+    "sourceLabel": "CASNAV Bas-Rhin — rentrée 2026"
   }
 ]
