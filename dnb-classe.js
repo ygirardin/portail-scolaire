@@ -92,37 +92,86 @@ function pronoteSubject(code){
  return null; // matières non reconnues, UPE2A et éventuelles options : ne pas supposer le statut
 }
 function recognizePronote(tables){
+ // Les blocs de matières peuvent être réordonnés indépendamment des colonnes Nom / Classe / Moyenne.
+ // Chaque matière est retrouvée par son code, puis reliée à la colonne de note correspondante,
+ // sans confondre la colonne voisine « Pos » et sans imposer une position fixe.
+ const nameHeaders=new Set(['nom','eleve','nom prenom','nom et prenom','nom de l eleve','nom des eleves']);
+ const classHeaders=new Set(['classe','classe eleve','classe de l eleve']);
+ const meanHeaders=new Set(['moyenne','moyenne generale','moyenne de l eleve']);
+ const positionHead=new Set(['pos','position','positionnement','pos.']);
+ const noteHead=s=>/^(?:\d+(?:[.,]\d+)?|note|notes|moy|moyenne)$/.test(s);
+ let best=null;
  for(const entry of tables){
   const table=entry.table;
-  for(let h=1;h<Math.min(12,table.length);h++){
-   const head=(table[h]||[]).map(norm);
-   if(!(head[0]==='nom' && head[1]==='classe' && head[2]==='moyenne'))continue;
-   const codes=table[h-1]||[],subjects=[],already=new Set();
-   for(let c=3;c<Math.max(codes.length,head.length);c++){
-    const label=pronoteSubject(codes[c]);
-    if(!label || already.has(label))continue; // ne pas compter deux fois HI-GE, par exemple
-    const col=head[c]==='pos' && /^\d+(?:[,.]\d+)?$/.test(String(table[h][c-1]))?c-1:c;
-    if(!/^\d+(?:[,.]\d+)?$/.test(String(table[h][col]??'')))continue;
-    already.add(label);subjects.push({name:label,index:col});
+  for(let h=1;h<Math.min(18,table.length);h++){
+   const typeLine=table[h]||[];
+   const types=typeLine.map(norm);
+   const nameCol=types.findIndex(x=>nameHeaders.has(x));
+   const classCol=types.findIndex(x=>classHeaders.has(x));
+   const meanCol=types.findIndex(x=>meanHeaders.has(x));
+   if(nameCol<0 || (classCol<0 && meanCol<0))continue;
+   // Une extraction brute PRONOTE utilise habituellement une ligne de codes matières au-dessus.
+   // Certains exports insèrent une ligne vide ou un titre supplémentaire : chercher jusqu’à 2 lignes au-dessus.
+   let candidate=null;
+   for(let offset=1;offset<=Math.min(2,h);offset++){
+    const codes=table[h-offset]||[], subjects=[], usedColumns=new Set(), byName=new Set();
+    const taken=new Set([nameCol,classCol,meanCol].filter(x=>x>=0));
+    const max=Math.max(codes.length,types.length);
+    for(let c=0;c<max;c++){
+     const label=pronoteSubject(codes[c]);
+     if(!label || byName.has(label))continue;
+     let noteCol=-1;
+     const available=idx=>idx>=0 && idx<max && !taken.has(idx) &&
+        !usedColumns.has(idx) && noteHead(types[idx]||'') && !positionHead.has(types[idx]);
+     if(positionHead.has(types[c])){
+      // PRONOTE place normalement le code de discipline sur la colonne « Pos »,
+      // immédiatement après la colonne numérique de notes.
+      if(available(c-1))noteCol=c-1;
+      else if(available(c+1))noteCol=c+1; // variante : positionnement avant la note
+     }else if(available(c)){
+      noteCol=c; // code de matière sur sa propre colonne numérique
+     }else{
+      // Décalage éventuel de l’en-tête, sans traverser d’autres colonnes de discipline.
+      if(available(c-1) && !pronoteSubject(codes[c-1]))noteCol=c-1;
+      else if(available(c+1) && !pronoteSubject(codes[c+1]))noteCol=c+1;
+     }
+     if(noteCol<0)continue;
+     byName.add(label);
+     usedColumns.add(noteCol);
+     subjects.push({name:label,index:noteCol,headerCol:c});
+    }
+    if(subjects.length>=5 && (!candidate || subjects.length>candidate.subjects.length))
+      candidate={subjects,codes};
    }
-   if(subjects.length<5)continue;
+   if(!candidate)continue;
+   const subjects=candidate.subjects;
    const heading=['Élève','Classe','Moyenne Pronote',...subjects.map(x=>'CC '+x.name)];
    const values=[];
    for(const row of table.slice(h+1)){
-    const name=String(row[0]??'').trim(),classe=String(row[1]??'').trim();
-    if(!name || !classe || /moyenne de|total|effectif/i.test(name))continue;
-    if(/^(nom|eleve)$/i.test(name))continue;
-    values.push([name,classe,row[2]??'',...subjects.map(x=>row[x.index]??'')]);
+    const name=String(row[nameCol]??'').trim();
+    const classe=classCol>=0?String(row[classCol]??'').trim():'Classe non indiquée';
+    if(!name || !classe)continue;
+    if(/moyenne\s+(de|des)\s+(classe|groupes?)|effectif|total|sous.total/i.test(name))continue;
+    if(/^(nom|élève|eleve)$/i.test(name))continue;
+    if(/moyenne\s+(de|des)\s+(classe|groupes?)|effectif|total/i.test(classe))continue;
+    values.push([name,classe,meanCol>=0?row[meanCol]??'':'',...subjects.map(x=>row[x.index]??'')]);
    }
    if(!values.length)continue;
-   const keys=getKeys(heading);keys.headerLabels=heading;keys.pronote=true;
-   keys.pronoteSubjects=subjects.map(s=>s.name);keys.pronoteClass=1;keys.pronoteGeneral=2;
-   return {table:values,keys,header:heading,sheet:entry.name,pronote:true,subjects};
+   const keys=getKeys(heading);
+   keys.headerLabels=heading;
+   keys.pronote=true;
+   keys.pronoteSubjects=subjects.map(x=>x.name);
+   keys.pronoteClass=1;
+   keys.pronoteGeneral=2;
+   keys.pronoteDetectedColumns=subjects.map(x=>({name:x.name,index:x.index}));
+   const result={table:values,keys,header:heading,sheet:entry.name,pronote:true,subjects,
+    headerPosition:h,identityColumns:{name:nameCol,classe:classCol,moyenne:meanCol}};
+   if(!best || subjects.length>best.subjects.length ||
+      (subjects.length===best.subjects.length && values.length>best.table.length))best=result;
   }
  }
- return null;
+ return best;
 }
-
 function findSheet(tables){
  const pronote=recognizePronote(tables);if(pronote)return pronote;
  let best=null;
@@ -233,7 +282,11 @@ function render(){
   const cc=computed.filter(r=>r.mean!==null),gen=computed.filter(r=>r.pronoteGeneral!==null);
   $('dnb-pronote-ccmean').textContent=cc.length?fmt(cc.reduce((sum,r)=>sum+r.mean,0)/cc.length)+' / 20':'—';
   $('dnb-pronote-generalmean').textContent=gen.length?fmt(gen.reduce((sum,r)=>sum+r.pronoteGeneral,0)/gen.length)+' / 20':'—';
-  $('dnb-pronote-subjects').textContent=rows[0].keys.pronoteSubjects.join(' · ');
+  $('dnb-pronote-subjects').textContent=(rows[0].keys.pronoteDetectedColumns||[]).map(s=>{
+   let col=s.index+1,letters='';
+   while(col>0){col--;letters=String.fromCharCode(65+col%26)+letters;col=Math.floor(col/26);}
+   return s.name+' (col. '+letters+')';
+  }).join(' · ') || rows[0].keys.pronoteSubjects.join(' · ');
   $('dnb-pronote-cname').textContent=[...new Set(rows.map(r=>String(r.raw[r.keys.pronoteClass])))].join(', ');
   $('dnb-pronote-info').textContent=$('dnb-pronote-period').value==='annuelle'
    ? 'Export déclaré annuel : contrôle continu encore indicatif. Les notes terminales doivent être complétées ou explicitement simulées.'
