@@ -223,7 +223,8 @@ function render(){
  if(!rows.length)return;
  const computed=rows.map((r,i)=>{
   const base=compute(r.raw,i,r.keys,enabled,estimate);
-  return window.DNBPoints?window.DNBPoints.enrich(r.raw,r.keys,base,enabled,estimate,$('dnb-class-predstyle').value):base;
+  const result=window.DNBPoints?window.DNBPoints.enrich(r.raw,r.keys,base,enabled,estimate,$('dnb-class-predstyle').value):base;
+  return window.DNBTableEdit?window.DNBTableEdit.applyEdits(result,i):result;
  });
  const valid=computed.filter(r=>r.valid);
  const isPronote=!!rows[0]?.keys?.pronote;
@@ -289,6 +290,7 @@ function render(){
    ?(enabled?'PROJECTION FICTIVE : épreuves non renseignées simulées à '+fmt(estimate)+'/20. ':'Notes d’épreuves absentes : aucun résultat DNB final ne peut être calculé. ')
    :'')+(enabled?'Scénario fictif appliqué aux seules épreuves manquantes.':'Les notes manquantes ne sont pas remplacées par zéro.');
  if(window.DNBPoints)window.DNBPoints.render(computed,rows,$('dnb-class-filter').value,$('dnb-class-order').value);
+ if(window.DNBTableEdit)window.DNBTableEdit.render(computed,rows,$('dnb-class-filter').value,$('dnb-class-order').value);
  if(enabled && $('dnb-class-predstyle').value==='subjects' && isPronote)status.textContent=source+' · Estimation matière par matière à partir des moyennes Pronote ; oral et EMC : hypothèse neutre de repli. Aucun résultat prédit ne constitue une note officielle.';
  results.hidden=false;
  $('dnb-class-clear').hidden=false;
@@ -376,6 +378,7 @@ $('dnb-class-file').addEventListener('change',async()=>{
  const file=input.files?.[0];if(!file)return;
  status.textContent='Lecture et analyse du fichier…';
  rows=[];results.hidden=true;$('dnb-class-clear').hidden=true;
+ if(window.DNBTableEdit)window.DNBTableEdit.clear();
  try{await parseFile(file)}catch(err){status.textContent='Import impossible : '+(err.message||'Fichier non reconnu.');}
  input.value='';
 });
@@ -384,12 +387,21 @@ $('dnb-class-template').addEventListener('click',async()=>{
  try{await template();status.textContent=rows.length?source+' · Modèle Excel téléchargé.':'Modèle Excel téléchargé.'}
  catch(err){status.textContent=err.message||'Impossible de préparer le modèle.'}
 });
-$('dnb-class-clear').addEventListener('click',()=>{rows=[];source='';$('dnb-points-dashboard').hidden=true;results.hidden=true;$('dnb-pronote-meta').hidden=true;$('dnb-class-clear').hidden=true;status.textContent='Données effacées de cette page.';input.value='';});
+$('dnb-class-clear').addEventListener('click',()=>{if(window.DNBTableEdit)window.DNBTableEdit.clear();rows=[];source='';$('dnb-points-dashboard').hidden=true;results.hidden=true;$('dnb-pronote-meta').hidden=true;$('dnb-class-clear').hidden=true;status.textContent='Données effacées de cette page.';input.value='';});
 $('dnb-class-hyp').addEventListener('change',render);
 $('dnb-class-predstyle').addEventListener('change',render);
 $('dnb-class-estimate').addEventListener('input',render);
 $('dnb-class-filter').addEventListener('input',render);
 $('dnb-class-order').addEventListener('change',render);
-$('dnb-class-export').addEventListener('click',exportCSV);
+$('dnb-class-export').addEventListener('click',async()=>{
+ try{
+  if(window.DNBTableEdit)await window.DNBTableEdit.exportExcel(excelLibrary);
+  else exportCSV();
+ }catch(err){
+  status.textContent='Export Excel impossible : '+(err.message||'réessayez.');
+ }
+});
+if(window.DNBTableEdit)window.DNBTableEdit.registerOnEdit(render);
+$('dnb-filters-clear').addEventListener('click',()=>window.DNBTableEdit?.resetFilters());
 $('dnb-pronote-period').addEventListener('change',render);
 })();

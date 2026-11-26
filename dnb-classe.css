@@ -76,3 +76,24 @@
 .dnb-class .dnb-scenario label:last-of-type{flex:0 1 175px}
 @media(max-width:960px){.dnb-points-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:550px){.dnb-points-kpis{grid-template-columns:1fr}}
+
+/* Saisie et filtrage du tableau DNB */
+.dnb-edit-tools{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#f0f3ff;border:1px solid #dce1f6;padding:12px 14px;border-radius:12px;margin:12px 0}
+.dnb-edit-tools>span{font-size:13px;flex:1;min-width:220px;color:#374674}
+.dnb-edit-tools code{font-size:12px;background:#fff;padding:1px 5px;border:1px solid #dce1f6;border-radius:3px}
+.dnb-edit-tools button{font-size:12px}
+.dnb-edit-feedback{font-size:12px;min-height:20px;margin:6px 0;color:#315d9c;font-weight:650}
+.dnb-edit-head th{vertical-align:bottom;padding:0!important;position:sticky;top:0;background:#edf1fe;z-index:4}
+.dnb-edit-head .dnb-sort-head{width:100%;height:100%;min-height:42px;text-align:left;background:none;border:0;color:#273773;font-weight:800;font-size:12px;padding:8px;white-space:normal;line-height:1.3}
+.dnb-edit-head .dnb-sort-head:hover{background:#e2e8ff}
+.dnb-filter-head th{position:sticky;top:42px;background:#f4f6ff;padding:5px!important;z-index:3}
+.dnb-filter-head .dnb-column-filter{min-width:85px;width:100%;padding:5px 6px;font-size:12px;height:30px;border-radius:6px;background:#fff}
+.dnb-inline-note{width:92px!important;min-width:72px!important;padding:7px 8px!important;border:1px solid #aebede!important;font-size:13px!important;font-weight:700!important;font-variant-numeric:tabular-nums;background:#fff!important}
+.dnb-inline-note.is-estimated{background:#fff8df!important;color:#684800!important;border-color:#e4c678!important}
+.dnb-inline-note.is-edited{background:#eef1ff!important;color:#253caf!important;border-color:#697ce9!important}
+.dnb-inline-note:focus{outline:2px solid #6470de;outline-offset:1px}
+.dnb-points-wrap .dnb-input-cell{min-width:100px!important}
+.dnb-points-wrap .dnb-goals-cell{min-width:310px;font-size:12px;white-space:normal}
+.dnb-points-wrap .dnb-name{min-width:145px;font-weight:700}
+.dnb-points-wrap table{table-layout:auto}
+@media print{.dnb-filter-head,.dnb-edit-tools,.dnb-edit-feedback{display:none!important}.dnb-inline-note{border:0!important;background:transparent!important}}
