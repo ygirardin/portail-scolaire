@@ -114,12 +114,12 @@ function recognizePronote(tables){
    // Certains exports insèrent une ligne vide ou un titre supplémentaire : chercher jusqu’à 2 lignes au-dessus.
    let candidate=null;
    for(let offset=1;offset<=Math.min(2,h);offset++){
-    const codes=table[h-offset]||[], subjects=[], usedColumns=new Set(), byName=new Set();
+    const codes=table[h-offset]||[], subjects=[], usedColumns=new Set(), byName=new Map();
     const taken=new Set([nameCol,classCol,meanCol].filter(x=>x>=0));
     const max=Math.max(codes.length,types.length);
     for(let c=0;c<max;c++){
      const label=pronoteSubject(codes[c]);
-     if(!label || byName.has(label))continue;
+     if(!label)continue;
      let noteCol=-1;
      const available=idx=>idx>=0 && idx<max && !taken.has(idx) &&
         !usedColumns.has(idx) && noteHead(types[idx]||'') && !positionHead.has(types[idx]);
@@ -136,9 +136,16 @@ function recognizePronote(tables){
       else if(available(c+1) && !pronoteSubject(codes[c+1]))noteCol=c+1;
      }
      if(noteCol<0)continue;
-     byName.add(label);
      usedColumns.add(noteCol);
-     subjects.push({name:label,index:noteCol,headerCol:c});
+     if(byName.has(label)){
+      const existing=byName.get(label);
+      existing.indices.push(noteCol);
+      existing.headerCols.push(c);
+     }else{
+      const item={name:label,index:noteCol,indices:[noteCol],headerCols:[c]};
+      byName.set(label,item);
+      subjects.push(item);
+     }
     }
     if(subjects.length>=5 && (!candidate || subjects.length>candidate.subjects.length))
       candidate={subjects,codes};
@@ -147,6 +154,14 @@ function recognizePronote(tables){
    const subjects=candidate.subjects;
    const heading=['Élève','Classe','Moyenne Pronote',...subjects.map(x=>'CC '+x.name)];
    const values=[];
+   const conflicts=Object.create(null);
+   const isScore=value=>{
+    if(value===undefined||value===null||String(value).trim()==='')return null;
+    const token=String(value).trim().replace(',','.');
+    if(!/^\d+(?:\.\d+)?$/.test(token))return null;
+    const number=Number(token);
+    return Number.isFinite(number)&&number>=0&&number<=20?number:null;
+   };
    for(const row of table.slice(h+1)){
     const name=String(row[nameCol]??'').trim();
     const classe=classCol>=0?String(row[classCol]??'').trim():'Classe non indiquée';
@@ -154,7 +169,16 @@ function recognizePronote(tables){
     if(/moyenne\s+(de|des)\s+(classe|groupes?)|effectif|total|sous.total/i.test(name))continue;
     if(/^(nom|élève|eleve)$/i.test(name))continue;
     if(/moyenne\s+(de|des)\s+(classe|groupes?)|effectif|total/i.test(classe))continue;
-    values.push([name,classe,meanCol>=0?row[meanCol]??'':'',...subjects.map(x=>row[x.index]??'')]);
+    const parsed=[name,classe,meanCol>=0?row[meanCol]??'':''];
+    for(const subject of subjects){
+     const nums=subject.indices.map(i=>isScore(row[i])).filter(x=>x!==null);
+     if(nums.length>1 && nums.some(x=>Math.abs(x-nums[0])>0.001)){
+      parsed.push('Notes divergentes');
+      conflicts[subject.name]=(conflicts[subject.name]||0)+1;
+     }else if(nums.length)parsed.push(nums[0]);
+     else parsed.push(subject.indices.map(i=>String(row[i]??'').trim()).find(x=>x)||'');
+    }
+    values.push(parsed);
    }
    if(!values.length)continue;
    const keys=getKeys(heading);
@@ -163,7 +187,8 @@ function recognizePronote(tables){
    keys.pronoteSubjects=subjects.map(x=>x.name);
    keys.pronoteClass=1;
    keys.pronoteGeneral=2;
-   keys.pronoteDetectedColumns=subjects.map(x=>({name:x.name,index:x.index}));
+   keys.pronoteDetectedColumns=subjects.map(x=>({name:x.name,index:x.index,indices:x.indices.slice()}));
+   keys.pronoteConflicts=conflicts;
    const result={table:values,keys,header:heading,sheet:entry.name,pronote:true,subjects,
     headerPosition:h,identityColumns:{name:nameCol,classe:classCol,moyenne:meanCol}};
    if(!best || subjects.length>best.subjects.length ||
@@ -283,11 +308,15 @@ function render(){
   $('dnb-pronote-ccmean').textContent=cc.length?fmt(cc.reduce((sum,r)=>sum+r.mean,0)/cc.length)+' / 20':'—';
   $('dnb-pronote-generalmean').textContent=gen.length?fmt(gen.reduce((sum,r)=>sum+r.pronoteGeneral,0)/gen.length)+' / 20':'—';
   $('dnb-pronote-subjects').textContent=(rows[0].keys.pronoteDetectedColumns||[]).map(s=>{
-   let col=s.index+1,letters='';
-   while(col>0){col--;letters=String.fromCharCode(65+col%26)+letters;col=Math.floor(col/26);}
-   return s.name+' (col. '+letters+')';
+   const excelColumn=n=>{let letters='';for(n++;n;n=Math.floor((n-1)/26))letters=String.fromCharCode(65+(n-1)%26)+letters;return letters;};
+   const cols=s.indices&&s.indices.length?s.indices:[s.index];
+   return s.name+' (col. '+cols.map(excelColumn).join(' + ')+')';
   }).join(' · ') || rows[0].keys.pronoteSubjects.join(' · ');
   $('dnb-pronote-cname').textContent=[...new Set(rows.map(r=>String(r.raw[r.keys.pronoteClass])))].join(', ');
+  const conflicts=rows[0].keys.pronoteConflicts||{};
+  $('dnb-pronote-conflicts').textContent=Object.keys(conflicts).length
+   ?'Attention : notes différentes dans plusieurs colonnes pour une même matière : '+Object.entries(conflicts).map(([name,count])=>name+' ('+count+' élève(s))').join(', ')+'. Vérifier les données.'
+   :'';
   $('dnb-pronote-info').textContent=$('dnb-pronote-period').value==='annuelle'
    ? 'Export déclaré annuel : contrôle continu encore indicatif. Les notes terminales doivent être complétées ou explicitement simulées.'
    : 'Export de période : les moyennes ne représentent pas le contrôle continu ANNUEL. Les résultats finaux affichés sont des projections fictives fondées sur des épreuves simulées.';
