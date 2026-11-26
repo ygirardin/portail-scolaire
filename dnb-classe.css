@@ -45,3 +45,34 @@
 @media print{.dnb-class .dnb-actions,.dnb-class .dnb-filters,.dnb-class .dnb-scenario{display:none!important}.dnb-class .dnb-table-wrap{overflow:visible;max-height:none}}
 
 .dnb-pronote{margin:14px 0;border:1px solid #b4c2eb;background:#f5f7ff;border-radius:14px;padding:16px}.dnb-pronote h4{font-size:18px;margin:8px 0}.dnb-pronote .fields{align-items:end}.dnb-pronote .fields>div{padding:8px}.dnb-pronote .dnb-pronote-warning{color:#8e4a15;font-weight:700;background:#fff1da;border-radius:8px;padding:11px}.dnb-pronote .dnb-pronote-averages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.dnb-pronote .dnb-pronote-averages>div{background:white;border:1px solid #d7e0f5;border-radius:10px;padding:12px}.dnb-pronote .dnb-pronote-averages small{display:block;color:#52627d}.dnb-pronote .dnb-pronote-averages strong{font-size:24px;color:#273784}@media(max-width:680px){.dnb-pronote .dnb-pronote-averages{grid-template-columns:1fr}}
+
+/* Objectifs DNB 2027 : points équivalents + prévisions par matière */
+.dnb-points-dashboard{margin:22px 0;padding:18px;border:1px solid #d9e0f4;border-radius:16px;background:#fbfcff}
+.dnb-points-dashboard h3{color:#202c69;margin:6px 0 10px}
+.dnb-points-notice{border-left:4px solid #5458df;background:#eff1ff;border-radius:8px;padding:12px 14px;color:#252f68}
+.dnb-points-warning{border-left:4px solid #b17b22;background:#fff5e5;padding:12px 14px;border-radius:8px;font-weight:650;color:#77500d}
+.dnb-points-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.dnb-points-kpis article{padding:13px;background:#eff3fa;border:1px solid #dce5f5;border-radius:10px}
+.dnb-points-kpis small{font-weight:600;color:#52627e;display:block}
+.dnb-points-kpis strong{color:#182d62;font-size:clamp(18px,2vw,26px);display:block;font-variant-numeric:tabular-nums}
+.dnb-class .dnb-points-dashboard .dnb-table-wrap{display:block!important;max-width:100%;overflow:auto}
+.dnb-class .dnb-table-wrap:not(.dnb-points-wrap){display:none!important}
+.dnb-class #dnb-class-result-count{display:none}
+.dnb-points-wrap table{min-width:1530px;width:100%;border-collapse:collapse}
+.dnb-points-wrap th{background:#edf1fe;color:#293775}
+.dnb-points-wrap tbody tr:nth-child(even){background:#f8faff}
+.dnb-points-wrap th:first-child,.dnb-points-wrap td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:3px 0 6px rgba(0,0,0,.045)}
+.dnb-points-wrap th:first-child{z-index:3;background:#edf1fe}
+.dnb-points-wrap .dnb-name{min-width:130px;font-weight:650}
+.dnb-points-wrap .dnb-points-strong{font-weight:800;white-space:nowrap}
+.dnb-points-wrap .dnb-points-blue{color:#243a98}
+.dnb-points-wrap .dnb-points-hyp{background:#fffae9;color:#73500a;font-weight:650}
+.dnb-points-wrap .dnb-points-detail{min-width:135px}
+.dnb-points-wrap .dnb-points-detail summary{font-weight:700;cursor:pointer;color:#4349a4}
+.dnb-points-wrap .dnb-points-detail table{min-width:290px;margin-top:8px;background:#fff;border:1px solid #dce2f4}
+.dnb-points-wrap .dnb-points-detail td{padding:5px 6px;font-size:12px}
+.dnb-points-wrap .dnb-points-detail td:first-child{position:static;box-shadow:none}
+.dnb-class .dnb-scenario label:nth-child(2){flex:1 1 240px}
+.dnb-class .dnb-scenario label:last-of-type{flex:0 1 175px}
+@media(max-width:960px){.dnb-points-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.dnb-points-kpis{grid-template-columns:1fr}}
