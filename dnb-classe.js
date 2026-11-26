@@ -71,7 +71,60 @@ function getKeys(h){
  keys.score=(keys.name>=0||keys.nom>=0?3:0)+(keys.cc>=0||keys.ccList>=0||keys.ccCols.length?5:0)+['fr','ma','hg','emc','sc','oral'].filter(k=>keys[k]>=0).length;
  return keys;
 }
+
+/* Export Pronote « Tableau des moyennes > Excel (brut) ».
+   En-têtes sur deux lignes : code matière + colonne note 1 / positionnement Pos.
+   Une période seule NE constitue jamais le contrôle continu annuel du DNB. */
+function pronoteSubject(code){
+ const c=norm(code).replace(/ /g,'');
+ const fixed={
+  apla:'Arts plastiques',edmus:'Éducation musicale',eps:'EPS',
+  franc:'Français',hige:'Histoire-géographie',maths:'Mathématiques',
+  phch:'Physique-chimie',svt:'SVT',techn:'Technologie',
+  emc:'EMC'
+ };
+ if(fixed[c])return fixed[c];
+ if(/^agl[1-3]?$|^ang[1-3]?$/.test(c))return 'Anglais';
+ if(/^esp[1-3]?$/.test(c))return 'Espagnol';
+ if(/^all[1-3]?$/.test(c))return 'Allemand';
+ if(/^ita[1-3]?$/.test(c))return 'Italien';
+ if(/^port[1-3]?$/.test(c))return 'Portugais';
+ return null; // matières non reconnues, UPE2A et éventuelles options : ne pas supposer le statut
+}
+function recognizePronote(tables){
+ for(const entry of tables){
+  const table=entry.table;
+  for(let h=1;h<Math.min(12,table.length);h++){
+   const head=(table[h]||[]).map(norm);
+   if(!(head[0]==='nom' && head[1]==='classe' && head[2]==='moyenne'))continue;
+   const codes=table[h-1]||[],subjects=[],already=new Set();
+   for(let c=3;c<Math.max(codes.length,head.length);c++){
+    const label=pronoteSubject(codes[c]);
+    if(!label || already.has(label))continue; // ne pas compter deux fois HI-GE, par exemple
+    const col=head[c]==='pos' && /^\d+(?:[,.]\d+)?$/.test(String(table[h][c-1]))?c-1:c;
+    if(!/^\d+(?:[,.]\d+)?$/.test(String(table[h][col]??'')))continue;
+    already.add(label);subjects.push({name:label,index:col});
+   }
+   if(subjects.length<5)continue;
+   const heading=['Élève','Classe','Moyenne Pronote',...subjects.map(x=>'CC '+x.name)];
+   const values=[];
+   for(const row of table.slice(h+1)){
+    const name=String(row[0]??'').trim(),classe=String(row[1]??'').trim();
+    if(!name || !classe || /moyenne de|total|effectif/i.test(name))continue;
+    if(/^(nom|eleve)$/i.test(name))continue;
+    values.push([name,classe,row[2]??'',...subjects.map(x=>row[x.index]??'')]);
+   }
+   if(!values.length)continue;
+   const keys=getKeys(heading);keys.headerLabels=heading;keys.pronote=true;
+   keys.pronoteSubjects=subjects.map(s=>s.name);keys.pronoteClass=1;keys.pronoteGeneral=2;
+   return {table:values,keys,header:heading,sheet:entry.name,pronote:true,subjects};
+  }
+ }
+ return null;
+}
+
 function findSheet(tables){
+ const pronote=recognizePronote(tables);if(pronote)return pronote;
  let best=null;
  for(const entry of tables){
   for(let i=0;i<Math.min(entry.table.length,10);i++){
@@ -91,6 +144,17 @@ function grade(value,label,missing){
  return n;
 }
 function parseCC(row,keys,missing){
+ if(keys.pronote){
+  const cc=[];for(const ix of keys.ccCols){
+   const raw=String(row[ix]??'').trim().replace(',','.');
+   if(/^\d+(?:\.\d+)?$/.test(raw)){
+    const score=Number(raw);if(score>=0&&score<=20)cc.push(score);
+   }
+   // Une absence, une dispense, N.Not ou une cellule vide ne vaut jamais zéro.
+  }
+  if(cc.length<5)missing.push('Moyennes disciplinaires insuffisantes (moins de 5)');
+  return {cc:cc.length?cc:null,option:null};
+ }
  const option=keys.option>=0?grade(row[keys.option],'Option facultative',[]):null;
  let cc=null;
  if(keys.ccList>=0&&String(row[keys.ccList]??'').trim()!==''){
@@ -120,8 +184,7 @@ function compute(row,index,keys,hypothesis,estimate){
  if(!name)name='Élève '+(index+1);
  const missing=[],invalid=[];
  let cc=null,option=null,notes=[],hypCount=0,exam=null,mean=null,final=null,mention='À compléter';
- try{const c=parseCC(row,keys,missing);cc=c.cc;option=c.option}
- catch(err){invalid.push(err.message)}
+ try{const c=parseCC(row,keys,missing);cc=c.cc;option=c.option}catch(err){invalid.push(err.message)}
  for(const [key,label] of [['fr','Français'],['ma','Mathématiques'],['hg','Histoire-géographie'],['emc','EMC'],['sc','Sciences'],['oral','Oral']]){
   try{
    let n=keys[key]>=0?grade(row[keys[key]],'Épreuve '+label,[]):null;
@@ -130,14 +193,21 @@ function compute(row,index,keys,hypothesis,estimate){
    notes.push(n);
   }catch(err){invalid.push(err.message);notes.push(null)}
  }
- if(cc&&cc.length&&!missing.length&&!invalid.length&&notes.every(v=>v!==null)){
-  const exam=(notes[0]*2+notes[1]*2+notes[2]*1.5+notes[3]*.5+notes[4]*2+notes[5]*2)/10;
+ if(cc&&cc.length&&!invalid.length){
   mean=Math.min(20,(cc.reduce((a,b)=>a+b,0)+Math.max(0,(option??0)-10))/cc.length);
+ }
+ const pronote=!!keys.pronote;
+ const general=pronote?Number(String(row[keys.pronoteGeneral]??'').replace(',','.')):null;
+ const pronoteGeneral=pronote&&Number.isFinite(general)&&general>=0&&general<=20?general:null;
+ const context=pronote?'Moyennes de période '+(cc?cc.length:0)+'/'+keys.pronoteSubjects.length+' disciplines renseignées':'';
+ if(cc&&cc.length&&!missing.length&&!invalid.length&&notes.every(v=>v!==null)){
+  exam=(notes[0]*2+notes[1]*2+notes[2]*1.5+notes[3]*.5+notes[4]*2+notes[5]*2)/10;
   final=mean*.4+exam*.6;
   mention=final>=18?'Très bien avec les félicitations du jury':final>=16?'Très bien':final>=14?'Bien':final>=12?'Assez bien':final>=10?'Admis sans mention':'Non admis';
-  return {name,index,mean,exam,final,mention,detail: hypCount?'Hypothèse sur '+hypCount+' épreuve(s)':'Notes complètes',hypCount,valid:true};
+  const detail=[hypCount?'Hypothèse sur '+hypCount+' épreuve(s)':'Notes complètes',context].filter(Boolean).join(' · ');
+  return {name,index,mean,exam,final,mention,pronoteGeneral,detail,hypCount,valid:true};
  }
- return {name,index,mean,exam,final,mention:invalid.length?'À corriger':'À compléter',detail:[...new Set([...invalid,...missing])].join(' · '),hypCount,valid:false};
+ return {name,index,mean,exam,final,mention:invalid.length?'À corriger':'À compléter',pronoteGeneral,detail:[...new Set([context,...invalid,...missing].filter(Boolean))].join(' · '),hypCount,valid:false};
 }
 function cell(tr,tag,text,cls){
  const node=document.createElement(tag);node.textContent=text;
@@ -153,6 +223,19 @@ function render(){
  if(!rows.length)return;
  const computed=rows.map((r,i)=>compute(r.raw,i,r.keys,enabled,estimate));
  const valid=computed.filter(r=>r.valid);
+ const isPronote=!!rows[0]?.keys?.pronote;
+ const meta=$('dnb-pronote-meta');meta.hidden=!isPronote;
+ if(isPronote){
+  const cc=computed.filter(r=>r.mean!==null),gen=computed.filter(r=>r.pronoteGeneral!==null);
+  $('dnb-pronote-ccmean').textContent=cc.length?fmt(cc.reduce((sum,r)=>sum+r.mean,0)/cc.length)+' / 20':'—';
+  $('dnb-pronote-generalmean').textContent=gen.length?fmt(gen.reduce((sum,r)=>sum+r.pronoteGeneral,0)/gen.length)+' / 20':'—';
+  $('dnb-pronote-subjects').textContent=rows[0].keys.pronoteSubjects.join(' · ');
+  $('dnb-pronote-cname').textContent=[...new Set(rows.map(r=>String(r.raw[r.keys.pronoteClass])))].join(', ');
+  $('dnb-pronote-info').textContent=$('dnb-pronote-period').value==='annuelle'
+   ? 'Export déclaré annuel : contrôle continu encore indicatif. Les notes terminales doivent être complétées ou explicitement simulées.'
+   : 'Export de période : les moyennes ne représentent pas le contrôle continu ANNUEL. Les résultats finaux affichés sont des projections fictives fondées sur des épreuves simulées.';
+ }
+ $('dnb-pronote-general-head').hidden=!isPronote;
  const passed=valid.filter(r=>r.final>=10);
  const average=valid.length?valid.reduce((s,r)=>s+r.final,0)/valid.length:null;
  $('dnb-class-total').textContent=String(rows.length);
@@ -181,14 +264,16 @@ function render(){
  filtered=computed.filter(r=>!q||norm(r.name).includes(q)||norm(r.mention).includes(q));
  const order=$('dnb-class-order').value;
  if(order!=='source')filtered.sort((a,b)=>{
-  if(a.final===null&&b.final!==null)return 1;
-  if(b.final===null&&a.final!==null)return -1;
-  return a.final===null? a.index-b.index : (order==='desc'?b.final-a.final:a.final-b.final)||a.index-b.index;
+  const byCC=order==='ccdesc'||order==='ccasc',aValue=byCC?a.mean:a.final,bValue=byCC?b.mean:b.final;
+  if(aValue===null&&bValue!==null)return 1;
+  if(bValue===null&&aValue!==null)return -1;
+  return aValue===null?a.index-b.index:((order==='desc'||order==='ccdesc')?bValue-aValue:aValue-bValue)||a.index-b.index;
  });
  const tbody=$('dnb-class-body');tbody.replaceChildren();
  for(const r of filtered){
   const tr=document.createElement('tr');
   cell(tr,'td',r.name);
+  const gen=cell(tr,'td',r.pronoteGeneral===null?'—':fmt(r.pronoteGeneral));gen.hidden=!isPronote;
   cell(tr,'td',r.mean===null?'—':fmt(r.mean));
   cell(tr,'td',r.exam===null?'—':fmt(r.exam));
   cell(tr,'td',r.final===null?'—':fmt(r.final),'dnb-grade');
@@ -197,7 +282,9 @@ function render(){
   tbody.append(tr);
  }
  $('dnb-class-result-count').textContent=filtered.length+' ligne(s) affichée(s)';
- status.textContent=source+' · '+rows.length+' élève(s) importé(s). '+(enabled?'Scénario fictif appliqué aux seules épreuves manquantes.':'Les notes manquantes ne sont pas remplacées par zéro.');
+ status.textContent=source+' · '+rows.length+' élève(s) importé(s). '+(isPronote
+   ?(enabled?'PROJECTION FICTIVE : épreuves non renseignées simulées à '+fmt(estimate)+'/20. ':'Notes d’épreuves absentes : aucun résultat DNB final ne peut être calculé. ')
+   :'')+(enabled?'Scénario fictif appliqué aux seules épreuves manquantes.':'Les notes manquantes ne sont pas remplacées par zéro.');
  results.hidden=false;
  $('dnb-class-clear').hidden=false;
 }
@@ -215,14 +302,20 @@ async function parseFile(file){
   const wb=lib.read(await file.arrayBuffer(),{type:'array',cellDates:false});
   tables=wb.SheetNames.map(name=>({name,table:lib.utils.sheet_to_json(wb.Sheets[name],{header:1,blankrows:false,defval:'',raw:true})}));
  }else throw Error('Importer un fichier Excel .xlsx, .xls ou CSV.');
- const {table,keys,header,sheet}=findSheet(tables);
+ const {table,keys,header,sheet,pronote}=findSheet(tables);
  keys.headerLabels=header;
  const max=500;
  const actual=table.map((raw,i)=>({raw,i,keys})).filter(r=>r.raw.some(v=>String(v??'').trim()!==''));
  if(!actual.length)throw Error('Le tableau ne contient aucun élève.');
  if(actual.length>max)throw Error('Maximum '+max+' élèves par import.');
  rows=actual;
- source='Fichier : '+file.name+' · feuille : '+sheet;
+ source='Fichier : '+file.name+' · feuille : '+sheet+(pronote?' · format PRONOTE détecté':'');
+ $('dnb-pronote-period').value='inconnue'; // Le fichier Excel brut ne précise pas sa période.
+ if(pronote){
+  $('dnb-class-hyp').checked=true; // Projection explicitement fictive : 10/20 aux épreuves manquantes.
+  $('dnb-class-estimate').value='10';
+  $('dnb-class-order').value='ccdesc';
+ }else $('dnb-class-order').value='source';
  render();
 }
 function csvSafe(value){
@@ -236,8 +329,8 @@ function exportCSV(){
  if(enabled&&(estimate<0||estimate>20||!Number.isFinite(estimate)))return;
  const list=rows.map((r,i)=>compute(r.raw,i,r.keys,enabled,estimate));
  const content=[
- ['Élève','Contrôle continu /20','Épreuves /20','Résultat /20','Appréciation indicative','Compléments / hypothèse'].map(csvSafe).join(';'),
- ...list.map(r=>[r.name,r.mean??'',r.exam??'',r.final??'',r.mention,r.detail].map(csvSafe).join(';'))
+ ['Élève','Moyenne générale Pronote /20','CC indicatif /20','Épreuves /20','Résultat simulé /20','Appréciation indicative','Période déclarée','Compléments / hypothèse'].map(csvSafe).join(';'),
+ ...list.map(r=>[r.name,r.pronoteGeneral??'',r.mean??'',r.exam??'',r.final??'',r.mention,rows[0]?.keys?.pronote?$('dnb-pronote-period').value:'',r.detail].map(csvSafe).join(';'))
  ].join('\r\n');
  const a=document.createElement('a');
  const url=URL.createObjectURL(new Blob(['\uFEFF'+content],{type:'text/csv;charset=utf-8'}));
@@ -283,10 +376,11 @@ $('dnb-class-template').addEventListener('click',async()=>{
  try{await template();status.textContent=rows.length?source+' · Modèle Excel téléchargé.':'Modèle Excel téléchargé.'}
  catch(err){status.textContent=err.message||'Impossible de préparer le modèle.'}
 });
-$('dnb-class-clear').addEventListener('click',()=>{rows=[];source='';results.hidden=true;$('dnb-class-clear').hidden=true;status.textContent='Données effacées de cette page.';input.value='';});
+$('dnb-class-clear').addEventListener('click',()=>{rows=[];source='';results.hidden=true;$('dnb-pronote-meta').hidden=true;$('dnb-class-clear').hidden=true;status.textContent='Données effacées de cette page.';input.value='';});
 $('dnb-class-hyp').addEventListener('change',render);
 $('dnb-class-estimate').addEventListener('input',render);
 $('dnb-class-filter').addEventListener('input',render);
 $('dnb-class-order').addEventListener('change',render);
 $('dnb-class-export').addEventListener('click',exportCSV);
+$('dnb-pronote-period').addEventListener('change',render);
 })();
