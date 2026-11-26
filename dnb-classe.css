@@ -1,0 +1,45 @@
+
+/* Tableau DNB : styles spécifiques, dans l'identité du portail */
+.dnb-class{border-top:1px solid #dae4ed;margin-top:26px;padding-top:22px}
+.dnb-class h3{margin:4px 0 8px;color:#19224e;font-size:21px}
+.dnb-class p{font-size:14px;line-height:1.55}
+.dnb-class .dnb-pill{display:inline-block;border-radius:999px;background:#edf0ff;color:#393ab9;font-size:12px;font-weight:800;padding:4px 10px}
+.dnb-class .dnb-actions{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin:14px 0}
+.dnb-class .dnb-file{flex:1 1 350px;min-width:250px}
+.dnb-class .dnb-actions button{min-height:42px}
+.dnb-class details{border:1px solid #dce4ef;border-radius:10px;padding:12px 14px;background:#f8faff;margin:12px 0}
+.dnb-class details summary{font-weight:700;cursor:pointer;color:#303f91}
+.dnb-class details p{margin:8px 0}
+.dnb-class code{background:#e6ebf7;padding:2px 5px;border-radius:4px}
+.dnb-class #dnb-class-status{font-size:13px;font-weight:600;color:#4b5670;margin:12px 0}
+.dnb-class .dnb-scenario{display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:#fff8ea;border:1px solid #ecd8a7;border-radius:12px;padding:14px}
+.dnb-class .dnb-scenario label:first-child{display:flex;flex-direction:row;align-items:center;gap:8px;flex:2}
+.dnb-class .dnb-scenario label:last-child{flex:0 0 160px}
+.dnb-class .dnb-scenario input[type=checkbox]{width:18px;height:18px;accent-color:#5458df}
+.dnb-class .dnb-scenario small{display:block;flex-basis:100%;color:#775d25}
+.dnb-class .dnb-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+.dnb-class .dnb-kpis article{background:#f6f8fd;border:1px solid #dce4ef;border-radius:12px;padding:14px}
+.dnb-class .dnb-kpis span{display:block;font-size:12px;color:#56627b;font-weight:600}
+.dnb-class .dnb-kpis strong{display:block;font-size:25px;color:#19224e;font-variant-numeric:tabular-nums}
+.dnb-class .dnb-distro{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin:12px 0}
+.dnb-class .dnb-dist-row{display:flex;align-items:center;gap:7px;font-size:12px}
+.dnb-class .dnb-dist-row>span:first-child{width:94px;flex-shrink:0}
+.dnb-class .dnb-dist-row strong{width:24px;text-align:right;font-variant-numeric:tabular-nums}
+.dnb-class .dnb-dist-track{flex:1;background:#e6eaf3;border-radius:999px;height:9px;overflow:hidden}
+.dnb-class .dnb-dist-track span{display:block;background:#5458df;height:100%;border-radius:999px}
+.dnb-class .dnb-filters{display:flex;gap:14px;flex-wrap:wrap;margin:15px 0}
+.dnb-class .dnb-filters label{flex:1 1 230px}
+.dnb-class .dnb-table-wrap{overflow:auto;border:1px solid #dce4ef;border-radius:10px;max-height:570px}
+.dnb-class table{width:100%;border-collapse:collapse;font-size:13px}
+.dnb-class th,.dnb-class td{text-align:left;padding:10px 12px;border-bottom:1px solid #e8edf4;vertical-align:top}
+.dnb-class th{position:sticky;top:0;background:#eaf0fb;color:#283466;white-space:nowrap;z-index:1}
+.dnb-class tbody tr:nth-child(even){background:#f9fbff}
+.dnb-class td:first-child{min-width:130px}
+.dnb-class .dnb-grade{font-weight:800;white-space:nowrap}
+.dnb-class .dnb-pass{color:#146b4a;font-weight:700}
+.dnb-class .dnb-fail{color:#a23235;font-weight:700}
+.dnb-class .dnb-wait{color:#9a6421}
+.dnb-class .dnb-detail{font-size:12px;color:#58647a;max-width:270px}
+.dnb-class .dnb-privacy{font-size:12px;color:#546177}
+@media(max-width:720px){.dnb-class .dnb-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.dnb-class .dnb-distro{grid-template-columns:1fr}.dnb-class .dnb-scenario label:last-child{flex:1 1 120px}}
+@media print{.dnb-class .dnb-actions,.dnb-class .dnb-filters,.dnb-class .dnb-scenario{display:none!important}.dnb-class .dnb-table-wrap{overflow:visible;max-height:none}}
